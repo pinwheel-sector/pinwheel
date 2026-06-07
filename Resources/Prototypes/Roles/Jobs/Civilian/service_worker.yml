@@ -4,9 +4,11 @@
   description: job-description-serviceworker
   playTimeTracker: JobServiceWorker
   requirements:
-  - !type:DepartmentTimeRequirement
-    department: Civilian
-    time: 0.5h
+  # Pinwheel-stt - easy unlocks
+  # !type:DepartmentTimeRequirement
+  # department: Civilian
+  # time: 0.5h
+  # Pinwheel-end - easy unlocks
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service

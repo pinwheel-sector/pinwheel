@@ -4,8 +4,11 @@
   description: job-description-mime
   playTimeTracker: JobMime
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 4h
+    # Pinwheel-stt - easy unlocks
+    # sure hope nobody will come to regret this
+    # !type:OverallPlaytimeRequirement
+    # time: 4h
+    # Pinwheel-end - easy unlocks
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop
@@ -31,6 +34,7 @@
     back:
     - RubberStampMime
 
+# slate this for destruction later - Pinwheel
 - type: entity
   parent: BaseAction
   id: ActionMimeInvisibleWall

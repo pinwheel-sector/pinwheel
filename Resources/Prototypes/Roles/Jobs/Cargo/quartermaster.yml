@@ -6,13 +6,15 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 5h
+      time: 1h # Pinwheel - easy unlocks
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 10h
+      time: 1h # Pinwheel - easy unlocks
+    # Pinwheel-stt - easy unlocks
+    # !type:DepartmentTimeRequirement
+    # department: Cargo
+    # time: 10h
+    # Pinwheel-end - easy unlocks
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

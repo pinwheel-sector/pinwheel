@@ -3,6 +3,14 @@
   name: job-name-psychologist
   description: job-description-psychologist
   playTimeTracker: JobPsychologist
+  # Pinwheel-stt - easy unlocks
+  # despite the comment this actually makes it harder to unlock (gives it an unlock at all)
+  # because i cba commenting out chemistry access from the role right now
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 2h
+  # Pinwheel-end - easy unlocks
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo

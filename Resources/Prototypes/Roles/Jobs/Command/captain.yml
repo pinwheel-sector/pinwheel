@@ -6,19 +6,20 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 4h
+      time: 2h # Pinwheel - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 4h
+      time: 2h # Pinwheel - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 4h
+      time: 2h # Pinwheel - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h
+      time: 2h # Pinwheel - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 4h
+      time: 2h # Pinwheel - easy unlocks
+    # ^ these could be trimmed down to just security and command, or maybe JUST command, i'll need to think about it - arenaconspiracy - Pinwheel
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

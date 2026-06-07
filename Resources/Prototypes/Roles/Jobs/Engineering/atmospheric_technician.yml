@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Engineering
-    time: 2.5h
+    time: 2h # Pinwheel - easy unlocks
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
@@ -19,6 +19,8 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FirefighterDay
     prototype: FireAxe
+
+# The job is slated for removal anyhow - Pinwheel
 
 - type: startingGear
   id: AtmosphericTechnicianGear

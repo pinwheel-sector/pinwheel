@@ -4,9 +4,9 @@
   description: job-description-detective
   playTimeTracker: JobDetective
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobSecurityOfficer
-    time: 5h
+  - !type:DepartmentTimeRequirement # Pinwheel - easy unlocks
+    department: Security # Pinwheel - easy unlocks
+    time: 2h # Pinwheel - easy unlocks
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
