@@ -68,6 +68,17 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: shell
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetPlastic1:
+              min: 4
+              max: 4
+    - trigger:
+        !type:DamageTrigger
         damage: 600
       behaviors:
         - !type:ChangeConstructionNodeBehavior
@@ -77,9 +88,6 @@
             SheetSteel1:
               min: 2
               max: 2
-            SheetPlastic1:
-              min: 4
-              max: 4
 
 - type: entity
   parent: ExtractableServerBase
