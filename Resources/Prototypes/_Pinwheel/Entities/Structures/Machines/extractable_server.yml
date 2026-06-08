@@ -1,3 +1,5 @@
+## Servers
+
 - type: entity
   abstract: true
   parent: BaseMachinePowered
@@ -9,7 +11,7 @@
     layers:
     - state: base
     - state: disk
-    # map: [ blah blah ] # TODO
+      map: [ "enum.StorageContainerVisualLayers.Fill" ]
     - state: shell
       map: [ "enum.ExtractableServerVisualLayers.Shell" ]
     - state: lid
@@ -38,6 +40,10 @@
         enum.ExtractableServerVisualLayers.Shell:
           1: {visible: true}
           0: {visible: false}
+  - type: ContainerFillVisuals
+    maxFillLevels: 1
+    fillBaseName: disk
+    layer: disk
   # audio
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -154,6 +160,8 @@
     guides:
     - Science
 
+## Construction Graph
+
 - type: constructionGraph
   id: ExtractableServer
   start: lid
@@ -201,3 +209,57 @@
     - !type:VisualizerDataInt
       key: "enum.ExtractableServerVisuals.ShellConstruction"
       data: 0
+    edges:
+    - to: empty
+      steps:
+      - tool: Prying
+        doAfter: 1
+  - node: empty # this is really bad. but i didn't want to make something new for getting the disk out
+    actions:
+    - !type:EmptyAllContainers
+      pickup: true
+
+## Disks
+
+- type: Tag
+  id: ServerDisk
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: ServerDiskBase
+  components:
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: ServerDiskBase
+  id: ServerDiskCrewMonitor
+  name: 'server datadisk "Hippocrates"'
+  description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Hippocrates" analytical software, helping crew monitor servers process vital signs en-masse.'
+  components:
+  - type: Sprite
+    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    layers:
+    - state: icon
+    - state: label
+      color: "#4df"
+  - type: Tag
+    tags:
+    - ServerDisk
+
+- type: entity
+  parent: ServerDiskBase
+  id: ServerDiskResearch
+  name: 'server datadisk "Archimedes"'
+  description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Archimedes" analytical software, letting research servers process scientific data more efficiently.' # this will need some other effect when research points are axed
+  components:
+  - type: Sprite
+    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    layers:
+    - state: icon
+    - state: label
+      color: "#92f"
+  - type: Tag
+    tags:
+    - ServerDisk
