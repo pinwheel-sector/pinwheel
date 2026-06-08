@@ -11,7 +11,7 @@
     layers:
     - state: base
     - state: disk
-      map: [ "enum.StorageContainerVisualLayers.Fill" ]
+      map: [ "enum.ExtractableServerVisualLayers.Disk" ]
     - state: shell
       map: [ "enum.ExtractableServerVisualLayers.Shell" ]
     - state: lid
@@ -40,10 +40,10 @@
         enum.ExtractableServerVisualLayers.Shell:
           1: {visible: true}
           0: {visible: false}
-  - type: ContainerFillVisuals
-    maxFillLevels: 1
-    fillBaseName: disk
-    layer: disk
+      enum.ExtractableServerVisuals.Disk:
+        enum.ExtractableServerVisualLayers.Disk:
+          1: {visible: true}
+          0: {visible: false}
   # audio
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -92,7 +92,7 @@
     layers: # ideally i wouldn't have to redefine the whole thing to just change the label sprite and color. but.
     - state: base
     - state: disk
-    # map: [ blah blah ] # TODO
+      map: [ "enum.ExtractableServerVisualLayers.Disk" ]
     - state: shell
       map: [ "enum.ExtractableServerVisualLayers.Shell" ]
     - state: lid
@@ -133,7 +133,7 @@
     layers:
     - state: base
     - state: disk
-    # map: [ blah blah ] # TODO
+      map: [ "enum.ExtractableServerVisualLayers.Disk" ]
     - state: shell
       map: [ "enum.ExtractableServerVisualLayers.Shell" ]
     - state: lid
@@ -214,8 +214,11 @@
       steps:
       - tool: Prying
         doAfter: 1
-  - node: empty # this is really bad. but i didn't want to make something new for getting the disk out
+  - node: empty # easier than faffing with other components handling extraction and visuals, why shouldn't you have a crowbar
     actions:
+    - !type:VisualizerDataInt
+      key: "enum.ExtractableServerVisuals.Disk"
+      data: 0
     - !type:EmptyAllContainers
       pickup: true
 
