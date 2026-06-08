@@ -1,0 +1,203 @@
+- type: entity
+  abstract: true
+  parent: BaseMachinePowered
+  id: ExtractableServerBase
+  components:
+  # visual
+  - type: Sprite
+    sprite: _Pinwheel/Structures/Machines/server.rsi
+    layers:
+    - state: base
+    - state: disk
+    # map: [ blah blah ] # TODO
+    - state: shell
+      map: [ "enum.ExtractableServerVisualLayers.Shell" ]
+    - state: lid
+      map: [ "enum.ExtractableServerVisualLayers.Lid" ]
+    - state: label-right
+      color: "#999"
+      map: [ "enum.ExtractableServerVisualLayers.Label" ]
+    - state: power-on
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          1: {visible: true}
+          0: {visible: false}
+      enum.ExtractableServerVisuals.LidConstruction: # this is so much boilerplate
+        enum.ExtractableServerVisualLayers.Label:
+          1: {visible: true}
+          0: {visible: false}
+        enum.ExtractableServerVisualLayers.Lid:
+          1: {visible: true}
+          0: {visible: false}
+      enum.ExtractableServerVisuals.ShellConstruction:
+        enum.ExtractableServerVisualLayers.Shell:
+          1: {visible: true}
+          0: {visible: false}
+  # audio
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  # functional
+  - type: Anchorable
+    flags: [ Anchorable ]
+  - type: ExtensionCableReceiver
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ContainerContainer
+    containers:
+      server_disk: !type:Container
+  - type: Construction
+    graph: ExtractableServer
+    node: lid
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: bare
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 2
+              max: 2
+            SheetPlastic1:
+              min: 4
+              max: 4
+
+- type: entity
+  parent: ExtractableServerBase
+  id: ExtractableServerCrewMonitor # TODO: migrate CrewMonitoringServer to this
+  name: crew monitoring server
+  description: Receives and relays the status of all active suit sensors on the station.
+  components:
+  # visual
+  - type: Sprite
+    layers: # ideally i wouldn't have to redefine the whole thing to just change the label sprite and color. but.
+    - state: base
+    - state: disk
+    # map: [ blah blah ] # TODO
+    - state: shell
+      map: [ "enum.ExtractableServerVisualLayers.Shell" ]
+    - state: lid
+      map: [ "enum.ExtractableServerVisualLayers.Lid" ]
+    - state: label-right
+      map: [ "enum.ExtractableServerVisualLayers.Label" ]
+      color: "#4df"
+    - state: power-on
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  # functional
+  - type: SingletonDeviceNetServer
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    autoConnect: false
+    transmitFrequencyId: CrewMonitor
+    receiveFrequencyId: SuitSensor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
+  - type: CrewMonitoringServer
+  - type: ContainerFill
+    containers:
+      server_disk:
+      - ServerDiskCrewMonitor
+  - type: GuideHelp
+    guides:
+    - Medical
+
+- type: entity
+  parent: ExtractableServerBase
+  id: ExtractableServerResearch # TODO: migrate ResearchAndDevelopmentServer to this
+  name: research server
+  description: "Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?"
+  components:
+  # visual
+  - type: Sprite
+    layers:
+    - state: base
+    - state: disk
+    # map: [ blah blah ] # TODO
+    - state: shell
+      map: [ "enum.ExtractableServerVisualLayers.Shell" ]
+    - state: lid
+      map: [ "enum.ExtractableServerVisualLayers.Lid" ]
+    - state: label-leftright
+      map: [ "enum.ExtractableServerVisualLayers.Label" ]
+      color: "#92f"
+    - state: power-on
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  # functional
+  - type: ResearchServer
+  - type: TechnologyDatabase
+    supportedDisciplines:
+    - Industrial
+    - Arsenal
+    - Experimental
+    - CivilianServices
+  - type: ContainerFill
+    containers:
+      server_disk:
+      - ServerDiskResearch
+  - type: GuideHelp
+    guides:
+    - Science
+
+- type: constructionGraph
+  id: ExtractableServer
+  start: lid
+  graph:
+  - node: lid
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.ExtractableServerVisuals.LidConstruction"
+      data: 1
+    edges:
+    - to: shell
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 2
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      - tool: Prying
+        doAfter: 1
+  - node: shell
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.ExtractableServerVisuals.LidConstruction"
+      data: 0
+    - !type:VisualizerDataInt
+      key: "enum.ExtractableServerVisuals.ShellConstruction"
+      data: 1
+    edges:
+    - to: bare
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 4
+      steps:
+      - tool: Welding
+        doAfter: 5
+      - tool: Prying
+        doAfter: 1
+  - node: bare
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.ExtractableServerVisuals.LidConstruction"
+      data: 0
+    - !type:VisualizerDataInt
+      key: "enum.ExtractableServerVisuals.ShellConstruction"
+      data: 0
