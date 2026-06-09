@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Research.Components;
+using Robust.Shared.Containers; // Pinwheel - server sabotage
 
 namespace Content.Server.Research.Systems;
 
@@ -11,6 +12,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
+        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnInserted); // Pinwheel - server sabotage
+        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnRemoved); // Pinwheel - server sabotage
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -148,6 +151,18 @@ public sealed partial class ResearchSystem
         return ev.Points;
     }
 
+    // Pinwheel-stt - server sabotage
+    public void OnInserted(Entity<ResearchServerComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+            ent.Comp.HasDisk = true;
+    }
+
+    public void OnRemoved(Entity<ResearchServerComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+            ent.Comp.HasDisk = false;
+    }
+    // Pinwheel-stt - server sabotage
+
     /// <summary>
     /// Adds a specified number of points to a server.
     /// </summary>
@@ -161,7 +176,14 @@ public sealed partial class ResearchSystem
 
         if (!Resolve(uid, ref component))
             return;
+
+        // Pinwheel-stt - server sabotage
+        if (!component.HasDisk)
+            points = points / 2;
+
         component.Points += points;
+        // Pinwheel-end - server sabotage
+
         var ev = new ResearchServerPointsChangedEvent(uid, component.Points, points);
         foreach (var client in component.Clients)
         {

@@ -42,6 +42,20 @@ public sealed partial class ResearchServerComponent : Component
 
     [DataField("researchConsoleUpdateTime"), ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan ResearchConsoleUpdateTime = TimeSpan.FromSeconds(1);
+
+    // Pinwheel-stt - server sabotage
+    /// <summary>
+    /// ID of the container meant to contain the disk
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public string DiskContainer = "server_disk";
+
+    /// <summary>
+    /// Do we have the disk
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool HasDisk = true;
+    // Pinwheel-end - server sabotage
 }
 
 /// <summary>
