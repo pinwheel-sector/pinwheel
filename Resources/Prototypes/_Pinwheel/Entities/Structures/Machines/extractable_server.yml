@@ -255,6 +255,8 @@
     - state: icon
     - state: label
       color: "#4df"
+  - type: StealTarget
+    stealGroup: ServerDiskCrewMonitor
   - type: Tag
     tags:
     - ServerDisk
@@ -271,6 +273,8 @@
     - state: icon
     - state: label
       color: "#92f"
+  - type: StealTarget
+    stealGroup: ServerDiskResearch
   - type: Tag
     tags:
     - ServerDisk

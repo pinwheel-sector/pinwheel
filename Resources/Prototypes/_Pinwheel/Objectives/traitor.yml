@@ -1,0 +1,41 @@
+# the upstream naming patterns are nonsense so i'm not going to follow them - arenaconspiracy
+
+## Medical
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: BaseStealObjectiveMedbay
+  components:
+  - type: NotJobRequirement
+    jobs: [ ChiefMedicalOfficer, Chemist, MedicalDoctor, Paramedic, MedicalIntern ]
+  - type: StealCondition
+    objectiveText: objective-title-steal-departmental
+    owner: department-Medical
+
+- type: entity
+  parent: BaseStealObjectiveMedbay
+  id: StealServerDiskCrewMonitor
+  components:
+  - type: StealCondition
+    descriptionText: objective-description-steal-serverdisk
+    stealGroup: ServerDiskCrewMonitor
+
+## Science
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: BaseStealObjectiveScience
+  components:
+  - type: NotJobRequirement
+    jobs: [ ResearchDirector, Scientist, ResearchAssistant ]
+  - type: StealCondition
+    objectiveText: objective-title-steal-departmental
+    owner: department-Science
+
+- type: entity
+  parent: BaseStealObjectiveScience
+  id: StealServerDiskResearch
+  components:
+  - type: StealCondition
+    descriptionText: objective-description-steal-serverdisk
+    stealGroup: ServerDiskResearch

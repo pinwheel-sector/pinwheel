@@ -1,0 +1,13 @@
+- type: stealTargetGroup
+  id: ServerDiskCrewMonitor
+  name: steal-target-groups-serverdisk-crewmonitor
+  sprite:
+    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: ServerDiskResearch
+  name: steal-target-groups-serverdisk-research
+  sprite:
+    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    state: icon
