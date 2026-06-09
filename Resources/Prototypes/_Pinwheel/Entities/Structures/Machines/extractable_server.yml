@@ -27,8 +27,8 @@
     visuals:
       enum.PowerDeviceVisuals.Powered:
         enum.PowerDeviceVisualLayers.Powered:
-          1: {visible: true}
-          0: {visible: false}
+          True: {visible: true}
+          False: {visible: false}
       enum.ExtractableServerVisuals.LidConstruction: # this is so much boilerplate
         enum.ExtractableServerVisualLayers.Label:
           1: {visible: true}
