@@ -29,7 +29,7 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: {visible: true}
           False: {visible: false}
-      enum.ExtractableServerVisuals.LidConstruction: # this is so much boilerplate
+      enum.ExtractableServerVisuals.LidConstruction:
         enum.ExtractableServerVisualLayers.Label:
           1: {visible: true}
           0: {visible: false}
@@ -88,10 +88,16 @@
             SheetSteel1:
               min: 2
               max: 2
+    - trigger:
+        !type:DamageTrigger
+        damage: 620
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: empty
 
 - type: entity
   parent: ExtractableServerBase
-  id: ExtractableServerCrewMonitor # TODO: migrate CrewMonitoringServer to this
+  id: ExtractableServerCrewMonitor
   name: crew monitoring server
   description: Receives and relays the status of all active suit sensors on the station.
   components:
@@ -132,9 +138,9 @@
 
 - type: entity
   parent: ExtractableServerBase
-  id: ExtractableServerResearch # TODO: migrate ResearchAndDevelopmentServer to this
+  id: ExtractableServerResearch
   name: research server
-  description: "Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?"
+  description: "Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?" # this is a really stupid description
   components:
   # visual
   - type: Sprite
@@ -222,7 +228,7 @@
       steps:
       - tool: Prying
         doAfter: 1
-  - node: empty # easier than faffing with other components handling extraction and visuals, why shouldn't you have a crowbar
+  - node: empty # easier than faffing with other components handling extraction and visuals
     actions:
     - !type:VisualizerDataInt
       key: "enum.ExtractableServerVisuals.Disk"
@@ -265,7 +271,7 @@
   parent: ServerDiskBase
   id: ServerDiskResearch
   name: 'server datadisk "Archimedes"'
-  description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Archimedes" analytical software, letting research servers process scientific data more efficiently.' # this will need some other effect when research points are axed
+  description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Archimedes" analytical software, letting research servers process scientific data more efficiently.' # this will need some other effect when research points are axed. obviously
   components:
   - type: Sprite
     sprite: _Pinwheel/Objects/Devices/serverdisk.rsi

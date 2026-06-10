@@ -7,3 +7,7 @@
 # Window: WallSolid
 # WallSolid: Window
 # Table: null
+
+# 2026-06-11 - server sabotage
+CrewMonitoringServer: ExtractableServerCrewMonitor
+ResearchAndDevelopmentServer: ExtractableServerResearch

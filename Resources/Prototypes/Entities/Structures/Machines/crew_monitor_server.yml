@@ -1,6 +1,9 @@
 - type: entity
-  id: CrewMonitoringServer
+  # Pinwheel-stt - server sabotage
   parent: [ BaseMachinePowered, ConstructibleMachine ]
+  id: CrewMonitoringServer
+  categories: [ HideSpawnMenu ]
+  # Pinwheel-end - server sabotage
   name: crew monitoring server
   description: Receives and relays the status of all active suit sensors on the station.
   components:
