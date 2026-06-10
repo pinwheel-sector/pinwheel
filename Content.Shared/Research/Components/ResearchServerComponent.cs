@@ -45,12 +45,6 @@ public sealed partial class ResearchServerComponent : Component
 
     // Pinwheel-stt - server sabotage
     /// <summary>
-    /// ID of the container meant to contain the disk
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public string DiskContainer = "server_disk";
-
-    /// <summary>
     /// Do we have the disk
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]

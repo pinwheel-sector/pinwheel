@@ -12,8 +12,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
-        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnInserted); // Pinwheel - server sabotage
-        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnRemoved); // Pinwheel - server sabotage
+        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnContainerInserted); // Pinwheel - server sabotage
+        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnContainerRemoved); // Pinwheel - server sabotage
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -152,12 +152,12 @@ public sealed partial class ResearchSystem
     }
 
     // Pinwheel-stt - server sabotage
-    public void OnInserted(Entity<ResearchServerComponent> ent, ref EntInsertedIntoContainerMessage args)
+    public void OnContainerInserted(Entity<ResearchServerComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
             ent.Comp.HasDisk = true;
     }
 
-    public void OnRemoved(Entity<ResearchServerComponent> ent, ref EntRemovedFromContainerMessage args)
+    public void OnContainerRemoved(Entity<ResearchServerComponent> ent, ref EntRemovedFromContainerMessage args)
     {
             ent.Comp.HasDisk = false;
     }
