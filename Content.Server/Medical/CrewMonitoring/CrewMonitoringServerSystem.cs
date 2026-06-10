@@ -5,6 +5,7 @@ using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
+using Robust.Shared.Containers; // Pinwheel - server sabotage
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -24,6 +25,8 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
         SubscribeLocalEvent<CrewMonitoringServerComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<CrewMonitoringServerComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
         SubscribeLocalEvent<CrewMonitoringServerComponent, DeviceNetServerDisconnectedEvent>(OnDisconnected);
+        SubscribeLocalEvent<CrewMonitoringServerComponent, EntInsertedIntoContainerMessage>(OnContainerInserted); // Pinwheel - server sabotage
+        SubscribeLocalEvent<CrewMonitoringServerComponent, EntRemovedFromContainerMessage>(OnContainerRemoved); // Pinwheel - server sabotage
     }
 
     public override void Update(float frameTime)
@@ -56,6 +59,14 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
         var sensorStatus = _sensors.PacketToSuitSensor(args.Data);
         if (sensorStatus == null)
             return;
+
+        // Pinwheel-stt - server sabotage
+        if (!component.HasDisk)
+            {
+            sensorStatus.TotalDamage = null;
+            sensorStatus.TotalDamageThreshold = null;
+            }
+        // Pinwheel-end - server sabotage
 
         sensorStatus.Timestamp = _gameTiming.CurTime;
         component.SensorStatus[args.SenderAddress] = sensorStatus;
@@ -109,4 +120,16 @@ public sealed class CrewMonitoringServerSystem : EntitySystem
     {
         component.SensorStatus.Clear();
     }
+
+    // Pinwheel-stt - server sabotage
+    public void OnContainerInserted(Entity<CrewMonitoringServerComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+            ent.Comp.HasDisk = true;
+    }
+
+    public void OnContainerRemoved(Entity<CrewMonitoringServerComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+            ent.Comp.HasDisk = false;
+    }
+    // Pinwheel-stt - server sabotage
 }

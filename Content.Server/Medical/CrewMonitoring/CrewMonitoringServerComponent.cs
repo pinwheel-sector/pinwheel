@@ -18,4 +18,12 @@ public sealed partial class CrewMonitoringServerComponent : Component
     /// </summary>
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]
     public float SensorTimeout = 10f;
+
+    // Pinwheel-stt - server sabotage
+    /// <summary>
+    /// Do we have the disk
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool HasDisk = true;
+    // Pinwheel-end - server sabotage
 }
