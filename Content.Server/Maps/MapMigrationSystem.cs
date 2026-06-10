@@ -35,7 +35,7 @@ public sealed class MapMigrationSystem : EntitySystem
 
         // Verify that all of the entries map to valid entity prototypes.
         // Pinwheel-stt - migrations
-        foreach (var mapping in mappings.Children.Values)
+        foreach (var mapping in mappings)
         {
             foreach (var node in mapping.Values)
             {
@@ -90,9 +90,9 @@ public sealed class MapMigrationSystem : EntitySystem
                     continue;
 
                 if (string.IsNullOrWhiteSpace(valueNode.Value) || valueNode.Value == "null")
-                    ev.DeletedPrototypes.Add(keyNode.Value);
+                    ev.DeletedPrototypes.Add(key);
                 else
-                    ev.RenamedPrototypes.Add(keyNode.Value, valueNode.Value);
+                    ev.RenamedPrototypes.Add(key, valueNode.Value);
             }
         }
     }
