@@ -4,22 +4,23 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2h # Pinwheel - easy unlocks
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 2h # Pinwheel - easy unlocks
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 2h # Pinwheel - easy unlocks
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 2h # Pinwheel - easy unlocks
+    # Pinwheel-stt - easy unlocks
+    # !type:DepartmentTimeRequirement
+    # department: Engineering
+    # time: 4h
+    # !type:DepartmentTimeRequirement
+    # department: Medical
+    # time: 4h
+    # !type:DepartmentTimeRequirement
+    # department: Science
+    # time: 4h
+    # !type:DepartmentTimeRequirement
+    # department: Security
+    # time: 4h
+    # Pinwheel-end - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 2h # Pinwheel - easy unlocks
-    # ^ these could be trimmed down to just security and command, or maybe JUST command, i'll need to think about it - arenaconspiracy - Pinwheel
+      time: 4h
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

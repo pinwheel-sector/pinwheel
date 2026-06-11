@@ -4,21 +4,23 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 1h # Pinwheel - easy unlocks
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 1h # Pinwheel - easy unlocks
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 1h # Pinwheel - easy unlocks
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 1h # Pinwheel - easy unlocks
+    # Pinwheel-stt - easy unlocks
+    # !type:DepartmentTimeRequirement
+    # department: Engineering
+    # time: 2h
+    # !type:DepartmentTimeRequirement
+    # department: Medical
+    # time: 2h
+    # !type:DepartmentTimeRequirement
+    # department: Science
+    # time: 2h
+    # !type:DepartmentTimeRequirement
+    # department: Security
+    # time: 2h
+    # Pinwheel-end - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 1h # Pinwheel - easy unlocks
+      time: 2h # Pinwheel - easy unlocks
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
