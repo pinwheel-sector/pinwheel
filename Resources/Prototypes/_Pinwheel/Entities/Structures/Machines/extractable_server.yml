@@ -99,7 +99,7 @@
   parent: ExtractableServerBase
   id: ExtractableServerCrewMonitor
   name: crew monitoring server
-  description: Receives and relays the status of all active suit sensors on the station.
+  description: "Receives, processes, and broadcasts the station's suit sensor data. The lid can be unscrewed and pried off, but you probably shouldn't do that without a really good reason."
   components:
   # visual
   - type: Sprite
@@ -140,7 +140,7 @@
   parent: ExtractableServerBase
   id: ExtractableServerResearch
   name: research server
-  description: "Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?" # this is a really stupid description
+  description: "Contains and processes Science's research data. The lid can be unscrewed and pried off, but you probably shouldn't do that without a really good reason."
   components:
   # visual
   - type: Sprite
