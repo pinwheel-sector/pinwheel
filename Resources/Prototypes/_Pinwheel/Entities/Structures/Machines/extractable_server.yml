@@ -63,7 +63,7 @@
       server_disk: !type:Container
   - type: Construction
     graph: ExtractableServer
-    node: lid
+    node: start
   - type: Destructible
     thresholds:
     - trigger:
@@ -88,12 +88,6 @@
             SheetSteel1:
               min: 2
               max: 2
-    - trigger:
-        !type:DamageTrigger
-        damage: 620
-      behaviors:
-        - !type:ChangeConstructionNodeBehavior
-          node: empty
 
 - type: entity
   parent: ExtractableServerBase
@@ -178,9 +172,9 @@
 
 - type: constructionGraph
   id: ExtractableServer
-  start: lid
+  start: start
   graph:
-  - node: lid
+  - node: start
     actions:
     - !type:VisualizerDataInt
       key: "enum.ExtractableServerVisuals.LidConstruction"
@@ -235,6 +229,12 @@
       data: 0
     - !type:EmptyAllContainers
       pickup: true
+
+- type: construction # there's an integration test that checks for this existing UGH
+  id: extractableServer
+  graph: ExtractableServer
+  startNode: lid
+  targetNode: empty
 
 ## Disks
 - type: entity
