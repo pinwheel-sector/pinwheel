@@ -49,8 +49,8 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleSelectAlertLevelMessage>(OnSelectAlertLevelMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleAnnounceMessage>(OnAnnounceMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleBroadcastMessage>(OnBroadcastMessage);
-            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCallEmergencyShuttleMessage>(OnCallShuttleMessage);
-            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
+            // SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCallEmergencyShuttleMessage>(OnCallShuttleMessage); // Pinwheel - rigid evac
+            // SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage); // Pinwheel - rigid evac
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
@@ -160,7 +160,7 @@ namespace Content.Server.Communications
 
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
                 CanAnnounce(comp),
-                CanCallOrRecall(comp),
+                // CanCallOrRecall(comp), // Pinwheel - rigid evac
                 levels,
                 currentLevel,
                 currentDelay,
@@ -182,6 +182,7 @@ namespace Content.Server.Communications
             return true;
         }
 
+        /* // Pinwheel - rigid evac
         private bool CanCallOrRecall(CommunicationsConsoleComponent comp)
         {
             // Defer to what the round end system thinks we should be able to do.
@@ -206,6 +207,7 @@ namespace Content.Server.Communications
 
             return !(left.TotalSeconds / expected.TotalSeconds < recallThreshold);
         }
+        */ // Pinwheel - rigid evac
 
         private void OnSelectAlertLevelMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleSelectAlertLevelMessage message)
         {
@@ -291,6 +293,7 @@ namespace Content.Server.Communications
             _adminLogger.Add(LogType.DeviceNetwork, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following broadcast: {message.Message:msg}");
         }
 
+        /* // Pinwheel - rigid evac
         private void OnCallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCallEmergencyShuttleMessage message)
         {
             if (!CanCallOrRecall(comp))
@@ -332,6 +335,7 @@ namespace Content.Server.Communications
             _roundEndSystem.CancelRoundEndCountdown(mob, uid);
             _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(message.Actor):player} has recalled the shuttle.");
         }
+        */ // Pinwheel - rigid evac
     }
 
     /// <summary>

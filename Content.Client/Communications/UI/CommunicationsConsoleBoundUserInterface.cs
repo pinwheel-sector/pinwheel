@@ -26,7 +26,7 @@ namespace Content.Client.Communications.UI
             _menu.OnAnnounce += AnnounceButtonPressed;
             _menu.OnBroadcast += BroadcastButtonPressed;
             _menu.OnAlertLevel += AlertLevelSelected;
-            _menu.OnEmergencyLevel += EmergencyShuttleButtonPressed;
+            // _menu.OnEmergencyLevel += EmergencyShuttleButtonPressed; // Pinwheel - rigid evac
         }
 
         public void AlertLevelSelected(string level)
@@ -79,16 +79,16 @@ namespace Content.Client.Communications.UI
             {
                 _menu.CanAnnounce = commsState.CanAnnounce;
                 _menu.CanBroadcast = commsState.CanBroadcast;
-                _menu.CanCall = commsState.CanCall;
+                // _menu.CanCall = commsState.CanCall; // Pinwheel - rigid evac
                 _menu.CountdownStarted = commsState.CountdownStarted;
                 _menu.AlertLevelSelectable = commsState.AlertLevels != null && !float.IsNaN(commsState.CurrentAlertDelay) && commsState.CurrentAlertDelay <= 0;
                 _menu.CurrentLevel = commsState.CurrentAlert;
                 _menu.CountdownEnd = commsState.ExpectedCountdownEnd;
 
-                _menu.UpdateCountdown();
+                // _menu.UpdateCountdown(); // Pinwheel - rigid evac
                 _menu.UpdateAlertLevels(commsState.AlertLevels, _menu.CurrentLevel);
                 _menu.AlertLevelButton.Disabled = !_menu.AlertLevelSelectable;
-                _menu.EmergencyShuttleButton.Disabled = !_menu.CanCall;
+                // _menu.EmergencyShuttleButton.Disabled = !_menu.CanCall; // Pinwheel - rigid evac
                 _menu.AnnounceButton.Disabled = !_menu.CanAnnounce;
                 _menu.BroadcastButton.Disabled = !_menu.CanBroadcast;
             }

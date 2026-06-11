@@ -12,17 +12,17 @@ namespace Content.Shared.Communications
     {
         public readonly bool CanAnnounce;
         public readonly bool CanBroadcast = true;
-        public readonly bool CanCall;
+        // public readonly bool CanCall; // Pinwheel - rigid evac
         public readonly TimeSpan? ExpectedCountdownEnd;
         public readonly bool CountdownStarted;
         public List<string>? AlertLevels;
         public string CurrentAlert;
         public float CurrentAlertDelay;
 
-        public CommunicationsConsoleInterfaceState(bool canAnnounce, bool canCall, List<string>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null)
+        public CommunicationsConsoleInterfaceState(bool canAnnounce, /*bool canCall,*/ List<string>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null) // Pinwheel - rigid evac
         {
             CanAnnounce = canAnnounce;
-            CanCall = canCall;
+            // CanCall = canCall; // Pinwheel - rigid evac
             ExpectedCountdownEnd = expectedCountdownEnd;
             CountdownStarted = expectedCountdownEnd != null;
             AlertLevels = alertLevels;

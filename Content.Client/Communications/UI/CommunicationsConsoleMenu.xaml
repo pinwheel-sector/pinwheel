@@ -47,6 +47,7 @@
             </BoxContainer>
 
             <!-- EmergencyPart -->
+            <!-- Pinwheel - rigid evac
             <BoxContainer Orientation="Vertical"
                 SeparationOverride="6">
 
@@ -57,6 +58,7 @@
                     Text="Placeholder Text"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"/>
             </BoxContainer>
+            Pinwheel - rigid evac -->
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

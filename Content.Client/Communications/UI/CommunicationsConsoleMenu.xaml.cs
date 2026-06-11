@@ -24,7 +24,7 @@ namespace Content.Client.Communications.UI
         public string CurrentLevel = string.Empty;
         public TimeSpan? CountdownEnd;
 
-        public event Action? OnEmergencyLevel;
+        // public event Action? OnEmergencyLevel; // Pinwheel - rigid evac
         public event Action<string>? OnAlertLevel;
         public event Action<string>? OnAnnounce;
         public event Action<string>? OnBroadcast;
@@ -70,14 +70,14 @@ namespace Content.Client.Communications.UI
 
             AlertLevelButton.Disabled = !AlertLevelSelectable;
 
-            EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
-            EmergencyShuttleButton.Disabled = !CanCall;
+            // EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke(); // Pinwheel - rigid evac
+            // EmergencyShuttleButton.Disabled = !CanCall; // Pinwheel - rigid evac
         }
 
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
-            UpdateCountdown();
+            // UpdateCountdown(); // Pinwheel - rigid evac
         }
 
         // The current alert could make levels unselectable, so we need to ensure that the UI reacts properly.
@@ -117,6 +117,7 @@ namespace Content.Client.Communications.UI
             }
         }
 
+        /* // Pinwheel - rigid evac
         public void UpdateCountdown()
         {
             if (!CountdownStarted)
@@ -133,5 +134,6 @@ namespace Content.Client.Communications.UI
                 ("time", diff.ToString(@"hh\:mm\:ss", CultureInfo.CurrentCulture)));
             CountdownLabel.SetMessage(infoText);
         }
+        */ // Pinwheel - rigid evac
     }
 }

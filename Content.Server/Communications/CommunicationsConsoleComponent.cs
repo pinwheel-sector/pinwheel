@@ -49,12 +49,14 @@ namespace Content.Server.Communications
         [DataField]
         public int InitialDelay = 30;
 
+        /* // Pinwheel - rigid evac
         /// <summary>
         /// Can call or recall the shuttle
         /// </summary>
         [ViewVariables]
         [DataField]
         public bool CanShuttle = true;
+        */ // Pinwheel - rigid evac
 
         /// <summary>
         /// Announce on all grids (for nukies)
