@@ -1,17 +1,15 @@
 using Content.Shared.Popups;
-/* // Pinwheel - magic isn't real, idiot.
-using Content.Shared.Actions;
-using Content.Shared.Actions.Events;
-*/ // Pinwheel - magic isn't real, idiot.
+// using Content.Shared.Actions; // Pinwheel - magic isn't real, idiot.
+// using Content.Shared.Actions.Events; // Pinwheel - magic isn't real, idiot.
 using Content.Shared.Alert;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Maps;
+// using Content.Shared.Maps; // Pinwheel - magic isn't real, idiot.
 using Content.Shared.Paper;
 using Content.Shared.Physics;
 using Content.Shared.Speech.Muting;
-using Robust.Shared.Containers;
-using Robust.Shared.Map;
+// using Robust.Shared.Containers; // Pinwheel - magic isn't real, idiot.
+// using Robust.Shared.Map; // Pinwheel - magic isn't real, idiot.
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Abilities.Mime;
@@ -21,9 +19,9 @@ public sealed class MimePowersSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     // [Dependency] private readonly SharedActionsSystem _actionsSystem = default!; // Pinwheel - magic isn't real, idiot.
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    // [Dependency] private readonly TurfSystem _turf = default!; // Pinwheel - magic isn't real, idiot.
+    // [Dependency] private readonly IMapManager _mapMan = default!; // Pinwheel - magic isn't real, idiot.
+    // [Dependency] private readonly SharedContainerSystem _container = default!; // Pinwheel - magic isn't real, idiot.
     [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
