@@ -18,6 +18,7 @@ public sealed partial class MimePowersComponent : Component
     [DataField, AutoNetworkedField]
     public bool Enabled = true;
 
+    /* // Pinwheel - magic isn't real, idiot.
     /// <summary>
     /// The wall prototype to use.
     /// </summary>
@@ -29,6 +30,7 @@ public sealed partial class MimePowersComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? InvisibleWallActionEntity;
+    */ // Pinwheel - magic isn't real, idiot.
 
     // The vow zone lies below
     [DataField, AutoNetworkedField]
