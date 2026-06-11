@@ -13,7 +13,7 @@ namespace Content.Client.Communications.UI
     public sealed partial class CommunicationsConsoleMenu : FancyWindow
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
+        // [Dependency] private readonly IGameTiming _timing = default!; // Pinwheel - rigid evac
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         public bool CanAnnounce;
