@@ -63,6 +63,7 @@
       server_disk: !type:Container
   - type: Construction
     graph: ExtractableServer
+    deconstructionTarget: null
     node: lid
   - type: Destructible
     thresholds:
