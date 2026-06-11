@@ -237,10 +237,6 @@
       pickup: true
 
 ## Disks
-
-- type: Tag
-  id: ServerDisk
-
 - type: entity
   abstract: true
   parent: BaseItem
@@ -263,9 +259,6 @@
       color: "#4df"
   - type: StealTarget
     stealGroup: ServerDiskCrewMonitor
-  - type: Tag
-    tags:
-    - ServerDisk
 
 - type: entity
   parent: ServerDiskBase
@@ -281,6 +274,3 @@
       color: "#92f"
   - type: StealTarget
     stealGroup: ServerDiskResearch
-  - type: Tag
-    tags:
-    - ServerDisk
