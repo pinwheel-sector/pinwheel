@@ -14,15 +14,15 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Abilities.Mime;
 
-public sealed class MimePowersSystem : EntitySystem
+public sealed partial class MimePowersSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    // [Dependency] private readonly SharedActionsSystem _actionsSystem = default!; // Pinwheel - magic isn't real, idiot.
-    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    // [Dependency] private readonly TurfSystem _turf = default!; // Pinwheel - magic isn't real, idiot.
-    // [Dependency] private readonly IMapManager _mapMan = default!; // Pinwheel - magic isn't real, idiot.
-    // [Dependency] private readonly SharedContainerSystem _container = default!; // Pinwheel - magic isn't real, idiot.
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    // [Dependency] private SharedActionsSystem _actionsSystem = default!; // Pinwheel - magic isn't real, idiot.
+    [Dependency] private AlertsSystem _alertsSystem = default!;
+    // [Dependency] private TurfSystem _turf = default!; // Pinwheel - magic isn't real, idiot.
+    // [Dependency] private IMapManager _mapMan = default!; // Pinwheel - magic isn't real, idiot.
+    // [Dependency] private SharedContainerSystem _container = default!; // Pinwheel - magic isn't real, idiot.
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
