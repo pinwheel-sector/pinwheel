@@ -24,7 +24,6 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 2h # Pinwheel - easy unlocks
-  canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery
