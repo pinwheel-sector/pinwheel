@@ -145,7 +145,7 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     [ViewVariables]
-    public DamageSpecifier Damage = default!;
+    public DamageSpecifier Damage = new();
     // Pinwheel-end - survivable recycler
 }
 
