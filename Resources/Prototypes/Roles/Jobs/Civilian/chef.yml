@@ -3,12 +3,13 @@
   name: job-name-chef
   description: job-description-chef
   playTimeTracker: JobChef
-  requirements:
-    # Pinwheel-stt - easy unlocks
-    # !type:DepartmentTimeRequirement
-    # department: Civilian
-    # time: 0.5h
-    # Pinwheel-end - easy unlocks
+  # Pinwheel-stt - easy unlocks
+  #requirements:
+  # Pinwheel-stt - easy unlocks
+  # !type:DepartmentTimeRequirement
+  # department: Civilian
+  # time: 0.5h
+  # Pinwheel-end - easy unlocks
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop

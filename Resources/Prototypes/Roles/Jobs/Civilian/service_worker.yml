@@ -3,8 +3,8 @@
   name: job-name-serviceworker
   description: job-description-serviceworker
   playTimeTracker: JobServiceWorker
-  requirements:
   # Pinwheel-stt - easy unlocks
+  #requirements:
   # !type:DepartmentTimeRequirement
   # department: Civilian
   # time: 0.5h

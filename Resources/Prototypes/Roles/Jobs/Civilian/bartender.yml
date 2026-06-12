@@ -3,12 +3,12 @@
   name: job-name-bartender
   description: job-description-bartender
   playTimeTracker: JobBartender
-  requirements:
-    # Pinwheel-stt - easy unlocks
-    # !type:DepartmentTimeRequirement
-    # department: Civilian
-    # time: 0.5h
-    # Pinwheel-end - easy unlocks
+  # Pinwheel-stt - easy unlocks
+  #requirements:
+  # !type:DepartmentTimeRequirement
+  # department: Civilian
+  # time: 0.5h
+  # Pinwheel-end - easy unlocks
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
