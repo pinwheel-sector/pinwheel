@@ -10,7 +10,6 @@
     role: JobBorg
     time: 2h # Pinwheel - easy unlocks
   weight: 10
-  canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
