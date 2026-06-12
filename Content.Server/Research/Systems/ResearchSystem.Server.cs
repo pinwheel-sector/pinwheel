@@ -161,7 +161,7 @@ public sealed partial class ResearchSystem
     {
             ent.Comp.HasDisk = false;
     }
-    // Pinwheel-stt - server sabotage
+    // Pinwheel-end - server sabotage
 
     /// <summary>
     /// Adds a specified number of points to a server.

@@ -131,5 +131,5 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
     {
             ent.Comp.HasDisk = false;
     }
-    // Pinwheel-stt - server sabotage
+    // Pinwheel-end - server sabotage
 }
