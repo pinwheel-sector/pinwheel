@@ -1,0 +1,21 @@
+- type: entity
+  parent: BulletLaserWindowPiercingMagnum
+  id: BulletLaserWindowPiercingShotgun
+  categories: [ HideSpawnMenu ]
+  name: shotgun window-piercing bolt
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Heat: 15
+
+- type: entity
+  parent: BulletLaserWindowPiercingShotgun
+  id: BulletLaserSpreadPiercing
+  categories: [ HideSpawnMenu ]
+  name: window piercing laser barrage
+  components:
+  - type: ProjectileSpread
+    proto: BulletLaserWindowPiercingShotgun
+    count: 4
+    spread: 9
