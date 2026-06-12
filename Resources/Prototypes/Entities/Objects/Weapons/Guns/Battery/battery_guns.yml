@@ -544,7 +544,7 @@
   name: disabler
   parent: [WeaponDisablerPractice, BaseSecurityCommandContraband]
   id: WeaponDisabler
-  description: An battery weapon firing bolts of energy that exhaust organic targets, helping control the distance between you and a target. # Pinwheel - disabler nerf
+  description: A battery weapon firing bolts of energy that exhaust muscles on impact, helping control the distance between you and a target. # Pinwheel - disabler nerf
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
