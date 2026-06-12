@@ -3,12 +3,11 @@
   name: job-name-mime
   description: job-description-mime
   playTimeTracker: JobMime
-  requirements:
-    # Pinwheel-stt - easy unlocks
-    # sure hope nobody will come to regret this
-    # !type:OverallPlaytimeRequirement
-    # time: 4h
-    # Pinwheel-end - easy unlocks
+  # Pinwheel-stt - easy unlocks
+  #requirements:
+  # !type:OverallPlaytimeRequirement
+  # time: 4h
+  # Pinwheel-end - easy unlocks
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop
@@ -33,22 +32,6 @@
   storage:
     back:
     - RubberStampMime
-
-# slate this for destruction later - Pinwheel
-- type: entity
-  parent: BaseAction
-  id: ActionMimeInvisibleWall
-  name: Create Invisible Wall
-  description: Create an invisible wall in front of you, if placeable there.
-  components:
-  - type: Action
-    priority: -1
-    useDelay: 30
-    icon:
-      sprite: Structures/Walls/solid.rsi
-      state: full
-  - type: InstantAction
-    event: !type:InvisibleWallActionEvent
 
 - type: chameleonOutfit
   id: MimeChameleonOutfit

@@ -1,15 +1,15 @@
 using Content.Shared.Popups;
-using Content.Shared.Actions;
-using Content.Shared.Actions.Events;
+// using Content.Shared.Actions; // Pinwheel - magic isn't real, idiot.
+// using Content.Shared.Actions.Events; // Pinwheel - magic isn't real, idiot.
 using Content.Shared.Alert;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Maps;
+// using Content.Shared.Maps; // Pinwheel - magic isn't real, idiot.
 using Content.Shared.Paper;
 using Content.Shared.Physics;
 using Content.Shared.Speech.Muting;
-using Robust.Shared.Containers;
-using Robust.Shared.Map;
+// using Robust.Shared.Containers; // Pinwheel - magic isn't real, idiot.
+// using Robust.Shared.Map; // Pinwheel - magic isn't real, idiot.
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Abilities.Mime;
@@ -17,11 +17,11 @@ namespace Content.Shared.Abilities.Mime;
 public sealed partial class MimePowersSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popupSystem = default!;
-    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    // [Dependency] private SharedActionsSystem _actionsSystem = default!; // Pinwheel - magic isn't real, idiot.
     [Dependency] private AlertsSystem _alertsSystem = default!;
-    [Dependency] private TurfSystem _turf = default!;
-    [Dependency] private IMapManager _mapMan = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
+    // [Dependency] private TurfSystem _turf = default!; // Pinwheel - magic isn't real, idiot.
+    // [Dependency] private IMapManager _mapMan = default!; // Pinwheel - magic isn't real, idiot.
+    // [Dependency] private SharedContainerSystem _container = default!; // Pinwheel - magic isn't real, idiot.
     [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
@@ -29,8 +29,10 @@ public sealed partial class MimePowersSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MimePowersComponent, ComponentInit>(OnComponentInit);
+        /* // Pinwheel - magic isn't real, idiot.
         SubscribeLocalEvent<MimePowersComponent, ComponentShutdown>(OnComponentShutdown);
         SubscribeLocalEvent<MimePowersComponent, InvisibleWallActionEvent>(OnInvisibleWall);
+        */ // Pinwheel - magic isn't real, idiot.
 
         SubscribeLocalEvent<MimePowersComponent, BreakVowAlertEvent>(OnBreakVowAlert);
         SubscribeLocalEvent<MimePowersComponent, RetakeVowAlertEvent>(OnRetakeVowAlert);
@@ -68,9 +70,10 @@ public sealed partial class MimePowersSystem : EntitySystem
         }
 
         _alertsSystem.ShowAlert(ent.Owner, ent.Comp.VowAlert);
-        _actionsSystem.AddAction(ent, ref ent.Comp.InvisibleWallActionEntity, ent.Comp.InvisibleWallAction);
+        // _actionsSystem.AddAction(ent, ref ent.Comp.InvisibleWallActionEntity, ent.Comp.InvisibleWallAction); // Pinwheel - magic isn't real, idiot.
     }
 
+/* // Pinwheel - magic isn't real, idiot.
     private void OnComponentShutdown(Entity<MimePowersComponent> ent, ref ComponentShutdown args)
     {
         _actionsSystem.RemoveAction(ent.Owner, ent.Comp.InvisibleWallActionEntity);
@@ -111,6 +114,7 @@ public sealed partial class MimePowersSystem : EntitySystem
         // Handle args so cooldown works
         args.Handled = true;
     }
+*/ // Pinwheel - magic isn't real, idiot.
 
     private void OnBreakVowAlert(Entity<MimePowersComponent> ent, ref BreakVowAlertEvent args)
     {
@@ -151,7 +155,7 @@ public sealed partial class MimePowersSystem : EntitySystem
 
         _alertsSystem.ClearAlert(uid, mimePowers.VowAlert);
         _alertsSystem.ShowAlert(uid, mimePowers.VowBrokenAlert);
-        _actionsSystem.RemoveAction(uid, mimePowers.InvisibleWallActionEntity);
+        // _actionsSystem.RemoveAction(uid, mimePowers.InvisibleWallActionEntity); // Pinwheel - magic isn't real, idiot.
     }
 
     /// <summary>
@@ -182,6 +186,6 @@ public sealed partial class MimePowersSystem : EntitySystem
 
         _alertsSystem.ClearAlert(uid, mimePowers.VowBrokenAlert);
         _alertsSystem.ShowAlert(uid, mimePowers.VowAlert);
-        _actionsSystem.AddAction(uid, ref mimePowers.InvisibleWallActionEntity, mimePowers.InvisibleWallAction, uid);
+        // _actionsSystem.AddAction(uid, ref mimePowers.InvisibleWallActionEntity, mimePowers.InvisibleWallAction, uid); // Pinwheel - magic isn't real, idiot.
     }
 }

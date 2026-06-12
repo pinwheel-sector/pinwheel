@@ -228,3 +228,22 @@
   - type: FireVisuals
     alternateState: Standing
   - type: StunVisuals
+  # Pinwheel-stt - no species gibing
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 40
+      behaviors:
+      - !type:VomitBehavior
+  # Pinwheel-end - no species gibing
