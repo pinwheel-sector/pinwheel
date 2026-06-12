@@ -143,7 +143,8 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// <summary>
     /// Damage to deal to entities when emagged
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
+    [ViewVariables]
     public DamageSpecifier Damage = default!;
     // Pinwheel-end - survivable recycler
 }
