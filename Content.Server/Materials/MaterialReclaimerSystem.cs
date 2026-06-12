@@ -26,6 +26,8 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
+using Content.Shared.Damage.Components; // Pinwheel - survivable recycler
+using Content.Shared.Damage.Systems; // Pinwheel - survivable recycler
 
 namespace Content.Server.Materials;
 
@@ -44,6 +46,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
     [Dependency] private StackSystem _stack = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private DamageableSystem _damage = default!; // Pinwheel - survivable recycler
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -186,14 +189,17 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         if (component.ReclaimMaterials)
             SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
 
+        bool deleteItem = true; // Pinwheel - survivable recycler
+
         if (CanGib(uid, item, component))
         {
+        // Pinwheel-stt - survivable recycler
             var logImpact = HasComp<HumanoidProfileComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
-            _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was gibbed by {ToPrettyString(uid):entity} ");
-            if (component.ReclaimSolutions)
-                SpawnChemicalsFromComposition(uid, item, completion, false, component, xform);
-            _gibbing.Gib(item);
+            _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was minced by {ToPrettyString(uid):entity} ");
+            _damage.TryChangeDamage(item, component.Damage);
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
+            deleteItem = false;
+        // Pinwheel-end - survivable recycler
         }
         else
         {
@@ -201,7 +207,10 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
                 SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
         }
 
-        QueueDel(item);
+        // Pinwheel-stt - survivable recycler
+        if (deleteItem)
+            QueueDel(item);
+        // Pinwheel-end - survivable recycler
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,
