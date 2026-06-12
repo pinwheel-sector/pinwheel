@@ -1,36 +1,29 @@
-<!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- Neglecting to fill out the template leaves the pull request liable to be closed at maintainer discretion -->
 
 ## About the PR
-<!-- What did you change? -->
+<!-- Overview the changes in this pull request -->
 
 ## Why / Balance
-<!-- Discuss how this would affect game balance or explain why it was changed. Link any relevant discussions or issues. -->
+<!-- Describe the goal of this pull request, as well as any balance considerations created and/or solved by it -->
 
 ## Technical details
-<!-- Summary of code changes for easier review. -->
+<!-- Summarize changes or additions to resources, prototypes, components, or systems -->
 
 ## Media
-<!-- Attach media if the PR makes in-game changes (clothing, items, features, etc).
-Small fixes/refactors are exempt. Media may be used in SS14 progress reports with credit. -->
+<!-- Attach videos or images of in-game changes to demonstrate them working as intended -->
 
-## Requirements
-<!-- Confirm the following by placing an X in the brackets without spaces inside (for example: [X] ): -->
-- [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
-- [ ] I have added media to this PR or it does not require an in-game showcase.
-<!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
+## Testing plan
+<!-- Outline steps to verify all features relevant to the pull request working as intended -->
 
-## Breaking changes
-<!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
-This will be posted in #codebase-changes. -->
+## Known issues
+<!-- Outline any issues relevant to the pull request you're aware of -->
+<!-- If you're opening the pull request as a draft, explain why here, and outline when it will be ready to review -->
 
-**Changelog**
-<!-- Add a Changelog entry to make players aware of new features or changes that could affect gameplay.
-Make sure to read the guidelines and take this Changelog template out of the comment block in order for it to show up.
-Changelog must have a :cl: symbol, so the bot recognizes the changes and adds them to the game's changelog. -->
-<!--
-:cl:
+## Changelog
+<!-- Summarize /player facing/ changes in this pull request. Avoid technical terms or otherwise make it comprehensible to the average player -->
+<!-- Use full sentences, call things by their in-game name, and do not write "in character" -->
+:cl: <!-- (optional) author 1, author 2, [...] -->
 - add: Added fun!
 - remove: Removed fun!
 - tweak: Changed fun!
 - fix: Fixed fun!
--->
