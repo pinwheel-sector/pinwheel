@@ -13,7 +13,7 @@
 <!-- Attach videos or images of in-game changes to demonstrate them working as intended -->
 
 ## Testing plan
-<!-- Outline steps to make verify all features relevant to the pull request working as intended -->
+<!-- Outline steps to verify all features relevant to the pull request working as intended -->
 
 ## Known issues
 <!-- Outline any issues relevant to the pull request you're aware of -->
