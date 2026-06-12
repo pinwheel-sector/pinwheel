@@ -50,7 +50,6 @@
   id: TraitorObjectiveGroupSabotage
   weights:
     SupercritAnomaliesObjective: 1
-    KillStationAiObjective: 0.25 # Pinwheel - traitor objectives
 
 #misc objectives that don't fall other another category
 - type: weightedRandom
