@@ -25,10 +25,6 @@
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 0.5
     EnergyMagnumStealObjective: 0.5
-    # Pinwheel-stt - traitor objectives
-    StealServerDiskCrewMonitor: 1 # might fit better among sabotage objectives
-    StealServerDiskResearch: 1 # ditto
-    # Pinwheel-end - traitor objectives
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -54,6 +50,10 @@
   id: TraitorObjectiveGroupSabotage
   weights:
     SupercritAnomaliesObjective: 1
+    # Pinwheel-stt - traitor objectives
+    StealServerDiskCrewMonitor: 1
+    StealServerDiskResearch: 1
+    # Pinwheel-end - traitor objectives
 
 #misc objectives that don't fall other another category
 - type: weightedRandom
