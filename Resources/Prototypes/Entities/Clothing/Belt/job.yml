@@ -209,11 +209,13 @@
       - Wrench
       - Bottle
       - Spray
-      - Brutepack
-      - Bloodpack
-      - Gauze
-      - Ointment
-      - Tourniquet
+      # Pinwheel-stt - good tourniquets
+      # Brutepack
+      # Bloodpack
+      # Gauze
+      # Ointment
+      # Tourniquet
+      # Pinwheel-end - good tourniquets
       - CigPack
       - PillCanister
       - Radio
@@ -224,6 +226,7 @@
       - Injector
       - Pill
       - HandLabeler
+      - Healing # Pinwheel - good tourniquets
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:

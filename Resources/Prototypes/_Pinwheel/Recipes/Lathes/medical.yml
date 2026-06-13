@@ -1,0 +1,9 @@
+# TODO: lathe recipe file structures need to be rethought entirely. do NOT keep this shit here in the future
+
+- type: latheRecipe
+  id: LatheRecipeTourniquet
+  result: Tourniquet1
+  completetime: 1
+  materials:
+    Plastic: 25
+    Steel: 10

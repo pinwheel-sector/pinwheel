@@ -6,6 +6,7 @@
   - Brutepack
   - Ointment
   - Gauze
+  - LatheRecipeTourniquet # Pinwheel - good tourniquets
 
 - type: latheRecipePack
   id: BasicChemistryStatic

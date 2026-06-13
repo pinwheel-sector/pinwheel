@@ -258,6 +258,7 @@
   parent: BaseHealingItem
   id: Tourniquet
   name: tourniquet
+  suffix: Full # Pinwheel - good tourniquets
   description: Stops bleeding! Hopefully.
   components:
     - type: Tag
@@ -271,12 +272,15 @@
     - type: Healing
       damageContainers:
         - Biological
+      # Pinwheel-stt - good tourniquets
       damage:
         types:
-          Blunt: 5 # Tourniquets HURT
-          Asphyxiation: 5 # Essentially Stopping all blood reaching a part of your body
-      bloodlossModifier: -10 # Tourniquets stop bleeding
-      delay: 0.5
+          Piercing: -2
+          Slash: -2
+      bloodlossModifier: -5
+      delay: 2
+      selfHealPenaltyMultiplier: 1.25
+      # Pinwheel-end - good tourniquets
       healingBeginSound:
         path: "/Audio/Items/Medical/brutepack_begin.ogg"
         params:
@@ -287,6 +291,28 @@
         params:
           volume: 1.0
           variation: 0.125
+    # Pinwheel-stt - good tourniquets
+    - type: Stack
+      stackType: Tourniquet
+      count: 5
+    # Pinwheel-end - good tourniquets
+
+# Pinwheel-stt - good tourniquets
+- type: entity
+  id: Tourniquet1
+  parent: Tourniquet
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: stack # usually these go in their own file but that sucks badly
+  parent: BaseVerySmallStack
+  id: Tourniquet
+  name: stack-tourniquet
+  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
+  spawn: Tourniquet
+# Pinwheel-end - good tourniquets
 
 - type: entity
   name: roll of gauze
