@@ -40,11 +40,11 @@
             #service (1)
             Chaplain: [ 1, 1 ]
             #engineering (4)
-            AtmosphericTechnician: [ 2, 2 ]
+            #AtmosphericTechnician: [ 2, 2 ] # Pinwheel - gooncave eviction
             StationEngineer: [ 2, 2 ]
             TechnicalAssistant: [ 2, 2 ] #intern, not counted
             #medical (4)
-            Chemist: [ 1, 1 ]
+            #Chemist: [ 1, 1 ] # Pinwheel - gooncave eviction
             MedicalDoctor: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted

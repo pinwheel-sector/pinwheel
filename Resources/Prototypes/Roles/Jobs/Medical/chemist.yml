@@ -16,8 +16,6 @@
   - Chemistry
   - Maintenance
 
-# The job slated for removal anyhow - Pinwheel
-
 - type: startingGear
   id: ChemistGear
   equipment:
