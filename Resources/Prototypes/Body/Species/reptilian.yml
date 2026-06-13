@@ -143,8 +143,10 @@
       Unsexed: MaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
-  - type: Damageable
-    damageModifierSet: Scale
+  # Pinwheel-stt - species standards
+  # type: Damageable
+  # damageModifierSet: Scale
+  # Pinwheel-end - species standards
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw

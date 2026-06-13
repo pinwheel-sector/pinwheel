@@ -163,8 +163,10 @@
   id: MobVox
   name: Urist McVox
   components:
-  - type: Damageable
-    damageModifierSet: Vox
+  # Pinwheel-stt - species standards
+  # type: Damageable
+  # damageModifierSet: Vox
+  # Pinwheel-stt - species standards
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox

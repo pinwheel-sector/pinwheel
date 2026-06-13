@@ -140,8 +140,10 @@
   id: MobMoth
   name: Urist McFluff
   components:
-  - type: Damageable
-    damageModifierSet: Moth
+  # Pinwheel-stt - species standards
+  # type: Damageable
+  # damageModifierSet: Moth
+  # Pinwheel-end - species standards
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Speech
