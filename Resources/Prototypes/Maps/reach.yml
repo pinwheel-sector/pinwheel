@@ -26,10 +26,10 @@
             Chef: [ 1, 1 ]
             Janitor: [ 1, 1 ]
             #engineering (2 - 3)
-            AtmosphericTechnician: [ 1, 1 ]
+            #AtmosphericTechnician: [ 1, 1 ] # Pinwheel - gooncave eviction
             StationEngineer: [ 1, 2 ]
             #medical (2 - 3)
-            Chemist: [ 1, 1 ]
+            #Chemist: [ 1, 1 ] # Pinwheel - gooncave eviction
             MedicalDoctor: [ 1, 2 ]
             #science (1)
             Scientist: [ 1, 1 ]

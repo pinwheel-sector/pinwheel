@@ -34,11 +34,11 @@
             ServiceWorker: [ 2, 2 ]
             Reporter: [ 1, 1 ]
             #engineering (8)
-            AtmosphericTechnician: [ 3, 3 ]
+            #AtmosphericTechnician: [ 3, 3 ] # Pinwheel - gooncave eviction
             StationEngineer: [ 5, 5 ]
             TechnicalAssistant: [ 4, 4 ] #intern, not counted
             #medical (11)
-            Chemist: [ 2, 2 ]
+            #Chemist: [ 2, 2 ] # Pinwheel - gooncave eviction
             MedicalDoctor: [ 6, 6 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 4 ] #intern, not counted
