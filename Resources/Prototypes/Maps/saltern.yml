@@ -33,11 +33,11 @@
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
             #engineering (6)
-            AtmosphericTechnician: [ 2, 2 ]
+            #AtmosphericTechnician: [ 2, 2 ] # Pinwheel-stt - cargo gutting
             StationEngineer: [ 4, 4 ]
             TechnicalAssistant: [ 4, 4 ] #intern, not counted
             #medical (6)
-            Chemist: [ 2, 2 ]
+            #Chemist: [ 2, 2 ]] # Pinwheel-stt - cargo gutting
             MedicalDoctor: [ 3, 3 ]
             MedicalIntern: [ 4, 4 ] #intern, not counted
             Paramedic: [ 1, 1 ]
