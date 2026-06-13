@@ -14,7 +14,7 @@
   - Maintenance
   - Engineering
   - External
-  extendedAccess:
+  #extendedAccess: # Pinwheel - gooncave eviction
   - Atmospherics
 
 - type: startingGear

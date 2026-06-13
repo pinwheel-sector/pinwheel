@@ -5,8 +5,8 @@
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
     - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 1h # Pinwheel - easy unlocks - maybe replace this with paramedic when chemist is axed?
+      role: JobParamedic # Pinwheel - gooncave eviction
+      time: 1h # Pinwheel - easy unlock
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
       time: 1h # Pinwheel - easy unlocks

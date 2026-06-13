@@ -13,7 +13,7 @@
   access:
   - Medical
   - Maintenance
-  extendedAccess:
+  #extendedAccess: # Pinwheel - gooncave eviction
   - Chemistry
   special:
   - !type:GiveItemOnHolidaySpecial

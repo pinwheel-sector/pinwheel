@@ -3,6 +3,7 @@
   name: job-name-chemist
   description: job-description-chemist
   playTimeTracker: JobChemist
+  setPreference: false # Pinwheel - gooncave eviction
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
