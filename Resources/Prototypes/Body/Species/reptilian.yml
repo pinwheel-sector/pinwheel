@@ -172,7 +172,7 @@
     currentTemperature: 310.15
     specificHeat: 42
   - type: TemperatureDamage
-    heatDamageThreshold: 400
+    heatDamageThreshold: 343 # Pinwheel - species standards
     coldDamageThreshold: 285
     coldDamage:
       types:
