@@ -35,7 +35,7 @@
   flavor: fiber
   color: "#808080"
   metabolisms:
-    Digestion:
+    Metabolites: # Pinwheel - species standards
       effects:
       - !type:SatiateHunger
         conditions:

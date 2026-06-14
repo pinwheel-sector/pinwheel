@@ -1,0 +1,7 @@
+- type: metabolizerType
+  id: Carnivore
+  name: metabolizer-type-carnivore
+
+- type: metabolizerType
+  id: Herbivore
+  name: metabolizer-type-herbivore
