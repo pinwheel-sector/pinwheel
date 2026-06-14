@@ -99,13 +99,13 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Moth ]
-      # Pinwheel-end - species standards
       - !type:SatiateHunger
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Moth ]
           inverted: true
         factor: 0.2
+      # Pinwheel-end - species standards
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: 0.1
