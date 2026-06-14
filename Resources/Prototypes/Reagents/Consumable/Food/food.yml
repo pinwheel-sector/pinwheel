@@ -43,7 +43,7 @@
         probability: 0.2
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Carnivore ]
+          type: [ Carnivore, Moth ]
       # Pinwheel-end - species standards
   # Lets plants benefit too
   plantMetabolism:
@@ -78,7 +78,7 @@
         probability: 0.2
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Herbivore ]
+          type: [ Herbivore, Moth ]
       # Pinwheel-end - species standards
   pricePerUnit: 3
 
