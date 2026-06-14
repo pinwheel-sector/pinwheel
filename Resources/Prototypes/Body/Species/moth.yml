@@ -108,6 +108,19 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
+  # Pinwheel-stt - inhand displacements
+  - type: Hands
+    leftHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _Pinwheel/Mobs/Species/Moth/displacement.rsi
+          state: hand_l
+    rightHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _Pinwheel/Mobs/Species/Moth/displacement.rsi
+          state: hand_r
+  # Pinwheel-end - inhand displacements
   - type: InitialBody
     organs:
       Torso: OrganMothTorso
