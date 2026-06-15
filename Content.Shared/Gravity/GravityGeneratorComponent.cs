@@ -55,13 +55,6 @@ public sealed partial class GravityGeneratorComponent : Component
     public bool DriftEnabled = false;
 
     /// <summary>
-    /// Force to apply to drifting entities in the direction of the generator
-    /// </summary>
-    [DataField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public float DriftStrength = 10f;
-
-    /// <summary>
     /// How often the drift impulse is applied
     /// </summary>
     [DataField]

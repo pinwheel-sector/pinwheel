@@ -51,18 +51,22 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
             var worldPos = _transform.GetWorldPosition(xform);
 
             // get all entities with GravityDrift
-            var drifters = EntityQueryEnumerator<GravityDriftComponent>();
-            while (drifters.MoveNext(out var driftUid, out var drift))
+            var drifters = EntityQueryEnumerator<GravityDriftComponent, TransformComponent>();
+            while (drifters.MoveNext(out var driftUid, out var drift, out var driftXform))
             {
-                var driftXform = Transform(driftUid);
-
-                // skip it if it's on a grid
+                // reset the strength and skip to the next entity if grounded
                 if (driftXform.GridUid != null)
-                    continue;
+                    {
+                        drift.DriftStrength = 0;
+                        continue;
+                    }
 
                 var dir = (_transform.GetWorldPosition(driftXform) - worldPos).Normalized();
 
-                _physics.ApplyLinearImpulse(driftUid, (-dir * grav.DriftStrength));
+                if (drift.DriftStrength < drift.DriftMax)
+                    drift.DriftStrength += drift.DriftAdd;
+
+                _physics.ApplyLinearImpulse(driftUid, (-dir * drift.DriftStrength));
             }
             // Pinwheel-end - gravity drift
         }
