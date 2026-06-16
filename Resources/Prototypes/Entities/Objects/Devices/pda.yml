@@ -124,6 +124,7 @@
     proto: robot
   - type: Speech
     speechVerb: Robotic
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   parent: BasePDA

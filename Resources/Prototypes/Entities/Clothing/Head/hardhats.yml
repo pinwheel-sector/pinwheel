@@ -66,6 +66,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   parent: ClothingHeadHatHardhatBase

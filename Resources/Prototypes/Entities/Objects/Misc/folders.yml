@@ -70,6 +70,7 @@
   - type: Tag
     tags:
     - Folder
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   abstract: true

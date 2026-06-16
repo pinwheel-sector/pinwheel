@@ -24,6 +24,7 @@
   - type: Tag
     tags:
     - HolosignProjector
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   parent: Holoprojector
