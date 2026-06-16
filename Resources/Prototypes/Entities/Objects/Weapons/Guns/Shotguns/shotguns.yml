@@ -101,6 +101,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 5000
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   name: double-barreled shotgun

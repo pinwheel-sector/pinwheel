@@ -25,6 +25,7 @@
   - type: StaticPrice
     price: 500
   # No chamber because HMG may want its own
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   name: minigun

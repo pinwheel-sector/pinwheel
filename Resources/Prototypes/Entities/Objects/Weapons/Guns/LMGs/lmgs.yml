@@ -63,6 +63,7 @@
     price: 500
   - type: UseDelay
     delay: 1
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   name: L6 SAW

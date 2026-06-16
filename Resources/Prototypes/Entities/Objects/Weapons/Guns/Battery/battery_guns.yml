@@ -99,6 +99,7 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   id: BaseWeaponBatterySmall
