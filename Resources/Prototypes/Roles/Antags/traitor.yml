@@ -25,25 +25,6 @@
   mindRoles:
   - MindRoleTraitor
 
-- type: antag
-  id: TraitorSleeper
-  name: roles-antag-syndicate-agent-sleeper-name
-  antagonist: true
-  setPreference: true
-  objective: roles-antag-syndicate-agent-sleeper-objective
-  guides: [ Traitors ]
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 1h
-
-- type: antagSpecifier
-  parent: BaseTraitor
-  id: TraitorSleeper
-  prefRoles:
-  - TraitorSleeper
-  mindRoles:
-  - MindRoleTraitorSleeper
-
 - type: antagSpecifier
   parent: BaseTraitor
   id: TraitorReinforcement

@@ -264,14 +264,6 @@
 
 - type: entity
   parent: MindRoleTraitor
-  id: MindRoleTraitorSleeper
-  name: Sleeper Agent Role
-  components:
-  - type: MindRole
-    antagPrototype: TraitorSleeper
-
-- type: entity
-  parent: MindRoleTraitor
   id: MindRoleTraitorReinforcement
   name: Syndicate Reinforcement Role
   components:
