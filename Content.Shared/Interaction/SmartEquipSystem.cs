@@ -115,7 +115,7 @@ public sealed partial class SmartEquipSystem : EntitySystem
         // 2) has an item, and that item is a storage item
         //    - with hand item: try to put it in storage
         //    - without hand item:
-        //      A) if item has SmartEquipPickupStorageComponent - try to pick up it
+        //      A) if item has NoSmartEquipRecurseComponent - try to pick up it
         //      B) try to take the last stored item and put it in our hands
         // 3) has an item, and that item is an item slots holder
         //    - with hand item: get the highest priority item slot with a valid whitelist and try to insert it
