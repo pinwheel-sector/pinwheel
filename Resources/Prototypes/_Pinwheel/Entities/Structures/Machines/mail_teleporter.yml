@@ -1,6 +1,6 @@
 - type: entity
   id: CargoMailTeleporter
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: BaseMachinePowered
   name: mail teleporter
   description: Periodically teleports in mail to deliver across the station.
   components:
@@ -27,10 +27,6 @@
       shader: unshaded
       visible: false
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-  - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
-    damageContainer: StructuralInorganic
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: Appearance
@@ -44,12 +40,34 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-  - type: Machine
-    board: MailTeleporterMachineCircuitboard
   - type: PowerSwitch
-  - type: InteractionPopup
-    interactSuccessString: petting-success-mail-teleporter
-    interactFailureString: petting-failure-mail-teleporter
   - type: DeliverySpawner
     table: !type:NestedSelector
       tableId: RandomDeliveryBasic
+  - type: ContainerContainer
+    containers:
+      sabotage_container: !type:ContainerSlot
+  - type: SabotagableMachine
+    insertSound:
+      collection: MaleLaugh
+    toolWhitelist:
+      tags: [ MailTeleporterHacker ]
+
+- type: Tag
+  id: MailTeleporterHacker
+
+- type: entity
+  parent: BaseItem
+  id: LeetAutoHacker
+  name: 1337 mail network autohacker
+  description: A compact device designed for shunting into NanoTrasen mail teleporters and wrecking cargo's day. Simply connect the pins to the exposed board in the teleporter and let the device do its magic for around two minutes, the dream of script-kiddies sectorwide.
+  components:
+  - type: Sprite
+    sprite: _Pinwheel/Objects/Devices/autohacker.rsi
+    state: icon
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Tag
+    tags: [ MailTeleporterHacker ]
+
