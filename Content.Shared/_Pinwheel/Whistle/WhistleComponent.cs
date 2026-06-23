@@ -33,6 +33,9 @@ public sealed partial class WhistleComponent : Component
     [DataField]
     public EntityUid? Action;
 
+    /// <summary>
+    /// Sound to play when the whistle is used
+    /// </summary>
     [DataField]
     public SoundSpecifier WhistleSound = new SoundCollectionSpecifier("PlasticWhistle");
 }

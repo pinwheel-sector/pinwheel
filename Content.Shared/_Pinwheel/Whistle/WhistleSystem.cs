@@ -48,7 +48,6 @@ public sealed partial class WhistleSystem : EntitySystem
         args.Handled = true;
     }
 
-
     public void OnUseInHand(Entity<WhistleComponent> ent, ref UseInHandEvent args)
     {
         if (args.Handled || !_timing.IsFirstTimePredicted)
@@ -73,7 +72,8 @@ public sealed partial class WhistleSystem : EntitySystem
         _audio.PlayPredicted(ent.Comp.WhistleSound, ent.Owner, user);
 
         foreach (var iterator in
-            _entityLookup.GetEntitiesInRange<HumanoidProfileComponent>(_transform.GetMapCoordinates(ent), ent.Comp.Distance))
+            _entityLookup.GetEntitiesInRange<HumanoidProfileComponent>(_transform.GetMapCoordinates(ent),
+            ent.Comp.Distance))
         {
             //Avoid pinging invisible entities
             if (TryComp(iterator, out stealth) && stealth.Enabled)
