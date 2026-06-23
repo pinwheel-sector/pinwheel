@@ -14,7 +14,7 @@ namespace Content.Server.Objectives.Components;
 public sealed partial class PresentJobRequirementComponent : Component
 {
     /// <summary>
-    /// List of job prototype IDs to ban from having this objective.
+    /// Job that has to be present for the objective to roll
     /// </summary>
     [DataField(required: true)]
     public ProtoId<JobPrototype>? Job = default!;
