@@ -18,24 +18,6 @@
 
 - type: entity
   parent: ReinforcementRadio
-  id: ReinforcementRadioSyndicate
-  name: syndicate reinforcement radio
-  description: Call in a syndicate agent of questionable quality, instantly!
-  components:
-  - type: GhostRole
-    name: ghost-role-information-syndicate-reinforcement-spy-name
-    description: ghost-role-information-syndicate-reinforcement-spy-description
-    rules: ghost-role-information-syndicate-reinforcement-rules
-    mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: default
-  - type: GhostRoleMobSpawner
-    prototype: MobHumanSyndicateAgentSpy
-    selectablePrototypes: ["SyndicateAgentMedic", "SyndicateAgentSpy", "SyndicateAgentThief"]
-
-- type: entity
-  parent: ReinforcementRadio
   id: ReinforcementRadioSyndicateNukeops # Reinforcement radio exclusive to nukeops uplink
   name: nuclear operative radio
   description: Call in a nuclear operative of questionable quality, instantly! Basic nukeop equipment provided.

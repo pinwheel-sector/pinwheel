@@ -199,18 +199,6 @@
         max: 8
 
 - type: entity
-  id: TraitorReinforcement # This shouldn't be in here but I'm not sure where to put it :(
-  parent: BaseTraitorRule
-  components:
-  - type: TraitorRule
-    giveUplink: false
-    giveBriefing: false
-  - type: AntagSelection
-    antags:
-    - !type:FixedAntagCount
-      proto: TraitorReinforcement
-
-- type: entity
   id: Changeling
   parent: [BaseGameRule, BaseRoundstartAntagRule]
   components:

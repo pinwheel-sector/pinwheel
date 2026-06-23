@@ -18,43 +18,6 @@
 
 - type: entity
   parent: MobHumanSyndicateAgentBase
-  id: MobHumanSyndicateAgent
-  name: syndicate agent
-  suffix: Human, Traitor
-  components:
-  # make the player a traitor once its taken
-  - type: AutoTraitor
-    profile: TraitorReinforcement
-
-- type: entity
-  parent: MobHumanSyndicateAgent
-  id: MobHumanSyndicateAgentMedic
-  name: syndicate medic
-  components:
-  - type: Loadout
-    prototypes: [SyndicateReinforcementMedic]
-    roleLoadout: [ RoleSurvivalSyndicate ]
-
-- type: entity
-  parent: MobHumanSyndicateAgent
-  id: MobHumanSyndicateAgentSpy
-  name: syndicate spy
-  components:
-  - type: Loadout
-    prototypes: [SyndicateReinforcementSpy]
-    roleLoadout: [ RoleSurvivalSyndicate ]
-
-- type: entity
-  parent: MobHumanSyndicateAgent
-  id: MobHumanSyndicateAgentThief
-  name: syndicate thief
-  components:
-  - type: Loadout
-    prototypes: [SyndicateReinforcementThief]
-    roleLoadout: [ RoleSurvivalSyndicate ]
-
-- type: entity
-  parent: MobHumanSyndicateAgentBase
   id: MobHumanSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: Human, NukeOps
   components:
