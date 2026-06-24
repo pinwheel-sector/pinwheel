@@ -1,41 +1,386 @@
-# the upstream naming patterns are nonsense so i'm not going to follow them - arenaconspiracy
+- type: weightedRandom # TODO: rip out the bit of logic that wants nested groups. we only need one
+  id: TraitorObjectiveGroups
+  weights:
+    TraitorObjectives: 1
 
-## Medical
+- type: weightedRandom
+  id: TraitorObjectives
+  weights: # TODO: think these through
+    TraitorSabotageAts: 1
+    TraitorStealAntiqueLaser: 1
+    TraitorStealCaptainId: 1
+    TraitorStealCaptainJetpack: 1
+    TraitorStealCorgiMeat: 1
+    TraitorStealDigiboard: 1
+    TraitorStealEnergyMagnum: 1
+    TraitorStealExperimentalHardsuit: 1
+    TraitorStealHandheldMonitor: 1
+    TraitorStealHandheldTeleporter: 1
+    TraitorStealHypospray: 1
+    TraitorStealKnuckleDusters: 1
+    TraitorStealMagbootsAdvanced: 1
+    TraitorStealNukeDisk: 1
+    TraitorStealServerDiskCrewMonitor: 1
+    TraitorStealServerDiskResearch: 1
+
+### Bases
+## Base of all
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseTraitorObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-syndicate
+    unique: true
+  - type: RoleRequirement
+    roles: [ TraitorRole ]
+  - type: ObjectiveLimit
+    limit: 1
+
+## Sabotage
+- type: entity
+  abstract: true
+  parent: BaseTraitorObjective
+  id: BaseTraitorSabotageObjective
+  components:
+  - type: Objective
+    difficulty: 3
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorSabotageObjective
+  id: BaseTraitorSabotageSecurity
+  components:
+  - type: NotJobRequirement
+    jobs: [ Captain, HeadOfPersonnel ]
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorSabotageObjective
+  id: BaseTraitorSabotageCargo
+  components:
+  - type: NotJobRequirement
+    jobs: [ Quartermaster, CargoTechnician, SalvageSpecialist ]
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorSabotageObjective
+  id: BaseTraitorSabotageEngineering
+  components:
+  - type: NotJobRequirement
+    jobs: [ ChiefEngineer, StationEngineer, TechnicalAssistant ]
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorSabotageObjective
+  id: BaseTraitorSabotageMedical
+  components:
+  - type: NotJobRequirement
+    jobs: [ ChiefMedicalOfficer, MedicalDoctor, Paramedic, MedicalIntern ]
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorSabotageObjective
+  id: BaseTraitorSabotageScience
+  components:
+  - type: NotJobRequirement
+    jobs: [ ResearchDirector, Scientist, ResearchAssistant ]
+
+## Steal
+- type: entity
+  abstract: true
+  parent: [ BaseTraitorObjective, BaseStealObjective ]
+  id: BaseTraitorStealObjective
+  components:
+  - type: Objective
+    difficulty: 2.25 # TODO: rethink objective difficulties wholesale
+  - type: StealCondition
+    descriptionText: objective-description-traitor-steal-general
+
 - type: entity
   abstract: true
   parent: BaseTraitorStealObjective
-  id: BaseStealObjectiveMedbay
+  id: BaseTraitorStealCommand
   components:
   - type: NotJobRequirement
-    jobs: [ ChiefMedicalOfficer, Chemist, MedicalDoctor, Paramedic, MedicalIntern ]
+    jobs: [ Captain, HeadOfPersonnel ]
   - type: StealCondition
-    objectiveText: objective-title-steal-departmental
+    objectiveText: objective-title-traitor-steal-department
+    owner: department-Command
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealCommand
+  id: BaseTraitorStealCaptain
+  components:
+  - type: Objective
+    difficulty: 3 # just steal something from the most watched, most mobile person on the station. no sweat
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-captain
+  - type: PresentJobRequirement
+    job: Captain
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealCommand
+  id: BaseTraitorStealHop
+  components:
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-hop
+  - type: PresentJobRequirement
+    job: HeadOfPersonnel
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: BaseTraitorStealSecurity
+  components:
+  - type: NotJobRequirement
+    jobs: [ HeadOfSecurity, Detective, SecurityOfficer, Warden, SecurityCadet ]
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-department
+    owner: department-Security
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealSecurity
+  id: BaseTraitorStealHos
+  components:
+  - type: Objective
+    difficulty: 3 # like stealing candy from a fully grown baby in martial gear
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-hos
+  - type: PresentJobRequirement
+    job: HeadOfSecurity
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: BaseTraitorStealCargo
+  components:
+  - type: NotJobRequirement
+    jobs: [ Quartermaster, CargoTechnician, SalvageSpecialist ]
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-department
+    owner: department-Cargo
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealCargo
+  id: BaseTraitorStealQm
+  components:
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-qm
+  - type: PresentJobRequirement
+    job: Quartermaster
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: BaseTraitorStealEngineering
+  components:
+  - type: NotJobRequirement
+    jobs: [ ChiefEngineer, StationEngineer, TechnicalAssistant ]
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-department
+    owner: department-Science
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealEngineering
+  id: BaseTraitorStealCe
+  components:
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-ce
+  - type: PresentJobRequirement
+    job: ChiefEngineer
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: BaseTraitorStealMedical
+  components:
+  - type: NotJobRequirement
+    jobs: [ ChiefMedicalOfficer, MedicalDoctor, Paramedic, MedicalIntern ]
+  - type: StealCondition
+    objectiveText: objective-title-traitor-steal-department
     owner: department-Medical
 
 - type: entity
-  parent: BaseStealObjectiveMedbay
-  id: StealServerDiskCrewMonitor
+  abstract: true
+  parent: BaseTraitorStealMedical
+  id: BaseTraitorStealCmo
   components:
   - type: StealCondition
-    descriptionText: objective-description-steal-serverdisk
-    stealGroup: ServerDiskCrewMonitor
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-cmo
+  - type: PresentJobRequirement
+    job: ChiefMedicalOfficer
 
-## Science
 - type: entity
   abstract: true
   parent: BaseTraitorStealObjective
-  id: BaseStealObjectiveScience
+  id: BaseTraitorStealScience
   components:
   - type: NotJobRequirement
     jobs: [ ResearchDirector, Scientist, ResearchAssistant ]
   - type: StealCondition
-    objectiveText: objective-title-steal-departmental
+    objectiveText: objective-title-traitor-steal-department
     owner: department-Science
 
 - type: entity
-  parent: BaseStealObjectiveScience
-  id: StealServerDiskResearch
+  abstract: true
+  parent: BaseTraitorStealScience
+  id: BaseTraitorStealRd
   components:
   - type: StealCondition
-    descriptionText: objective-description-steal-serverdisk
+    objectiveText: objective-title-traitor-steal-job
+    owner: job-name-rd
+  - type: PresentJobRequirement
+    job: ResearchDirector
+
+### Real objectives
+## Sabotage
+# Command
+
+# Security
+
+# Cargo
+- type: entity
+  parent: BaseTraitorSabotageCargo
+  id: TraitorSabotageAts
+  name: Sabotage the Automated Trade Station # TODO: make this a loc string via components
+  description: Find the beacon in your uplink. Deploy it on the ATS and defend it whilst it breaches it's firewall. # ditto
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Tools/hijack_beacon.rsi
+      state: extraction_point
+  - type: HijackTradeStationCondition
+
+# Engineering
+
+# Medical
+
+# Science
+
+## Steal
+# Command
+- type: entity
+  parent: BaseTraitorStealCaptain
+  id: TraitorStealNukeDisk
+  components:
+  - type: StealCondition
+    stealGroup: NukeDisk
+
+- type: entity
+  parent: BaseTraitorStealCaptain
+  id: TraitorStealAntiqueLaser
+  components:
+  - type: StealCondition
+    stealGroup: WeaponAntiqueLaser
+
+- type: entity
+  parent: BaseTraitorStealCaptain
+  id: TraitorStealCaptainId
+  components:
+  - type: StealCondition
+    stealGroup: CaptainIDCard
+
+- type: entity
+  parent: BaseTraitorStealCaptain
+  id: TraitorStealCaptainJetpack
+  components:
+  - type: StealCondition
+    stealGroup: CaptainJetpackFilled
+
+- type: entity
+  parent: BaseTraitorStealHop
+  id: TraitorStealCorgiMeat
+  components:
+  - type: StealCondition
+    verifyMapExistence: false # the meat only spawns after butchering Ian
+    stealGroup: FoodMeatCorgi
+
+# Security
+- type: entity
+  parent: BaseTraitorStealHos
+  id: TraitorStealEnergyMagnum
+  components:
+  - type: StealCondition
+    stealGroup: WeaponEnergyMagnum
+
+# Cargo
+- type: entity
+  parent: BaseTraitorStealQm
+  id: TraitorStealDigiboard
+  components:
+  - type: StealCondition
+    stealGroup: BoxFolderQmClipboard
+
+- type: entity
+  parent: BaseTraitorStealQm
+  id: TraitorStealKnuckleDusters
+  components:
+  - type: StealCondition
+    stealGroup: ClothingHandsKnuckleDustersQM
+
+# Engineering
+- type: entity
+  parent: BaseTraitorStealCe
+  id: TraitorStealMagbootsAdvanced
+  components:
+  - type: StealCondition
+    stealGroup: ClothingShoesBootsMagAdv
+
+# Medical
+- type: entity
+  parent: BaseTraitorStealCmo
+  id: TraitorStealHypospray
+  components:
+  - type: StealCondition
+    stealGroup: Hypospray
+
+- type: entity
+  parent: BaseTraitorStealCmo
+  id: TraitorStealHandheldMonitor
+  components:
+  - type: StealCondition
+    stealGroup: HandheldCrewMonitor
+
+- type: entity
+  parent: BaseTraitorStealMedical
+  id: TraitorStealServerDiskCrewMonitor
+  components:
+  - type: StealCondition
+    descriptionText: objective-description-traitor-steal-serverdisk
+    stealGroup: ServerDiskCrewMonitor
+
+# Science
+- type: entity
+  parent: BaseTraitorStealRd
+  id: TraitorStealExperimentalHardsuit
+  components:
+  - type: StealCondition
+    stealGroup: ClothingOuterHardsuitRd
+
+- type: entity
+  parent: BaseTraitorStealRd
+  id: TraitorStealHandheldTeleporter
+  components:
+  - type: StealCondition
+    stealGroup: HandTeleporter
+
+- type: entity
+  parent: BaseTraitorStealScience
+  id: TraitorStealServerDiskResearch
+  components:
+  - type: StealCondition
+    descriptionText: objective-description-traitor-steal-serverdisk
     stealGroup: ServerDiskResearch
