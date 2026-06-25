@@ -29,12 +29,14 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         // removing the tool
         SubscribeLocalEvent<SabotagableMachineComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolRemoveDoAfterEvent>(OnRemoveDoAfter);
+        // sabotage process
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
     }
 
     private void OnInteractUsing(Entity<SabotagableMachineComponent> ent, ref InteractUsingEvent args)
     {
-        if (args.Handled)
-            return; // cancel if handled
+        if (args.Handled || ent.Comp.Closed)
+            return; // cancel if handled or closed
 
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
             return; // cancel if we don't have a container
@@ -87,8 +89,8 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
     private void OnInteractHand(Entity<SabotagableMachineComponent> ent, ref InteractHandEvent args)
     {
-        if (args.Handled)
-            return; // cancel if handled
+        if (args.Handled || ent.Comp.Closed)
+            return; // cancel if handled or closed
 
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
             return; // cancel if we don't have a container
@@ -144,5 +146,10 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
         RaiseLocalEvent(ent.Owner, ev);
+    }
+
+    private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
+    {
+        ent.Comp.Closed = false;
     }
 }

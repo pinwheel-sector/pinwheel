@@ -1,20 +1,11 @@
+## Teleporter
 - type: entity
   id: CargoMailTeleporter
   parent: BaseMachinePowered
   name: mail teleporter
   description: Periodically teleports in mail to deliver across the station.
   components:
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.35,-0.35,0.35,0.35"
-        density: 190
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
+  # visual
   - type: Sprite
     sprite: Structures/mailbox.rsi
     snapCardinals: true
@@ -27,8 +18,6 @@
       shader: unshaded
       visible: false
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-  - type: ApcPowerReceiver
-    powerLoad: 1000
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -40,7 +29,20 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-  - type: PowerSwitch
+  # functional
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: ApcPowerReceiver
+    powerLoad: 1000
   - type: DeliverySpawner
     table: !type:NestedSelector
       tableId: RandomDeliveryBasic
@@ -52,7 +54,31 @@
       collection: MaleLaugh
     toolWhitelist:
       tags: [ MailTeleporterHacker ]
+  - type: Construction
+    graph: MailTeleporterGraph
+    deconstructionTarget: null
+    node: lid
 
+## Construction Graph
+- type: constructionGraph
+  id: MailTeleporterGraph
+  start: lid
+  graph:
+  - node: lid
+    edges:
+    - to: bare
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      - tool: Prying
+        doAfter: 1
+  - node: bare
+    actions:
+    - !type:RaiseEvent
+      event: !type:SabotagableMachineOpenedEvent
+      broadcast: false
+
+## Macguffin
 - type: Tag
   id: MailTeleporterHacker
 

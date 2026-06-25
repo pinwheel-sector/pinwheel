@@ -3,6 +3,9 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Pinwheel.Sabotage;
 
+/// <summary>
+/// Raised when the sabotage tool is finished inserting
+/// </summary>
 public sealed class SabotageToolInsertEvent(EntityUid user, EntityUid used, EntityUid target) : EntityEventArgs
 {
     /// <summary>
@@ -21,6 +24,9 @@ public sealed class SabotageToolInsertEvent(EntityUid user, EntityUid used, Enti
     public readonly EntityUid Target = target;
 }
 
+/// <summary>
+/// Raised when the sabotage tool is finished removing
+/// </summary>
 public sealed class SabotageToolRemoveEvent(EntityUid user, EntityUid target) : EntityEventArgs
 {
     /// <summary>
@@ -34,10 +40,28 @@ public sealed class SabotageToolRemoveEvent(EntityUid user, EntityUid target) : 
     public readonly EntityUid Target = target;
 }
 
+/// <summary>
+/// Raised by construction graphs to indicate the tool container should open
+/// </summary>
+public sealed class SabotagableMachineOpenedEvent : EntityEventArgs
+{}
+
+/// <summary>
+/// Used by <see cref=SabotagableMachineSystem/> for the insertion doafter
+/// </summary>
+/// <remarks>
+/// DO NOT USE anywhere else
+/// </remarks>
 [Serializable, NetSerializable]
 public sealed partial class SabotageToolInsertDoAfterEvent : SimpleDoAfterEvent
 {}
 
+/// <summary>
+/// Used by <see cref=SabotagableMachineSystem/> for the removal doafter
+/// </summary>
+/// <remarks>
+/// DO NOT USE anywhere else
+/// </remarks>
 [Serializable, NetSerializable]
 public sealed partial class SabotageToolRemoveDoAfterEvent : SimpleDoAfterEvent
 {}
