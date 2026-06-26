@@ -7,24 +7,37 @@
   components:
   # visual
   - type: Sprite
-    sprite: Structures/mailbox.rsi
+    sprite: _Pinwheel/Structures/Machines/mail_teleporter.rsi
     snapCardinals: true
     layers:
-    - state: icon
-    - state: contents
-      map: [ "enum.DeliverySpawnerVisualLayers.Contents" ]
+    - state: base
+    - state: panel
+      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
+    - state: tool
       visible: false
-    - state: unlit
+      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
+    - state: flag-down
+      map: [ "enum.DeliverySpawnerVisualLayers.Contents" ]
+      visible: true
+    - state: power
       shader: unshaded
       visible: false
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
+      enum.SabotagableMachineVisuals.ShellState:
+        enum.SabotagableMachineVisualLayers.Cover:
+          0: { visible: false }
+          1: { visible: true }
+      enum.SabotagableMachineVisuals.ToolState:
+        enum.SabotagableMachineVisualLayers.Tool:
+          0: { visible: false }
+          1: { visible: true }
       enum.DeliverySpawnerVisuals.Contents:
         enum.DeliverySpawnerVisualLayers.Contents:
-          True: { visible: true }
-          False: { visible: false }
+          True: { state: flag-up }
+          False: { state: flag-down }
       enum.PowerDeviceVisuals.Powered:
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
@@ -57,14 +70,18 @@
   - type: Construction
     graph: MailTeleporterGraph
     deconstructionTarget: null
-    node: lid
+    node: panel
 
 ## Construction Graph
 - type: constructionGraph
   id: MailTeleporterGraph
-  start: lid
+  start: panel
   graph:
-  - node: lid
+  - node: panel
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 1
     edges:
     - to: bare
       steps:
@@ -74,6 +91,9 @@
         doAfter: 1
   - node: bare
     actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 0
     - !type:RaiseEvent
       event: !type:SabotagableMachineOpenedEvent
       broadcast: false

@@ -13,6 +13,7 @@ namespace Content.Shared._Pinwheel.Sabotage;
 /// </summary>
 public sealed partial class SabotagableMachineSystem : EntitySystem
 {
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
@@ -49,6 +50,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (ent.Comp.ToolInsertTime == null)
         { // if we don't have a doafter just cram it in
             _container.Insert(args.Used, container);
+            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
             _audio.PlayPredicted(ent.Comp.InsertSound, ent.Owner, args.User);
             RaiseLocalEvent(ent.Owner, ev);
         }
@@ -83,6 +85,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         var ev = new SabotageToolInsertEvent(args.User, args.Used!.Value, ent.Owner);
 
         _container.Insert(args.Used!.Value, container);
+            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
         _audio.PlayPredicted(ent.Comp.InsertSound, ent.Owner, args.User);
         RaiseLocalEvent(ent.Owner, ev);
     }
@@ -107,6 +110,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
                 _hands.TryPickupAnyHand(args.User, tool);
             }
 
+            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
             _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
             RaiseLocalEvent(ent.Owner, ev);
         }
@@ -144,6 +148,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
             _hands.TryPickupAnyHand(args.User, tool);
         }
 
+            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
         _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
         RaiseLocalEvent(ent.Owner, ev);
     }
