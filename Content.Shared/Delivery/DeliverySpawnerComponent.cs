@@ -1,6 +1,8 @@
+using Content.Shared.Radio; // Pinwheel - traitor sabotage
 using Content.Shared.EntityTable.EntitySelectors;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
 namespace Content.Shared.Delivery;
 
 /// <summary>
@@ -40,4 +42,18 @@ public sealed partial class DeliverySpawnerComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? OpenSound = new SoundCollectionSpecifier("storageRustle");
+
+    // Pinwheel-stt - traitor sabotage
+    /// <summary>
+    /// The radio channel to whine on when the maintenance panel is taken off
+    /// </summary>
+    [DataField]
+    public ProtoId<RadioChannelPrototype> MessageChannel = "Supply";
+
+    /// <summary>
+    /// Message to use when the maintenance panel is taken off
+    /// </summary>
+    [DataField]
+    public string MessageText = "delivery-warranty-message";
+    // Pinwheel-end - traitor sabotage
 }

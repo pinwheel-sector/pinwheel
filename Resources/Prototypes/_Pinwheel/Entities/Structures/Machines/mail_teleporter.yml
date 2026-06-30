@@ -62,6 +62,9 @@
   - type: ContainerContainer
     containers:
       sabotage_container: !type:ContainerSlot
+  - type: VoiceOverride
+    nameOverride: Mail Teleporter
+    speechVerbOverride: Robotic
   - type: SabotagableMachine
     insertSound:
       collection: MaleLaugh
