@@ -32,8 +32,8 @@
           1: { visible: true }
       enum.SabotagableMachineVisuals.ToolState:
         enum.SabotagableMachineVisualLayers.Tool:
-          0: { visible: false }
-          1: { visible: true }
+          False: { visible: false }
+          True: { visible: true }
       enum.DeliverySpawnerVisuals.Contents:
         enum.DeliverySpawnerVisualLayers.Contents:
           True: { state: flag-up }
@@ -68,6 +68,8 @@
   - type: SabotagableMachine
     insertSound:
       collection: MaleLaugh
+    removeSound:
+      collection: MaleCry
     toolWhitelist:
       tags: [ MailTeleporterHacker ]
   - type: Construction

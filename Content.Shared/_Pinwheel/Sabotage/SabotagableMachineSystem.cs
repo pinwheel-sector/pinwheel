@@ -38,6 +38,17 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         SubscribeLocalEvent<SabotagableMachineComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
+    private void ProcessTool(Entity<SabotagableMachineComponent> ent, bool inserting, EntityEventArgs raisedEvent, EntityUid? user)
+    { // helper function to handle tool moving and functions
+        var sound = inserting ? ent.Comp.InsertSound : ent.Comp.RemoveSound;
+
+        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
+        _audio.PlayPredicted(sound, ent.Owner, user);
+        ent.Comp.Sabotaging = inserting;
+        RaiseLocalEvent(ent.Owner, raisedEvent);
+    }
+
+
     private void OnInteractUsing(Entity<SabotagableMachineComponent> ent, ref InteractUsingEvent args)
     {
         if (args.Handled || ent.Comp.Closed)
@@ -55,10 +66,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         { // if we don't have a doafter just cram it in
             // TODO: make this a helper function dear lord
             _container.Insert(args.Used, container);
-            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
-            _audio.PlayPredicted(ent.Comp.InsertSound, ent.Owner, args.User);
-            ent.Comp.Sabotaging = true;
-            RaiseLocalEvent(ent.Owner, ev);
+            ProcessTool(ent, true, ev, args.User);
         }
 
         var doAfter = new DoAfterArgs(
@@ -91,10 +99,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         var ev = new SabotageToolInsertEvent(args.User, args.Used!.Value, ent.Owner);
 
         _container.Insert(args.Used!.Value, container);
-        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
-        _audio.PlayPredicted(ent.Comp.InsertSound, ent.Owner, args.User);
-        ent.Comp.Sabotaging = true;
-        RaiseLocalEvent(ent.Owner, ev);
+        ProcessTool(ent, true, ev, args.User);
     }
 
     private void OnInteractHand(Entity<SabotagableMachineComponent> ent, ref InteractHandEvent args)
@@ -117,10 +122,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
                 _hands.TryPickupAnyHand(args.User, tool);
             }
 
-            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
-            _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
-            ent.Comp.Sabotaging = false;
-            RaiseLocalEvent(ent.Owner, ev);
+            ProcessTool(ent, false, ev, args.User);
         }
 
         var doAfter = new DoAfterArgs(
@@ -156,10 +158,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
             _hands.TryPickupAnyHand(args.User, tool);
         }
 
-        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
-        _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
-        ent.Comp.Sabotaging = false;
-        RaiseLocalEvent(ent.Owner, ev);
+        ProcessTool(ent, false, ev, args.User);
     }
 
     private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
