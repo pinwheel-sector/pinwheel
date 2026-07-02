@@ -66,10 +66,15 @@
     nameOverride: Mail Teleporter
     speechVerbOverride: Robotic
   - type: SabotagableMachine
-    insertSound:
+    sabotageLength: 1m
+    soundInsert:
       collection: MaleLaugh
-    removeSound:
+    soundRemove:
       collection: MaleCry
+    soundComplete:
+      collection: MaleScreams
+    toolInsertTime: 2s
+    toolRemoveTime: 4s
     toolWhitelist:
       tags: [ MailTeleporterHacker ]
   - type: Construction

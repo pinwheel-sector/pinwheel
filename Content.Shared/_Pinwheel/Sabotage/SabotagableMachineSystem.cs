@@ -2,9 +2,11 @@ using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Pinwheel.Sabotage;
@@ -20,6 +22,8 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedPowerReceiverSystem _power = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
@@ -36,22 +40,53 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         // sabotage process
         SubscribeLocalEvent<SabotagableMachineComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
         SubscribeLocalEvent<SabotagableMachineComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotageCompleteEvent>(OnSabotageComplete);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var curTime = _timing.CurTime;
+
+        var query = EntityQueryEnumerator<SabotagableMachineComponent>();
+        while (query.MoveNext(out var uid, out var machine))
+        {
+            if (machine.StatusSabotaged || !_power.IsPowered(uid))
+                continue; // skip if we're not being sabotaged or we're missing power
+
+            if ((curTime < machine.SabotageComplete) || (!machine.StatusSabotaging))
+                continue; // skip if we're not being sabotaged or it's not done yet
+
+            var ev = new SabotageCompleteEvent();
+
+            RaiseLocalEvent(uid, ev);
+        }
     }
 
     private void ProcessTool(Entity<SabotagableMachineComponent> ent, bool inserting, EntityEventArgs raisedEvent, EntityUid? user)
-    { // helper function to handle tool moving and functions
-        var sound = inserting ? ent.Comp.InsertSound : ent.Comp.RemoveSound;
+    { // helper function to handle tool moving et alii
+        var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
 
         _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
         _audio.PlayPredicted(sound, ent.Owner, user);
-        ent.Comp.Sabotaging = inserting;
-        RaiseLocalEvent(ent.Owner, raisedEvent);
-    }
 
+        if (ent.Comp.StatusSabotaged)
+            return; // cancel if the sabotage is complete. can't jack it twice
+
+        ent.Comp.StatusSabotaging = inserting;
+        RaiseLocalEvent(ent.Owner, raisedEvent);
+
+        if (inserting)
+        {
+            var curTime = _timing.CurTime;
+            ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageLength);
+        }
+    }
 
     private void OnInteractUsing(Entity<SabotagableMachineComponent> ent, ref InteractUsingEvent args)
     {
-        if (args.Handled || ent.Comp.Closed)
+        if (args.Handled || ent.Comp.StatusClosed)
             return; // cancel if handled or closed
 
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
@@ -104,7 +139,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
     private void OnInteractHand(Entity<SabotagableMachineComponent> ent, ref InteractHandEvent args)
     {
-        if (args.Handled || ent.Comp.Closed)
+        if (args.Handled || ent.Comp.StatusClosed)
             return; // cancel if handled or closed
 
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
@@ -163,12 +198,12 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
     private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
-        ent.Comp.Closed = false;
+        ent.Comp.StatusClosed = false;
     }
 
     private void OnPowerChanged(Entity<SabotagableMachineComponent> ent, ref PowerChangedEvent args)
     {
-        if (!ent.Comp.Sabotaging)
+        if (!ent.Comp.StatusSabotaging)
             return; // cancel if nothing is happening
 
         var curTime = _timing.CurTime;
@@ -182,5 +217,13 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         // if we're regaining power
         ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageTimeStored); // restore our time
+    }
+
+    private void OnSabotageComplete(Entity<SabotagableMachineComponent> ent, ref SabotageCompleteEvent args)
+    {
+        ent.Comp.StatusSabotaging = false;
+        ent.Comp.StatusSabotaged = true;
+        if (_net.IsServer)
+            _audio.PlayPvs(ent.Comp.SoundComplete, ent.Owner);
     }
 }
