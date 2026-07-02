@@ -22,6 +22,13 @@ public sealed partial class SabotagableMachineComponent : Component
     public TimeSpan SabotageLength = TimeSpan.FromSeconds(120);
 
     /// <summary>
+    /// Length of time until the sabotage completes when the machine runs out of power
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan SabotageTimeStored = new();
+
+    /// <summary>
     /// When the sabotage will complete
     /// </summary>
     [DataField, AutoNetworkedField]

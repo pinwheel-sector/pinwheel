@@ -1,9 +1,11 @@
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Power;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Pinwheel.Sabotage;
 
@@ -18,6 +20,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     public override void Initialize()
@@ -32,6 +35,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolRemoveDoAfterEvent>(OnRemoveDoAfter);
         // sabotage process
         SubscribeLocalEvent<SabotagableMachineComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        SubscribeLocalEvent<SabotagableMachineComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
     private void OnInteractUsing(Entity<SabotagableMachineComponent> ent, ref InteractUsingEvent args)
@@ -49,9 +53,11 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         if (ent.Comp.ToolInsertTime == null)
         { // if we don't have a doafter just cram it in
+            // TODO: make this a helper function dear lord
             _container.Insert(args.Used, container);
             _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
             _audio.PlayPredicted(ent.Comp.InsertSound, ent.Owner, args.User);
+            ent.Comp.Sabotaging = true;
             RaiseLocalEvent(ent.Owner, ev);
         }
 
@@ -85,8 +91,9 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         var ev = new SabotageToolInsertEvent(args.User, args.Used!.Value, ent.Owner);
 
         _container.Insert(args.Used!.Value, container);
-            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
+        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 1);
         _audio.PlayPredicted(ent.Comp.InsertSound, ent.Owner, args.User);
+        ent.Comp.Sabotaging = true;
         RaiseLocalEvent(ent.Owner, ev);
     }
 
@@ -112,6 +119,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
             _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
             _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
+            ent.Comp.Sabotaging = false;
             RaiseLocalEvent(ent.Owner, ev);
         }
 
@@ -148,13 +156,32 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
             _hands.TryPickupAnyHand(args.User, tool);
         }
 
-            _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
+        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, 0);
         _audio.PlayPredicted(ent.Comp.RemoveSound, ent.Owner, args.User);
+        ent.Comp.Sabotaging = false;
         RaiseLocalEvent(ent.Owner, ev);
     }
 
     private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
         ent.Comp.Closed = false;
+    }
+
+    private void OnPowerChanged(Entity<SabotagableMachineComponent> ent, ref PowerChangedEvent args)
+    {
+        if (!ent.Comp.Sabotaging)
+            return; // cancel if nothing is happening
+
+        var curTime = _timing.CurTime;
+
+        if (!args.Powered) // if we're losing power
+        {
+
+            ent.Comp.SabotageTimeStored = (ent.Comp.SabotageComplete - curTime); // store our remaining time
+            return; // we did our job
+        }
+
+        // if we're regaining power
+        ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageTimeStored); // restore our time
     }
 }
