@@ -8,6 +8,7 @@
 # WallSolid: Window
 # Table: null
 
-# 2026-06-11 - server sabotage
+# 2026-06-11 - traitor sabotage
 CrewMonitoringServer: ExtractableServerCrewMonitor
 ResearchAndDevelopmentServer: ExtractableServerResearch
+CargoMailTeleporter: CargoMailbox

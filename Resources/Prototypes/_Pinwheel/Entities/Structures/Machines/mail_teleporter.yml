@@ -1,6 +1,6 @@
 ## Teleporter
 - type: entity
-  id: CargoMailTeleporter
+  id: CargoMailbox
   parent: BaseMachinePowered
   name: mail teleporter
   description: Periodically teleports in mail to deliver across the station.
@@ -68,17 +68,17 @@
   - type: SabotagableMachine
     sabotageLength: 1m
     soundInsert:
-      collection: MaleLaugh
+      collection: MailboxSabotageInsert
     soundRemove:
-      collection: MaleCry
+      collection: MailboxSabotageRemove
     soundComplete:
-      collection: MaleScreams
+      collection: MailboxSabotageComplete
     toolInsertTime: 2s
     toolRemoveTime: 4s
     toolWhitelist:
-      tags: [ MailTeleporterHacker ]
+      tags: [ MailboxHacker ]
   - type: Construction
-    graph: MailTeleporterGraph
+    graph: MailboxGraph
     deconstructionTarget: null
     node: panel
   - type: Destructible
@@ -90,9 +90,28 @@
         - !type:ChangeConstructionNodeBehavior
           node: bare
 
+## Sound Collections
+- type: soundCollection
+  id: MailboxSabotageInsert
+  files:
+  - /Audio/Effects/sparks1.ogg
+  - /Audio/Effects/sparks2.ogg
+  - /Audio/Effects/sparks3.ogg
+  - /Audio/Effects/sparks4.ogg
+
+- type: soundCollection
+  id: MailboxSabotageRemove
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: MailboxSabotageComplete
+  files:
+  - /Audio/Effects/kaching.ogg # TODO: placeholder
+
 ## Construction Graph
 - type: constructionGraph
-  id: MailTeleporterGraph
+  id: MailboxGraph
   start: panel
   graph:
   - node: panel
@@ -118,7 +137,7 @@
 
 ## Macguffin
 - type: Tag
-  id: MailTeleporterHacker
+  id: MailboxHacker
 
 - type: entity
   parent: BaseItem
@@ -133,5 +152,5 @@
     shape:
     - 0,0,1,0
   - type: Tag
-    tags: [ MailTeleporterHacker ]
+    tags: [ MailboxHacker ]
 
