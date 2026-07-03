@@ -81,6 +81,14 @@
     graph: MailTeleporterGraph
     deconstructionTarget: null
     node: panel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: bare
 
 ## Construction Graph
 - type: constructionGraph
