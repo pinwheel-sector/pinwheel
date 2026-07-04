@@ -61,8 +61,6 @@
   id: TraitorObjectiveGroupOther
   weights:
     HijackTradeStationObjective: 1
-    MailFraudObjective: 1
-
 
 #Thief groups
 - type: weightedRandom
