@@ -43,6 +43,8 @@
           True: { visible: true }
           False: { visible: false }
   # functional
+  - type: Anchorable
+    flags: [ Anchorable ]
   - type: Fixtures
     fixtures:
       fix1:
