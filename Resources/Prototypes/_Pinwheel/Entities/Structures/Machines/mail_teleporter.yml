@@ -3,7 +3,7 @@
   id: CargoMailbox
   parent: BaseMachinePowered
   name: bluespace mailbox
-  description: Periodically recieves mail addressed to someone on the station. The maintenance panel looks like it could be unscrewed and pried off, or just bashed in.
+  description: Periodically recieves mail addressed to someone on the station. The maintenance panel looks like it could be unscrewed and pried off, or bashed in.
   components:
   # visual
   - type: Sprite
@@ -145,7 +145,7 @@
   parent: BaseItem
   id: MailboxAutohacker
   name: 1337 mail network autohacker
-  description: A compact device designed for shunting into NanoTrasen mail teleporters and wrecking cargo's day. Simply connect the pins to the exposed board in the teleporter and let the device do its magic for around two minutes, the dream of script-kiddies sectorwide.
+  description: A compact device designed for shunting into NanoTrasen bluespace mailboxes, using their hardware to authorize illicit transactions. Simply jam it anywhere on the circuit board and let it do its magic. The dream of script-kiddies sectorwide.
   components:
   - type: Sprite
     sprite: _Pinwheel/Objects/Devices/autohacker.rsi
