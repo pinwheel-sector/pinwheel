@@ -157,6 +157,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: GravityDrift # Pinwheel - gravity drift
 
 - type: entity
   abstract: true

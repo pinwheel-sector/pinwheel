@@ -31,6 +31,7 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: HandheldCrewMonitor
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   id: HandheldCrewMonitorEmpty

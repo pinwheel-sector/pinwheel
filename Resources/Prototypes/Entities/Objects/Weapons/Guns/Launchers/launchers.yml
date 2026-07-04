@@ -27,6 +27,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   name: china lake

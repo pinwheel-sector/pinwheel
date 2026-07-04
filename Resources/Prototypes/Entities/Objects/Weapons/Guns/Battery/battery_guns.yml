@@ -99,6 +99,7 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -277,8 +278,14 @@
     price: 300
   - type: BatteryAmmoProvider
     proto: RedLaserPractice
-    fireCost: 62.5
+    fireCost: 20 # Pinwheel - practice visuals
   - type: PacifismAllowedGun
+  # Pinwheel-stt - practice visuals
+  # this has nothing to do with visuals because the visual changes are in the laser protype. but. you know
+  - type: Battery
+    maxCharge: 320
+    startingCharge: 320
+  # Pinwheel-end - practice visuals
 
 - type: entity
   name: pulse pistol

@@ -52,6 +52,7 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   name: AKMS

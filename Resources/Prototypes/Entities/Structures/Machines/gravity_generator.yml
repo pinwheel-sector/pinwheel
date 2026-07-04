@@ -63,6 +63,7 @@
       unpowered: "off"
       off: "off"
       on: "on"
+    driftEnabled: true # Pinwheel - gravity drift
   - type: ActivatableUI
     key: enum.PowerChargeUiKey.Key
   - type: ActivatableUIRequiresPower
@@ -137,5 +138,6 @@
   - type: GravityGenerator
     lightRadiusMin: 0.75
     lightRadiusMax: 2.5
+    driftEnabled: false # Pinwheel - gravity drift
   - type: StaticPrice
     price: 2000

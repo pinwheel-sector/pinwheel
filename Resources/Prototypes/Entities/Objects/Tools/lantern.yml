@@ -68,6 +68,7 @@
     - type: Tag
       tags:
       - Flashlight
+    - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   parent: Lantern

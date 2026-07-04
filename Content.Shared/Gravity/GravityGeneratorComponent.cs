@@ -1,5 +1,6 @@
 using Content.Shared.Power;
 using Robust.Shared.GameStates;
+using Robust.Shared.Timing; // Pinwheel - gravity drift
 
 namespace Content.Shared.Gravity;
 
@@ -44,4 +45,27 @@ public sealed partial class GravityGeneratorComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(SharedGravityGeneratorSystem))]
     public bool GravityActive = false;
+
+    // Pinwheel-stt - gravity drift
+    /// <summary>
+    /// Should entities drift in this generator's direction
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool DriftEnabled = false;
+
+    /// <summary>
+    /// How often the drift impulse is applied
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan DriftRate = TimeSpan.FromSeconds(1);
+
+    /// <summary>
+    /// When the next drift impulse will be applied
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan NextDrift;
+    // Pinwheel-end - gravity drift
 }

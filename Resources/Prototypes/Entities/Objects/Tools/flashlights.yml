@@ -74,6 +74,7 @@
     quickEquip: false
     slots:
       - Belt
+  - type: NoSmartEquipRecurse # Pinwheel - smartequip recurse stop
 
 - type: entity
   name: seclite
