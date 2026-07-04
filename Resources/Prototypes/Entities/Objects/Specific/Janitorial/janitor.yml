@@ -294,7 +294,6 @@
     SpacemenFigurineSpawner90: 28
     SpawnMobCockroach: 5
     MaintenanceToolSpawner: 5
-    SpawnMobMoproach: 2
 
 - type: entity
   parent: [SolutionMopSmall, BaseItem]
