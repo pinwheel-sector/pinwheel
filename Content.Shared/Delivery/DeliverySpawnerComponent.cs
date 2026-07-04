@@ -1,3 +1,4 @@
+using Content.Shared.Cargo.Prototypes; // Pinwheel - traitor sabotage
 using Content.Shared.Radio; // Pinwheel - traitor sabotage
 using Content.Shared.EntityTable.EntitySelectors;
 using Robust.Shared.Audio;
@@ -45,7 +46,7 @@ public sealed partial class DeliverySpawnerComponent : Component
 
     // Pinwheel-stt - traitor sabotage
     /// <summary>
-    /// The radio channel to whine on when the maintenance panel is taken off
+    /// The radio channel to whine on when something goes wrong
     /// </summary>
     [DataField]
     public ProtoId<RadioChannelPrototype> MessageChannel = "Supply";
@@ -54,6 +55,24 @@ public sealed partial class DeliverySpawnerComponent : Component
     /// Message to use when the maintenance panel is taken off
     /// </summary>
     [DataField]
-    public string MessageText = "delivery-warranty-message";
+    public string WarrantyMessage = "delivery-warranty-message";
+
+    /// <summary>
+    /// Message to use when the sabotage macguffin does its thing
+    /// </summary>
+    [DataField]
+    public string SabotageMessage = "delivery-sabotage-message";
+
+    /// <summary>
+    /// Spesos to withdraw when the sabotage doodad completes its job
+    /// </summary>
+    [DataField]
+    public int SabotagePenalty = 3500;
+
+    /// <summary>
+    /// The account to drain from when the sabotage gadget finishes
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<CargoAccountPrototype> PenaltyBankAccount = "Cargo";
     // Pinwheel-end - traitor sabotage
 }

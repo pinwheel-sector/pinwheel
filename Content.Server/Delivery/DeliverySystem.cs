@@ -45,7 +45,10 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
         base.Initialize();
 
         SubscribeLocalEvent<DeliveryComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<DeliverySpawnerComponent, SabotagableMachineOpenedEvent>(OnMachineOpened); // Pinwheel - traitor sabotage
+        // Pinwheel-stt - traitor sabotage
+        SubscribeLocalEvent<DeliverySpawnerComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        SubscribeLocalEvent<DeliverySpawnerComponent, SabotageCompleteEvent>(OnSabotageComplete);
+        // Pinwheel-end - traitor sabotage
 
         InitializeSpawning();
     }
@@ -79,7 +82,28 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
     // Pinwheel-stt - traitor sabotage
     private void OnMachineOpened(Entity<DeliverySpawnerComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
-        string message = Loc.GetString(ent.Comp.MessageText);
+        string message = Loc.GetString(ent.Comp.WarrantyMessage);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
+    }
+
+    private void OnSabotageComplete(Entity<DeliverySpawnerComponent> ent, ref SabotageCompleteEvent args)
+    {
+        var xform = Transform(ent);
+
+        if (_station.GetStationInMap(Transform(ent).MapID) is not { } stationId)
+            return;
+
+        if (!TryComp<StationBankAccountComponent>(stationId, out var account))
+            return; // cancel if the grid we're on has no bank account
+
+        string message = Loc.GetString(ent.Comp.SabotageMessage,
+            ("penalty", ent.Comp.SabotagePenalty));
+
+        _cargo.UpdateBankAccount(
+            (stationId, account),
+            -ent.Comp.SabotagePenalty,
+           _cargo.CreateAccountDistribution((stationId, account)));
+
         _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
     // Pinwheel-end - traitor sabotage
