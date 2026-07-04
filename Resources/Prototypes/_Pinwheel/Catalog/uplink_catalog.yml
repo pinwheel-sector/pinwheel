@@ -1,0 +1,13 @@
+- type: listing
+  id: uplinkMailboxAutohacker
+  name: uplink-mailbox-autohacker-name
+  description: uplink-mailbox-autohacker-desc
+  productEntity: MailboxAutohacker
+  categories: [ UplinkObjective ]
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerObjectiveWhitelistCondition
+    whitelist:
+      components:
+      - SabotageMailboxCondition

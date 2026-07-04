@@ -4,6 +4,7 @@ using Content.Shared.EntityTable.EntitySelectors;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
+
 namespace Content.Shared.Delivery;
 
 /// <summary>
@@ -74,5 +75,11 @@ public sealed partial class DeliverySpawnerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public ProtoId<CargoAccountPrototype> PenaltyBankAccount = "Cargo";
+
+    /// <summary>
+    /// Is the sabotage complete. Checked by the objective
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool SabotageComplete = false;
     // Pinwheel-end - traitor sabotage
 }

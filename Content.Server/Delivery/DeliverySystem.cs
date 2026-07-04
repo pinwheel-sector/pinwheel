@@ -99,6 +99,8 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
         string message = Loc.GetString(ent.Comp.SabotageMessage,
             ("penalty", ent.Comp.SabotagePenalty));
 
+        ent.Comp.SabotageComplete = true;
+
         _cargo.UpdateBankAccount(
             (stationId, account),
             -ent.Comp.SabotagePenalty,

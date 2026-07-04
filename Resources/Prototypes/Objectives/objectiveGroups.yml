@@ -53,6 +53,7 @@
     # Pinwheel-stt - traitor objectives
     StealServerDiskCrewMonitor: 1
     StealServerDiskResearch: 1
+    SabotageMailbox: 1
     # Pinwheel-end - traitor objectives
 
 #misc objectives that don't fall other another category

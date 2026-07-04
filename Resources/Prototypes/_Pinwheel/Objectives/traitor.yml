@@ -1,5 +1,19 @@
 # the upstream naming patterns are nonsense so i'm not going to follow them - arenaconspiracy
 
+## Cargo
+- type: entity
+  parent: BaseTraitorObjective
+  id: SabotageMailbox
+  name: Sabotage Cargo's mailbox
+  description: Find the hacking tool in your uplink and insert it into the machine. Make sure nobody pulls it out ahead of time.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: _Pinwheel/Objects/Devices/autohacker.rsi
+      state: icon
+  - type: SabotageMailboxCondition
+
 ## Medical
 - type: entity
   abstract: true
