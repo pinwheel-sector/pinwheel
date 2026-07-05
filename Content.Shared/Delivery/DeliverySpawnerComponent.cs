@@ -56,13 +56,13 @@ public sealed partial class DeliverySpawnerComponent : Component
     /// Message to use when the maintenance panel is taken off
     /// </summary>
     [DataField]
-    public string WarrantyMessage = "delivery-warranty-message";
+    public LocId WarrantyMessage = "delivery-warranty-message";
 
     /// <summary>
     /// Message to use when the sabotage macguffin does its thing
     /// </summary>
     [DataField]
-    public string SabotageMessage = "delivery-sabotage-message";
+    public LocId SabotageMessage = "delivery-sabotage-message";
 
     /// <summary>
     /// Spesos to withdraw when the sabotage doodad completes its job
