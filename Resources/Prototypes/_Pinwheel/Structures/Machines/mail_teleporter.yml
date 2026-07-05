@@ -145,7 +145,7 @@
   description: A compact device designed for shunting into NanoTrasen bluespace mailboxes, using their hardware to authorize illicit transactions. Simply jam it anywhere on the circuit board and let it do its magic. The dream of script-kiddies sectorwide.
   components:
   - type: Sprite
-    sprite: _Pinwheel/Objects/Devices/autohacker.rsi
+    sprite: _Pinwheel/Devices/autohacker.rsi
     state: icon
   - type: Item
     shape:

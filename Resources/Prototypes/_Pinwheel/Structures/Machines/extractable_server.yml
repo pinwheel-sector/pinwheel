@@ -170,7 +170,6 @@
     - Science
 
 ## Construction Graph
-
 - type: constructionGraph
   id: ExtractableServer
   start: lid
@@ -247,7 +246,7 @@
   description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Hippocrates" analytical software, helping crew monitor servers process vital signs en-masse.'
   components:
   - type: Sprite
-    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    sprite: _Pinwheel/Devices/serverdisk.rsi
     layers:
     - state: icon
     - state: label
@@ -262,10 +261,24 @@
   description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Archimedes" analytical software, letting research servers process scientific data more efficiently.' # this will need some other effect when research points are axed. obviously
   components:
   - type: Sprite
-    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    sprite: _Pinwheel/Devices/serverdisk.rsi
     layers:
     - state: icon
     - state: label
       color: "#92f"
   - type: StealTarget
     stealGroup: ServerDiskResearch
+
+- type: stealTargetGroup
+  id: ServerDiskCrewMonitor
+  name: steal-target-groups-serverdisk-crewmonitor
+  sprite:
+    sprite: _Pinwheel/Devices/serverdisk.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: ServerDiskResearch
+  name: steal-target-groups-serverdisk-research
+  sprite:
+    sprite: _Pinwheel/Devices/serverdisk.rsi
+    state: icon
