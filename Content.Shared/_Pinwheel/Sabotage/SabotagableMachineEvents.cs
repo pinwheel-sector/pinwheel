@@ -43,7 +43,8 @@ public sealed class SabotageToolRemoveEvent(EntityUid user, EntityUid target) : 
 /// <summary>
 /// Raised by construction graphs to indicate the tool container should open
 /// </summary>
-public sealed class SabotagableMachineOpenedEvent : EntityEventArgs;
+[DataDefinition]
+public sealed partial class SabotagableMachineOpenedEvent : EntityEventArgs;
 
 /// <summary>
 /// Raised when the sabotage process is complete
@@ -53,17 +54,11 @@ public sealed class SabotageCompleteEvent : EntityEventArgs;
 /// <summary>
 /// Used by <see cref=SabotagableMachineSystem/> for the insertion doafter
 /// </summary>
-/// <remarks>
-/// DO NOT USE anywhere else
-/// </remarks>
 [Serializable, NetSerializable]
 public sealed partial class SabotageToolInsertDoAfterEvent : SimpleDoAfterEvent;
 
 /// <summary>
 /// Used by <see cref=SabotagableMachineSystem/> for the removal doafter
 /// </summary>
-/// <remarks>
-/// DO NOT USE anywhere else
-/// </remarks>
 [Serializable, NetSerializable]
 public sealed partial class SabotageToolRemoveDoAfterEvent : SimpleDoAfterEvent;
