@@ -7,6 +7,7 @@
   id: TraitorObjectives
   weights: # TODO: think these through
     TraitorSabotageAts: 1
+    TraitorSabotageMailbox: 1
     TraitorStealAntiqueLaser: 1
     TraitorStealCaptainId: 1
     TraitorStealCaptainJetpack: 1
@@ -255,6 +256,18 @@
 # Cargo
 - type: entity
   parent: BaseTraitorSabotageCargo
+  id: TraitorSabotageAts
+  name: Sabotage the Automated Trade Station # TODO: this should be a LocId on a component
+  description: Find the beacon in your uplink. Deploy it on the ATS and defend it whilst it breaches it's firewall. # ditto
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Tools/hijack_beacon.rsi
+      state: extraction_point
+  - type: HijackTradeStationCondition
+
+- type: entity
+  parent: BaseTraitorSabotageCargo
   id: TraitorSabotageMailbox
   name: Sabotage Cargo's mailbox
   description: Find the hacking tool in your uplink and insert it into the machine. Make sure nobody pulls it out ahead of time.
@@ -265,18 +278,6 @@
       sprite: _Pinwheel/Objects/Devices/autohacker.rsi
       state: icon
   - type: SabotageMailboxCondition
-
-- type: entity
-  parent: BaseTraitorSabotageCargo
-  id: TraitorSabotageAts
-  name: Sabotage the Automated Trade Station # TODO: make this a loc string via components
-  description: Find the beacon in your uplink. Deploy it on the ATS and defend it whilst it breaches it's firewall. # ditto
-  components:
-  - type: Objective
-    icon:
-      sprite: Objects/Tools/hijack_beacon.rsi
-      state: extraction_point
-  - type: HijackTradeStationCondition
 
 # Engineering
 
