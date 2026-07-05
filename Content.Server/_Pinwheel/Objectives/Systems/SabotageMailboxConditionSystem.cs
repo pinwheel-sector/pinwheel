@@ -18,7 +18,7 @@ public sealed class SabotageMailboxConditionSystem : EntitySystem
     {
         var enumerator = EntityQueryEnumerator<DeliverySpawnerComponent>();
         args.Progress = 0f;
-        // If there's any hacked trade station, succeed.
+        // If there's any hacked mailbox, succeed.
         while (enumerator.MoveNext(out var comp))
         {
             if (!comp.SabotageComplete)

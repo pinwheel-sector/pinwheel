@@ -53,7 +53,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         while (query.MoveNext(out var uid, out var machine))
         {
             if (machine.StatusSabotaged || !_power.IsPowered(uid))
-                continue; // skip if we're not being sabotaged or we're missing power
+                continue; // skip if we're already sabotaged or we're missing power
 
             if ((curTime < machine.SabotageComplete) || (!machine.StatusSabotaging))
                 continue; // skip if we're not being sabotaged or it's not done yet
@@ -65,7 +65,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
     }
 
     private void ProcessTool(Entity<SabotagableMachineComponent> ent, bool inserting, EntityEventArgs raisedEvent, EntityUid? user)
-    { // helper function to handle tool moving et alii
+    { // helper function to handle tool moving feedback
         var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
 
         _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
@@ -99,7 +99,6 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         if (ent.Comp.ToolInsertTime == null)
         { // if we don't have a doafter just cram it in
-            // TODO: make this a helper function dear lord
             _container.Insert(args.Used, container);
             ProcessTool(ent, true, ev, args.User);
         }
@@ -208,9 +207,8 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         var curTime = _timing.CurTime;
 
-        if (!args.Powered) // if we're losing power
-        {
-
+        if (!args.Powered)
+        { // if we're losing power
             ent.Comp.SabotageTimeStored = (ent.Comp.SabotageComplete - curTime); // store our remaining time
             return; // we did our job
         }

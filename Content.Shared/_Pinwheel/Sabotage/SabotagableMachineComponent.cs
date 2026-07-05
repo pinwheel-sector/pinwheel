@@ -66,17 +66,14 @@ public sealed partial class SabotagableMachineComponent : Component
     public string ToolContainerId = "sabotage_container";
 
     /// <summary>
-    /// Length of doafter for inserting the sabotage tool
+    /// Length of doafter for inserting the sabotage tool, if null the interaction completes instantly
     /// </summary>
-    /// <remarks>
-    /// If null the interaction completes instantly
-    /// </remarks>
     [DataField, AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan? ToolInsertTime = TimeSpan.FromSeconds(6);
 
     /// <summary>
-    /// Length of doafter for removing the sabotage tool
+    /// Length of doafter for removing the sabotage tool, if null the interaction completes instantly
     /// </summary>
     [DataField, AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]

@@ -89,8 +89,8 @@
         !type:DamageTrigger
         damage: 100
       behaviors:
-        - !type:ChangeConstructionNodeBehavior
-          node: bare
+      - !type:ChangeConstructionNodeBehavior
+        node: bare
 
 ## Sound Collections
 - type: soundCollection
@@ -138,9 +138,6 @@
       broadcast: false
 
 ## Macguffin
-- type: Tag
-  id: MailboxAutohacker
-
 - type: entity
   parent: BaseItem
   id: MailboxAutohacker
@@ -156,3 +153,5 @@
   - type: Tag
     tags: [ MailboxAutohacker ]
 
+- type: Tag
+  id: MailboxAutohacker
