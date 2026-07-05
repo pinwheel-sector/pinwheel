@@ -74,8 +74,6 @@
       prob: 0.03
     - id: MobMothroach
       prob: 0.008
-    - id: MobMoproach
-      prob: 0.004
 
 - type: entity
   id: SnailMigrationLowPop
@@ -139,8 +137,6 @@
         children: # Increased chances for special roaches on purpose. Makes it a bit more interesting.
         - id: MobCockroach
         - id: MobMothroach
-        - id: MobMoproach
-          weight: 0.5
       - !type:GroupSelector
         children:
         - id: MobMouse

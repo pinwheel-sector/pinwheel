@@ -1,5 +1,6 @@
 using Content.Server.Cargo.Systems;
 using Content.Server.Chat.Systems;
+using Content.Server.Radio.EntitySystems; // Pinwheel - traitor sabotage
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords.Systems;
 using Content.Shared.Cargo.Components;
@@ -9,6 +10,7 @@ using Content.Shared.Delivery;
 using Content.Shared.FingerprintReader;
 using Content.Shared.Labels.EntitySystems;
 using Content.Shared.StationRecords;
+using Content.Shared._Pinwheel.Sabotage; // Pinwheel - traitor sabotage
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -24,6 +26,7 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
     [Dependency] private CargoSystem _cargo = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private RadioSystem _radio = default!; // Pinwheel - traitor sabotage
     [Dependency] private StationRecordsSystem _records = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private FingerprintReaderSystem _fingerprintReader = default!;
@@ -42,6 +45,10 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
         base.Initialize();
 
         SubscribeLocalEvent<DeliveryComponent, MapInitEvent>(OnMapInit);
+        // Pinwheel-stt - traitor sabotage
+        SubscribeLocalEvent<DeliverySpawnerComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        SubscribeLocalEvent<DeliverySpawnerComponent, SabotageCompleteEvent>(OnSabotageComplete);
+        // Pinwheel-end - traitor sabotage
 
         InitializeSpawning();
     }
@@ -71,6 +78,37 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
 
         Dirty(ent);
     }
+
+    // Pinwheel-stt - traitor sabotage
+    private void OnMachineOpened(Entity<DeliverySpawnerComponent> ent, ref SabotagableMachineOpenedEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.WarrantyMessage);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
+    }
+
+    private void OnSabotageComplete(Entity<DeliverySpawnerComponent> ent, ref SabotageCompleteEvent args)
+    {
+        var xform = Transform(ent);
+
+        if (_station.GetStationInMap(Transform(ent).MapID) is not { } stationId)
+            return;
+
+        if (!TryComp<StationBankAccountComponent>(stationId, out var account))
+            return; // cancel if the grid we're on has no bank account
+
+        string message = Loc.GetString(ent.Comp.SabotageMessage,
+            ("penalty", ent.Comp.SabotagePenalty));
+
+        ent.Comp.SabotageComplete = true;
+
+        _cargo.UpdateBankAccount(
+            (stationId, account),
+            -ent.Comp.SabotagePenalty,
+           _cargo.CreateAccountDistribution((stationId, account)));
+
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
+    }
+    // Pinwheel-end - traitor sabotage
 
     protected override void GrantSpesoReward(Entity<DeliveryComponent?> ent)
     {

@@ -1,6 +1,10 @@
+using Content.Shared.Cargo.Prototypes; // Pinwheel - traitor sabotage
+using Content.Shared.Radio; // Pinwheel - traitor sabotage
 using Content.Shared.EntityTable.EntitySelectors;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
+
 namespace Content.Shared.Delivery;
 
 /// <summary>
@@ -40,4 +44,42 @@ public sealed partial class DeliverySpawnerComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? OpenSound = new SoundCollectionSpecifier("storageRustle");
+
+    // Pinwheel-stt - traitor sabotage
+    /// <summary>
+    /// The radio channel to whine on when something goes wrong
+    /// </summary>
+    [DataField]
+    public ProtoId<RadioChannelPrototype> MessageChannel = "Supply";
+
+    /// <summary>
+    /// Message to use when the maintenance panel is taken off
+    /// </summary>
+    [DataField]
+    public LocId WarrantyMessage = "delivery-warranty-message";
+
+    /// <summary>
+    /// Message to use when the sabotage macguffin does its thing
+    /// </summary>
+    [DataField]
+    public LocId SabotageMessage = "delivery-sabotage-message";
+
+    /// <summary>
+    /// Spesos to withdraw when the sabotage doodad completes its job
+    /// </summary>
+    [DataField]
+    public int SabotagePenalty = 3500;
+
+    /// <summary>
+    /// The account to drain from when the sabotage gadget finishes
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<CargoAccountPrototype> PenaltyBankAccount = "Cargo";
+
+    /// <summary>
+    /// Is the sabotage complete. Checked by the objective
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool SabotageComplete = false;
+    // Pinwheel-end - traitor sabotage
 }

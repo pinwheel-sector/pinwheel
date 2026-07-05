@@ -98,6 +98,7 @@
   - type: StealCondition
     descriptionText: objective-description-traitor-steal-general
 
+## Medical
 - type: entity
   abstract: true
   parent: BaseTraitorStealObjective
@@ -252,6 +253,19 @@
 # Security
 
 # Cargo
+- type: entity
+  parent: BaseTraitorSabotageCargo
+  id: TraitorSabotageMailbox
+  name: Sabotage Cargo's mailbox
+  description: Find the hacking tool in your uplink and insert it into the machine. Make sure nobody pulls it out ahead of time.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: _Pinwheel/Objects/Devices/autohacker.rsi
+      state: icon
+  - type: SabotageMailboxCondition
+
 - type: entity
   parent: BaseTraitorSabotageCargo
   id: TraitorSabotageAts
