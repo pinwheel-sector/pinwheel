@@ -1,5 +1,5 @@
-﻿using Content.Shared.Radio; // Pinwheel - traitor sabotage
-using Content.Shared.Medical.SuitSensor;
+﻿using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Radio; // Pinwheel - traitor sabotage
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
 
