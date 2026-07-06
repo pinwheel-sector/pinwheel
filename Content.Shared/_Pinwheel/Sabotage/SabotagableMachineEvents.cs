@@ -6,7 +6,7 @@ namespace Content.Shared._Pinwheel.Sabotage;
 /// <summary>
 /// Raised when the sabotage tool is finished inserting
 /// </summary>
-public sealed class SabotageToolInsertEvent(EntityUid user, EntityUid used, EntityUid target) : EntityEventArgs
+public sealed class SabotageToolInsertEvent(EntityUid user, EntityUid used) : EntityEventArgs
 {
     /// <summary>
     /// The entity inserting the tool
@@ -17,27 +17,17 @@ public sealed class SabotageToolInsertEvent(EntityUid user, EntityUid used, Enti
     /// The sabotage tool being inserted
     /// </summary>
     public readonly EntityUid Used = used;
-
-    /// <summary>
-    /// The entity getting sabotaged
-    /// </summary>
-    public readonly EntityUid Target = target;
 }
 
 /// <summary>
-/// Raised when the sabotage tool is finished removing
+/// Raised when the sabotage tool is finished being removed
 /// </summary>
-public sealed class SabotageToolRemoveEvent(EntityUid user, EntityUid target) : EntityEventArgs
+public sealed class SabotageToolRemoveEvent(EntityUid user) : EntityEventArgs
 {
     /// <summary>
     /// The entity ejecting the tool
     /// </summary>
     public readonly EntityUid User = user;
-
-    /// <summary>
-    /// The entity getting (un)sabotaged
-    /// </summary>
-    public readonly EntityUid Target = target;
 }
 
 /// <summary>

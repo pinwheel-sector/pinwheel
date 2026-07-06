@@ -108,6 +108,9 @@
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   # functional
+  - type: VoiceOverride
+    nameOverride: Crew Monitoring Server
+    speechVerbOverride: Robotic
   - type: SingletonDeviceNetServer
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -147,6 +150,9 @@
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   # functional
+  - type: VoiceOverride
+    nameOverride: Research Server
+    speechVerbOverride: Robotic
   - type: ResearchServer
   - type: TechnologyDatabase
     supportedDisciplines:

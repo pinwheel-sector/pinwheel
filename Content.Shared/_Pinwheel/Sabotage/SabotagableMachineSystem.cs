@@ -75,7 +75,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
             return; // cancel if the sabotage is complete. can't jack it twice
 
         ent.Comp.StatusSabotaging = inserting;
-        RaiseLocalEvent(ent.Owner, raisedEvent);
+        RaiseLocalEvent(ent.Owner, (object)raisedEvent);
 
         if (inserting)
         {
@@ -95,7 +95,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (!_whitelist.IsValid(ent.Comp.ToolWhitelist, args.Used))
             return; // cancel if not our sabotage tool
 
-        var ev = new SabotageToolInsertEvent(args.User, args.Used, ent.Owner);
+        var ev = new SabotageToolInsertEvent(args.User, args.Used);
 
         if (ent.Comp.ToolInsertTime == null)
         { // if we don't have a doafter just cram it in
@@ -130,7 +130,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
             return; // doafter can't start w/o a container but we need the out var
 
-        var ev = new SabotageToolInsertEvent(args.User, args.Used!.Value, ent.Owner);
+        var ev = new SabotageToolInsertEvent(args.User, args.Used!.Value);
 
         _container.Insert(args.Used!.Value, container);
         ProcessTool(ent, true, ev, args.User);
@@ -147,7 +147,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (container.ContainedEntities.Count < 1)
             return; // cancel if the container is empty
 
-        var ev = new SabotageToolRemoveEvent(args.User, ent.Owner);
+        var ev = new SabotageToolRemoveEvent(args.User);
 
         if (ent.Comp.ToolRemoveTime == null)
         { // if we don't have a doafter just yank it out
@@ -185,7 +185,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
             return; // doafter can't start w/o a container but we need the out var
 
-        var ev = new SabotageToolRemoveEvent(args.User, ent.Owner);
+        var ev = new SabotageToolRemoveEvent(args.User);
 
         foreach (var tool in container.ContainedEntities)
         {
