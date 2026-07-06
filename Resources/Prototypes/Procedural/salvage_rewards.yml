@@ -54,7 +54,6 @@
   weights:
     # rare machinery
     AmmoTechFabCircuitboard: 1.0
-    ResearchAndDevelopmentServerMachineCircuitboard: 1.0
     PowerCellAntiqueProto: 0.25
     # basic weapons
     CrateArmorySMG: 1.0

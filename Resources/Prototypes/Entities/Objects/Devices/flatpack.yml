@@ -255,15 +255,6 @@
 
 - type: entity
   parent: BaseFlatpack
-  id: CrewMonitoringServerFlatpack
-  name: crew monitoring server flatpack
-  description: A flatpack used for constructing a crew monitoring server.
-  components:
-  - type: Flatpack
-    entity: CrewMonitoringServer
-
-- type: entity
-  parent: BaseFlatpack
   id: CrewMonitoringComputerFlatpack
   name: crew monitoring computer flatpack
   description: A flatpack used for constructing a crew monitoring console.

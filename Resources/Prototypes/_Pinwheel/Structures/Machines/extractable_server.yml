@@ -12,7 +12,7 @@
     - state: base
     - state: disk
       map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
-    - state: shell
+    - state: lid
       map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-right
       color: "#999"
@@ -99,7 +99,7 @@
     - state: base
     - state: disk
       map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
-    - state: shell
+    - state: lid
       map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-right
       map: [ "enum.SabotagableMachineVisualLayers.Label" ]
@@ -141,7 +141,7 @@
     - state: base
     - state: disk
       map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
-    - state: shell
+    - state: lid
       map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-leftright
       map: [ "enum.SabotagableMachineVisualLayers.Label" ]
