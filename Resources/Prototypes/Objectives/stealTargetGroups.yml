@@ -222,13 +222,6 @@
     state: icon_alt
 
 - type: stealTargetGroup
-  id: ResearchAndDevelopmentServerMachineCircuitboard
-  name: steal-target-groups-research-and-development-server-machine-circuitboard
-  sprite:
-    sprite: Objects/Misc/module.rsi
-    state: science
-
-- type: stealTargetGroup
   id: FireAxe
   name: steal-target-groups-fire-axe
   sprite:

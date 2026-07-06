@@ -1,16 +1,20 @@
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Medical.SuitSensors;
+using Content.Server.Radio.EntitySystems; // Pinwheel - traitor sabotage
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Events;
+using Content.Shared.Power.EntitySystems; // Pinwheel - traitor sabotage
+using Content.Shared._Pinwheel.Sabotage; // Pinwheel - traitor sabotage
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Components;
-using Robust.Shared.Containers; // Pinwheel - server sabotage
 
 namespace Content.Server.Medical.CrewMonitoring;
 
 public sealed partial class CrewMonitoringServerSystem : EntitySystem
 {
+    [Dependency] private SharedPowerReceiverSystem _power = default!; // Pinwheel - traitor sabotage
+    [Dependency] private RadioSystem _radio = default!; // Pinwheel - traitor sabotage
     [Dependency] private SuitSensorSystem _sensors = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
@@ -25,8 +29,10 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         SubscribeLocalEvent<CrewMonitoringServerComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<CrewMonitoringServerComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
         SubscribeLocalEvent<CrewMonitoringServerComponent, DeviceNetServerDisconnectedEvent>(OnDisconnected);
-        SubscribeLocalEvent<CrewMonitoringServerComponent, EntInsertedIntoContainerMessage>(OnContainerInserted); // Pinwheel - server sabotage
-        SubscribeLocalEvent<CrewMonitoringServerComponent, EntRemovedFromContainerMessage>(OnContainerRemoved); // Pinwheel - server sabotage
+        // Pinwheel-stt - traitor sabotage
+        SubscribeLocalEvent<CrewMonitoringServerComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        SubscribeLocalEvent<CrewMonitoringServerComponent, SabotageToolRemoveEvent>(OnToolRemoved); // the disk is the "tool"
+        // Pinwheel-end - traitor sabotage
     }
 
     public override void Update(float frameTime)
@@ -60,13 +66,13 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         if (sensorStatus == null)
             return;
 
-        // Pinwheel-stt - server sabotage
-        if (!component.HasDisk)
-            {
+        // Pinwheel-stt - traitor sabotage
+        if (component.Sabotaged)
+        {
             sensorStatus.TotalDamage = null;
             sensorStatus.TotalDamageThreshold = null;
-            }
-        // Pinwheel-end - server sabotage
+        }
+        // Pinwheel-end - traitor sabotage
 
         sensorStatus.Timestamp = _gameTiming.CurTime;
         component.SensorStatus[args.SenderAddress] = sensorStatus;
@@ -121,15 +127,25 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         component.SensorStatus.Clear();
     }
 
-    // Pinwheel-stt - server sabotage
-    public void OnContainerInserted(Entity<CrewMonitoringServerComponent> ent, ref EntInsertedIntoContainerMessage args)
+    // Pinwheel-stt - traitor sabotage
+    private void OnMachineOpened(Entity<CrewMonitoringServerComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
-            ent.Comp.HasDisk = true;
+        if (!_power.IsPowered(ent.Owner))
+            return; // cancel if unpowered
+
+        string message = Loc.GetString(ent.Comp.MessageDamage);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
 
-    public void OnContainerRemoved(Entity<CrewMonitoringServerComponent> ent, ref EntRemovedFromContainerMessage args)
+    private void OnToolRemoved(Entity<CrewMonitoringServerComponent> ent, ref SabotageToolRemoveEvent args)
     {
-            ent.Comp.HasDisk = false;
+        ent.Comp.Sabotaged = true;
+
+        if (!_power.IsPowered(ent.Owner))
+            return; // cancel if unpowered
+
+        string message = Loc.GetString(ent.Comp.MessageSabotage);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
-    // Pinwheel-end - server sabotage
+    // Pinwheel-end - traitor sabotage
 }

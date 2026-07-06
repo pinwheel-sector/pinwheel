@@ -38,18 +38,6 @@
   category: cargoproduct-category-name-science
   group: market
 
-# Pinwheel-stt - server sabotage
-# type: cargoProduct
-# id: CrewMonitoring
-# icon:
-#   sprite: Structures/Machines/server.rsi
-#   state: server
-# product: CrateCrewMonitoring
-# cost: 2000
-# category: cargoproduct-category-name-science
-# group: market
-# Pinwheel-end - server sabotage
-
 - type: cargoProduct
   id: StationAiCore
   icon:

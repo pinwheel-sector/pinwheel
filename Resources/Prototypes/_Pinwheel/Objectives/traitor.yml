@@ -275,7 +275,7 @@
   - type: Objective
     difficulty: 1
     icon:
-      sprite: _Pinwheel/Objects/Devices/autohacker.rsi
+      sprite: _Pinwheel/Devices/autohacker.rsi
       state: icon
   - type: SabotageMailboxCondition
 

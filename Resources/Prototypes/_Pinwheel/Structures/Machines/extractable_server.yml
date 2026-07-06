@@ -11,14 +11,12 @@
     layers:
     - state: base
     - state: disk
-      map: [ "enum.ExtractableServerVisualLayers.Disk" ]
-    - state: shell
-      map: [ "enum.ExtractableServerVisualLayers.Shell" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
     - state: lid
-      map: [ "enum.ExtractableServerVisualLayers.Lid" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-right
       color: "#999"
-      map: [ "enum.ExtractableServerVisualLayers.Label" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Label" ]
     - state: power-on
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
@@ -29,21 +27,19 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: {visible: true}
           False: {visible: false}
-      enum.ExtractableServerVisuals.LidConstruction:
-        enum.ExtractableServerVisualLayers.Label:
-          1: {visible: true}
+      enum.SabotagableMachineVisuals.ShellState:
+        enum.SabotagableMachineVisualLayers.Cover:
+          2: {state: lid}
+          1: {state: shell}
           0: {visible: false}
-        enum.ExtractableServerVisualLayers.Lid:
-          1: {visible: true}
+        enum.SabotagableMachineVisualLayers.Label:
+          2: {visible: true}
+          1: {visible: false}
           0: {visible: false}
-      enum.ExtractableServerVisuals.ShellConstruction:
-        enum.ExtractableServerVisualLayers.Shell:
-          1: {visible: true}
-          0: {visible: false}
-      enum.ExtractableServerVisuals.Disk:
-        enum.ExtractableServerVisualLayers.Disk:
-          1: {visible: true}
-          0: {visible: false}
+      enum.SabotagableMachineVisuals.ToolState:
+        enum.SabotagableMachineVisualLayers.Tool:
+          True: {visible: true}
+          False: {visible: false}
   # audio
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -60,7 +56,8 @@
     powerLoad: 200
   - type: ContainerContainer
     containers:
-      server_disk: !type:Container
+      sabotage_container: !type:ContainerSlot
+  - type: SabotagableMachine
   - type: Construction
     graph: ExtractableServer
     deconstructionTarget: null
@@ -101,18 +98,19 @@
     layers: # ideally i wouldn't have to redefine the whole thing to just change the label sprite and color. but.
     - state: base
     - state: disk
-      map: [ "enum.ExtractableServerVisualLayers.Disk" ]
-    - state: shell
-      map: [ "enum.ExtractableServerVisualLayers.Shell" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
     - state: lid
-      map: [ "enum.ExtractableServerVisualLayers.Lid" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-right
-      map: [ "enum.ExtractableServerVisualLayers.Label" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Label" ]
       color: "#4df"
     - state: power-on
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   # functional
+  - type: VoiceOverride
+    nameOverride: Crew Monitoring Server
+    speechVerbOverride: Robotic
   - type: SingletonDeviceNetServer
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -125,7 +123,7 @@
   - type: CrewMonitoringServer
   - type: ContainerFill
     containers:
-      server_disk:
+      sabotage_container:
       - ServerDiskCrewMonitor
   - type: GuideHelp
     guides:
@@ -142,18 +140,19 @@
     layers:
     - state: base
     - state: disk
-      map: [ "enum.ExtractableServerVisualLayers.Disk" ]
-    - state: shell
-      map: [ "enum.ExtractableServerVisualLayers.Shell" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
     - state: lid
-      map: [ "enum.ExtractableServerVisualLayers.Lid" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-leftright
-      map: [ "enum.ExtractableServerVisualLayers.Label" ]
+      map: [ "enum.SabotagableMachineVisualLayers.Label" ]
       color: "#92f"
     - state: power-on
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   # functional
+  - type: VoiceOverride
+    nameOverride: Research Server
+    speechVerbOverride: Robotic
   - type: ResearchServer
   - type: TechnologyDatabase
     supportedDisciplines:
@@ -163,14 +162,13 @@
     - CivilianServices
   - type: ContainerFill
     containers:
-      server_disk:
+      sabotage_container:
       - ServerDiskResearch
   - type: GuideHelp
     guides:
     - Science
 
 ## Construction Graph
-
 - type: constructionGraph
   id: ExtractableServer
   start: lid
@@ -178,8 +176,8 @@
   - node: lid
     actions:
     - !type:VisualizerDataInt
-      key: "enum.ExtractableServerVisuals.LidConstruction"
-      data: 1
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 2
     edges:
     - to: shell
       completed:
@@ -194,10 +192,7 @@
   - node: shell
     actions:
     - !type:VisualizerDataInt
-      key: "enum.ExtractableServerVisuals.LidConstruction"
-      data: 0
-    - !type:VisualizerDataInt
-      key: "enum.ExtractableServerVisuals.ShellConstruction"
+      key: "enum.SabotagableMachineVisuals.ShellState"
       data: 1
     edges:
     - to: bare
@@ -213,23 +208,11 @@
   - node: bare
     actions:
     - !type:VisualizerDataInt
-      key: "enum.ExtractableServerVisuals.LidConstruction"
+      key: "enum.SabotagableMachineVisuals.ShellState"
       data: 0
-    - !type:VisualizerDataInt
-      key: "enum.ExtractableServerVisuals.ShellConstruction"
-      data: 0
-    edges:
-    - to: empty
-      steps:
-      - tool: Prying
-        doAfter: 1
-  - node: empty # easier than faffing with other components handling extraction and visuals
-    actions:
-    - !type:VisualizerDataInt
-      key: "enum.ExtractableServerVisuals.Disk"
-      data: 0
-    - !type:EmptyAllContainers
-      pickup: true
+    - !type:RaiseEvent
+      event: !type:SabotagableMachineOpenedEvent
+      broadcast: false
 
 ## Disks
 - type: entity
@@ -247,7 +230,7 @@
   description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Hippocrates" analytical software, helping crew monitor servers process vital signs en-masse.'
   components:
   - type: Sprite
-    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    sprite: _Pinwheel/Devices/serverdisk.rsi
     layers:
     - state: icon
     - state: label
@@ -262,10 +245,24 @@
   description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Archimedes" analytical software, letting research servers process scientific data more efficiently.' # this will need some other effect when research points are axed. obviously
   components:
   - type: Sprite
-    sprite: _Pinwheel/Objects/Devices/serverdisk.rsi
+    sprite: _Pinwheel/Devices/serverdisk.rsi
     layers:
     - state: icon
     - state: label
       color: "#92f"
   - type: StealTarget
     stealGroup: ServerDiskResearch
+
+- type: stealTargetGroup
+  id: ServerDiskCrewMonitor
+  name: steal-target-groups-serverdisk-crewmonitor
+  sprite:
+    sprite: _Pinwheel/Devices/serverdisk.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: ServerDiskResearch
+  name: steal-target-groups-serverdisk-research
+  sprite:
+    sprite: _Pinwheel/Devices/serverdisk.rsi
+    state: icon

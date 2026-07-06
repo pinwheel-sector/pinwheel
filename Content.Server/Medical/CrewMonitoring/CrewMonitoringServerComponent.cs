@@ -1,5 +1,7 @@
 ﻿using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Radio; // Pinwheel - traitor sabotage
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -19,11 +21,29 @@ public sealed partial class CrewMonitoringServerComponent : Component
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]
     public float SensorTimeout = 10f;
 
-    // Pinwheel-stt - server sabotage
+    // Pinwheel-stt - traitor sabotage
     /// <summary>
-    /// Do we have the disk
+    /// Has this server been sabotaged
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public bool HasDisk = true;
-    // Pinwheel-end - server sabotage
+    public bool Sabotaged = false;
+
+    /// <summary>
+    /// The radio channel to whine on when something goes wrong
+    /// </summary>
+    [DataField]
+    public ProtoId<RadioChannelPrototype> MessageChannel = "Medical";
+
+    /// <summary>
+    /// Message to send when the server's shell is removed
+    /// </summary>
+    [DataField]
+    public LocId MessageDamage = "server-damage-message";
+
+    /// <summary>
+    /// Message to use when the disk is removed
+    /// </summary>
+    [DataField]
+    public LocId MessageSabotage = "server-sabotage-message";
+    // Pinwheel-end - traitor sabotage
 }

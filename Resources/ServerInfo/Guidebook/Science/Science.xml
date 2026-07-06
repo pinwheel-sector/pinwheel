@@ -13,7 +13,7 @@
 ## Technologies
   <Box>
     <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/>
-    <GuideEntityEmbed Entity="ResearchAndDevelopmentServer"/>
+    <GuideEntityEmbed Entity="ExtractableServerResearch"/>
   </Box>
 The most important thing inside your department is the R&D server, which stores unlocked technologies, and the R&D computer, which allows you to unlock [color=#a4885c]technologies[/color].
 
