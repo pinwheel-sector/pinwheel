@@ -37,13 +37,13 @@ public sealed partial class CrewMonitoringServerComponent : Component
     /// <summary>
     /// Message to send when the server's shell is removed
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public LocId MessageDamage = "server-damage-message";
 
     /// <summary>
     /// Message to use when the disk is removed
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public LocId MessageSabotage = "server-sabotage-message";
     // Pinwheel-end - traitor sabotage
 }

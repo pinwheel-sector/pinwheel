@@ -147,5 +147,5 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         string message = Loc.GetString(ent.Comp.MessageSabotage);
         _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
-    // Pinwheel-end - server sabotage
+    // Pinwheel-end - traitor sabotage
 }

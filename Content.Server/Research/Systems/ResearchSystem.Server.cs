@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Radio.EntitySystems; // Pinwheel - traitor sabotage
 using Content.Shared.Research.Components;
+using Content.Shared._Pinwheel.Sabotage; // Pinwheel - traitor sabotage
 using Robust.Shared.Containers; // Pinwheel - server sabotage
 
 namespace Content.Server.Research.Systems;
@@ -12,8 +14,10 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
-        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnContainerInserted); // Pinwheel - server sabotage
-        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnContainerRemoved); // Pinwheel - server sabotage
+        // Pinwheel-stt - traitor sabotage
+        SubscribeLocalEvent<ResearchServerComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        SubscribeLocalEvent<ResearchServerComponent, SabotageToolRemoveEvent>(OnToolRemoved); // the disk is the "tool"
+        // Pinwheel-end - traitor sabotage
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -151,17 +155,27 @@ public sealed partial class ResearchSystem
         return ev.Points;
     }
 
-    // Pinwheel-stt - server sabotage
-    public void OnContainerInserted(Entity<ResearchServerComponent> ent, ref EntInsertedIntoContainerMessage args)
+    // Pinwheel-stt - traitor sabotage
+    private void OnMachineOpened(Entity<ResearchServerComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
-            ent.Comp.HasDisk = true;
+        if (!CanRun(ent.Owner))
+            return; // cancel if unpowered
+
+        string message = Loc.GetString(ent.Comp.MessageDamage);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
 
-    public void OnContainerRemoved(Entity<ResearchServerComponent> ent, ref EntRemovedFromContainerMessage args)
+    private void OnToolRemoved(Entity<ResearchServerComponent> ent, ref SabotageToolRemoveEvent args)
     {
-            ent.Comp.HasDisk = false;
+        ent.Comp.Sabotaged = true;
+
+        if (!CanRun(ent.Owner))
+            return; // cancel if unpowered
+
+        string message = Loc.GetString(ent.Comp.MessageSabotage);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
-    // Pinwheel-end - server sabotage
+    // Pinwheel-end - traitor sabotage
 
     /// <summary>
     /// Adds a specified number of points to a server.
@@ -178,7 +192,7 @@ public sealed partial class ResearchSystem
             return;
 
         // Pinwheel-stt - server sabotage
-        if (!component.HasDisk)
+        if (component.Sabotaged)
             points = points / 2;
 
         component.Points += points;
