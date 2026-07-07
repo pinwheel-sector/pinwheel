@@ -1,0 +1,30 @@
+- type: entity
+  id: MindRoleTraitor
+  name: Traitor Mind Role
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    subtype: role-subtype-traitor
+    exclusiveAntag: true
+    antagPrototype: AntagTraitor
+    sortWeight: 50
+  - type: TraitorRole
+
+- type: antag
+  id: AntagTraitor
+  name: antagonist-preference-name-traitor
+  antagonist: true
+  setPreference: true
+  objective: antagonist-preference-desc-traitor
+  guides: [ Traitors ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+
+- type: antagSpecifier
+  id: AntagSpecifierTraitor
+  prefRoles: [ AntagTraitor ]
+  blacklist:
+    components:
+    - AntagImmune
+  mindRoles: [ MindRoleTraitor ]

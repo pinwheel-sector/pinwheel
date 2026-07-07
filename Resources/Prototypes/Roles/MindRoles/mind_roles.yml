@@ -251,16 +251,7 @@
   - type: ThiefRole
 
 # Traitors
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleTraitor
-  name: Traitor Role
-  components:
-  - type: MindRole
-    antagPrototype: Traitor
-    exclusiveAntag: true
-    subtype: role-subtype-traitor
-  - type: TraitorRole
+# moved to it's own file. bye - Pinwheel
 
 # Wizards
 - type: entity

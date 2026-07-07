@@ -15,7 +15,7 @@
         - !type:RoundDurationCondition
           max: 1
         children:
-        - id: Traitor
+        - id: MajorAntagTraitors # Pinwheel
           weight: 60
           conditions:
           - !type:HasBudgetCondition

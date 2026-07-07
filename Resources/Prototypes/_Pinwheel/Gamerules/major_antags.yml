@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseRoundstartAntagRule
+  id: MajorAntagTraitors
+  name: major antagonist - traitors # helps w/ toolshed visualize
+  components:
+  - type: DynamicRuleCost
+    cost: 100
+  - type: GameRule
+    minPlayers: 5
+    delay:
+      min: 240
+      max: 420
+  - type: AntagSelection
+    agentName: traitor-round-end-agent-name
+    lateJoinAdditional: true
+    antags:
+    - !type:LinearAntagCount
+      proto: AntagSpecifierTraitor
+      range:
+        min: 1
+        max: 8
+  - type: TraitorRule
+    traitorPrototypeId: AntagTraitor
+  - type: AntagRandomObjectives
+    maxDifficulty: 5
+    sets:
+    - groups: TraitorObjectiveGroups

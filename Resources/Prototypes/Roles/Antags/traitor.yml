@@ -1,29 +1,6 @@
-- type: antag
-  id: Traitor
-  name: roles-antag-syndicate-agent-name
-  antagonist: true
-  setPreference: true
-  objective: roles-antag-syndicate-agent-objective
-  guides: [ Traitors ]
-  requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 1h
-
-- type: antagSpecifier
-  abstract: true
-  parent: RestrictedAntag
-  id: BaseTraitor
-
-- type: antagSpecifier
-  parent: BaseTraitor
-  id: Traitor
-  prefRoles:
-  - Traitor
-  blacklist:
-    components:
-    - AntagImmune
-  mindRoles:
-  - MindRoleTraitor
+# the antag and antagSpecifier have been moved elsewhere
+# i have no fucking idea what the rest of this was doing here, these have nothing to do with traitors
+# and i have better things to do than to move them somewhere more appropriate right now - Pinwheel
 
 # Syndicate Operative Outfit - Monkey
 - type: startingGear
