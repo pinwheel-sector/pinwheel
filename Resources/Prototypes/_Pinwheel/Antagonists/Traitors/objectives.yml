@@ -324,7 +324,7 @@
   id: TraitorStealCaptainJetpack
   components:
   - type: StealCondition
-    stealGroup: CaptainJetpackFilled
+    stealGroup: JetpackCaptainFilled
 
 - type: entity
   parent: BaseTraitorStealHop
