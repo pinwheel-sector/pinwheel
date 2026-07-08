@@ -3,6 +3,7 @@
   name: Traitor Mind Role
   components:
   - type: MindRole
+    antag: true
     roleType: SoloAntagonist
     subtype: role-subtype-traitor
     exclusiveAntag: true
