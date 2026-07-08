@@ -20,8 +20,8 @@ namespace Content.IntegrationTests.Tests.GameRules;
 [TestFixture]
 public sealed class TraitorRuleTest : GameTest
 {
-    private const string TraitorGameRuleProtoId = "Traitor";
-    private const string TraitorAntagRoleName = "Traitor";
+    private const string TraitorGameRuleProtoId = "MajorAntagTraitors"; // Pinwheel - traitor remake
+    private const string TraitorAntagRoleName = "AntagTraitor"; // Pinwheel - traitor remake
     private static readonly ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
     private static readonly ProtoId<NpcFactionPrototype> NanotrasenFaction = "NanoTrasen";
 
