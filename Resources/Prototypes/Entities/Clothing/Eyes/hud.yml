@@ -3,9 +3,6 @@
   id: ClothingEyesHudBase
   abstract: true
   categories: [ HideSpawnMenu ]
-  components:
-  - type: StealTarget
-    stealGroup: ClothingEyesHuds
 
 - type: entity
   id: ShowSecurityIcons
@@ -251,9 +248,6 @@
   parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons]
   id: ClothingEyesGlassesHiddenSecurity
   suffix: Syndicate
-  components:
-  - type: StealTarget
-    stealGroup: ClothingEyesHuds
 
 - type: entity
   parent: [ClothingEyesHudMedical, ClothingHeadEyeBaseFlippable]

@@ -202,10 +202,8 @@
 - type: entity
   parent: ToiletGoldenEmpty
   id: ToiletGoldenDirtyWater
-  suffix: Dirty Water, StealTarget
+  suffix: Dirty Water # Pinwheel
   components:
-  - type: StealTarget
-    stealGroup: ToiletGoldenDirtyWater
   - type: Solution
     solution:
       reagents:

@@ -273,8 +273,6 @@
       map: ["flame"]
       visible: false
       shader: unshaded
-  - type: StealTarget
-    stealGroup: FlippoEngravedLighter
 
 - type: entity
   parent: [BaseBrandedLighter, BaseSyndicateContraband]

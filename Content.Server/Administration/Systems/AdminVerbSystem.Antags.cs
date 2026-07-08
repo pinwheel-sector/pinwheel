@@ -27,7 +27,6 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultInitialInfectedRule = "Zombie";
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
-    private static readonly EntProtoId DefaultThiefRule = "Thief";
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
@@ -140,21 +139,6 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", headRevName, Loc.GetString("admin-verb-make-head-rev")),
         };
         args.Verbs.Add(headRev);
-
-        var thiefName = Loc.GetString("admin-verb-text-make-thief");
-        Verb thief = new()
-        {
-            Text = thiefName,
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Hands/Gloves/Color/black.rsi"), "icon"),
-            Act = () =>
-            {
-                _antag.ForceMakeAntag<ThiefRuleComponent>(targetPlayer, DefaultThiefRule);
-            },
-            Impact = LogImpact.High,
-            Message = string.Join(": ", thiefName, Loc.GetString("admin-verb-make-thief")),
-        };
-        args.Verbs.Add(thief);
 
         var changelingName = Loc.GetString("admin-verb-text-make-changeling");
         Verb changeling = new()

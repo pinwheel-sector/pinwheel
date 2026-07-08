@@ -23,8 +23,6 @@
     - DoorBumpOpener
     - WhitelistChameleon
     - WhitelistChameleonIdCard
-  - type: StealTarget
-    stealGroup: IDCard
 
 #IDs with layers
 

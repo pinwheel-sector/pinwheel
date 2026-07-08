@@ -47,16 +47,7 @@
           - !type:PlayerCountCondition
             min: 10
       # Roundstart Minor Rules
-      - !type:GroupSelector
-        conditions:
-        - !type:RoundDurationCondition
-          max: 1
-        children:
-        - id: Thief
-          prob: 0.5
-          conditions:
-          - !type:HasBudgetCondition
-          - !type:MaxRuleOccurenceCondition
+      # NOTHING! - Pinwheel
       # Midround rules
       - !type:GroupSelector
         conditions:

@@ -65,8 +65,6 @@
             max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: StealTarget
-    stealGroup: AltarNanotrasen
 
 - type: entity
   id: AltarChaos

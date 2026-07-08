@@ -220,8 +220,6 @@
       state: cpu_supply
     - type: ComputerBoard
       prototype: ComputerSalvageExpedition
-    - type: StealTarget
-      stealGroup: SalvageExpeditionsComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -233,8 +231,6 @@
     state: cpu_supply
   - type: ComputerBoard
     prototype: ComputerShuttleCargo
-  - type: StealTarget
-    stealGroup: CargoShuttleConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
