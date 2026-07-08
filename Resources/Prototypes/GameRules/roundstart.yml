@@ -163,7 +163,7 @@
   - type: DynamicRuleCost
     cost: 200
 
-# traitor gamerules have been moved to their own directory - Pinwheel
+# traitor gamerules have been moved to their own directory - Pinwheel - traitor remake
 
 - type: entity
   id: Changeling
@@ -321,7 +321,7 @@
   id: DummyAntag
   prefRoles: # Only Station bound roles.
   - InitialInfected
-  - AntagTraitor # Pinwheel
+  - AntagTraitor # Pinwheel - traitor remake
   - Thief
   - HeadRev
 

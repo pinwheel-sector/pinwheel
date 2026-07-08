@@ -15,7 +15,7 @@
         - !type:RoundDurationCondition
           max: 1
         children:
-        - id: MajorAntagTraitors # Pinwheel
+        - id: MajorAntagTraitors # Pinwheel - traitor remake
           weight: 60
           conditions:
           - !type:HasBudgetCondition

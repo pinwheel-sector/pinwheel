@@ -23,7 +23,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private OutfitSystem _outfit = default!;
 
-    private static readonly EntProtoId DefaultTraitorRule = "MajorAntagTraitors"; // Pinwheel
+    private static readonly EntProtoId DefaultTraitorRule = "MajorAntagTraitors"; // Pinwheel - traitor remake
     private static readonly EntProtoId DefaultInitialInfectedRule = "Zombie";
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
