@@ -1,10 +1,9 @@
 # NOTICE:
-# the total objective difficulty traitors will accumulate is currently defined by the gamerule
+# the max objective difficulty traitors will get is currently defined by the gamerule
 # as of writing it's --> 5 <--
 # I Hope Whoever Thinks To Change That Also Updates This Comment Here
-# TODO: rethink objective difficulties as a whole
 # TODO: refactor objective difficulties to be defined in like the groups or something so it can be
-# # slapped in this file and nobody has to rip their hair out syncing comments between two files
+# # slapped here somewhere and nobody has to rip their hair out syncing comments between two files
 # TODO: refactor objectives to store the name and description as LocId on ObjectiveComponent
 
 - type: weightedRandom # TODO: rip out the bit of logic that wants nested groups. we only need one
@@ -14,22 +13,27 @@
 
 - type: weightedRandom
   id: TraitorObjectives
-  weights: # TODO: think these through
+  weights:
+    # difficulty 5
+    # difficulty 4
+    # difficulty 3
     TraitorSabotageAts: 1
+    TraitorStealNukeDisk: 1
+    # difficulty 2
     TraitorSabotageMailbox: 1
     TraitorStealAntiqueLaser: 1
     TraitorStealCaptainId: 1
     TraitorStealCaptainJetpack: 1
+    TraitorStealEnergyMagnum: 1
+    # difficulty 1
     TraitorStealCorgiMeat: 1
     TraitorStealDigiboard: 1
-    TraitorStealEnergyMagnum: 1
     TraitorStealExperimentalHardsuit: 1
     TraitorStealHandheldMonitor: 1
     TraitorStealHandheldTeleporter: 1
     TraitorStealHypospray: 1
     TraitorStealKnuckleDusters: 1
     TraitorStealMagbootsAdvanced: 1
-    TraitorStealNukeDisk: 1
     TraitorStealServerDiskCrewMonitor: 1
     TraitorStealServerDiskResearch: 1
 
