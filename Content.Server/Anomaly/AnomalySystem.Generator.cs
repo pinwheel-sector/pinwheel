@@ -1,9 +1,11 @@
 using Content.Server.Anomaly.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Anomaly;
+using Content.Shared.Chat; // Pinwheel - traitor sabotage
 using Content.Shared.CCVar;
 using Content.Shared.Materials;
 using Content.Shared.Radio;
+using Content.Shared._Pinwheel.Sabotage; // Pinwheel - traitor sabotage
 using Robust.Shared.Audio;
 using Content.Shared.Physics;
 using Robust.Shared.Map.Components;
@@ -20,6 +22,7 @@ namespace Content.Server.Anomaly;
 /// </summary>
 public sealed partial class AnomalySystem
 {
+    [Dependency] private SharedChatSystem _chat = default!; // Pinwheel - traitor sabotage
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
@@ -31,6 +34,10 @@ public sealed partial class AnomalySystem
         SubscribeLocalEvent<AnomalyGeneratorComponent, AnomalyGeneratorGenerateButtonPressedEvent>(OnGenerateButtonPressed);
         SubscribeLocalEvent<AnomalyGeneratorComponent, PowerChangedEvent>(OnGeneratorPowerChanged);
         SubscribeLocalEvent<GeneratingAnomalyGeneratorComponent, ComponentStartup>(OnGeneratingStartup);
+        // Pinwheel-stt - traitor sabotage
+        SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageToolInsertEvent>(OnToolInsert);
+        SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageCompleteEvent>(OnSabotageComplete);
+        // Pinwheel-end - traitor sabotage
     }
 
     private void OnGeneratorPowerChanged(EntityUid uid, AnomalyGeneratorComponent component, ref PowerChangedEvent args)
@@ -157,6 +164,20 @@ public sealed partial class AnomalySystem
     {
         Appearance.SetData(uid, AnomalyGeneratorVisuals.Generating, true);
     }
+
+// Pinwheel-stt - traitor sabotage
+    private void OnToolInsert(Entity<AnomalyGeneratorComponent> ent, ref SabotageToolInsertEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.MessageOpen);
+        _radio.SendRadioMessage(ent, message, ent.Comp.ScienceChannel, ent);
+    }
+
+    private void OnSabotageComplete(Entity<AnomalyGeneratorComponent> ent, ref SabotageCompleteEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.MessageComplete);
+        _chat.DispatchStationAnnouncement(ent, message);
+    }
+// Pinwheel-end - traitor sabotage
 
     private void OnGeneratingFinished(EntityUid uid, AnomalyGeneratorComponent component)
     {

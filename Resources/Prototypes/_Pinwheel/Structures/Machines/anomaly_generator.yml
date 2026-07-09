@@ -1,0 +1,168 @@
+## Machine
+- type: entity
+  parent: BaseMachinePowered
+  id: MachineAnomalyGenerator
+  name: anomaly generator
+  description: "A hulking machine utilizing energy extracted from plasma to incite tears in spacetime.\nThe maintenance panel looks like it's welded shut, but not like it can take a real beating."
+  placement:
+    mode: AlignTileAny
+  components:
+  # visual
+  - type: Sprite
+    sprite: _Pinwheel/Structures/Machines/anomaly_generator.rsi
+    offset: 0,1
+    drawdepth: Mobs
+    layers:
+    - state: base
+    - state: panel
+      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
+    - state: powered
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      shader: unshaded
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+      visible: false
+    - state: generating
+      map: [ "enum.AnomalyGeneratorVisualLayers.Base" ]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.SabotagableMachineVisuals.ShellState:
+        enum.SabotagableMachineVisualLayers.Cover:
+          0: { visible: false }
+          1: { visible: true }
+      enum.SabotagableMachineVisuals.ToolState:
+        enum.SabotagableMachineVisualLayers.Tool:
+          False: { visible: false }
+          True: { visible: true }
+      enum.AnomalyGeneratorVisuals.Generating:
+        enum.AnomalyGeneratorVisualLayers.Base:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Appearance
+  # audio
+  - type: AmbientSound
+    range: 5
+    volume: -6
+    sound:
+      path: /Audio/Ambience/Objects/anomaly_generator.ogg
+  # UI
+  - type: ActivatableUI
+    key: enum.AnomalyGeneratorUiKey.Key
+  - type: ActivatableUIRequiresAccess
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.AnomalyGeneratorUiKey.Key:
+        type: AnomalyGeneratorBoundUserInterface
+  # functional
+  - type: Anchorable
+    falgs: [ Anchorable ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-0.5,1.5,0.6"
+        density: 50
+        mask: [ LargeMobMask ]
+        layer: [ WallLayer ]
+  - type: AccessReader
+    access: [ [ "Research" ] ]
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: AnomalyGenerator
+    generatingSound:
+      path: /Audio/Machines/anomaly_generate.ogg
+    generatingFinishedSound:
+      path: /Audio/Machines/beep.ogg
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+    materialWhiteList:
+    - Plasma
+  - type: OreSiloClient
+  - type: ContainerContainer
+    containers:
+      sabotage_container: !type:ContainerSlot
+  - type: VoiceOverride
+    nameOverride: Anomaly Generator
+    speechVerbOverride: Robotic
+  - type: SabotagableMachine
+    sabotageLength: 10s #3m
+    soundInsert:
+      collection: MailboxSabotageInsert # TODO: placeholder
+    soundRemove:
+      collection: MailboxSabotageRemove # TODO: placeholder
+    soundComplete:
+      collection: MailboxSabotageComplete # TODO: placeholder
+    toolInsertTime: 10s
+    toolRemoveTime: 10s
+    toolWhitelist:
+      tags: [ AnomalyGeneratorHacker ]
+  - type: Construction
+    graph: AnomalyGeneratorSabotageGraph
+    deconstructionTarget: null
+    node: panel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: bare
+  - type: GuideHelp
+    guides: [ AnomalousResearch ]
+
+## Construction Graph
+- type: constructionGraph
+  id: AnomalyGeneratorSabotageGraph
+  start: panel
+  graph:
+  - node: panel
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 1
+    edges:
+    - to: bare
+      steps:
+      - tool: Welding
+        doAfter: 5
+      - tool: Prying
+        doAfter: 1
+  - node: bare
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 0
+    - !type:RaiseEvent
+      event: !type:SabotagableMachineOpenedEvent
+      broadcast: false
+
+## Macguffin
+- type: entity
+  parent: BaseItem
+  id: AnomalyGeneratorHacker
+  name: plasmic hypercapacitive powercage
+  description: "A highly compressed mass of plasma ripe for fission, packaged in a cheap shell along with bespoke circuits made to bypass safety measures on NanoTrasen anomaly generators.\nThis thing is NOT up to regulation."
+  components:
+  - type: Sprite
+    sprite: _Pinwheel/Devices/autohacker.rsi # TODO: placeholder
+    state: icon
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,2
+  - type: Tag
+    tags: [ AnomalyGeneratorHacker ]
+
+- type: Tag
+  id: AnomalyGeneratorHacker

@@ -5,7 +5,7 @@
     "y":96
   },
   "license":"CC0-1.0",
-  "copyright":"Created by EmoGarbage",
+  "copyright":"Created by EmoGarbage, edited by arenaconspiracy (github)",
   "states":[
     {
       "name": "generating",
@@ -44,7 +44,7 @@
       "name": "panel"
     },
     {
-      "name": "unshaded",
+      "name": "powered",
       "delays": [
         [
           1.0,

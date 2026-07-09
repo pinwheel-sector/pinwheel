@@ -78,9 +78,9 @@
     toolInsertTime: 2s
     toolRemoveTime: 4s
     toolWhitelist:
-      tags: [ MailboxAutohacker ]
+      tags: [ MailboxHacker ]
   - type: Construction
-    graph: MailboxGraph
+    graph: MailboxSabotageGraph
     deconstructionTarget: null
     node: panel
   - type: Destructible
@@ -113,7 +113,7 @@
 
 ## Construction Graph
 - type: constructionGraph
-  id: MailboxGraph
+  id: MailboxSabotageGraph
   start: panel
   graph:
   - node: panel
@@ -140,7 +140,7 @@
 ## Macguffin
 - type: entity
   parent: BaseItem
-  id: MailboxAutohacker
+  id: MailboxHacker
   name: 1337 mail network autohacker
   description: A compact device designed for shunting into NanoTrasen bluespace mailboxes, using their hardware to authorize illicit transactions. Simply jam it anywhere on the circuit board and let it do its magic. The dream of script-kiddies sectorwide.
   components:
@@ -151,7 +151,7 @@
     shape:
     - 0,0,1,0
   - type: Tag
-    tags: [ MailboxAutohacker ]
+    tags: [ MailboxHacker ]
 
 - type: Tag
-  id: MailboxAutohacker
+  id: MailboxHacker
