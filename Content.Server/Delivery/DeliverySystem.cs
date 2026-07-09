@@ -82,7 +82,7 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
     // Pinwheel-stt - traitor sabotage
     private void OnMachineOpened(Entity<DeliverySpawnerComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
-        string message = Loc.GetString(ent.Comp.WarrantyMessage);
+        string message = Loc.GetString(ent.Comp.MessageOpen);
         _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
 
@@ -96,7 +96,7 @@ public sealed partial class DeliverySystem : SharedDeliverySystem
         if (!TryComp<StationBankAccountComponent>(stationId, out var account))
             return; // cancel if the grid we're on has no bank account
 
-        string message = Loc.GetString(ent.Comp.SabotageMessage,
+        string message = Loc.GetString(ent.Comp.MessageComplete,
             ("penalty", ent.Comp.SabotagePenalty));
 
         ent.Comp.SabotageComplete = true;

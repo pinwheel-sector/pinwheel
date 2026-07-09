@@ -75,19 +75,24 @@ public sealed partial class AnomalyGeneratorComponent : Component
     /// Message to use when the maintenance panel is taken off
     /// </summary>
     [DataField]
-    public LocId MessageOpen = "anomaly-panel-message";
+    public LocId MessageInsert = "sabotage-message-insert-anomaly";
 
     /// <summary>
     /// Message to use when the sabotage macguffin does its thing
     /// </summary>
     [DataField]
-    public LocId MessageComplete = "anomaly-sabotage-message";
+    public LocId MessageComplete = "sabotage-message-complete-anomaly";
 
     /// <summary>
     /// Anomalies to spawn on complete sabotage
     /// </summary>
+    /// <remarks>
+    /// The random tile spawn method can sometimes fail, leading to less anomalies than desired.
+    /// This is why the number is inflated to account for statistical failures
+    /// TODO: make it not do that
+    /// </remarks>
     [DataField]
-    public int SabotageAnomalyCount = 4;
+    public int SabotageAnomalyCount = 6;
 
     /// <summary>
     /// Is the sabotage complete. Checked by the objective

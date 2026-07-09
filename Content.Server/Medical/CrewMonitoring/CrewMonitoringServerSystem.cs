@@ -133,7 +133,7 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         if (!_power.IsPowered(ent.Owner))
             return; // cancel if unpowered
 
-        string message = Loc.GetString(ent.Comp.MessageDamage);
+        string message = Loc.GetString(ent.Comp.MessageOpen);
         _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
 
@@ -144,7 +144,7 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         if (!_power.IsPowered(ent.Owner))
             return; // cancel if unpowered
 
-        string message = Loc.GetString(ent.Comp.MessageSabotage);
+        string message = Loc.GetString(ent.Comp.MessageRemove);
         _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
     // Pinwheel-end - traitor sabotage

@@ -168,12 +168,27 @@ public sealed partial class AnomalySystem
 // Pinwheel-stt - traitor sabotage
     private void OnToolInsert(Entity<AnomalyGeneratorComponent> ent, ref SabotageToolInsertEvent args)
     {
-        string message = Loc.GetString(ent.Comp.MessageOpen);
+        string message = Loc.GetString(ent.Comp.MessageInsert);
         _radio.SendRadioMessage(ent, message, ent.Comp.ScienceChannel, ent);
     }
 
     private void OnSabotageComplete(Entity<AnomalyGeneratorComponent> ent, ref SabotageCompleteEvent args)
     {
+        var xform = Transform(ent);
+
+        if (_station.GetStationInMap(xform.MapID) is not { } station ||
+            _station.GetLargestGrid(station) is not { } grid)
+        {
+            if (xform.GridUid == null)
+                return;
+            grid = xform.GridUid.Value;
+        }
+
+        for (int spawned = 1; spawned <= ent.Comp.SabotageAnomalyCount; spawned++)
+        {
+            SpawnOnRandomGridLocation(grid, ent.Comp.SpawnerPrototype);
+        }
+
         string message = Loc.GetString(ent.Comp.MessageComplete);
         _chat.DispatchStationAnnouncement(ent, message);
     }
