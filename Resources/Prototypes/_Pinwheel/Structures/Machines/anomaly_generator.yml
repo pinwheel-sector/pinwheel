@@ -19,6 +19,9 @@
     - state: powered
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
       shader: unshaded
+    - state: tool
+      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
+      visible: false
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
       visible: false
@@ -62,7 +65,7 @@
         type: AnomalyGeneratorBoundUserInterface
   # functional
   - type: Anchorable
-    falgs: [ Anchorable ]
+    flags: [ Anchorable ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -155,7 +158,7 @@
   description: "A highly compressed mass of plasma ripe for fission, packaged in a cheap shell along with bespoke circuits made to bypass safety measures on NanoTrasen anomaly generators.\nThis thing is NOT up to regulation."
   components:
   - type: Sprite
-    sprite: _Pinwheel/Devices/autohacker.rsi # TODO: placeholder
+    sprite: _Pinwheel/Devices/Sabotage/anomaly_generator_hacker.rsi
     state: icon
   - type: Item
     size: Large
