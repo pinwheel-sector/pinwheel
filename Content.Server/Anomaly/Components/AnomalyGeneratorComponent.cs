@@ -86,13 +86,8 @@ public sealed partial class AnomalyGeneratorComponent : Component
     /// <summary>
     /// Anomalies to spawn on complete sabotage
     /// </summary>
-    /// <remarks>
-    /// The random tile spawn method can sometimes fail, leading to less anomalies than desired.
-    /// This is why the number is inflated to account for statistical failures
-    /// TODO: make it not do that
-    /// </remarks>
     [DataField]
-    public int SabotageAnomalyCount = 6;
+    public int SabotageAnomalyCount = 4;
 
     /// <summary>
     /// Is the sabotage complete. Checked by the objective

@@ -255,14 +255,14 @@
 
 - type: stealTargetGroup
   id: ServerDiskCrewMonitor
-  name: steal-target-groups-Sabotage/serverdisk-crewmonitor
+  name: steal-target-groups-serverdisk-crewmonitor
   sprite:
     sprite: _Pinwheel/Devices/Sabotage/serverdisk.rsi
     state: icon
 
 - type: stealTargetGroup
   id: ServerDiskResearch
-  name: steal-target-groups-Sabotage/serverdisk-research
+  name: steal-target-groups-serverdisk-research
   sprite:
     sprite: _Pinwheel/Devices/Sabotage/serverdisk.rsi
     state: icon

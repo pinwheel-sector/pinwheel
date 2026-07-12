@@ -189,6 +189,8 @@ public sealed partial class AnomalySystem
             SpawnOnRandomGridLocation(grid, ent.Comp.SpawnerPrototype);
         }
 
+        ent.Comp.SabotageComplete = true;
+
         string message = Loc.GetString(ent.Comp.MessageComplete);
         _chat.DispatchStationAnnouncement(ent, message);
     }

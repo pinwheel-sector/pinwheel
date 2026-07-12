@@ -21,11 +21,8 @@ public sealed class SabotageMailboxConditionSystem : EntitySystem
         // If there's any hacked mailbox, succeed.
         while (enumerator.MoveNext(out var comp))
         {
-            if (!comp.SabotageComplete)
-                continue;
-
-            args.Progress = 1f;
-            return;
+            if (comp.SabotageComplete)
+                args.Progress = 1f;
         }
     }
 }
