@@ -6,29 +6,27 @@ namespace Content.Shared._Pinwheel.Sabotage;
 /// <summary>
 /// Raised when the sabotage tool is finished inserting
 /// </summary>
-public sealed class SabotageToolInsertEvent(EntityUid user, EntityUid used) : EntityEventArgs
-{
-    /// <summary>
-    /// The entity inserting the tool
-    /// </summary>
-    public readonly EntityUid User = user;
-
-    /// <summary>
-    /// The sabotage tool being inserted
-    /// </summary>
-    public readonly EntityUid Used = used;
-}
+public sealed class SabotageStartEvent : EntityEventArgs;
 
 /// <summary>
 /// Raised when the sabotage tool is finished being removed
 /// </summary>
-public sealed class SabotageToolRemoveEvent(EntityUid user) : EntityEventArgs
-{
-    /// <summary>
-    /// The entity ejecting the tool
-    /// </summary>
-    public readonly EntityUid User = user;
-}
+public sealed class SabotageStopEvent : EntityEventArgs;
+
+/// <summary>
+/// Raised when the machine loses power
+/// </summary>
+public sealed class SabotagePausedEvent : EntityEventArgs;
+
+/// <summary>
+/// Raised when the machine regains power
+/// </summary>
+public sealed class SabotageUnPausedEvent : EntityEventArgs;
+
+/// <summary>
+/// Raised when the sabotage process is complete
+/// </summary>
+public sealed class SabotageCompleteEvent : EntityEventArgs;
 
 /// <summary>
 /// Raised by construction graphs to indicate the tool container should open
@@ -37,18 +35,29 @@ public sealed class SabotageToolRemoveEvent(EntityUid user) : EntityEventArgs
 public sealed partial class SabotagableMachineOpenedEvent : EntityEventArgs;
 
 /// <summary>
-/// Raised when the sabotage process is complete
-/// </summary>
-public sealed class SabotageCompleteEvent : EntityEventArgs;
-
-/// <summary>
-/// Used by <see cref=SabotagableMachineSystem/> for the insertion doafter
+/// Used for the tool insertion doafter
 /// </summary>
 [Serializable, NetSerializable]
-public sealed partial class SabotageToolInsertDoAfterEvent : SimpleDoAfterEvent;
+public sealed partial class SabotageToolInsertDoAfterEvent : DoAfterEvent
+{
+    /// <summary>
+    /// Tool being inserted
+    /// </summary>
+    /// <remarks>
+    /// BAD: needs wrapping in entity proxy systems to use but EntityUid is not serializable so fuck me
+    /// </remarks>
+    public NetEntity? Used = default!;
+
+    public SabotageToolInsertDoAfterEvent(NetEntity? used)
+    {
+        Used = used;
+    }
+
+    public override DoAfterEvent Clone() => this;
+}
 
 /// <summary>
-/// Used by <see cref=SabotagableMachineSystem/> for the removal doafter
+/// Used for the tool removal doafter
 /// </summary>
 [Serializable, NetSerializable]
 public sealed partial class SabotageToolRemoveDoAfterEvent : SimpleDoAfterEvent;

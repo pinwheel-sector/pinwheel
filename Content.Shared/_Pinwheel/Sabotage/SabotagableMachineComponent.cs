@@ -102,4 +102,16 @@ public sealed partial class SabotagableMachineComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier? SoundComplete = default!;
+
+    /// <summary>
+    /// Ambience while the machine is not being sabotaged
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public SoundSpecifier? SoundAmbientBase = default!;
+
+    /// <summary>
+    /// Ambience while the machine is, in fact, being sabotaged
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public SoundSpecifier? SoundAmbientSabotage = default!;
 }

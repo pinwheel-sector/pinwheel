@@ -31,15 +31,18 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
     {
         base.Initialize();
 
-        // inserting the tool
+        // player interactions
         SubscribeLocalEvent<SabotagableMachineComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolInsertDoAfterEvent>(OnInsertDoAfter);
-        // removing the tool
         SubscribeLocalEvent<SabotagableMachineComponent, InteractHandEvent>(OnInteractHand);
-        SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolRemoveDoAfterEvent>(OnRemoveDoAfter);
-        // sabotage process
         SubscribeLocalEvent<SabotagableMachineComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        // do-afters
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolInsertDoAfterEvent>(OnInsertDoAfter);
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolRemoveDoAfterEvent>(OnRemoveDoAfter);
+        // external factors
         SubscribeLocalEvent<SabotagableMachineComponent, PowerChangedEvent>(OnPowerChanged);
+        // progress events
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotagePausedEvent>(OnSabotagePaused);
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotageUnPausedEvent>(OnSabotageUnPaused);
         SubscribeLocalEvent<SabotagableMachineComponent, SabotageCompleteEvent>(OnSabotageComplete);
     }
 
@@ -64,26 +67,6 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         }
     }
 
-    private void ProcessTool(Entity<SabotagableMachineComponent> ent, bool inserting, EntityEventArgs raisedEvent, EntityUid? user)
-    { // helper function to handle tool moving feedback
-        var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
-
-        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
-        _audio.PlayPredicted(sound, ent.Owner, user);
-
-        if (ent.Comp.StatusSabotaged)
-            return; // cancel if the sabotage is complete. can't jack it twice
-
-        ent.Comp.StatusSabotaging = inserting;
-        RaiseLocalEvent(ent.Owner, (object)raisedEvent);
-
-        if (inserting)
-        {
-            var curTime = _timing.CurTime;
-            ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageLength);
-        }
-    }
-
     private void OnInteractUsing(Entity<SabotagableMachineComponent> ent, ref InteractUsingEvent args)
     {
         if (args.Handled || ent.Comp.StatusClosed)
@@ -95,19 +78,16 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (!_whitelist.IsValid(ent.Comp.ToolWhitelist, args.Used))
             return; // cancel if not our sabotage tool
 
-        var ev = new SabotageToolInsertEvent(args.User, args.Used);
+        var ev = new SabotageStartEvent();
 
         if (ent.Comp.ToolInsertTime == null)
-        { // if we don't have a doafter just cram it in
-            _container.Insert(args.Used, container);
-            ProcessTool(ent, true, ev, args.User);
-        }
+            ProcessTool(ent, true, ev, args.User, args.Used); // if we don't have a doafter just cram it in
 
         var doAfter = new DoAfterArgs(
             EntityManager,
             args.User,
             ent.Comp.ToolInsertTime!.Value,
-            new SabotageToolInsertDoAfterEvent(),
+            new SabotageToolInsertDoAfterEvent(GetNetEntity(args.Used)),
             ent.Owner,
             used: args.Used)
             {
@@ -122,20 +102,6 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         _doAfter.TryStartDoAfter(doAfter);
     }
 
-    private void OnInsertDoAfter(Entity<SabotagableMachineComponent> ent, ref SabotageToolInsertDoAfterEvent args)
-    {
-        if (args.Cancelled)
-            return; // cancel if cancelled
-
-        if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
-            return; // doafter can't start w/o a container but we need the out var
-
-        var ev = new SabotageToolInsertEvent(args.User, args.Used!.Value);
-
-        _container.Insert(args.Used!.Value, container);
-        ProcessTool(ent, true, ev, args.User);
-    }
-
     private void OnInteractHand(Entity<SabotagableMachineComponent> ent, ref InteractHandEvent args)
     {
         if (args.Handled || ent.Comp.StatusClosed)
@@ -147,17 +113,10 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (container.ContainedEntities.Count < 1)
             return; // cancel if the container is empty
 
-        var ev = new SabotageToolRemoveEvent(args.User);
+        var ev = new SabotageStopEvent();
 
         if (ent.Comp.ToolRemoveTime == null)
-        { // if we don't have a doafter just yank it out
-            foreach (var tool in container.ContainedEntities)
-            {
-                _hands.TryPickupAnyHand(args.User, tool);
-            }
-
-            ProcessTool(ent, false, ev, args.User);
-        }
+            ProcessTool(ent, false, ev, args.User); // if we don't have a doafter just yank it out
 
         var doAfter = new DoAfterArgs(
             EntityManager,
@@ -177,24 +136,6 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         _doAfter.TryStartDoAfter(doAfter);
     }
 
-    private void OnRemoveDoAfter(Entity<SabotagableMachineComponent> ent, ref SabotageToolRemoveDoAfterEvent args)
-    {
-        if (args.Cancelled)
-            return; // cancel if cancelled
-
-        if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
-            return; // doafter can't start w/o a container but we need the out var
-
-        var ev = new SabotageToolRemoveEvent(args.User);
-
-        foreach (var tool in container.ContainedEntities)
-        {
-            _hands.TryPickupAnyHand(args.User, tool);
-        }
-
-        ProcessTool(ent, false, ev, args.User);
-    }
-
     private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
         ent.Comp.StatusClosed = false;
@@ -207,14 +148,62 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         var curTime = _timing.CurTime;
 
-        if (!args.Powered)
-        { // if we're losing power
-            ent.Comp.SabotageTimeStored = (ent.Comp.SabotageComplete - curTime); // store our remaining time
-            return; // we did our job
+        EntityEventArgs ev = default!;
+
+        switch (args.Powered)
+        {
+            case true: // if we're regaining power
+                ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageTimeStored); // restore our time
+                ev = new SabotageUnPausedEvent();
+                break;
+
+            case false: // if we're losing power
+                ent.Comp.SabotageTimeStored = (ent.Comp.SabotageComplete - curTime); // store our remaining time
+                ev = new SabotagePausedEvent();
+                break;
         }
 
-        // if we're regaining power
-        ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageTimeStored); // restore our time
+        RaiseLocalEvent(ent, ev);
+    }
+
+    private void OnInsertDoAfter(Entity<SabotagableMachineComponent> ent, ref SabotageToolInsertDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return; // cancel if cancelled
+
+        var ev = new SabotageStartEvent();
+
+        ProcessTool(ent, true, ev, args.User, GetEntity(args.Used));
+    }
+
+    private void OnRemoveDoAfter(Entity<SabotagableMachineComponent> ent, ref SabotageToolRemoveDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return; // cancel if cancelled
+
+        var ev = new SabotageStopEvent();
+
+        ProcessTool(ent, false, ev, args.User);
+    }
+
+    private void OnSabotageStart(Entity<SabotagableMachineComponent> ent, ref SabotageStartEvent args)
+    {
+        ProcessAmbient(ent); // TODO
+    }
+
+    private void OnSabotageStop(Entity<SabotagableMachineComponent> ent, ref SabotageStopEvent args)
+    {
+        ProcessAmbient(ent); // TODO
+    }
+
+    private void OnSabotagePaused(Entity<SabotagableMachineComponent> ent, ref SabotagePausedEvent args)
+    {
+        ProcessAmbient(ent); // TODO
+    }
+
+    private void OnSabotageUnPaused(Entity<SabotagableMachineComponent> ent, ref SabotageUnPausedEvent args)
+    {
+        ProcessAmbient(ent); // TODO
     }
 
     private void OnSabotageComplete(Entity<SabotagableMachineComponent> ent, ref SabotageCompleteEvent args)
@@ -223,5 +212,48 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         ent.Comp.StatusSabotaged = true;
         if (_net.IsServer)
             _audio.PlayPvs(ent.Comp.SoundComplete, ent.Owner);
+    }
+
+    private void ProcessTool(
+        Entity<SabotagableMachineComponent> ent,
+        bool inserting,
+        EntityEventArgs raisedEvent,
+        EntityUid? user = null,
+        EntityUid? used = null)
+    {
+        if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
+            return; // starting w/o a container shouldn't be possible but we need the ^ out var
+
+        var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
+
+        _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
+        _audio.PlayPredicted(sound, ent.Owner, user);
+
+        switch (inserting)
+        {
+            case true:
+            var curTime = _timing.CurTime;
+            ent.Comp.SabotageComplete = (curTime + ent.Comp.SabotageLength);
+            _container.Insert(used!.Value, container);
+            break;
+
+            case false:
+            foreach (var tool in container.ContainedEntities)
+            {
+                _hands.TryPickupAnyHand(user!.Value, tool);
+            }
+            break;
+        }
+
+        if (ent.Comp.StatusSabotaged)
+            return; // cancel if the sabotage is complete. can't jack it twice
+
+        ent.Comp.StatusSabotaging = inserting;
+        RaiseLocalEvent(ent.Owner, (object)raisedEvent);
+    }
+
+    private void ProcessAmbient(Entity<SabotagableMachineComponent> ent)
+    {
+        Log.Info("Unfinished function right here"); // TODO
     }
 }

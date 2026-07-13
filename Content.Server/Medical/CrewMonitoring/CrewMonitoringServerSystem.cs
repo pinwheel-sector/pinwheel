@@ -31,7 +31,7 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         SubscribeLocalEvent<CrewMonitoringServerComponent, DeviceNetServerDisconnectedEvent>(OnDisconnected);
         // Pinwheel-stt - traitor sabotage
         SubscribeLocalEvent<CrewMonitoringServerComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
-        SubscribeLocalEvent<CrewMonitoringServerComponent, SabotageToolRemoveEvent>(OnToolRemoved); // the disk is the "tool"
+        SubscribeLocalEvent<CrewMonitoringServerComponent, SabotageStopEvent>(OnSabotageStop); // technically true
         // Pinwheel-end - traitor sabotage
     }
 
@@ -137,7 +137,7 @@ public sealed partial class CrewMonitoringServerSystem : EntitySystem
         _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
     }
 
-    private void OnToolRemoved(Entity<CrewMonitoringServerComponent> ent, ref SabotageToolRemoveEvent args)
+    private void OnSabotageStop(Entity<CrewMonitoringServerComponent> ent, ref SabotageStopEvent args)
     {
         ent.Comp.Sabotaged = true;
 

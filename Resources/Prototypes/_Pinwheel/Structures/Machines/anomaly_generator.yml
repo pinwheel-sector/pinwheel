@@ -53,9 +53,9 @@
     range: 5
     volume: -6
     sound:
-      path: /Audio/Ambience/Objects/anomaly_generator.ogg
+      collection: AnomalyGeneratorBaseAmbience
   # UI
-  - type: ActivatableUI
+  - type: ActivatableUI # TODO: this opens at the same time you try to remove the tool which is bad
     key: enum.AnomalyGeneratorUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: ActivatableUIRequiresPower
@@ -81,9 +81,9 @@
     powerLoad: 1500
   - type: AnomalyGenerator
     generatingSound:
-      path: /Audio/Machines/anomaly_generate.ogg
+      collection: AnomalyGeneratorGenerating
     generatingFinishedSound:
-      path: /Audio/Machines/beep.ogg
+      collection: AnomalyGeneratorGeneratingFinish
   - type: MaterialStorage
     whitelist:
       tags:
@@ -98,13 +98,13 @@
     nameOverride: Anomaly Generator
     speechVerbOverride: Robotic
   - type: SabotagableMachine
-    sabotageLength: 10s #3m
+    sabotageLength: 3m
     soundInsert:
-      collection: MailboxSabotageInsert # TODO: placeholder
+      collection: AnomalyGeneratorSabotageInsert
     soundRemove:
-      collection: MailboxSabotageRemove # TODO: placeholder
+      collection: AnomalyGeneratorSabotageRemove
     soundComplete:
-      collection: MailboxSabotageComplete # TODO: placeholder
+      collection: AnomalyGeneratorSabotageComplete
     toolInsertTime: 10s
     toolRemoveTime: 10s
     toolWhitelist:
@@ -123,6 +123,42 @@
         node: bare
   - type: GuideHelp
     guides: [ AnomalousResearch ]
+
+## Sound Collections
+- type: soundCollection
+  id: AnomalyGeneratorBaseAmbience
+  files:
+  - /Audio/Ambience/Objects/anomaly_generator.ogg
+
+- type: soundCollection
+  id: AnomalyGeneratorGenerating
+  files:
+  - /Audio/Machines/anomaly_generate.ogg
+
+- type: soundCollection
+  id: AnomalyGeneratorGeneratingFinish
+  files:
+  - /Audio/Machines/beep.ogg
+
+- type: soundCollection
+  id: AnomalyGeneratorSabotageInsert
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: AnomalyGeneratorSabotageRemove
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: AnomalyGeneratorSabotageComplete
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: AnomalyGeneratorSabotageAmbience
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
 
 ## Construction Graph
 - type: constructionGraph

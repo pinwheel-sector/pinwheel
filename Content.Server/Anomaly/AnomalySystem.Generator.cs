@@ -35,7 +35,7 @@ public sealed partial class AnomalySystem
         SubscribeLocalEvent<AnomalyGeneratorComponent, PowerChangedEvent>(OnGeneratorPowerChanged);
         SubscribeLocalEvent<GeneratingAnomalyGeneratorComponent, ComponentStartup>(OnGeneratingStartup);
         // Pinwheel-stt - traitor sabotage
-        SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageToolInsertEvent>(OnToolInsert);
+        SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageStartEvent>(OnSabotageStart);
         SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageCompleteEvent>(OnSabotageComplete);
         // Pinwheel-end - traitor sabotage
     }
@@ -166,7 +166,7 @@ public sealed partial class AnomalySystem
     }
 
 // Pinwheel-stt - traitor sabotage
-    private void OnToolInsert(Entity<AnomalyGeneratorComponent> ent, ref SabotageToolInsertEvent args)
+    private void OnSabotageStart(Entity<AnomalyGeneratorComponent> ent, ref SabotageStartEvent args)
     {
         string message = Loc.GetString(ent.Comp.MessageInsert);
         _radio.SendRadioMessage(ent, message, ent.Comp.ScienceChannel, ent);

@@ -9,5 +9,5 @@ sabotage-message-insert-anomaly = Warning. Unscheduled energetic effluence in pr
 sabotage-message-remove-servers = Error. Read-only storage device removed without unmounting volumes. Operational memory corruption may occur.
 
 ## Sabotage complete event
-sabotage-message-complete-anomaly = Standard acroamatic survey performed using non-standard energy levels. Extradimensional or countertemporal abberations may present undue risks onboard the station.
+sabotage-message-complete-anomaly = Standard acroamatic survey performed using non-standard energy levels. Extradimensional abberations may present undue risks onboard the station.
 sabotage-message-complete-mailbox = Transaction of ${$penalty} to xX_Syndicate-Hacker-Den_Xx complete. Thank you for doing business with NanoTrasen.
