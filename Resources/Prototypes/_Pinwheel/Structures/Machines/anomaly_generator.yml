@@ -108,7 +108,7 @@
     nameOverride: Anomaly Generator
     speechVerbOverride: Robotic
   - type: SabotagableMachine
-    sabotageLength: 15s #3m
+    sabotageLength: 3m
     soundInsert:
       collection: AnomalyGeneratorSabotageInsert
     soundRemove:
