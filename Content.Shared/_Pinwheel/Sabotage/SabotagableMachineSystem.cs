@@ -1,8 +1,10 @@
+using Content.Shared.Audio;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
+using Content.Shared.UserInterface;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -17,6 +19,7 @@ namespace Content.Shared._Pinwheel.Sabotage;
 /// </summary>
 public sealed partial class SabotagableMachineSystem : EntitySystem
 {
+    [Dependency] private SharedAmbientSoundSystem _ambient = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
@@ -34,6 +37,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         // player interactions
         SubscribeLocalEvent<SabotagableMachineComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<SabotagableMachineComponent, InteractHandEvent>(OnInteractHand);
+        SubscribeLocalEvent<SabotagableMachineComponent, ActivatableUIOpenAttemptEvent>(OnUIOpenAttempt);
         SubscribeLocalEvent<SabotagableMachineComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
         // do-afters
         SubscribeLocalEvent<SabotagableMachineComponent, SabotageToolInsertDoAfterEvent>(OnInsertDoAfter);
@@ -41,6 +45,10 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         // external factors
         SubscribeLocalEvent<SabotagableMachineComponent, PowerChangedEvent>(OnPowerChanged);
         // progress events
+        /* // these currently aren't needed for anything internally
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotageStartEvent>(OnSabotageStart);
+        SubscribeLocalEvent<SabotagableMachineComponent, SabotageStopEvent>(OnSabotageStop);
+        */
         SubscribeLocalEvent<SabotagableMachineComponent, SabotagePausedEvent>(OnSabotagePaused);
         SubscribeLocalEvent<SabotagableMachineComponent, SabotageUnPausedEvent>(OnSabotageUnPaused);
         SubscribeLocalEvent<SabotagableMachineComponent, SabotageCompleteEvent>(OnSabotageComplete);
@@ -136,6 +144,15 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         _doAfter.TryStartDoAfter(doAfter);
     }
 
+    private void OnUIOpenAttempt(Entity<SabotagableMachineComponent> ent, ref ActivatableUIOpenAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (ent.Comp.StatusSabotaging)
+            args.Cancel();
+    }
+
     private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
     {
         ent.Comp.StatusClosed = false;
@@ -163,7 +180,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
                 break;
         }
 
-        RaiseLocalEvent(ent, ev);
+        RaiseLocalEvent(ent, (object)ev);
     }
 
     private void OnInsertDoAfter(Entity<SabotagableMachineComponent> ent, ref SabotageToolInsertDoAfterEvent args)
@@ -186,30 +203,43 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         ProcessTool(ent, false, ev, args.User);
     }
 
+    /* // see subscription
     private void OnSabotageStart(Entity<SabotagableMachineComponent> ent, ref SabotageStartEvent args)
     {
-        ProcessAmbient(ent); // TODO
+        ProcessAmbient(ent, true);
     }
 
     private void OnSabotageStop(Entity<SabotagableMachineComponent> ent, ref SabotageStopEvent args)
     {
-        ProcessAmbient(ent); // TODO
+        ProcessAmbient(ent, false);
     }
+    */
 
     private void OnSabotagePaused(Entity<SabotagableMachineComponent> ent, ref SabotagePausedEvent args)
     {
-        ProcessAmbient(ent); // TODO
+        if (ent.Comp.StatusSabotaging)
+            _appearance.SetData(ent, SabotagableMachineVisuals.LightState, false);
+
+        ProcessAmbient(ent, false);
     }
 
     private void OnSabotageUnPaused(Entity<SabotagableMachineComponent> ent, ref SabotageUnPausedEvent args)
     {
-        ProcessAmbient(ent); // TODO
+        if (ent.Comp.StatusSabotaging)
+            _appearance.SetData(ent, SabotagableMachineVisuals.LightState, true);
+
+        ProcessAmbient(ent, true);
     }
 
     private void OnSabotageComplete(Entity<SabotagableMachineComponent> ent, ref SabotageCompleteEvent args)
     {
         ent.Comp.StatusSabotaging = false;
         ent.Comp.StatusSabotaged = true;
+
+        _appearance.SetData(ent, SabotagableMachineVisuals.LightState, false);
+
+        ProcessAmbient(ent, false);
+
         if (_net.IsServer)
             _audio.PlayPvs(ent.Comp.SoundComplete, ent.Owner);
     }
@@ -227,7 +257,9 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
 
         _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
+        _appearance.SetData(ent, SabotagableMachineVisuals.LightState, inserting);
         _audio.PlayPredicted(sound, ent.Owner, user);
+        ProcessAmbient(ent, inserting);
 
         switch (inserting)
         {
@@ -252,8 +284,17 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         RaiseLocalEvent(ent.Owner, (object)raisedEvent);
     }
 
-    private void ProcessAmbient(Entity<SabotagableMachineComponent> ent)
+    private void ProcessAmbient(Entity<SabotagableMachineComponent> ent, bool sabotaging)
     {
-        Log.Info("Unfinished function right here"); // TODO
+        var sound = sabotaging ? ent.Comp.SoundAmbientSabotage : ent.Comp.SoundAmbientBase;
+
+        if (sound == null)
+        {
+            _ambient.SetAmbience(ent.Owner, false);
+            return;
+        }
+
+        _ambient.SetAmbience(ent.Owner, true);
+        _ambient.SetSound(ent.Owner, sound);
     }
 }

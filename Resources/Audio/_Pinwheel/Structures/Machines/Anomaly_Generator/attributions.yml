@@ -1,0 +1,15 @@
+- files: ["ambient_base.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by steaq, converted Mono and .ogg by EmoGarbage"
+  source: "https://freesound.org/people/steaq/sounds/509249/"
+
+- files: ["ambient_sabotage.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by listeningwind"
+  source: "https://youtube.com/@crosseyedpainiess"
+
+- files: ["generating.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by szegvari, converted to mono and .ogg by EmoGarbage404 (github)."
+  source: "https://freesound.org/people/szegvari/sounds/536794/"
+

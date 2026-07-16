@@ -29,6 +29,10 @@
       map: [ "enum.AnomalyGeneratorVisualLayers.Base" ]
       shader: unshaded
       visible: false
+    - state: sabotaging # TODO: get someone better at spriting than me to make this not ugly
+      map: [ "enum.SabotagableMachineVisualLayers.Lights" ]
+      shader: unshaded
+      visible: false
   - type: GenericVisualizer
     visuals:
       enum.SabotagableMachineVisuals.ShellState:
@@ -37,6 +41,10 @@
           1: { visible: true }
       enum.SabotagableMachineVisuals.ToolState:
         enum.SabotagableMachineVisualLayers.Tool:
+          False: { visible: false }
+          True: { visible: true }
+      enum.SabotagableMachineVisuals.LightState:
+        enum.SabotagableMachineVisualLayers.Lights:
           False: { visible: false }
           True: { visible: true }
       enum.AnomalyGeneratorVisuals.Generating:
@@ -53,7 +61,7 @@
     range: 5
     volume: -6
     sound:
-      collection: AnomalyGeneratorBaseAmbience
+      collection: AnomalyGeneratorAmbientBase
   # UI
   - type: ActivatableUI # TODO: this opens at the same time you try to remove the tool which is bad
     key: enum.AnomalyGeneratorUiKey.Key
@@ -80,6 +88,8 @@
   - type: ApcPowerReceiver
     powerLoad: 1500
   - type: AnomalyGenerator
+    sabotageAnnouncementSound:
+      collection: AnomalyGeneratorAnnouncement
     generatingSound:
       collection: AnomalyGeneratorGenerating
     generatingFinishedSound:
@@ -98,13 +108,17 @@
     nameOverride: Anomaly Generator
     speechVerbOverride: Robotic
   - type: SabotagableMachine
-    sabotageLength: 3m
+    sabotageLength: 15s #3m
     soundInsert:
       collection: AnomalyGeneratorSabotageInsert
     soundRemove:
       collection: AnomalyGeneratorSabotageRemove
     soundComplete:
       collection: AnomalyGeneratorSabotageComplete
+    soundAmbientBase:
+      collection: AnomalyGeneratorAmbientBase
+    soundAmbientSabotage:
+      collection: AnomalyGeneratorAmbientSabotage
     toolInsertTime: 10s
     toolRemoveTime: 10s
     toolWhitelist:
@@ -126,14 +140,24 @@
 
 ## Sound Collections
 - type: soundCollection
-  id: AnomalyGeneratorBaseAmbience
+  id: AnomalyGeneratorAmbientBase
   files:
-  - /Audio/Ambience/Objects/anomaly_generator.ogg
+  - /Audio/_Pinwheel/Structures/Machines/Anomaly_Generator/ambient_base.ogg
+
+- type: soundCollection
+  id: AnomalyGeneratorAmbientSabotage
+  files:
+  - /Audio/_Pinwheel/Structures/Machines/Anomaly_Generator/ambient_sabotage.ogg
+
+- type: soundCollection
+  id: AnomalyGeneratorAnnouncement
+  files:
+  - /Audio/Effects/alert.ogg # TODO: placeholder. it fits but it's not good
 
 - type: soundCollection
   id: AnomalyGeneratorGenerating
   files:
-  - /Audio/Machines/anomaly_generate.ogg
+  - /Audio/_Pinwheel/Structures/Machines/Anomaly_Generator/generating.ogg
 
 - type: soundCollection
   id: AnomalyGeneratorGeneratingFinish
@@ -152,11 +176,6 @@
 
 - type: soundCollection
   id: AnomalyGeneratorSabotageComplete
-  files:
-  - /Audio/Effects/sparks1.ogg # TODO: placeholder
-
-- type: soundCollection
-  id: AnomalyGeneratorSabotageAmbience
   files:
   - /Audio/Effects/sparks1.ogg # TODO: placeholder
 

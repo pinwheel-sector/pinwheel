@@ -42,6 +42,11 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
+  # audio
+  - type: AmbientSound
+    enabled: false
+    sound:
+      collection: MailboxAmbientSabotage
   # functional
   - type: Anchorable
     flags: [ Anchorable ]
@@ -75,6 +80,8 @@
       collection: MailboxSabotageRemove
     soundComplete:
       collection: MailboxSabotageComplete
+    soundAmbientSabotage:
+      collection: MailboxAmbientSabotage
     toolInsertTime: 2s
     toolRemoveTime: 4s
     toolWhitelist:
@@ -93,6 +100,11 @@
         node: bare
 
 ## Sound Collections
+- type: soundCollection
+  id: MailboxAmbientSabotage
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
 - type: soundCollection
   id: MailboxSabotageInsert
   files:

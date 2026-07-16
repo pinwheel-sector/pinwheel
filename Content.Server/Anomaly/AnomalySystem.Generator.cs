@@ -36,6 +36,7 @@ public sealed partial class AnomalySystem
         SubscribeLocalEvent<GeneratingAnomalyGeneratorComponent, ComponentStartup>(OnGeneratingStartup);
         // Pinwheel-stt - traitor sabotage
         SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageStartEvent>(OnSabotageStart);
+        SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageStopEvent>(OnSabotageStop);
         SubscribeLocalEvent<AnomalyGeneratorComponent, SabotageCompleteEvent>(OnSabotageComplete);
         // Pinwheel-end - traitor sabotage
     }
@@ -172,6 +173,12 @@ public sealed partial class AnomalySystem
         _radio.SendRadioMessage(ent, message, ent.Comp.ScienceChannel, ent);
     }
 
+    private void OnSabotageStop(Entity<AnomalyGeneratorComponent> ent, ref SabotageStopEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.MessageRemove);
+        _radio.SendRadioMessage(ent, message, ent.Comp.ScienceChannel, ent);
+    }
+
     private void OnSabotageComplete(Entity<AnomalyGeneratorComponent> ent, ref SabotageCompleteEvent args)
     {
         var xform = Transform(ent);
@@ -192,7 +199,12 @@ public sealed partial class AnomalySystem
         ent.Comp.SabotageComplete = true;
 
         string message = Loc.GetString(ent.Comp.MessageComplete);
-        _chat.DispatchStationAnnouncement(ent, message);
+        Color messageColor = new Color(205, 124, 205); // science radio color
+        _chat.DispatchStationAnnouncement(ent,
+            message,
+            "Anomaly Generator", // TODO: de-hardcode this, somehow
+            announcementSound: ent.Comp.SabotageAnnouncementSound,
+            colorOverride: messageColor); // TODO: de-hardcode this too
     }
 // Pinwheel-end - traitor sabotage
 

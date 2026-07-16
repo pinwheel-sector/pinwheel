@@ -68,7 +68,7 @@ public sealed partial class ResearchServerComponent : Component
     /// Message to use when the disk is removed
     /// </summary>
     [DataField]
-    public LocId MessageRemove = "sabotage-message-remove-servers";
+    public LocId MessageRemove = "sabotage-message-stop-servers";
     // Pinwheel-end - traitor sabotage
 }
 

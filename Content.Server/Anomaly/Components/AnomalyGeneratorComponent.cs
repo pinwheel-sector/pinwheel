@@ -75,7 +75,19 @@ public sealed partial class AnomalyGeneratorComponent : Component
     /// Message to use when the maintenance panel is taken off
     /// </summary>
     [DataField]
-    public LocId MessageInsert = "sabotage-message-insert-anomaly";
+    public LocId MessageInsert = "sabotage-message-start-anomaly";
+
+    /// <summary>
+    /// Message to use when the sabotage doohickey is removed
+    /// </summary>
+    [DataField]
+    public LocId MessageRemove = "sabotage-message-stop-anomaly";
+
+    /// <summary>
+    /// Sound played with sabotage announcement
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SabotageAnnouncementSound;
 
     /// <summary>
     /// Message to use when the sabotage macguffin does its thing
