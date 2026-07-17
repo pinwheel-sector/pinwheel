@@ -217,17 +217,13 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
     private void OnSabotagePaused(Entity<SabotagableMachineComponent> ent, ref SabotagePausedEvent args)
     {
-        if (ent.Comp.StatusSabotaging)
-            _appearance.SetData(ent, SabotagableMachineVisuals.LightState, false);
-
+        _appearance.SetData(ent, SabotagableMachineVisuals.LightState, false);
         ProcessAmbient(ent, false);
     }
 
     private void OnSabotageUnPaused(Entity<SabotagableMachineComponent> ent, ref SabotageUnPausedEvent args)
     {
-        if (ent.Comp.StatusSabotaging)
-            _appearance.SetData(ent, SabotagableMachineVisuals.LightState, true);
-
+        _appearance.SetData(ent, SabotagableMachineVisuals.LightState, true);
         ProcessAmbient(ent, true);
     }
 

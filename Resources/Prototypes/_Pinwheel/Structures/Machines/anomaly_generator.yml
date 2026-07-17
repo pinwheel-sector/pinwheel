@@ -63,7 +63,7 @@
     sound:
       collection: AnomalyGeneratorAmbientBase
   # UI
-  - type: ActivatableUI # TODO: this opens at the same time you try to remove the tool which is bad
+  - type: ActivatableUI # TODO: after sabotage the UI opens at the same time you try to remove the tool which is bad
     key: enum.AnomalyGeneratorUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: ActivatableUIRequiresPower
