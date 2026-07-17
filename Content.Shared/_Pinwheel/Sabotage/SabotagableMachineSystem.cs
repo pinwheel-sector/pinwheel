@@ -95,7 +95,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
             EntityManager,
             args.User,
             ent.Comp.ToolInsertTime!.Value,
-            new SabotageToolInsertDoAfterEvent(GetNetEntity(args.Used)),
+            new SabotageToolInsertDoAfterEvent(),
             ent.Owner,
             used: args.Used)
             {
@@ -190,7 +190,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         var ev = new SabotageStartEvent();
 
-        ProcessTool(ent, true, ev, args.User, GetEntity(args.Used));
+        ProcessTool(ent, true, ev, args.User, args.Used);
     }
 
     private void OnRemoveDoAfter(Entity<SabotagableMachineComponent> ent, ref SabotageToolRemoveDoAfterEvent args)

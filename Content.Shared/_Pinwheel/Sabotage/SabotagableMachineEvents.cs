@@ -38,23 +38,7 @@ public sealed partial class SabotagableMachineOpenedEvent : EntityEventArgs;
 /// Used for the tool insertion doafter
 /// </summary>
 [Serializable, NetSerializable]
-public sealed partial class SabotageToolInsertDoAfterEvent : DoAfterEvent
-{
-    /// <summary>
-    /// Tool being inserted
-    /// </summary>
-    /// <remarks>
-    /// BAD: needs wrapping in entity proxy systems to use but EntityUid is not serializable so fuck me
-    /// </remarks>
-    public NetEntity? Used = default!;
-
-    public SabotageToolInsertDoAfterEvent(NetEntity? used)
-    {
-        Used = used;
-    }
-
-    public override DoAfterEvent Clone() => this;
-}
+public sealed partial class SabotageToolInsertDoAfterEvent : SimpleDoAfterEvent;
 
 /// <summary>
 /// Used for the tool removal doafter
