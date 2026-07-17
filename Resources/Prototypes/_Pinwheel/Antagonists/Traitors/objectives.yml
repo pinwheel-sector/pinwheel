@@ -23,7 +23,6 @@
     # difficulty 2
     TraitorSabotageMailbox: 1
     TraitorStealAntiqueLaser: 1
-    TraitorStealCaptainId: 1
     TraitorStealCaptainJetpack: 1
     TraitorStealEnergyMagnum: 1
     # difficulty 1
@@ -327,13 +326,6 @@
   components:
   - type: StealCondition
     stealGroup: WeaponAntiqueLaser
-
-- type: entity
-  parent: BaseTraitorStealCaptain
-  id: TraitorStealCaptainId
-  components:
-  - type: StealCondition
-    stealGroup: CaptainIDCard
 
 - type: entity
   parent: BaseTraitorStealCaptain
