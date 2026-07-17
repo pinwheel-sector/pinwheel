@@ -47,7 +47,7 @@
     range: 5
     enabled: false
     sound:
-      path: /Audio/Ambience/Objects/server_fans.ogg
+      collection: ServerAmbientBase
   # functional
   - type: Anchorable
     flags: [ Anchorable ]
@@ -57,7 +57,11 @@
   - type: ContainerContainer
     containers:
       sabotage_container: !type:ContainerSlot
-  - type: SabotagableMachine
+  - type: SabotagableMachine # EDGE CASE USE
+    soundAmbientBase: # system mutes ambience on disk removal if this is undefined
+      collection: ServerAmbientBase
+    soundAmbientSabotage:
+      collection: ServerAmbientBase
   - type: Construction
     graph: ExtractableServer
     deconstructionTarget: null
@@ -167,6 +171,12 @@
   - type: GuideHelp
     guides:
     - Science
+
+## Sound Collection
+- type: soundCollection
+  id: ServerAmbientBase
+  files:
+  - /Audio/Ambience/Objects/server_fans.ogg
 
 ## Construction Graph
 - type: constructionGraph
