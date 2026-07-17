@@ -45,6 +45,7 @@
   # audio
   - type: AmbientSound
     enabled: false
+    range: 7
     sound:
       collection: MailboxAmbientSabotage
   # functional
@@ -103,7 +104,7 @@
 - type: soundCollection
   id: MailboxAmbientSabotage
   files:
-  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+  - /Audio/_Pinwheel/Structures/Machines/Mailbox/ambient_sabotage.ogg
 
 - type: soundCollection
   id: MailboxSabotageInsert

@@ -58,8 +58,8 @@
   - type: Appearance
   # audio
   - type: AmbientSound
-    range: 5
-    volume: -6
+    range: 7
+    volume: -3
     sound:
       collection: AnomalyGeneratorAmbientBase
   # UI
