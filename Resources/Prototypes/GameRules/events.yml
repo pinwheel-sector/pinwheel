@@ -40,7 +40,6 @@
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: DragonSpawn
-    - id: NinjaSpawn
     - id: ParadoxCloneSpawn
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
@@ -215,34 +214,6 @@
     antags:
     - !type:FixedAntagCount
       proto: Dragon
-  - type: DynamicRuleCost
-    cost: 75
-
-- type: entity
-  parent: BaseAntagGhostRoleRule
-  id: NinjaSpawn
-  components:
-  - type: StationEvent
-    weight: 6
-    duration: null
-    earliestStart: 30
-    reoccurrenceDelay: 20
-    minimumPlayers: 30
-  - type: SpaceSpawnRule
-  - type: AntagLoadProfileRule
-  - type: AntagObjectives
-    objectives:
-    - StealResearchObjective
-    - DoorjackObjective
-    - SpiderChargeObjective
-    - TerrorObjective
-    - MassArrestObjective
-    - NinjaSurviveObjective
-  - type: AntagSelection
-    agentName: ninja-round-end-agent-name
-    antags:
-    - !type:FixedAntagCount
-      proto: SpaceNinja
   - type: DynamicRuleCost
     cost: 75
 

@@ -400,15 +400,6 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconNinja
-  icon:
-    sprite: *icon-rsi
-    state: Ninja
-  jobName: job-name-ninja
-  isCrewJob: false
-
-- type: jobIcon
-  parent: JobIcon
   id: JobIconPirate
   icon:
     sprite: *icon-rsi

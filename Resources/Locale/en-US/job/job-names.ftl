@@ -62,7 +62,6 @@ job-name-virologist = Virologist
 job-name-zookeeper = Zookeeper
 
 # antagonist jobs
-job-name-ninja = Ninja
 job-name-syndicate = Syndicate
 job-name-syndicate-commander = Syndicate Commander
 job-name-syndicate-corpsman = Syndicate Corpsman

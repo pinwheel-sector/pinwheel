@@ -137,37 +137,6 @@
   - Syndicate3
   obeysTo: laws-owner-syndicate
 
-# Ninja conversion laws
-- type: siliconLaw
-  id: Ninja1
-  order: 1
-  lawString: law-ninja-1
-
-- type: siliconLaw
-  id: Ninja2
-  order: 2
-  lawString: law-ninja-2
-
-- type: siliconLaw
-  id: Ninja3
-  order: 3
-  lawString: law-ninja-3
-
-- type: siliconLaw
-  id: Ninja4
-  order: 4
-  lawString: law-ninja-4
-
-- type: siliconLawset
-  id: Ninja
-  name: law-ninja-name
-  laws:
-  - Ninja1
-  - Ninja2
-  - Ninja3
-  - Ninja4
-  obeysTo: laws-owner-spider-clan
-
 # Commandment laws
 - type: siliconLaw
   id: Commandment1

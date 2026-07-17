@@ -61,13 +61,6 @@
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
             min: 900 # 15 minutes
-        - id: NinjaSpawn
-          weight: 20
-          conditions:
-          - !type:HasBudgetCondition
-          - !type:MaxRuleOccurenceCondition
-          - !type:RoundDurationCondition
-            min: 900 # 15 minutes
         - id: ParadoxCloneSpawn
           weight: 25
           conditions:

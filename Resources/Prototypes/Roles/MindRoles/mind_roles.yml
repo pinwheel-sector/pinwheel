@@ -145,18 +145,6 @@
     exclusiveAntag: true
   - type: DragonRole
 
-# Ninja
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleNinja
-  name: Space Ninja Role
-  components:
-  - type: MindRole
-    antagPrototype: SpaceNinja
-    subtype: role-subtype-ninja
-    exclusiveAntag: true
-  - type: NinjaRole
-
 # Paradox Clone
 - type: entity
   parent: BaseMindRoleAntag
