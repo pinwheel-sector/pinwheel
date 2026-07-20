@@ -1,0 +1,222 @@
+## Machine
+- type: entity
+  parent: BaseMachinePowered
+  id: MachineGravityGenerator
+  name: gravity generator
+  description: "A marvel of engineering, revered centuries after its invention.\nKeeps onboard objects to the floor of the station, and pulls distant objects to its hull.\nThe maintenance panel is welded on flush to the body, and its certainly not the only barrier between the world outside and the sensitive circuits inside."
+  placement:
+    mode: AlignTileAny
+  components:
+  # visual
+  - type: Sprite
+    sprite: _Pinwheel/Structures/Machines/gravity_generator.rsi
+    layers:
+    - state: base
+    - state: panel
+      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
+    - state: powered
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      shader: unshaded
+    - state: tool
+      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
+      visible: false
+    - state: sabotaging
+      map: [ "enum.SabotagableMachineVisualLayers.Lights" ]
+      shader: unshaded
+      visible: false
+    - sprite: Structures/Machines/gravity_generator_core.rsi
+      state: activated
+      shader: unshaded
+      map: [ "enum.GravityGeneratorVisualLayers.Core" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.SabotagableMachineVisuals.ShellState:
+        enum.SabotagableMachineVisualLayers.Cover:
+          0: { visible: false }
+          1: { visible: true, state: mesh }
+          2: { visible: true, state: panel }
+      enum.SabotagableMachineVisuals.ToolState:
+        enum.SabotagableMachineVisualLayers.Tool:
+          False: { visible: false }
+          True: { visible: true }
+      enum.SabotagableMachineVisuals.LightState:
+        enum.SabotagableMachineVisualLayers.Lights:
+          False: { visible: false }
+          True: { visible: true }
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          False: { visible: false }
+          True: { visible: true }
+  - type: PointLight
+    radius: 2.5
+    energy: 0.5
+    castShadows: false
+    color: "#afd"
+  - type: Appearance
+  # audio:
+  - type: AmbientSound
+    range: 10 # ooooo important machine oooo
+    volume: 0 # why is the default NEGATIVE TEN
+    sound:
+      collection: GravityGeneratorAmbientBase
+  # UI
+  - type: ActivatableUI # TODO: after sabotage the UI opens at the same time you try to remove the tool which is bad
+    key: enum.PowerChargeUiKey.Key
+  - type: ActivatableUIRequiresAccess
+  - type: UserInterface
+    interfaces:
+      enum.PowerChargeUiKey.Key:
+        type: PowerChargeBoundUserInterface
+  # functional
+  - type: Anchorable
+    flags: [ Anchorable ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.4,-1.4,1.4,1.4" # prevents tight spaces from becoming traps
+        density: 50
+        mask: [ LargeMobMask ]
+        layer: [ WallLayer ]
+  - type: AccessReader
+    access: [ [ "Engineering" ] ]
+  - type: ApcPowerReceiver
+    powerLoad: 2500
+  - type: PowerCharge
+    windowTitle: gravity-generator-window-title
+    idlePower: 50
+    activePower: 2500
+  - type: GravityGenerator
+    lightRadiusMin: 0.75
+    lightRadiusMax: 2.5
+    spriteMap:
+      broken: "broken"
+      unpowered: "off"
+      off: "off"
+      on: "on"
+    driftEnabled: true
+  - type: ContainerContainer
+    containers:
+      sabotage_container: !type:ContainerSlot
+  - type: SabotagableMachine
+    sabotageLength: 4m # one minute less than the nuclear fucking warhead
+    soundInsert:
+      collection: GravityGeneratorSabotageInsert
+    soundRemove:
+      collection: GravityGeneratorSabotageRemove
+    soundComplete:
+      collection: GravityGeneratorSabotageComplete
+    soundAmbientBase:
+      collection: GravityGeneratorAmbientBase
+    soundAmbientSabotage:
+      collection: GravityGeneratorAmbientSabotage
+    toolInsertTime: 10s
+    toolRemoveTime: 10s
+    toolWhitelist:
+      tags: [ GravityGeneratorHacker ]
+  - type: Construction
+    graph: GravityGeneratorSabotageGraph
+    deconstructionTarget: null
+    node: panel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: grate
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: bare
+
+## Sound Collections
+- type: soundCollection
+  id: GravityGeneratorAmbientBase
+  files:
+  - /Audio/Ambience/Objects/gravity_gen_hum.ogg # TODO: move this to pinwheel directory
+
+- type: soundCollection
+  id: GravityGeneratorAmbientSabotage
+  files:
+  - /Audio/_Pinwheel/Structures/Machines/Anomaly_Generator/ambient_sabotage.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: GravityGeneratorAnnouncement
+  files:
+  - /Audio/Effects/alert.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: GravityGeneratorSabotageInsert
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: GravityGeneratorSabotageRemove
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+- type: soundCollection
+  id: GravityGeneratorSabotageComplete
+  files:
+  - /Audio/Effects/sparks1.ogg # TODO: placeholder
+
+## Construction Graph
+- type: constructionGraph
+  id: GravityGeneratorSabotageGraph
+  start: panel
+  graph:
+  - node: panel
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 2
+    edges:
+    - to: grate
+      steps:
+      - tool: Welding
+        doAfter: 5
+      - tool: Prying
+        doAfter: 1
+  - node: grate
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 1
+    edges:
+    - to: bare
+      steps:
+      - tool: Cutting
+        doAfter: 3
+  - node: bare
+    actions:
+    - !type:VisualizerDataInt
+      key: "enum.SabotagableMachineVisuals.ShellState"
+      data: 0
+    - !type:RaiseEvent
+      event: !type:SabotagableMachineOpenedEvent
+      broadcast: false
+
+## Macguffin
+- type: entity
+  parent: BaseItem
+  id: GravityGeneratorHacker
+  name: gravity generator hacker
+  description: sample text
+  components:
+  - type: Sprite
+    sprite: _Pinwheel/Devices/Sabotage/anomaly_generator_hacker.rsi
+    state: icon
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,2
+  - type: Tag
+    tags: [ GravityGeneratorHacker ]
+
+- type: Tag
+  id: GravityGeneratorHacker

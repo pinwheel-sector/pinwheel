@@ -11,7 +11,11 @@
 # 2026-06-11 - traitor sabotage
 CrewMonitoringServer: ExtractableServerCrewMonitor
 ResearchAndDevelopmentServer: ExtractableServerResearch
+
 CrewMonitoringServerMachineCircuitboard: null
 ResearchAndDevelopmentServerMachineCircuitboard: null
 CrewMonitoringServerFlatpack: null
-CargoMailTeleporter: CargoMailbox
+
+CargoMailTeleporter: MachineMailbox
+
+GravityGenerator: MachineGravityGenerator

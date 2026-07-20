@@ -1,6 +1,6 @@
 ## Teleporter
 - type: entity
-  id: CargoMailbox
+  id: MachineMailbox
   parent: BaseMachinePowered
   name: bluespace mailbox
   description: Periodically recieves mail addressed to someone on the station. The maintenance panel looks like it could be unscrewed and pried off, or bashed in.
