@@ -72,7 +72,7 @@ public sealed partial class AnomalyGeneratorComponent : Component
 
     // Pinwheel-stt - traitor sabotage
     /// <summary>
-    /// Message to use when the maintenance panel is taken off
+    /// Message to use when the sabotage doodad is jammed in
     /// </summary>
     [DataField]
     public LocId MessageInsert = "sabotage-message-start-anomaly";
@@ -84,16 +84,16 @@ public sealed partial class AnomalyGeneratorComponent : Component
     public LocId MessageRemove = "sabotage-message-stop-anomaly";
 
     /// <summary>
-    /// Sound played with sabotage announcement
-    /// </summary>
-    [DataField]
-    public SoundSpecifier? SabotageAnnouncementSound;
-
-    /// <summary>
     /// Message to use when the sabotage macguffin does its thing
     /// </summary>
     [DataField]
     public LocId MessageComplete = "sabotage-message-complete-anomaly";
+
+    /// <summary>
+    /// Sound played with sabotage announcement
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SabotageAnnouncementSound;
 
     /// <summary>
     /// Anomalies to spawn on complete sabotage

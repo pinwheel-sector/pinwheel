@@ -1,5 +1,8 @@
 using Content.Shared.Power;
+using Content.Shared.Radio; // Pinwheel - traitor sabotage
+using Robust.Shared.Audio; // Pinwheel - traitor sabotage
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
 using Robust.Shared.Timing; // Pinwheel - gravity drift
 
 namespace Content.Shared.Gravity;
@@ -68,4 +71,54 @@ public sealed partial class GravityGeneratorComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan NextDrift;
     // Pinwheel-end - gravity drift
+
+    // Pinwheel-stt - traitor sabotage
+    /// <summary>
+    /// The radio channel to whine on when something goes wrong
+    /// </summary>
+    [DataField]
+    public ProtoId<RadioChannelPrototype> MessageChannel = "Engineering";
+
+    /// <summary>
+    /// Message to use when the maintenance panel is taken off
+    /// </summary>
+    [DataField]
+    public LocId MessageOpen = "sabotage-message-open-gravity";
+
+    /// <summary>
+    /// Message to use when the sabotage doodad is jammed in
+    /// </summary>
+    [DataField]
+    public LocId MessageStart = "sabotage-message-start-gravity";
+
+    /// <summary>
+    /// Message to use when the sabotage doohickey is removed
+    /// </summary>
+    [DataField]
+    public LocId MessageStop = "sabotage-message-stop-gravity";
+
+    /// <summary>
+    /// Message to use when the sabotage macguffin does its thing
+    /// </summary>
+    [DataField]
+    public LocId MessageComplete = "sabotage-message-complete-gravity";
+
+    /// <summary>
+    /// Sound played with sabotage announcement
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SabotageAnnouncementSound;
+
+    /// <summary>
+    /// Anomalies to spawn on complete sabotage
+    /// </summary>
+    [DataField]
+    public int SabotageAnomalyCount = 4;
+
+    /// <summary>
+    /// Is the sabotage complete. Checked by the objective
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool SabotageComplete = false;
+    // Pinwheel-end - traitor sabotage
 }

@@ -60,8 +60,8 @@
     sound:
       collection: GravityGeneratorAmbientBase
   # UI
-  - type: ActivatableUI # TODO: after sabotage the UI opens at the same time you try to remove the tool which is bad
-    key: enum.PowerChargeUiKey.Key
+  - type: ActivatableUI
+    key: enum.PowerChargeUiKey.Key # TODO: get rid of the toggle on/off
   - type: ActivatableUIRequiresAccess
   - type: UserInterface
     interfaces:

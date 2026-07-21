@@ -147,10 +147,13 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
     private void OnUIOpenAttempt(Entity<SabotagableMachineComponent> ent, ref ActivatableUIOpenAttemptEvent args)
     {
         if (args.Cancelled)
-            return;
+            return; // exit if cancelled
 
-        if (ent.Comp.StatusSabotaging)
-            args.Cancel();
+        if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
+            return; // exit if we don't have a container
+
+        if (container.Count > 0)
+            args.Cancel(); // stop the UI if we need to start the removal doafter instead
     }
 
     private void OnMachineOpened(Entity<SabotagableMachineComponent> ent, ref SabotagableMachineOpenedEvent args)
@@ -250,12 +253,7 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
         if (!_container.TryGetContainer(ent.Owner, ent.Comp.ToolContainerId, out var container))
             return; // starting w/o a container shouldn't be possible but we need the ^ out var
 
-        var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
-
         _appearance.SetData(ent, SabotagableMachineVisuals.ToolState, inserting);
-        _appearance.SetData(ent, SabotagableMachineVisuals.LightState, inserting);
-        _audio.PlayPredicted(sound, ent.Owner, user);
-        ProcessAmbient(ent, inserting);
 
         switch (inserting)
         {
@@ -275,6 +273,11 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
         if (ent.Comp.StatusSabotaged)
             return; // cancel if the sabotage is complete. can't jack it twice
+
+        var sound = inserting ? ent.Comp.SoundInsert : ent.Comp.SoundRemove;
+        _appearance.SetData(ent, SabotagableMachineVisuals.LightState, inserting);
+        _audio.PlayPredicted(sound, ent.Owner, user);
+        ProcessAmbient(ent, inserting);
 
         ent.Comp.StatusSabotaging = inserting;
         RaiseLocalEvent(ent.Owner, (object)raisedEvent);

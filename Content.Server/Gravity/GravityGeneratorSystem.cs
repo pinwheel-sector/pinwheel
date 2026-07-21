@@ -1,6 +1,9 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Radio.EntitySystems; // Pinwheel - traitor sabotage
+using Content.Shared.Chat; // Pinwheel - traitor sabotage
 using Content.Shared.Gravity;
+using Content.Shared._Pinwheel.Sabotage; // Pinwheel - traitor sabotage
 using Robust.Shared.Physics.Systems; // Pinwheel - gravity drift
 using Robust.Shared.Timing; // Pinwheel - gravity drift
 
@@ -8,6 +11,7 @@ namespace Content.Server.Gravity;
 
 public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSystem
 {
+    [Dependency] private SharedChatSystem _chat = default!; // Pinwheel - traitor sabotage
     [Dependency] private GravitySystem _gravitySystem = default!;
     [Dependency] private SharedPointLightSystem _lights = default!;
     // Pinwheel-stt - gravity drift
@@ -15,6 +19,7 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private IGameTiming _timing = default!;
     // Pinwheel-end - gravity drift
+    [Dependency] private RadioSystem _radio = default!; // Pinwheel - traitor sabotage
 
     public override void Initialize()
     {
@@ -23,7 +28,18 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
         SubscribeLocalEvent<GravityGeneratorComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineActivatedEvent>(OnActivated);
         SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineDeactivatedEvent>(OnDeactivated);
+        // Pinwheel-stt - traitor sabotage
+        SubscribeLocalEvent<GravityGeneratorComponent, SabotagableMachineOpenedEvent>(OnMachineOpened);
+        SubscribeLocalEvent<GravityGeneratorComponent, SabotageStartEvent>(OnSabotageStart);
+        SubscribeLocalEvent<GravityGeneratorComponent, SabotageStopEvent>(OnSabotageStop);
+        SubscribeLocalEvent<GravityGeneratorComponent, SabotageCompleteEvent>(OnSabotageComplete);
+        // Pinwheel-end - traitor sabotage
     }
+
+    // Pinwheel-stt - traitor sabotage
+    private Color messageColor = new Color(255, 115, 60); // engineering radio color
+    private string senderName = "Gravity Generator";
+    // Pinwheel-end - traitor sabotage
 
     public override void Update(float frameTime)
     {
@@ -105,4 +121,48 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
             _gravitySystem.RefreshGravity(args.OldParent.Value, gravity);
         }
     }
+
+// Pinwheel-stt - traitor sabotage
+    private void OnMachineOpened(Entity<GravityGeneratorComponent> ent, ref SabotagableMachineOpenedEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.MessageOpen);
+        _radio.SendRadioMessage(ent, message, ent.Comp.MessageChannel, ent);
+    }
+
+    private void OnSabotageStart(Entity<GravityGeneratorComponent> ent, ref SabotageStartEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.MessageStart);
+        _chat.DispatchStationAnnouncement(ent,
+            message,
+            sender: senderName, // TODO: de-hardcode this, somehow
+            announcementSound: ent.Comp.SabotageAnnouncementSound,
+            colorOverride: messageColor); // TODO: de-hardcode this too
+    }
+
+    private void OnSabotageStop(Entity<GravityGeneratorComponent> ent, ref SabotageStopEvent args)
+    {
+        string message = Loc.GetString(ent.Comp.MessageStop);
+        _chat.DispatchStationAnnouncement(ent,
+            message,
+            sender: senderName, // TODO: de-hardcode this, somehow
+            announcementSound: ent.Comp.SabotageAnnouncementSound,
+            colorOverride: messageColor); // TODO: de-hardcode this too
+    }
+
+    private void OnSabotageComplete(Entity<GravityGeneratorComponent> ent, ref SabotageCompleteEvent args)
+    {
+        /*
+        // TODO
+        */
+
+        ent.Comp.SabotageComplete = true;
+
+        string message = Loc.GetString(ent.Comp.MessageComplete);
+        _chat.DispatchStationAnnouncement(ent,
+            message,
+            sender: senderName, // TODO: de-hardcode this, somehow
+            announcementSound: ent.Comp.SabotageAnnouncementSound,
+            colorOverride: messageColor); // TODO: de-hardcode this too
+    }
+// Pinwheel-end - traitor sabotage
 }
