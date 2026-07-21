@@ -14,7 +14,7 @@ namespace Content.Shared._Pinwheel.Sabotage;
 /// Requires <see cref="ApcPowerReceiverComponent"/> for its Update loop
 /// </remarks>
 [RegisterComponent]
-[NetworkedComponent, AutoGenerateComponentState] // TODO: network this shit properly
+[NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SabotagableMachineSystem))]
 public sealed partial class SabotagableMachineComponent : Component
 {

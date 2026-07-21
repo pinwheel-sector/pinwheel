@@ -19,6 +19,7 @@
     # difficulty 3
     TraitorSabotageAts: 1
     TraitorSabotageAnomalyGenerator: 1
+    TraitorSabotageGravityGenerator: 1
     TraitorStealNukeDisk: 1
     # difficulty 2
     TraitorSabotageMailbox: 1
@@ -294,6 +295,17 @@
   - type: SabotageMailboxCondition # TODO: ditto
 
 # Engineering
+- type: entity
+  parent: BaseTraitorSabotageEngineering
+  id: TraitorSabotageGravityGenerator
+  name: Sabotage Engineering's Gravity Generator
+  description: Find the hacking tool in your uplink and insert it into the machine. Make sure nobody pulls it out ahead of time.
+  components:
+  - type: Objective
+    icon:
+      sprite: _Pinwheel/Devices/Sabotage/anomaly_generator_hacker.rsi # PLACEHOLDER
+      state: icon
+  - type: SabotageGravityGeneratorCondition # TODO: ditto
 
 # Medical
 
