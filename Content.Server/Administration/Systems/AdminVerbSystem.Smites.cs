@@ -715,7 +715,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = noGravityName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Structures/Machines/gravity_generator.rsi"), "off"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Pinwheel/Structures/Machines/gravity_generator.rsi"), "base"),
             Act = () =>
             {
                 var grav = EnsureComp<MovementIgnoreGravityComponent>(args.Target);
