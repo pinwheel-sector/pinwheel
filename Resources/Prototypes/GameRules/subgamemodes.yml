@@ -1,12 +1,5 @@
 # Needs testing
 - type: entity
-  parent: BaseWizardRule
-  id: SubWizard
-  components:
-  - type: GameRule
-    cancelPresetOnTooFewPlayers: false
-
-- type: entity
   parent: BaseXenoborgsRule
   id: SubXenoborgs
   components:

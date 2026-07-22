@@ -228,7 +228,6 @@
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
-    - Wizard
     - Xenoborg
 
 - type: entity

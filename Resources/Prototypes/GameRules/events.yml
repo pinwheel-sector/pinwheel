@@ -43,7 +43,6 @@
     - id: ParadoxCloneSpawn
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
-    - id: WizardSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -255,17 +254,6 @@
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: MobRevenant
-
-- type: entity
-  parent: [ BaseAntagGhostRoleRule, BaseWizardRule ]
-  id: WizardSpawn
-  components:
-  - type: StationEvent
-    weight: 1 # rare
-    duration: null
-    earliestStart: 30
-    reoccurrenceDelay: 60
-    minimumPlayers: 30
 
 # disabled until event is rewritten to be more interesting
 #- type: entity

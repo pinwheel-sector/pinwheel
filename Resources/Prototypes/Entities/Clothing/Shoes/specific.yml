@@ -135,8 +135,8 @@
 - type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesWizard
-  name: wizard shoes
-  description: A pair of magic shoes.
+  name: sandals # Pinwheel
+  description: Socks not included. # Pinwheel
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Specific/wizard.rsi
