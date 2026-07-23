@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/23/2026 15:37:26
-  entityCount: 29067
+  time: 07/23/2026 16:47:03
+  entityCount: 29064
 maps:
 - 1
 grids:
@@ -7777,35 +7777,6 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 28671
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 2644
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 5954
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 5954
-  - uid: 5958
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 5957
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 5957
-  - uid: 23586
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 5964
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 5964
 - proto: ActionToggleLight
   entities:
   - uid: 1794
@@ -129277,10 +129248,6 @@ entities:
     - type: Transform
       pos: 12.351956,20.422295
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 23596
-    - type: Jetpack
-      toggleActionEntity: invalid
 - proto: JetpackMiniFilled
   entities:
   - uid: 4122
@@ -129313,19 +129280,11 @@ entities:
     - type: Transform
       pos: 12.718499,20.40857
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 2645
-    - type: Jetpack
-      toggleActionEntity: invalid
   - uid: 5957
     components:
     - type: Transform
       pos: 12.418816,20.630312
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 5959
-    - type: Jetpack
-      toggleActionEntity: invalid
 - proto: Jukebox
   entities:
   - uid: 28323
