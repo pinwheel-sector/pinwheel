@@ -57,36 +57,79 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
             _lights.SetRadius(uid, MathHelper.Lerp(grav.LightRadiusMin, grav.LightRadiusMax, charge.Charge),
                 pointLight);
 
-            // Pinwheel-stt - gravity drift
-            if ((grav.NextDrift > curTime) || !grav.DriftEnabled)
-                continue;
+            // Pinwheel-stt
+            if ((grav.DriftNext < curTime) && grav.DriftEnabled)
+                HandleDrift((uid, grav));
 
-            grav.NextDrift += grav.DriftRate;
+            if ((grav.QuakeNext < (curTime + grav.QuakeWarning)) && grav.SabotageComplete)
+                HandleQuakeWarning((uid, grav));
 
-            var xform = Transform(uid);
-            var worldPos = _transform.GetWorldPosition(xform);
-
-            // get all entities with GravityDrift
-            var drifters = EntityQueryEnumerator<GravityDriftComponent, TransformComponent>();
-            while (drifters.MoveNext(out var driftUid, out var drift, out var driftXform))
-            {
-                // reset the strength and skip to the next entity if grounded
-                if (driftXform.GridUid != null)
-                    {
-                        drift.DriftStrength = 0;
-                        continue;
-                    }
-
-                var dir = (_transform.GetWorldPosition(driftXform) - worldPos).Normalized();
-
-                if (drift.DriftStrength < drift.DriftMax)
-                    drift.DriftStrength += drift.DriftAdd;
-
-                _physics.ApplyLinearImpulse(driftUid, (-dir * drift.DriftStrength));
-            }
-            // Pinwheel-end - gravity drift
+            if ((grav.QuakeNext < curTime) && grav.SabotageComplete)
+                HandleQuake((uid, grav));
+            // Pinwheel-end
         }
     }
+
+    // Pinwheel-stt
+    private void HandleDrift(Entity<GravityGeneratorComponent> ent)
+    {
+        ent.Comp.DriftNext += ent.Comp.DriftRate;
+
+        var xform = Transform(ent.Owner);
+        var worldPos = _transform.GetWorldPosition(xform);
+
+        // get all entities with GravityDrift
+        var drifters = EntityQueryEnumerator<GravityDriftComponent, TransformComponent>();
+        while (drifters.MoveNext(out var driftUid, out var drift, out var driftXform))
+        {
+            // reset the strength and skip to the next entity if grounded
+            if (driftXform.GridUid != null)
+                {
+                    drift.DriftStrength = 0;
+                    continue;
+                }
+
+            var dir = (_transform.GetWorldPosition(driftXform) - worldPos).Normalized();
+
+            if (drift.DriftStrength < drift.DriftMax)
+                drift.DriftStrength += drift.DriftAdd;
+
+            _physics.ApplyLinearImpulse(driftUid, (-dir * drift.DriftStrength));
+        }
+    }
+
+    private void HandleQuakeWarning(Entity<GravityGeneratorComponent> ent)
+    {
+        if (ent.Comp.QuakeWarned)
+            return; // don't spam the announcements
+
+        string message = Loc.GetString(ent.Comp.MessageQuake);
+        _chat.DispatchStationAnnouncement(ent,
+            message,
+            sender: senderName, // TODO: de-hardcode this, somehow
+            announcementSound: ent.Comp.SabotageAnnouncementSound,
+            colorOverride: messageColor); // TODO: de-hardcode this too
+
+        ent.Comp.QuakeWarned = true;
+    }
+
+    private void HandleQuake(Entity<GravityGeneratorComponent> ent)
+    {
+        var curTime = _timing.CurTime;
+
+        ent.Comp.QuakeNext = (curTime + ent.Comp.QuakeMin); // TODO: randomize this
+
+        _chat.DispatchStationAnnouncement(ent,
+            "DEBUG MESSAGE",
+            sender: senderName, // TODO: de-hardcode this, somehow
+            announcementSound: ent.Comp.SabotageAnnouncementSound,
+            colorOverride: messageColor); // TODO: de-hardcode this too
+
+        Log.Info($"ughhhhhhhhh - {curTime} - {ent.Comp.QuakeNext} - {ent.Comp.QuakeMin}");
+
+        ent.Comp.QuakeWarned = false;
+    }
+    // Pinwheel-end
 
     private void OnActivated(Entity<GravityGeneratorComponent> ent, ref ChargedMachineActivatedEvent args)
     {
@@ -151,9 +194,9 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
 
     private void OnSabotageComplete(Entity<GravityGeneratorComponent> ent, ref SabotageCompleteEvent args)
     {
-        /*
-        // TODO
-        */
+        var curTime = _timing.CurTime;
+
+        ent.Comp.QuakeNext = (curTime + ent.Comp.QuakeMin); // TODO: randomize this
 
         ent.Comp.SabotageComplete = true;
 

@@ -96,6 +96,8 @@
       off: "off"
       on: "on"
     driftEnabled: true
+    sabotageAnnouncementSound:
+      collection: AnomalyGeneratorAnnouncement # TODO: placeholder
   - type: ContainerContainer
     containers:
       sabotage_container: !type:ContainerSlot

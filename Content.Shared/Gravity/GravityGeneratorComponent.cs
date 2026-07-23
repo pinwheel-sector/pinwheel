@@ -69,7 +69,7 @@ public sealed partial class GravityGeneratorComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan NextDrift;
+    public TimeSpan DriftNext;
     // Pinwheel-end - gravity drift
 
     // Pinwheel-stt - traitor sabotage
@@ -104,21 +104,56 @@ public sealed partial class GravityGeneratorComponent : Component
     public LocId MessageComplete = "sabotage-message-complete-gravity";
 
     /// <summary>
+    /// Message to use when warning of an imminent quake
+    /// </summary>
+    [DataField]
+    public LocId MessageQuake = "sabotage-message-quake-gravity";
+
+    /// <summary>
     /// Sound played with sabotage announcement
     /// </summary>
     [DataField]
     public SoundSpecifier? SabotageAnnouncementSound;
 
     /// <summary>
-    /// Anomalies to spawn on complete sabotage
-    /// </summary>
-    [DataField]
-    public int SabotageAnomalyCount = 4;
-
-    /// <summary>
     /// Is the sabotage complete. Checked by the objective
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool SabotageComplete = false;
+
+    /// <summary>
+    /// How many seconds in advance to warn of a quake
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan QuakeWarning = TimeSpan.FromSeconds(2);
+
+    /// <summary>
+    /// Have we warned of the quake yet
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool QuakeWarned = false;
+
+    /// <summary>
+    /// When the next quake will happen
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan QuakeNext;
+
+    /// <summary>
+    /// Minimum time between quakes
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan QuakeMin = TimeSpan.FromSeconds(120);
+
+    /// <summary>
+    /// Maximum time between quakes
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan QuakeMax = TimeSpan.FromSeconds(840);
     // Pinwheel-end - traitor sabotage
 }

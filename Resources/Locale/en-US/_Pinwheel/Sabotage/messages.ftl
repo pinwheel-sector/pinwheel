@@ -23,4 +23,4 @@ sabotage-message-complete-gravity = Warning. Instability of gravitational nucleu
 sabotage-message-complete-mailbox = Transaction of ${$penalty} to xX_Syndicate-Hacker-Den_Xx complete. Thank you for doing business with NanoTrasen.
 
 ## Misc.
-sabotage-message-earthquake-gravity = Warning. Nucleus containment failure. Brace for impulse.
+sabotage-message-quake-gravity = Warning. Nucleus containment failure. Brace for impulse.
