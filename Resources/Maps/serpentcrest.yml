@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 272.0.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/05/2026 17:56:37
-  entityCount: 29072
+  time: 07/23/2026 15:37:26
+  entityCount: 29067
 maps:
 - 1
 grids:
@@ -7694,15 +7694,6 @@ entities:
       parent: 2
 - proto: ActionToggleBlock
   entities:
-  - uid: 3986
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12806
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 12806
   - uid: 20971
     mapInit: true
     paused: true
@@ -7777,15 +7768,6 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 24547
-  - uid: 28563
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 28561
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 28561
   - uid: 28672
     mapInit: true
     paused: true
@@ -7824,15 +7806,6 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 5964
-  - uid: 28562
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 28561
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 28561
 - proto: ActionToggleLight
   entities:
   - uid: 1794
@@ -54332,7 +54305,7 @@ entities:
     - type: Transform
       pos: -43.5,35.5
       parent: 2
-- proto: CargoMailTeleporter
+- proto: CargoMailbox
   entities:
   - uid: 22316
     components:
@@ -70093,21 +70066,6 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: ClockworkShield
-  entities:
-  - uid: 12806
-    components:
-    - type: Transform
-      pos: -55.53158,-14.472418
-      parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 3986
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 3986
 - proto: ClosetBombFilled
   entities:
   - uid: 5020
@@ -72836,27 +72794,6 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 7235
-- proto: ClothingShoesBootsMagSyndie
-  entities:
-  - uid: 28561
-    components:
-    - type: MetaData
-      desc: looks like an (un)lucky shot blew out the mini jetpack
-      name: Broken blood-red magboots
-    - type: Transform
-      pos: 22.250744,-64.840576
-      parent: 2
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 28562
-          - 28563
-    missingComponents:
-    - GasTank
-    - UserInterface
-    - Jetpack
 - proto: ClothingShoesBootsMerc
   entities:
   - uid: 28541
@@ -75810,32 +75747,6 @@ entities:
     - type: Transform
       pos: -2.5,-23.5
       parent: 2
-- proto: CrateVendingMachineRestockDonutFilled
-  entities:
-  - uid: 5077
-    components:
-    - type: Transform
-      pos: -9.5,21.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5078
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrayonBox
   entities:
   - uid: 6046
@@ -75858,13 +75769,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -2.5,-18.5
-      parent: 2
-- proto: CrewMonitoringServer
-  entities:
-  - uid: 6519
-    components:
-    - type: Transform
-      pos: 57.5,24.5
       parent: 2
 - proto: CriminalRecordsComputerCircuitboard
   entities:
@@ -83673,12 +83577,6 @@ entities:
       parent: 2
     - type: GasTank
       toggleActionEntity: 28672
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 28672
 - proto: EmergencyOxygenTankFilled
   entities:
   - uid: 16966
@@ -84051,6 +83949,20 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: ExtractableServerCrewMonitor
+  entities:
+  - uid: 6519
+    components:
+    - type: Transform
+      pos: 57.5,24.5
+      parent: 2
+- proto: ExtractableServerResearch
+  entities:
+  - uid: 6518
+    components:
+    - type: Transform
+      pos: 55.5,24.5
+      parent: 2
 - proto: FaxMachineBase
   entities:
   - uid: 1850
@@ -88735,7 +88647,6 @@ entities:
           occludes: True
           ents:
           - 6580
-    - type: ActionsContainer
   - uid: 7130
     components:
     - type: Transform
@@ -88754,7 +88665,6 @@ entities:
           occludes: True
           ents:
           - 5380
-    - type: ActionsContainer
   - uid: 7131
     components:
     - type: Transform
@@ -88773,7 +88683,6 @@ entities:
           occludes: True
           ents:
           - 1794
-    - type: ActionsContainer
   - uid: 22802
     components:
     - type: Transform
@@ -129371,14 +129280,7 @@ entities:
     - type: GasTank
       toggleActionEntity: 23596
     - type: Jetpack
-      toggleActionEntity: 23586
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 23586
-          - 23596
+      toggleActionEntity: invalid
 - proto: JetpackMiniFilled
   entities:
   - uid: 4122
@@ -129414,14 +129316,7 @@ entities:
     - type: GasTank
       toggleActionEntity: 2645
     - type: Jetpack
-      toggleActionEntity: 2644
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 2644
-          - 2645
+      toggleActionEntity: invalid
   - uid: 5957
     components:
     - type: Transform
@@ -129430,14 +129325,7 @@ entities:
     - type: GasTank
       toggleActionEntity: 5959
     - type: Jetpack
-      toggleActionEntity: 5958
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 5958
-          - 5959
+      toggleActionEntity: invalid
 - proto: Jukebox
   entities:
   - uid: 28323
@@ -129596,7 +129484,6 @@ entities:
           - 6515
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 6700
     components:
     - type: Transform
@@ -129617,7 +129504,6 @@ entities:
           - 1900
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 7189
     components:
     - type: Transform
@@ -129653,7 +129539,6 @@ entities:
           - 14302
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 10908
     components:
     - type: Transform
@@ -129674,7 +129559,6 @@ entities:
           - 5676
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
 - proto: LampBanana
   entities:
   - uid: 10514
@@ -129697,7 +129581,6 @@ entities:
           - 10515
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
 - proto: LampGold
   entities:
   - uid: 629
@@ -129720,7 +129603,6 @@ entities:
           - 6549
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 2661
     components:
     - type: Transform
@@ -129753,7 +129635,6 @@ entities:
           - 24233
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 6956
     components:
     - type: Transform
@@ -129779,7 +129660,6 @@ entities:
           - 5680
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 25913
     components:
     - type: Transform
@@ -129806,7 +129686,6 @@ entities:
           - 28841
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
 - proto: LampInterrogator
   entities:
   - uid: 5843
@@ -133424,12 +133303,6 @@ entities:
       parent: 2
     - type: GasTank
       toggleActionEntity: 24548
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 24548
   - uid: 24551
     components:
     - type: Transform
@@ -148126,13 +147999,6 @@ entities:
     - type: Transform
       pos: -58.61676,-2.423478
       parent: 2
-- proto: ResearchAndDevelopmentServer
-  entities:
-  - uid: 6518
-    components:
-    - type: Transform
-      pos: 55.5,24.5
-      parent: 2
 - proto: Retractor
   entities:
   - uid: 8231
@@ -148154,27 +148020,11 @@ entities:
     - type: Transform
       pos: 5.694502,21.418985
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 20971
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 20971
   - uid: 6340
     components:
     - type: Transform
       pos: 5.272627,21.43461
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 20972
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 20972
 - proto: RiotLaserShield
   entities:
   - uid: 6343
@@ -148182,27 +148032,11 @@ entities:
     - type: Transform
       pos: 12.601956,21.516045
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 23601
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 23601
   - uid: 6344
     components:
     - type: Transform
       pos: 12.461331,21.62542
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 23602
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 23602
 - proto: RiotShield
   entities:
   - uid: 6341
@@ -164564,6 +164398,34 @@ entities:
     - type: Transform
       pos: 5.5,-18.5
       parent: 2
+- proto: VendingMachineRestockDonut
+  entities:
+  - uid: 5077
+    components:
+    - type: Transform
+      pos: -9.5,21.5
+      parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
+      closeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/closetclose.ogg
+      openSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/closetopen.ogg
+      whitelist:
+        components:
+        - MobState
+        - Item
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          ents:
+          - 5078
+        paper_label: !type:ContainerSlot {}
 - proto: VendingMachineRestockHotDrinks
   entities:
   - uid: 5078
