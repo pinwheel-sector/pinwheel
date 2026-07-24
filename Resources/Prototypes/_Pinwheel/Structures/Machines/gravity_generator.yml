@@ -97,7 +97,7 @@
       on: "on"
     driftEnabled: true
     sabotageAnnouncementSound:
-      collection: AnomalyGeneratorAnnouncement # TODO: placeholder
+      collection: GravityGeneratorAnnouncement
   - type: ContainerContainer
     containers:
       sabotage_container: !type:ContainerSlot
@@ -140,12 +140,12 @@
 - type: soundCollection
   id: GravityGeneratorAmbientBase
   files:
-  - /Audio/Ambience/Objects/gravity_gen_hum.ogg # TODO: move this to pinwheel directory
+  - /Audio/_Pinwheel/Structures/Machines/Gravity_Generator/ambient_base.ogg
 
 - type: soundCollection
   id: GravityGeneratorAmbientSabotage
   files:
-  - /Audio/_Pinwheel/Structures/Machines/Anomaly_Generator/ambient_sabotage.ogg # TODO: placeholder
+  - /Audio/_Pinwheel/Structures/Machines/Gravity_Generator/ambient_sabotage.ogg
 
 - type: soundCollection
   id: GravityGeneratorAnnouncement
