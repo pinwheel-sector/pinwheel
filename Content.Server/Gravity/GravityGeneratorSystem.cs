@@ -1,17 +1,30 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Radio.EntitySystems; // Pinwheel - traitor sabotage
-using Content.Shared.Chat; // Pinwheel - traitor sabotage
 using Content.Shared.Gravity;
-using Content.Shared._Pinwheel.Sabotage; // Pinwheel - traitor sabotage
-using Robust.Shared.Physics.Systems; // Pinwheel - gravity drift
-using Robust.Shared.Timing; // Pinwheel - gravity drift
+// Pinwheel-stt - gravity drift
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Timing;
+using System.Numerics;
+// Pinwheel-end - gravity drift
+// Pinwheel-stt - traitor sabotage
+using Content.Server.Buckle.Systems;
+using Content.Server.Radio.EntitySystems;
+using Content.Server.Stunnable;
+using Content.Shared.Atmos.Components;
+using Content.Shared.Buckle.Components;
+using Content.Shared.Chat;
+using Content.Shared.Throwing;
+using Content.Shared._Pinwheel.Sabotage;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Dynamics;
+// Pinwheel-end - traitor sabotage
 
 namespace Content.Server.Gravity;
 
 public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSystem
 {
-    [Dependency] private SharedChatSystem _chat = default!; // Pinwheel - traitor sabotage
     [Dependency] private GravitySystem _gravitySystem = default!;
     [Dependency] private SharedPointLightSystem _lights = default!;
     // Pinwheel-stt - gravity drift
@@ -19,7 +32,18 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private IGameTiming _timing = default!;
     // Pinwheel-end - gravity drift
-    [Dependency] private RadioSystem _radio = default!; // Pinwheel - traitor sabotage
+    // Pinwheel-stt - traitor sabotage
+    [Dependency] private BuckleSystem _buckle = default!;
+    [Dependency] private SharedChatSystem _chat = default!;
+    [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private StunSystem _stuns = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+
+    [Dependency] private EntityQuery<BuckleComponent> _buckleQuery = default!;
+    [Dependency] private EntityQuery<MapGridComponent> _gridQuery = default!;
+    [Dependency] private EntityQuery<MovedByPressureComponent> _movedByPressureQuery = default!;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
+    // Pinwheel-end - traitor sabotage
 
     public override void Initialize()
     {
@@ -37,6 +61,7 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     }
 
     // Pinwheel-stt - traitor sabotage
+    // TODO: this shit should either be interpreted or in the component
     private Color messageColor = new Color(255, 115, 60); // engineering radio color
     private string senderName = "Gravity Generator";
     // Pinwheel-end - traitor sabotage
@@ -70,7 +95,7 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
         }
     }
 
-    // Pinwheel-stt
+    // Pinwheel-stt - gravity drift
     private void HandleDrift(Entity<GravityGeneratorComponent> ent)
     {
         ent.Comp.DriftNext += ent.Comp.DriftRate;
@@ -97,7 +122,9 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
             _physics.ApplyLinearImpulse(driftUid, (-dir * drift.DriftStrength));
         }
     }
+    // Pinwheel-end - gravity drift
 
+    // Pinwheel-stt - traitor sabotage
     private void HandleQuakeWarning(Entity<GravityGeneratorComponent> ent)
     {
         if (ent.Comp.QuakeWarned)
@@ -116,20 +143,71 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     private void HandleQuake(Entity<GravityGeneratorComponent> ent)
     {
         var curTime = _timing.CurTime;
+        var xform = Transform(ent);
 
         ent.Comp.QuakeNext = (curTime + ent.Comp.QuakeMin); // TODO: randomize this
 
-        _chat.DispatchStationAnnouncement(ent,
-            "DEBUG MESSAGE",
-            sender: senderName, // TODO: de-hardcode this, somehow
-            announcementSound: ent.Comp.SabotageAnnouncementSound,
-            colorOverride: messageColor); // TODO: de-hardcode this too
-
-        Log.Info($"ughhhhhhhhh - {curTime} - {ent.Comp.QuakeNext} - {ent.Comp.QuakeMin}");
+        ThrowEntitiesOnGrid(xform.ParentUid, ent);
 
         ent.Comp.QuakeWarned = false;
     }
-    // Pinwheel-end
+
+    private static bool GridQueryCallback(
+        ref (List<Entity<PhysicsComponent>> List, HashSet<EntityUid> Processed, EntityQuery<PhysicsComponent> PhysicsQuery) state,
+        in EntityUid uid)
+    {
+        if (state.Processed.Add(uid) && state.PhysicsQuery.TryComp(uid, out var body))
+            state.List.Add((uid, body));
+
+        return true;
+    }
+
+    private static bool GridQueryCallback(
+        ref (List<Entity<PhysicsComponent>> List, HashSet<EntityUid> Processed, EntityQuery<PhysicsComponent> PhysicsQuery) state,
+        in FixtureProxy proxy)
+    {
+        var owner = proxy.Entity;
+        return GridQueryCallback(ref state, in owner);
+    }
+
+    private void ThrowEntitiesOnGrid(EntityUid gridUid, Entity<GravityGeneratorComponent> generator)
+    { // ripped in large part from ShuttleSystem.Impact.cs
+
+        var xform = Transform(generator);
+
+        // iterate all dynamic entities on the grid
+        if (!TryComp<BroadphaseComponent>(gridUid, out var lookup) || !_gridQuery.TryComp(gridUid, out var gridComp))
+            return;
+
+        var gridBox = gridComp.LocalAABB;
+        List<Entity<PhysicsComponent>> list = new();
+        HashSet<EntityUid> processed = new();
+        var state = (list, processed, _physicsQuery);
+        lookup.DynamicTree.QueryAabb(ref state, GridQueryCallback, gridBox, true);
+        lookup.SundriesTree.QueryAabb(ref state, GridQueryCallback, gridBox, true);
+
+        foreach (var ent in list)
+        {
+            // don't throw if buckled
+            if (_buckle.IsBuckled(ent, _buckleQuery.CompOrNull(ent)))
+                continue;
+
+            // don't throw them if they have magboots
+            if (_movedByPressureQuery.TryComp(ent, out var moved) && !moved.Enabled)
+                continue;
+
+            var dir = (_transform.GetWorldPosition(ent) - _transform.GetWorldPosition(xform)).Normalized();
+
+            _stuns.TryCrawling(ent.Owner, generator.Comp.QuakeStunLength);
+            _throwing.TryThrow(
+                uid: ent.Owner,
+                direction: (-dir * generator.Comp.QuakeDistance),
+                baseThrowSpeed: (dir.Length() * generator.Comp.QuakeStrength),
+                compensateFriction: true,
+                doSpin: true);
+        }
+    }
+    // Pinwheel-end - traitor sabotage
 
     private void OnActivated(Entity<GravityGeneratorComponent> ent, ref ChargedMachineActivatedEvent args)
     {
