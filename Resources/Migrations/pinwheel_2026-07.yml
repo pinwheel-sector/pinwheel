@@ -44,3 +44,6 @@ WeaponWandPolymorphMonkey: null
 VendingMachineMagivend: null
 WizardCommsComputerCircuitBoard: null
 WizardComputerComms: null
+
+# 2026-07-26
+AlertEssenceSpriteView: null # this should not have been serializable in the first place
