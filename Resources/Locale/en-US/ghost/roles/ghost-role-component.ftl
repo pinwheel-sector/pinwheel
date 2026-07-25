@@ -76,9 +76,6 @@ ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
 ghost-role-information-xeno-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other xenos.
 
-ghost-role-information-revenant-name = Revenant
-ghost-role-information-revenant-description = You are a Revenant. Use your powers to harvest souls and unleash chaos upon the crew. Unlock new abilities with the essence you harvest.
-
 ghost-role-information-kangaroo-name = Kangaroo
 ghost-role-information-kangaroo-description = You're a kangaroo! Do whatever kangaroos do.
 

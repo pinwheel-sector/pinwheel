@@ -100,11 +100,6 @@
   id: NukieDelivery
   name: store-category-nukie-delivery
 
-#revenant
-- type: storeCategory
-  id: RevenantAbilities
-  name: store-category-abilities
-
 #pai
 - type: storeCategory
   id: PAIAbilities

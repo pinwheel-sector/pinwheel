@@ -31,7 +31,6 @@
     children:
     - id: ClosetSkeleton
     - id: KingRatMigration
-    - id: RevenantSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -243,18 +242,6 @@
       proto: ParadoxClone
   - type: DynamicRuleCost
     cost: 50
-
-- type: entity
-  parent: BaseGameRule
-  id: RevenantSpawn
-  components:
-  - type: StationEvent
-    weight: 7.5
-    duration: 1
-    earliestStart: 45
-    minimumPlayers: 20
-  - type: RandomSpawnRule
-    prototype: MobRevenant
 
 - type: entity
   parent: [ BaseAntagGhostRoleRule, BaseWizardRule ]

@@ -77,7 +77,6 @@
       weight: 0.002 # 1 in >10,500
       children:
       - id: PlushieThrongler
-      - id: PlushieGhostRevenant # You got the god roll, and failed
 
 # Weh!
 - type: entityTable

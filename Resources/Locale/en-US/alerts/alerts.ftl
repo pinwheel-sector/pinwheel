@@ -108,12 +108,6 @@ alerts-adrenaline-desc = You're full of adrenaline: pain won't slow you down.
 alerts-magboots-name = Magboots
 alerts-magboots-desc = You are immune to airflow, but slightly slower.
 
-alerts-revenant-essence-name = Essence
-alerts-revenant-essence-desc = The power of souls. It sustains you and is used for abilities. It regenerates slowly over time.
-
-alerts-revenant-corporeal-name = Corporeal
-alerts-revenant-corporeal-desc = You have manifested physically. People around you can see and hurt you.
-
 alerts-rooted-name = Rooted
 alerts-rooted-desc = You are attached to the ground. You can't slip, but you absorb fluids under you.
 
