@@ -1060,27 +1060,6 @@
     tags:
     - Xenoborg
 
-- type: entity
-  parent: [ IDCardStandard, BaseMagicalContraband ]
-  id: WizardIDCard
-  name: wizard ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: wizard
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: Wizard
-  - type: Item
-    heldPrefix: green
-  - type: Access
-    tags:
-    - Wizard
-    - External
-    - Maintenance
-  - type: IdCard
-    jobIcon: JobIconWizard
-
 #ERT/Centcomm
 
 - type: entity
@@ -1291,7 +1270,6 @@
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
-    - Wizard
     - Xenoborg
   - type: Tag #  Ignore Chameleon tags
     tags:

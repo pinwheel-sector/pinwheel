@@ -8,7 +8,6 @@
   - Zombie
   - Revolutionary
   - AllHostile
-  - Wizard
   - Xenoborg
 
 - type: npcFaction
@@ -21,7 +20,6 @@
   - Revolutionary
   - Dragon
   - AllHostile
-  - Wizard
   - Xenoborg
 
 - type: npcFaction
@@ -29,7 +27,6 @@
   hostile:
   - PetsNT
   - AllHostile
-  - Wizard
 
 - type: npcFaction
   id: Passive
@@ -58,7 +55,6 @@
   - Dragon
   - Xeno
   - AllHostile
-  - Wizard
   - Xenoborg
 
 - type: npcFaction
@@ -74,7 +70,6 @@
   - Zombie
   - Dragon
   - AllHostile
-  - Wizard
   - Xenoborg
 
 - type: npcFaction
@@ -87,7 +82,6 @@
   - Zombie
   - Revolutionary
   - AllHostile
-  - Wizard
   - Dragon
   - Xenoborg
 
@@ -102,7 +96,6 @@
   - PetsNT
   - Revolutionary
   - AllHostile
-  - Wizard
   - Dragon
   - Xenoborg
 
@@ -114,7 +107,6 @@
   - SimpleHostile
   - Dragon
   - AllHostile
-  - Wizard
   - Xenoborg
 
 - type: npcFaction
@@ -131,24 +123,6 @@
   - Xeno
   - Zombie
   - Revolutionary
-  - Wizard
-  - Xenoborg
-
-- type: npcFaction
-  id: Wizard
-  hostile:
-  - NanoTrasen
-  - Dragon
-  - Mouse
-  - Passive
-  - PetsNT
-  - SimpleHostile
-  - SimpleNeutral
-  - Syndicate
-  - Xeno
-  - Zombie
-  - Revolutionary
-  - AllHostile
   - Xenoborg
 
 - type: npcFaction
@@ -159,7 +133,6 @@
   - Syndicate
   - Zombie
   - Revolutionary
-  - Wizard
 
   - Xeno # rivalry
 

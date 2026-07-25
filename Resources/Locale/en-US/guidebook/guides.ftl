@@ -141,7 +141,6 @@ guide-entry-zombies = Zombies
 guide-entry-revolutionaries = Revolutionaries
 guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-thieves = Thieves
-guide-entry-wizard = Wizard
 guide-entry-xenoborgs = Xenoborgs
 
 guide-entry-rules = Server Rules

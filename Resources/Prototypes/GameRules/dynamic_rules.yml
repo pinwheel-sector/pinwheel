@@ -39,13 +39,6 @@
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
             min: 20
-        - id: Wizard
-          weight: 5
-          conditions:
-          - !type:HasBudgetCondition
-          - !type:MaxRuleOccurenceCondition
-          - !type:PlayerCountCondition
-            min: 10
       # Roundstart Minor Rules
       # NOTHING! - Pinwheel
       # Midround rules
