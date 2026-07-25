@@ -40,6 +40,13 @@ public sealed partial class SabotagableMachineComponent : Component
     public TimeSpan SabotageComplete = new();
 
     /// <summary>
+    /// If the machine should fire pause/unpause events on losing/gaining power respectively
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool PauseWithPower = true;
+
+    /// <summary>
     /// Is the container obstructed by a lock or panel or somesuch
     /// </summary>
     [DataField, AutoNetworkedField]

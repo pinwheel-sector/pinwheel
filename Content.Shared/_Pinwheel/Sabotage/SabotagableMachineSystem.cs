@@ -163,8 +163,8 @@ public sealed partial class SabotagableMachineSystem : EntitySystem
 
     private void OnPowerChanged(Entity<SabotagableMachineComponent> ent, ref PowerChangedEvent args)
     {
-        if (!ent.Comp.StatusSabotaging)
-            return; // cancel if nothing is happening
+        if (!ent.Comp.StatusSabotaging || !ent.Comp.PauseWithPower)
+            return;
 
         var curTime = _timing.CurTime;
 

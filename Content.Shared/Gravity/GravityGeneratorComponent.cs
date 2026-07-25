@@ -155,5 +155,26 @@ public sealed partial class GravityGeneratorComponent : Component
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan QuakeMax = TimeSpan.FromSeconds(840);
+
+    /// <summary>
+    /// Strength of quake throw
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float QuakeStrength = 4.0f;
+
+    /// <summary>
+    /// Distance, in tiles, to throw objects
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float QuakeDistance = 3.0f;
+
+    /// <summary>
+    /// Length of time to stun mobs thrown
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan QuakeStunLength = TimeSpan.FromSeconds(3);
     // Pinwheel-end - traitor sabotage
 }
