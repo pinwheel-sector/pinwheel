@@ -216,16 +216,7 @@
     subtype: role-subtype-revolutionary
 
 # Survivors (Wizard)
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleSurvivor
-  name: Survivor Role
-  components:
-  - type: MindRole
-    antagPrototype: Survivor
-    roleType: FreeAgent
-    subtype: role-subtype-survivor
-  - type: SurvivorRole
+# gone - Pinwheel
 
 # Thief
 # gone. - Pinwheel
@@ -234,16 +225,7 @@
 # moved to it's own file. bye - Pinwheel - traitor remake
 
 # Wizards
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleWizard
-  name: Wizard Role
-  components:
-  - type: MindRole
-    antagPrototype: Wizard
-    exclusiveAntag: true
-    subtype: role-subtype-wizard
-  - type: WizardRole
+# gone - Pinwheel
 
 # Xenoborgs
 - type: entity

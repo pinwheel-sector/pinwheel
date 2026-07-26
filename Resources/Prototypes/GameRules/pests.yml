@@ -108,8 +108,6 @@
       prob: 0.002
     - id: MobSnailMoth
       prob: 0.002
-    - id: MobSnailInstantDeath
-      prob: 0.00001 #  ~ 1:2000 snails
 
 - type: entity
   parent: BaseStationEventShortDelay

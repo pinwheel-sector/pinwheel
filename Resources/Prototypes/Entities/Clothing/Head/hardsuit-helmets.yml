@@ -666,33 +666,6 @@
     tags:
     - WhitelistChameleon
 
-#Wizard Hardsuit
-- type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitWizard
-  name: wizard hardsuit helmet
-  description: A bizarre gem-encrusted helmet that radiates magical energies.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/wizard.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hardsuits/wizard.rsi
-  - type: PointLight
-    color: "#ffadfb"
-  - type: PressureProtection
-    highPressureMultiplier: 0.27
-    lowPressureMultiplier: 1000
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
 #Organic Space Suit
 - type: entity
   parent: ClothingHeadHardsuitBase

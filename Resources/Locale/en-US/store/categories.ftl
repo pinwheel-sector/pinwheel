@@ -15,16 +15,6 @@ store-category-pointless = Pointless
 store-category-objective = Objective
 store-discounted-items = Discounts
 
-# Revenant
-store-category-abilities = Abilities
-
-# Wizard
-store-caregory-spellbook-offensive = Offensive Spells
-store-caregory-spellbook-defensive = Defensive Spells
-store-caregory-spellbook-utility = Utility Spells
-store-caregory-spellbook-equipment = Wizard Equipment
-store-caregory-spellbook-events = Event Spells
-
 # Nukie Delivery
 store-category-nukie-delivery = Offers
 

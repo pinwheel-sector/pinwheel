@@ -126,25 +126,3 @@
     solution: food
   - type: Extractable
     grindableSolutionName: food
-
-- type: entity
-  parent: Ash
-  id: Ectoplasm
-  name: ectoplasm
-  description: Much less deadly in this form.
-  components:
-  - type: Sprite
-    sprite: Mobs/Ghosts/revenant.rsi
-    state: ectoplasm
-  - type: Tag
-    tags:
-      - Trash
-      - Ectoplasm
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Fresium
-        Quantity: 15
-  - type: GuideHelp
-    guides:
-    - MinorAntagonists

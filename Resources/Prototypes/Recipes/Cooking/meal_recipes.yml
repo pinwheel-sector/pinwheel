@@ -236,16 +236,6 @@
     FoodChiliPepper: 3
 
 - type: microwaveMealRecipe
-  id: RecipeGhostBurger
-  name: ghost burger recipe
-  result: FoodBurgerGhost
-  time: 10
-  group: Savory
-  solids:
-    FoodBreadBun: 1
-    Ectoplasm: 1
-
-- type: microwaveMealRecipe
   id: RecipeHumanBurger
   name: human burger recipe
   result: FoodBurgerHuman

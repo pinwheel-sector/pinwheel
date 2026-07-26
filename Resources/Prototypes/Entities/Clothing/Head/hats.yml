@@ -529,7 +529,7 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: ClothingHeadHatWizardBase
+  parent: ClothingHeadBase # Pinwheel
   id: ClothingHeadHatRedwizard
   name: red wizard hat
   description: A strange-looking red hat that most certainly belongs to a powerful magic-user.
@@ -733,7 +733,7 @@
         color: "#a60b0b"
 
 - type: entity
-  parent: ClothingHeadHatWizardBase
+  parent: ClothingHeadBase # Pinwheel
   id: ClothingHeadHatVioletwizard
   name: violet wizard hat
   description: A strange-looking violet hat that most certainly belongs to a powerful magic-user.
@@ -769,7 +769,6 @@
   name: witch hat
   description: A witch hat.
   components:
-  - type: WizardClothes #Yes this will count
   - type: Sprite
     sprite: Clothing/Head/Hats/witch.rsi
   - type: Clothing
@@ -801,14 +800,7 @@
       HeadSide : HEAD
 
 - type: entity
-  abstract: true
-  parent: [ ClothingHeadBase, BaseMagicalContraband ]
-  id: ClothingHeadHatWizardBase
-  components:
-  - type: WizardClothes
-
-- type: entity
-  parent: ClothingHeadHatWizardBase
+  parent: ClothingHeadBase # Pinwheel
   id: ClothingHeadHatWizard
   name: wizard hat
   description: A strange-looking blue hat that most certainly belongs to a powerful magic-user.

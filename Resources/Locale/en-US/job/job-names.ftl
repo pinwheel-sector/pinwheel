@@ -67,7 +67,6 @@ job-name-syndicate-commander = Syndicate Commander
 job-name-syndicate-corpsman = Syndicate Corpsman
 job-name-syndicate-operative = Syndicate Operative
 job-name-pirate = Pirate
-job-name-wizard = Wizard
 job-name-zombie = Zombie
 
 # Job titles

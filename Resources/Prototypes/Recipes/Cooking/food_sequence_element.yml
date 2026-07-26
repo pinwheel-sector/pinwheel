@@ -1281,17 +1281,6 @@
     state: icon
     noRot: true
 
-# Revenant Plushie
-
-- type: foodSequenceElement
-  id: RevenantPlushie
-  name: food-sequence-cotton-burger-content-plushie-revenant
-  scale: 0.75, 0.75
-  sprites:
-  - sprite: Mobs/Ghosts/revenant.rsi
-    state: icon
-    noRot: true
-
 # Bee Plushie
 
 - type: foodSequenceElement
