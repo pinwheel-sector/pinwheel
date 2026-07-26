@@ -1,9 +1,11 @@
 using Content.Shared.Power;
-using Content.Shared.Radio; // Pinwheel - traitor sabotage
-using Robust.Shared.Audio; // Pinwheel - traitor sabotage
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes; // Pinwheel - traitor sabotage
-using Robust.Shared.Timing; // Pinwheel - gravity drift
+// Pinwheel-stt
+using Content.Shared.Radio;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+// Pinwheel-end
 
 namespace Content.Shared.Gravity;
 
