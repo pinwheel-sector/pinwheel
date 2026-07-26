@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 272.0.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/05/2026 17:56:37
+  time: 07/26/2026 22:01:15
   entityCount: 29072
 maps:
 - 1
@@ -54332,13 +54332,6 @@ entities:
     - type: Transform
       pos: -43.5,35.5
       parent: 2
-- proto: CargoMailTeleporter
-  entities:
-  - uid: 22316
-    components:
-    - type: Transform
-      pos: 60.5,-11.5
-      parent: 2
 - proto: Carpet
   entities:
   - uid: 197
@@ -75810,32 +75803,6 @@ entities:
     - type: Transform
       pos: -2.5,-23.5
       parent: 2
-- proto: CrateVendingMachineRestockDonutFilled
-  entities:
-  - uid: 5077
-    components:
-    - type: Transform
-      pos: -9.5,21.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5078
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrayonBox
   entities:
   - uid: 6046
@@ -75858,13 +75825,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -2.5,-18.5
-      parent: 2
-- proto: CrewMonitoringServer
-  entities:
-  - uid: 6519
-    components:
-    - type: Transform
-      pos: 57.5,24.5
       parent: 2
 - proto: CriminalRecordsComputerCircuitboard
   entities:
@@ -84051,6 +84011,20 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: ExtractableServerCrewMonitor
+  entities:
+  - uid: 6519
+    components:
+    - type: Transform
+      pos: 57.5,24.5
+      parent: 2
+- proto: ExtractableServerResearch
+  entities:
+  - uid: 6518
+    components:
+    - type: Transform
+      pos: 55.5,24.5
+      parent: 2
 - proto: FaxMachineBase
   entities:
   - uid: 1850
@@ -116793,25 +116767,6 @@ entities:
     - type: Transform
       pos: -1.5483892,20.584082
       parent: 2
-- proto: GravityGenerator
-  entities:
-  - uid: 1190
-    components:
-    - type: Transform
-      pos: -51.5,15.5
-      parent: 2
-- proto: GravityGeneratorMini
-  entities:
-  - uid: 28848
-    components:
-    - type: Transform
-      anchored: False
-      pos: -67.5,33.5
-      parent: 2
-    - type: PowerCharge
-      charge: 0
-    - type: Physics
-      bodyType: Dynamic
 - proto: GrenadeStinger
   entities:
   - uid: 5035
@@ -131529,6 +131484,32 @@ entities:
     - type: Transform
       pos: 2.5,6.5
       parent: 26470
+- proto: MachineGravityGenerator
+  entities:
+  - uid: 1190
+    components:
+    - type: Transform
+      pos: -51.5,15.5
+      parent: 2
+- proto: MachineGravityGeneratorMini
+  entities:
+  - uid: 28848
+    components:
+    - type: Transform
+      anchored: False
+      pos: -67.5,33.5
+      parent: 2
+    - type: PowerCharge
+      charge: 0
+    - type: Physics
+      bodyType: Dynamic
+- proto: MachineMailbox
+  entities:
+  - uid: 22316
+    components:
+    - type: Transform
+      pos: 60.5,-11.5
+      parent: 2
 - proto: MachineMaterialSilo
   entities:
   - uid: 24307
@@ -148126,13 +148107,6 @@ entities:
     - type: Transform
       pos: -58.61676,-2.423478
       parent: 2
-- proto: ResearchAndDevelopmentServer
-  entities:
-  - uid: 6518
-    components:
-    - type: Transform
-      pos: 55.5,24.5
-      parent: 2
 - proto: Retractor
   entities:
   - uid: 8231
@@ -164564,6 +164538,34 @@ entities:
     - type: Transform
       pos: 5.5,-18.5
       parent: 2
+- proto: VendingMachineRestockDonut
+  entities:
+  - uid: 5077
+    components:
+    - type: Transform
+      pos: -9.5,21.5
+      parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
+      closeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/closetclose.ogg
+      openSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/closetopen.ogg
+      whitelist:
+        components:
+        - MobState
+        - Item
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          ents:
+          - 5078
+        paper_label: !type:ContainerSlot {}
 - proto: VendingMachineRestockHotDrinks
   entities:
   - uid: 5078
