@@ -2,8 +2,8 @@
 - type: entity
   parent: BaseMachinePowered
   id: MachineGravityGenerator
-  name: gravity generator
-  description: "A marvel of engineering, revered centuries after its invention.\nKeeps onboard objects to the floor of the station, and pulls distant objects to its hull.\nThe maintenance panel is welded on flush to the body, and its certainly not the only barrier between the world outside and the sensitive circuits inside."
+  name: "model θ' gravity generator"
+  description: "The model Theta Prime gravity generator, a marvel of engineering revered centuries after its invention.\nKeeps onboard objects to the floor of the station, and pulls distant objects to its hull.\nThe maintenance panel is welded on flush to the body, and its certainly not the only barrier between the world outside and the sensitive circuits inside."
   placement:
     mode: AlignTileAny
   components:
@@ -208,16 +208,16 @@
 - type: entity
   parent: BaseItem
   id: GravityGeneratorHacker
-  name: gravity generator hacker
-  description: sample text
+  name: "reconfigured θ' reconfigurator"
+  description: "A 'borrowed' NanoTrasen Theta Prime Gravitational Nucleus Directive Configurator 'touched up' by the Syndicate.\nRestructures the internal math on the gravity generator with the wrong numbers."
   components:
   - type: Sprite
-    sprite: _Pinwheel/Devices/Sabotage/anomaly_generator_hacker.rsi
+    sprite: _Pinwheel/Devices/Sabotage/gravity_generator_hacker.rsi
     state: icon
   - type: Item
     size: Large
     shape:
-    - 0,0,1,2
+    - 0,0,2,1
   - type: Tag
     tags: [ GravityGeneratorHacker ]
 
