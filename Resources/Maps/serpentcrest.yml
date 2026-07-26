@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/26/2026 22:01:15
-  entityCount: 29072
+  time: 07/26/2026 23:02:03
+  entityCount: 29070
 maps:
 - 1
 grids:
@@ -7694,15 +7694,6 @@ entities:
       parent: 2
 - proto: ActionToggleBlock
   entities:
-  - uid: 3986
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12806
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 12806
   - uid: 20971
     mapInit: true
     paused: true
@@ -70086,21 +70077,6 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: ClockworkShield
-  entities:
-  - uid: 12806
-    components:
-    - type: Transform
-      pos: -55.53158,-14.472418
-      parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 3986
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 3986
 - proto: ClosetBombFilled
   entities:
   - uid: 5020
@@ -148128,27 +148104,11 @@ entities:
     - type: Transform
       pos: 5.694502,21.418985
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 20971
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 20971
   - uid: 6340
     components:
     - type: Transform
       pos: 5.272627,21.43461
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 20972
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 20972
 - proto: RiotLaserShield
   entities:
   - uid: 6343
@@ -148156,27 +148116,11 @@ entities:
     - type: Transform
       pos: 12.601956,21.516045
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 23601
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 23601
   - uid: 6344
     components:
     - type: Transform
       pos: 12.461331,21.62542
       parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 23602
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 23602
 - proto: RiotShield
   entities:
   - uid: 6341
