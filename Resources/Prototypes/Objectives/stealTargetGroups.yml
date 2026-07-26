@@ -3,7 +3,6 @@
 # add them next to the entities that use them, in the same file
 # these all need to be migrated out as time goes on, as we subsume prototypes to our own directory
 # - Pinwheel
-# Traitor single items
 
 - type: stealTargetGroup
   id: Hypospray
@@ -60,13 +59,6 @@
   sprite:
     sprite: Objects/Consumable/Food/meat.rsi
     state: corgi
-
-- type: stealTargetGroup
-  id: CaptainIDCard
-  name: steal-target-groups-captain-id-card
-  sprite:
-    sprite: Objects/Misc/id_cards.rsi
-    state: icon-captain
 
 - type: stealTargetGroup
   id: JetpackCaptainFilled
