@@ -206,7 +206,7 @@
 
 ## Macguffin
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseSyndicateContraband ]
   id: GravityGeneratorHacker
   name: "reconfigured θ' reconfigurator"
   description: "A 'borrowed' NanoTrasen Theta Prime Gravitational Nucleus Directive Configurator 'touched up' by the Syndicate.\nRestructures the internal math on the gravity generator with the wrong numbers."

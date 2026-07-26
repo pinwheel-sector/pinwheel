@@ -227,7 +227,7 @@
 ## Disks
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [ BaseItem, BaseSyndicateContraband ]
   id: ServerDiskBase
   components:
   - type: Item

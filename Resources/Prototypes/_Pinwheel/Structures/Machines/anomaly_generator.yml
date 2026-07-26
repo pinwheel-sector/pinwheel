@@ -207,7 +207,7 @@
 
 ## Macguffin
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BaseSyndicateContraband ]
   id: AnomalyGeneratorHacker
   name: plasmic hypercapacitive powercage
   description: "A highly compressed mass of plasma ripe for fission, packaged in a cheap shell along with bespoke circuits made to bypass safety measures on NanoTrasen anomaly generators.\nThis thing is NOT up to regulation."
