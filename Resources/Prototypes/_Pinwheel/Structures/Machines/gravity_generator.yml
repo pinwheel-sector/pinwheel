@@ -126,13 +126,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 250
+        damage: 180
       behaviors:
       - !type:ChangeConstructionNodeBehavior
         node: grate
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 200
       behaviors:
       - !type:ChangeConstructionNodeBehavior
         node: bare

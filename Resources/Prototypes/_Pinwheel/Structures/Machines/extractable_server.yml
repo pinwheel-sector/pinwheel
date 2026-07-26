@@ -70,7 +70,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 50
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: shell
@@ -81,7 +81,7 @@
               max: 4
     - trigger:
         !type:DamageTrigger
-        damage: 600
+        damage: 90
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: bare

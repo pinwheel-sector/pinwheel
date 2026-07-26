@@ -131,7 +131,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 150
       behaviors:
       - !type:ChangeConstructionNodeBehavior
         node: bare
