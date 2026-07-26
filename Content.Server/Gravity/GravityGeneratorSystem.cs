@@ -19,6 +19,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Random;
 // Pinwheel-end - traitor sabotage
 
 namespace Content.Server.Gravity;
@@ -30,6 +31,7 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     // Pinwheel-stt - gravity drift
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
+
     [Dependency] private IGameTiming _timing = default!;
     // Pinwheel-end - gravity drift
     // Pinwheel-stt - traitor sabotage
@@ -38,6 +40,8 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     [Dependency] private RadioSystem _radio = default!;
     [Dependency] private StunSystem _stuns = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
+
+    [Dependency] private IRobustRandom _random = default!;
 
     [Dependency] private EntityQuery<BuckleComponent> _buckleQuery = default!;
     [Dependency] private EntityQuery<MapGridComponent> _gridQuery = default!;
@@ -143,9 +147,10 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     private void HandleQuake(Entity<GravityGeneratorComponent> ent)
     {
         var curTime = _timing.CurTime;
+        var randTime = _random.Next(ent.Comp.QuakeMin, ent.Comp.QuakeMax);
         var xform = Transform(ent);
 
-        ent.Comp.QuakeNext = (curTime + ent.Comp.QuakeMin); // TODO: randomize this
+        ent.Comp.QuakeNext = (curTime + randTime);
 
         ThrowEntitiesOnGrid(xform.ParentUid, ent);
 
@@ -273,8 +278,9 @@ public sealed partial class GravityGeneratorSystem : SharedGravityGeneratorSyste
     private void OnSabotageComplete(Entity<GravityGeneratorComponent> ent, ref SabotageCompleteEvent args)
     {
         var curTime = _timing.CurTime;
+        var randTime = _random.Next(ent.Comp.QuakeMin, ent.Comp.QuakeMax);
 
-        ent.Comp.QuakeNext = (curTime + ent.Comp.QuakeMin); // TODO: randomize this
+        ent.Comp.QuakeNext = (curTime + randTime);
 
         ent.Comp.SabotageComplete = true;
 

@@ -147,14 +147,14 @@ public sealed partial class GravityGeneratorComponent : Component
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan QuakeMin = TimeSpan.FromSeconds(120);
+    public TimeSpan QuakeMin = TimeSpan.FromMinutes(2);
 
     /// <summary>
     /// Maximum time between quakes
     /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan QuakeMax = TimeSpan.FromSeconds(840);
+    public TimeSpan QuakeMax = TimeSpan.FromMinutes(20);
 
     /// <summary>
     /// Strength of quake throw
