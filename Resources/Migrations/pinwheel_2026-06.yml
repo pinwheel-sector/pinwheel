@@ -19,3 +19,4 @@ CrewMonitoringServerFlatpack: null
 CargoMailTeleporter: MachineMailbox
 
 GravityGenerator: MachineGravityGenerator
+GravityGeneratorMini: MachineGravityGeneratorMini

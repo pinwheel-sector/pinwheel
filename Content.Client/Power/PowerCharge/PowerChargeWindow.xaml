@@ -14,44 +14,20 @@
                 Columns="2"
                 VerticalAlignment="Center">
 
-                <!-- Power -->
-                <Label
-                    Text="{Loc 'power-charge-window-power'}"
-                    HorizontalExpand="True"
-                    StyleClasses="highlight" />
-
-                <BoxContainer
-                    Orientation="Horizontal"
-                    MinWidth="120"
-                    SetWidth="160">
-
-                    <Button Name="OnButton"
-                        Text="{Loc 'power-charge-window-power-on'}"
-                        StyleClasses="OpenRight"
-                        MinWidth="60"
-                        SetWidth="80"
-                        HorizontalAlignment="Center"/>
-
-                    <Button
-                        Name="OffButton"
-                        Text="{Loc 'power-charge-window-power-off'}"
-                        StyleClasses="OpenLeft"
-                        MinWidth="60"
-                        SetWidth="80"
-                        HorizontalAlignment="Center"/>
-                </BoxContainer>
-
-                <Control /> <!-- Empty control to act as a spacer in the grid. -->
-
-                <Label Name="PowerLabel"
-                    Text="0 / 0 W" />
-
                 <!-- Status -->
                 <Label
                     Text="{Loc 'power-charge-window-status'}"
                     StyleClasses="highlight" />
                 <Label Name="StatusLabel"
                     Text="{Loc 'power-charge-window-status-fully-charged'}" />
+
+                <Label
+                    Text="{Loc 'power-charge-window-power'}"
+                    HorizontalExpand="True"
+                    StyleClasses="highlight" />
+
+                <Label Name="PowerLabel"
+                    Text="0 / 0 W" />
 
                 <!-- ETA -->
                 <Label

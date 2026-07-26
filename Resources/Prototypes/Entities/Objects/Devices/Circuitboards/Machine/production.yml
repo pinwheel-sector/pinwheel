@@ -1247,7 +1247,7 @@
   - type: Sprite
     state: supply
   - type: MachineBoard
-    prototype: GravityGeneratorMini
+    prototype: MachineGravityGeneratorMini # Pinwheel
     stackRequirements:
       Manipulator: 7
       Steel: 5

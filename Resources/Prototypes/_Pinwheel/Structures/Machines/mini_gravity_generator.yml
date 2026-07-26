@@ -1,0 +1,59 @@
+## Machine
+- type: entity
+  id: MachineGravityGeneratorMini
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: mini gravity generator
+  description: A marvel of engineering, compressed through marvels of engineering. Enough to keep things to the floor of a shuttle, but not accrue anything outside of it.
+  placement:
+    mode: AlignTileAny
+  components:
+  # visual
+  - type: Sprite
+    sprite: _Pinwheel/Structures/Machines/gravity_generator_mini.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+    - state: powered
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - sprite: Structures/Machines/gravity_generator_core.rsi
+      state: activated
+      shader: unshaded
+      map: [ "enum.GravityGeneratorVisualLayers.Core" ]
+      scale: "0.4,0.4"
+      offset: "0,0.2"
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          False: { visible: false }
+          True: { visible: true }
+  # UI
+  - type: ActivatableUI
+    key: enum.PowerChargeUiKey.Key
+  # no access requirement because this isn't for the crew
+  - type: UserInterface
+    interfaces:
+      enum.PowerChargeUiKey.Key:
+        type: PowerChargeBoundUserInterface
+  # functional
+  - type: Anchorable
+    flags: [ Anchorable ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 50
+        mask: [ LargeMobMask ]
+        layer: [ WallLayer ]
+  - type: Machine
+    board: MiniGravityGeneratorCircuitboard
+  - type: ApcPowerReceiver
+  - type: PowerCharge
+    windowTitle: gravity-generator-window-title
+    idlePower: 15
+    activePower: 500
+  - type: GravityGenerator
+    lightRadiusMin: 0.75
+    lightRadiusMax: 2.5

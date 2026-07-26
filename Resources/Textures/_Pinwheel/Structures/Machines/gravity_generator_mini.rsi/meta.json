@@ -1,0 +1,17 @@
+{
+  "version":1,
+  "size":{
+    "x":32,
+    "y":32
+  },
+  "license":"CC0-1.0",
+  "copyright":"Taken from https://github.com/tgstation/tgstation/, edited by arenaconspiracy (github)",
+  "states":[
+    {
+      "name":"base"
+    },
+    {
+      "name": "powered"
+    }
+  ]
+}

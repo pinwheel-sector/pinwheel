@@ -16,27 +16,17 @@ public sealed partial class PowerChargeWindow : FancyWindow
     {
         RobustXamlLoader.Load(this);
 
-        OnButton.Group = _buttonGroup;
-        OffButton.Group = _buttonGroup;
     }
 
     public void UpdateWindow(PowerChargeBoundUserInterface bui, string title)
     {
         Title = title;
 
-        OnButton.OnPressed += _ => bui.SetPowerSwitch(true);
-        OffButton.OnPressed += _ => bui.SetPowerSwitch(false);
-
         EntityView.SetEntity(bui.Owner);
     }
 
     public void UpdateState(PowerChargeState state)
     {
-        if (state.On)
-            OnButton.Pressed = true;
-        else
-            OffButton.Pressed = true;
-
         PowerLabel.Text = Loc.GetString(
             "power-charge-window-power-label",
             ("draw", state.PowerDraw),
