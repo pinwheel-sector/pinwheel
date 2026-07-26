@@ -303,7 +303,7 @@
   components:
   - type: Objective
     icon:
-      sprite: _Pinwheel/Devices/Sabotage/anomaly_generator_hacker.rsi # PLACEHOLDER
+      sprite: _Pinwheel/Devices/Sabotage/gravity_generator_hacker.rsi
       state: icon
   - type: SabotageGravityGeneratorCondition # TODO: ditto
 

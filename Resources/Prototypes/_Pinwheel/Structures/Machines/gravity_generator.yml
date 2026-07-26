@@ -101,6 +101,9 @@
   - type: ContainerContainer
     containers:
       sabotage_container: !type:ContainerSlot
+  - type: VoiceOverride
+    nameOverride: Gravity Generator
+    speechVerbOverride: Robotic
   - type: SabotagableMachine
     # pauseWithPower: false # TODO: give GravityGenerator bespoke pause behavior via PowerCharge
     sabotageLength: 4m # one minute less than the nuclear fucking warhead
