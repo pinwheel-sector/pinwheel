@@ -4,7 +4,7 @@
   components:
   - type: MindRole
     antag: true
-    roleType: SoloAntagonist
+    roleType: TeamAntagonist
     subtype: role-subtype-traitor
     exclusiveAntag: true
     antagPrototype: AntagTraitor

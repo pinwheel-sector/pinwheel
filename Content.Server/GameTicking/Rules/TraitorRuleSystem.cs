@@ -19,6 +19,9 @@ using System.Linq;
 using System.Text;
 using Content.Server.Codewords;
 using Robust.Shared.Map;
+// Pinwheel-stt - traitor remake
+using Content.Shared.GameTicking.Components;
+// Pinwheel-end - traitor remake
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -44,8 +47,35 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
         Log.Level = LogLevel.Debug;
 
         SubscribeLocalEvent<TraitorRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
-        SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
+        // SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend); // Pinwheel - traitor remake
     }
+
+// Pinwheel-stt - traitor remake
+    protected override void AppendRoundEndText(EntityUid uid,
+        TraitorRuleComponent comp,
+        GameRuleComponent gameRule,
+        ref RoundEndTextAppendEvent args)
+    {
+        base.AppendRoundEndText(uid, comp, gameRule, ref args);
+
+
+        // TODO: localize all of this
+        args.AddLine("PLACEHOLDER major victory!");
+        args.AddLine("Nothing happened!");
+        args.AddLine(
+            Loc.GetString("objectives-round-end-result",
+                ("count", comp.TraitorMinds.Count()),
+                ("agent", "PLACEHOLDER")
+            ));
+
+        if(comp.GiveCodewords)
+            args.AddLine(
+                Loc.GetString("traitor-round-end-codewords",
+                    ("codewords", string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId)))
+                )
+            );
+    }
+// Pinwheel-end - traitor remake
 
     private void AfterEntitySelected(Entity<TraitorRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
@@ -178,12 +208,14 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
         return (null, briefing);
     }
 
+    /* // Pinwheel - traitor remake
     // TODO: AntagCodewordsComponent
     private void OnObjectivesTextPrepend(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextPrependEvent args)
     {
         if(comp.GiveCodewords)
             args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId))));
     }
+    */ // Pinwheel - traitor remake
 
     // TODO: figure out how to handle this? add priority to briefing event?
     private string GenerateBriefing(string[]? codewords, Note[]? uplinkCode, string? objectiveIssuer = null)
