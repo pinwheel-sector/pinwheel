@@ -58,20 +58,29 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
     {
         base.AppendRoundEndText(uid, comp, gameRule, ref args);
 
+        /* collate the results */
+        int winType = 1; // from 1 to 5, from traitor to crew major
+        // looks to the left
+        // looks to the right
 
-        // TODO: localize all of this
-        args.AddLine("PLACEHOLDER major victory!");
-        args.AddLine("Nothing happened!");
+        /* print results */
+        args.AddLine(Loc.GetString($"round-end-win-label-traitor-{winType}"));
+        args.AddLine(Loc.GetString($"round-end-win-desc-traitor-{winType}"));
+        /* this is currently listed by ObjectivesSystem which is #bad
+         * but i cba rewriting 3 systems from scratch right now. smiles.
         args.AddLine(
             Loc.GetString("objectives-round-end-result",
                 ("count", comp.TraitorMinds.Count()),
                 ("agent", "PLACEHOLDER")
             ));
+        */
 
         if(comp.GiveCodewords)
             args.AddLine(
                 Loc.GetString("traitor-round-end-codewords",
-                    ("codewords", string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId)))
+                    ("codewords",
+                    string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId))
+                    )
                 )
             );
     }
