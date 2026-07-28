@@ -20,6 +20,9 @@ using System.Text;
 using Content.Server.Codewords;
 using Robust.Shared.Map;
 // Pinwheel-stt - traitor remake
+using Content.Server.Antag.Components;
+using Content.Server.Mind;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.GameTicking.Components;
 // Pinwheel-end - traitor remake
 
@@ -52,37 +55,80 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
 
 // Pinwheel-stt - traitor remake
     protected override void AppendRoundEndText(EntityUid uid,
-        TraitorRuleComponent comp,
-        GameRuleComponent gameRule,
+        TraitorRuleComponent traitor,
+        GameRuleComponent rule,
         ref RoundEndTextAppendEvent args)
     {
-        base.AppendRoundEndText(uid, comp, gameRule, ref args);
+        base.AppendRoundEndText(uid, traitor, rule, ref args);
 
-        /* collate the results */
-        int winType = 1; // from 1 to 5, from traitor to crew major
-        // looks to the left
-        // looks to the right
+        if (!GetOutcome((uid, traitor), out int outcome))
+            return;
 
-        /* print results */
-        args.AddLine(Loc.GetString($"round-end-win-label-traitor-{winType}"));
-        args.AddLine(Loc.GetString($"round-end-win-desc-traitor-{winType}"));
+        args.AddLine(Loc.GetString($"round-end-win-label-traitor-{outcome}"));
+        args.AddLine(Loc.GetString($"round-end-win-desc-traitor-{outcome}"));
         /* this is currently listed by ObjectivesSystem which is #bad
          * but i cba rewriting 3 systems from scratch right now. smiles.
         args.AddLine(
             Loc.GetString("objectives-round-end-result",
-                ("count", comp.TraitorMinds.Count()),
+                ("count", traitor.TraitorMinds.Count()),
                 ("agent", "PLACEHOLDER")
             ));
         */
 
-        if(comp.GiveCodewords)
+        if(traitor.GiveCodewords)
             args.AddLine(
                 Loc.GetString("traitor-round-end-codewords",
                     ("codewords",
-                    string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId))
+                    string.Join(", ", _codewordSystem.GetCodewords(traitor.CodewordFactionPrototypeId))
                     )
                 )
             );
+
+        args.AddLine("");
+    }
+
+    /// <summary>
+    /// outputs an int from 1 to 5, indicating the scale of the victory.
+    /// from traitor major (1) to crew major (5)
+    /// returning false means something has went wrong with the calculation
+    /// - Are all traitors dead or restrained?
+    /// - yes:
+    /// -- Are all objectives complete:
+    /// -- no:
+    /// --- return 5, crew major
+    /// -- yes:
+    /// --- return 4, crew minor
+    /// - no:
+    /// -- Are all objectives complete:
+    /// -- no:
+    /// --- Are more than half of all objectives complete?
+    /// --- no:
+    /// ---- return 3, neutral
+    /// --- yes:
+    /// ---- return 2, traitor minor
+    /// -- yes:
+    /// --- return 1, traitor major
+    /// </summary>
+    private bool GetOutcome(Entity<TraitorRuleComponent> ent, out int outcome)
+    {
+        outcome = 1;
+
+        if (!TryComp(ent, out AntagSelectionComponent? selection))
+            return false; // fail if rule ent has no selection
+
+        var minds = _antag.GetAntagMinds((ent.Owner, selection));
+
+        bool thwarted = true;
+
+        foreach (var mind in minds)
+        {
+            if ((!_mindSystem.IsCharacterDeadIc(mind)) ||
+                (TryComp<CuffableComponent>(mind.Comp.OwnedEntity, out var cuffed) && cuffed.CuffedHandCount > 0))
+                thwarted = false;
+        }
+
+        outcome = thwarted ? 5 : 1;
+        return true;
     }
 // Pinwheel-end - traitor remake
 
@@ -216,15 +262,6 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
 
         return (null, briefing);
     }
-
-    /* // Pinwheel - traitor remake
-    // TODO: AntagCodewordsComponent
-    private void OnObjectivesTextPrepend(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextPrependEvent args)
-    {
-        if(comp.GiveCodewords)
-            args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId))));
-    }
-    */ // Pinwheel - traitor remake
 
     // TODO: figure out how to handle this? add priority to briefing event?
     private string GenerateBriefing(string[]? codewords, Note[]? uplinkCode, string? objectiveIssuer = null)
