@@ -38,6 +38,7 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
     [Dependency] private SharedRoleSystem _roleSystem = default!;
     [Dependency] private UplinkSystem _uplink = default!;
     [Dependency] private CodewordSystem _codewordSystem = default!;
+    [Dependency] private ObjectivesSystem _objective = default!; // Pinwheel - traitor remake
 
     public override void Initialize()
     {
@@ -91,19 +92,19 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
     /// - yes:
     /// -- Are all objectives complete:
     /// -- no:
-    /// --- return 5, crew major
+    /// --- out 5, crew major
     /// -- yes:
-    /// --- return 4, crew minor
+    /// --- out 4, crew minor
     /// - no:
     /// -- Are all objectives complete:
     /// -- no:
     /// --- Are more than half of all objectives complete?
     /// --- no:
-    /// ---- return 3, neutral
+    /// ---- out 3, neutral
     /// --- yes:
-    /// ---- return 2, traitor minor
+    /// ---- out 2, traitor minor
     /// -- yes:
-    /// --- return 1, traitor major
+    /// --- out 1, traitor major
     /// </summary>
     private bool GetOutcome(Entity<TraitorRuleComponent> ent, out int outcome)
     {
@@ -116,14 +117,44 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
 
         bool thwarted = true;
 
+        int obsTotal = 0;
+        int obsDone = 0;
+
         foreach (var mind in minds)
         {
             if ((!_mindSystem.IsCharacterDeadIc(mind)) ||
                 (TryComp<CuffableComponent>(mind.Comp.OwnedEntity, out var cuffed) && cuffed.CuffedHandCount > 0))
                 thwarted = false;
+
+            List<EntityUid> obs = mind.Comp.Objectives;
+
+            obsTotal += obs.Count();
+
+            foreach (EntityUid ob in obs)
+            {
+                float? p = _objective.GetProgress(ob, mind);
+
+                if (p == 1)
+                    obsDone += 1;
+            }
         }
 
-        outcome = thwarted ? 5 : 1;
+        // possibly the worst logic i've written in my time writing C#
+        switch (thwarted)
+        {
+            case true:
+                outcome = ( obsTotal == obsDone ) ? 4: 5;
+                break;
+            case false:
+                if ( obsTotal == obsDone )
+                {
+                    outcome = 1;
+                    break;
+                }
+                outcome = ( obsDone > ( obsTotal * 0.5f ) ) ? 2 : 3;
+                break;
+        }
+
         return true;
     }
 // Pinwheel-end - traitor remake
