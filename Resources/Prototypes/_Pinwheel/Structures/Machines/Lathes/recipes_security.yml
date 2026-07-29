@@ -26,6 +26,12 @@
 
 # Consumables
 - type: latheRecipe
+  id: RecipeSecurityBola
+  result: SecurityBola
+  materials:
+    Steel: 500
+
+- type: latheRecipe
   id: RecipeSecurityFlare
   completetime: 1s
   result: Flare
