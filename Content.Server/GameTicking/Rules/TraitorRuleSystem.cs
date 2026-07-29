@@ -18,7 +18,6 @@ using System.Text;
 using Content.Server.Codewords;
 // Pinwheel-stt - traitor remake
 using Content.Server.Antag.Components;
-using Content.Server.Mind;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.GameTicking.Components;
 // Pinwheel-end - traitor remake
