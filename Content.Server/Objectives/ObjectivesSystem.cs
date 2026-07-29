@@ -18,6 +18,7 @@ using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
+using Content.Server.Mind; // Pinwheel
 
 namespace Content.Server.Objectives;
 
@@ -28,6 +29,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private EmergencyShuttleSystem _emergencyShuttle = default!;
     [Dependency] private SharedJobSystem _job = default!;
+    [Dependency] private MindSystem _mind = default!; // Pinwheel
 
     private IEnumerable<string>? _objectives;
 
@@ -133,6 +135,11 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
 
             var title = GetTitle((mindId, mind), name);
             var custody = IsInCustody(mindId, mind) ? Loc.GetString("objectives-in-custody") : string.Empty;
+
+            // Pinwheel-stt
+            if (_mind.IsCharacterDeadIc(mind))
+                custody = Loc.GetString("objectives-is-dead");
+            // Pinwheel-end
 
             var objectives = mind.Objectives;
             if (objectives.Count == 0)

@@ -143,15 +143,15 @@ public sealed partial class TraitorRuleSystem : GameRuleSystem<TraitorRuleCompon
         switch (thwarted)
         {
             case true:
-                outcome = ( obsTotal == obsDone ) ? 4: 5;
+                outcome = (obsTotal == obsDone) ? 4: 5;
                 break;
             case false:
-                if ( obsTotal == obsDone )
+                if (obsTotal == obsDone)
                 {
                     outcome = 1;
                     break;
                 }
-                outcome = ( obsDone > ( obsTotal * 0.5f ) ) ? 2 : 3;
+                outcome = (obsDone > (obsTotal * 0.5f)) ? 2 : 3;
                 break;
         }
 
