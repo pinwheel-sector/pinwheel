@@ -9,7 +9,7 @@ round-end-win-label-traitor-5 = [bold][color=green]Crew Major Victory![/color][/
 round-end-win-desc-traitor-1 = [color=white]The Traitors achieved all of their objectives![/color]
 round-end-win-desc-traitor-2 = [color=white]The Traitors achieved more than half of their objectives![/color]
 round-end-win-desc-traitor-3 = [color=white]The Traitors achieved less than half of their objectives.[/color]
-round-end-win-desc-traitor-4 = [color=white]The Crew managed to thwart the traitors,
+round-end-win-desc-traitor-4 = [color=white]The Crew managed to thwart the Traitors,
                                 but not before the Traitors achieved all of their objectives.[/color]
-round-end-win-desc-traitor-5 = [color=white]The Crew managed to thwart the traitors![/color]
+round-end-win-desc-traitor-5 = [color=white]The Crew managed to thwart the Traitors![/color]
 
