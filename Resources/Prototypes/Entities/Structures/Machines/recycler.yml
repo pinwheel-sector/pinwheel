@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Recycler
   parent: BaseMachinePowered
   name: recycler
@@ -52,20 +52,22 @@
     noRot: false
   - type: Sprite
     drawdepth: Doors
-    sprite: Structures/Machines/recycling.rsi
+    sprite: Structures/Machines/recycler.rsi
     layers:
-    - state: grinder-o0
+    - state: recycler-o0
       map: ["enum.RecyclerVisualLayers.Main"]
   - type: Appearance
   - type: RecyclerVisuals
+  - type: DirectionalArrowIndicator
+    arrows:
+    - offset: 0, -1.35
+    - offset: 0, 0
 
   - type: CollideMaterialReclaimer
   - type: MaterialReclaimer
-    # Pinwheel-stt - survivable recycler
-    damage:
+    damageOnEmag:
       types:
-        Slash: 50 # TODO: this relies on a physics event which procs more than once. i couldn't get it to proc more than twice on humanoids, so i'm setting it to 50 given an intended target of 100 slash
-    # Pinwheel-end - survivable recycler
+        Slash: 50
     enabled: false
     scaleProcessSpeed: false #instant!
     minimumProcessDuration: 0

@@ -175,14 +175,7 @@
   - type: TypingIndicator
     proto: vulpkanin
   - type: Vocal
-    sounds:
-      Male: MaleVulpkanin
-      Female: FemaleVulpkanin
-      Unsexed: MaleVulpkanin
-  # Pinwheel-stt - species standards
-  # type: Damageable
-  # damageModifierSet: Vulpkanin
-  # Pinwheel-stt - species standards
+    emoteSounds: MaleVulpkanin
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/pierce.ogg
@@ -228,7 +221,7 @@
       state: creampie_vulpkanin
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganVulpkanin
   abstract: true
   suffix: vulpkanin

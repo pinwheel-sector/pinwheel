@@ -47,3 +47,10 @@ WizardComputerComms: null
 
 # 2026-07-26
 AlertEssenceSpriteView: null # this should not have been serializable in the first place
+
+# 2026-07-28
+FoodMeatDragon: null
+FoodMeatDragonCooked: null
+FoodMeatDragonCutlet: null
+FoodMeatDragonCutletCooked: null
+FoodTacoDragon: null

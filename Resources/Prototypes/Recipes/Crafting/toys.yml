@@ -1,7 +1,7 @@
 ﻿- type: construction
+  parent: BaseClothing
   id: ClothingOuterSuitIan
   graph: ClothingOuterSuitIan
-  startNode: start
   targetNode: suit
   category: construction-category-misc
   objectType: Item

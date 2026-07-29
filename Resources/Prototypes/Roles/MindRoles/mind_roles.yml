@@ -133,17 +133,7 @@
   - type: SubvertedSiliconRole
 
 # Dragon
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleDragon
-  name: Dragon Role
-  components:
-  - type: MindRole
-    antagPrototype: Dragon
-    roleType: TeamAntagonist
-    subtype: role-subtype-dragon
-    exclusiveAntag: true
-  - type: DragonRole
+# gone - Pinwheel
 
 # Paradox Clone
 - type: entity

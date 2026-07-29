@@ -156,34 +156,6 @@
         Quantity: 9
 
 - type: entity
-  parent: FoodTacoBase
-  id: FoodTacoDragon
-  name: draco
-  description: A dragon taco, which is technically also a fish taco.
-  components:
-  - type: Item
-    storedOffset: 0,3
-  - type: FlavorProfile
-    flavors:
-    - meaty
-    - spicy
-  - type: Sprite
-    state: dragontaco
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Nutriment
-        Quantity: 18
-      - ReagentId: Protein
-        Quantity: 6
-      - ReagentId: Ichor
-        Quantity: 2
-      - ReagentId: CapsaicinOil
-        Quantity: 10
-      - ReagentId: Vitamin
-        Quantity: 3
-
-- type: entity
   name: soft taco
   parent: FoodMealBase
   id: FoodMealSoftTaco

@@ -46,7 +46,7 @@
   id: BaseTraitorObjective
   components:
   - type: Objective
-    issuer: objective-issuer-syndicate
+    issuer: TheSyndicate
     unique: true
   - type: RoleRequirement
     roles: [ TraitorRole ]

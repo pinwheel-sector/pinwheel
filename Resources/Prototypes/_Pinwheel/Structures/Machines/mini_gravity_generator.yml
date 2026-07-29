@@ -57,3 +57,11 @@
   - type: GravityGenerator
     lightRadiusMin: 0.75
     lightRadiusMax: 2.5
+
+- type: entity
+  id: MachineGravityGeneratorMiniUncharged
+  parent: MachineGravityGeneratorMini
+  suffix: Uncharged
+  components:
+  - type: PowerCharge
+    charge: 0
