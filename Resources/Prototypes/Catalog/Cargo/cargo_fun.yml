@@ -172,16 +172,6 @@
   group: market
 
 - type: cargoProduct
-  id: FunCrateGambling
-  icon:
-    sprite: Objects/Economy/cash.rsi
-    state: cash_1000000
-  product: CrateCargoGambling
-  cost: 10000
-  category: cargoproduct-category-name-fun
-  group: market
-
-- type: cargoProduct
   id: FunPlants
   icon:
     sprite: Structures/Furniture/potted_plants.rsi
