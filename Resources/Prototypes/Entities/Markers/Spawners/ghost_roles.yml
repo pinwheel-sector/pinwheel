@@ -67,6 +67,8 @@
   parent: MarkerBase
   components:
   - type: GhostRole
+    name: roles-antag-nuclear-operative-name
+    description: roles-antag-nuclear-operative-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
     - MindRoleNukeops
@@ -83,25 +85,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  parent: BaseAntagSpawner
-  id: SpawnPointLoneNukeOperative
-  components:
-  - type: GhostRole
-    name: ghost-role-information-loneop-name
-    description: ghost-role-information-loneop-description
-    rules: ghost-role-information-loneop-rules
-    mindRoles:
-    - MindRoleLoneops
-  - type: Sprite
-    sprite: Markers/jobs.rsi
-    layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
-
-- type: entity
-  categories: [ HideSpawnMenu, Spawner ]
-  parent: SpawnPointLoneNukeOperative
+  parent: SpawnPointGhostNukeOperative
   id: SpawnPointNukeopsCommander
   components:
   - type: GhostRole
@@ -113,7 +97,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  parent: SpawnPointLoneNukeOperative
+  parent: SpawnPointGhostNukeOperative
   id: SpawnPointNukeopsMedic
   components:
   - type: GhostRole
@@ -125,15 +109,8 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  parent: SpawnPointLoneNukeOperative
+  parent: SpawnPointGhostNukeOperative
   id: SpawnPointNukeopsOperative
-  components:
-  - type: GhostRole
-    name: roles-antag-nuclear-operative-name
-    description: roles-antag-nuclear-operative-objective
-    rules: ghost-role-information-rules-default-team-antagonist
-    mindRoles:
-    - MindRoleNukeops
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]

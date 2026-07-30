@@ -97,21 +97,6 @@
   mindRoles:
   - MindRoleNukeops
 
-- type: antagSpecifier
-  parent: BaseNukeops
-  id: LoneOp
-  spawnerPrototype: SpawnPointLoneNukeOperative
-  pickPlayer: false
-  startingGear: SyndicateLoneOperativeGearFull
-  components:
-  - type: RandomMetadata
-    nameSegments:
-    - NamesSyndicatePrefix
-    - NamesSyndicateNormal
-    nameFormat: name-format-nukie-generic
-  mindRoles:
-  - MindRoleLoneops
-
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink
   equipment:
@@ -198,10 +183,3 @@
   equipment:
     head: ClothingHeadHelmetHardsuitSyndieMedic
     neck: ClothingNeckScarfStripedLightBlue
-
-#Lone Operative Gear
-- type: startingGear
-  id: SyndicateLoneOperativeGearFull
-  parent: SyndicateOperativeGearFull
-  equipment:
-    pocket2: BaseUplinkRadio60TC

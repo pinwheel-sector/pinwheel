@@ -64,12 +64,3 @@
             min: 20
           - !type:RoundDurationCondition
             min: 2700 # 45 minutes
-        - id: LoneOpsSpawn
-          weight: 5
-          conditions:
-          - !type:HasBudgetCondition
-          - !type:MaxRuleOccurenceCondition
-          - !type:PlayerCountCondition
-            min: 20
-          - !type:RoundDurationCondition
-            min: 2100 # 35 minutes
