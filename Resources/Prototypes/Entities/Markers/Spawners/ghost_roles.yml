@@ -61,10 +61,10 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
   id: SpawnPointGhostNukeOperative
   name: ghost role spawn point
   suffix: nukeops
-  parent: MarkerBase
   components:
   - type: GhostRole
     name: roles-antag-nuclear-operative-name
