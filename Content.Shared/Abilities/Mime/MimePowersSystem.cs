@@ -1,26 +1,31 @@
 using Content.Shared.Popups;
+using Content.Shared.Actions.Events;
 using Content.Shared.Alert;
-using Content.Shared.Coordinates.Helpers;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Paper;
-using Content.Shared.Physics;
-using Content.Shared.Speech.Muting;
+using Content.Shared.StatusEffectNew;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Abilities.Mime;
 
 public sealed partial class MimePowersSystem : EntitySystem
 {
+    public static readonly EntProtoId MutedEffect = "StatusEffectMimeMuted";
+
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private AlertsSystem _alertsSystem = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MimePowersComponent, ComponentInit>(OnComponentInit);
-	SubscribeLocalEvent<MimePowersComponent, BreakVowAlertEvent>(OnBreakVowAlert);
+        SubscribeLocalEvent<MimePowersComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<MimePowersComponent, ComponentShutdown>(OnComponentShutdown);
+
+        SubscribeLocalEvent<MimePowersComponent, BreakVowAlertEvent>(OnBreakVowAlert);
         SubscribeLocalEvent<MimePowersComponent, RetakeVowAlertEvent>(OnRetakeVowAlert);
     }
 
@@ -44,9 +49,10 @@ public sealed partial class MimePowersSystem : EntitySystem
         }
     }
 
-    private void OnComponentInit(Entity<MimePowersComponent> ent, ref ComponentInit args)
+    private void OnMapInit(Entity<MimePowersComponent> ent, ref MapInitEvent args)
     {
-        EnsureComp<MutedComponent>(ent);
+        if (!ent.Comp.VowBroken)
+            _statusEffects.TrySetStatusEffectDuration(ent, MutedEffect);
 
         if (ent.Comp.PreventWriting)
         {
@@ -54,8 +60,11 @@ public sealed partial class MimePowersSystem : EntitySystem
             illiterateComponent.FailWriteMessage = ent.Comp.FailWriteMessage;
             Dirty(ent, illiterateComponent);
         }
+    }
 
-        _alertsSystem.ShowAlert(ent.Owner, ent.Comp.VowAlert);
+    private void OnComponentShutdown(Entity<MimePowersComponent> ent, ref ComponentShutdown args)
+    {
+        _statusEffects.TryRemoveStatusEffect(ent, MutedEffect);
     }
 
     private void OnBreakVowAlert(Entity<MimePowersComponent> ent, ref BreakVowAlertEvent args)
@@ -91,11 +100,10 @@ public sealed partial class MimePowersSystem : EntitySystem
         mimePowers.VowBroken = true;
         mimePowers.VowRepentTime = _timing.CurTime + mimePowers.VowCooldown;
         Dirty(uid, mimePowers);
-        RemComp<MutedComponent>(uid);
+        _statusEffects.TryRemoveStatusEffect(uid, MutedEffect);
         if (mimePowers.PreventWriting)
             RemComp<BlockWritingComponent>(uid);
 
-        _alertsSystem.ClearAlert(uid, mimePowers.VowAlert);
         _alertsSystem.ShowAlert(uid, mimePowers.VowBrokenAlert);
     }
 
@@ -117,7 +125,7 @@ public sealed partial class MimePowersSystem : EntitySystem
         mimePowers.ReadyToRepent = false;
         mimePowers.VowBroken = false;
         Dirty(uid, mimePowers);
-        AddComp<MutedComponent>(uid);
+        _statusEffects.TrySetStatusEffectDuration(uid, MutedEffect);
         if (mimePowers.PreventWriting)
         {
             EnsureComp<BlockWritingComponent>(uid, out var illiterateComponent);
@@ -126,6 +134,5 @@ public sealed partial class MimePowersSystem : EntitySystem
         }
 
         _alertsSystem.ClearAlert(uid, mimePowers.VowBrokenAlert);
-        _alertsSystem.ShowAlert(uid, mimePowers.VowAlert);
     }
 }

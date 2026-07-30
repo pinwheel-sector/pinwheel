@@ -31,10 +31,6 @@
   id: PressureImmunity
 
 - type: statusEffect
-  id: Muted
-  alert: Muted
-
-- type: statusEffect
   id: Pacified #cannot attack
 
 - type: statusEffect
