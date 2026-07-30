@@ -138,9 +138,6 @@
   suffix: Empty
   components:
   - type: PlungerUse
-  - type: Rummageable
-    table: !type:NestedSelector
-      tableId: RatKingLoot
 
 # so theres not actually any way to replenish the gastrotoxin / gold in these.
 # I wouldn't add it to the solutionregeneration comp because that doesn't make a lot of sense imo.
@@ -211,9 +208,6 @@
             min: 5
             max: 5
   - type: PlungerUse
-  - type: Rummageable
-    table: !type:NestedSelector
-      tableId: RatKingLoot
 
 - type: entity
   parent: ToiletGoldenEmpty
