@@ -8,3 +8,4 @@ metabolizer-type-rat = Rat
 metabolizer-type-plant = Plant
 metabolizer-type-moth = Moth
 metabolizer-type-arachnid = Arachnid
+metabolizer-type-changeling = Changeling
