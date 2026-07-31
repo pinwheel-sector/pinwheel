@@ -8,12 +8,12 @@
   components:
   # visual
   - type: Sprite
-    sprite: Structures/Machines/autolathe.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/uniform.rsi # i bulldozed the generic lathes and this'll do
     snapCardinals: true
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
-    - state: unlit
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
@@ -67,10 +67,10 @@
         - RawMaterial
         - Ingot
   - type: Lathe
-    idleState: icon
-    runningState: building
-    unlitIdleState: unlit
-    unlitRunningState: unlit-building
+    idleState: base-idle
+    runningState: base-active
+    unlitIdleState: unlit-idle
+    unlitRunningState: unlit-active
 
 ## Departmental techfabs
 - type: entity
@@ -78,24 +78,23 @@
   id: MachineLatheCargo
   name: cargo techfab
   components:
-  # visual
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/techfab.rsi
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
     - state: cargo
-    - state: unlit
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  # functional
   - type: Machine
     board: SecurityTechFabCircuitboard # TODO
   - type: Lathe
+    runningState: null
     staticPacks:
     - LathePackPowercells
     - LathePackCargoSpares
@@ -111,24 +110,23 @@
   id: MachineLatheEngineering
   name: engineering techfab
   components:
-  # visual
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/techfab.rsi
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
-    - state: engi
-    - state: unlit
+    - state: engineering
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  # functional
   - type: Machine
     board: SecurityTechFabCircuitboard # TODO
   - type: Lathe
+    runningState: null
     staticPacks:
     - LathePackLights
     - LathePackPowercells
@@ -145,24 +143,23 @@
   id: MachineLatheMedical
   name: medical techfab
   components:
-  # visual
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/techfab.rsi
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
-    - state: med
-    - state: unlit
+    - state: medical
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  # functional
   - type: Machine
     board: SecurityTechFabCircuitboard # TODO
   - type: Lathe
+    runningState: null
     staticPacks:
     - LathePackPowercells
     - LathePackMedicalSpares
@@ -178,24 +175,23 @@
   id: MachineLatheScience
   name: science techfab
   components:
-  # visual
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/techfab.rsi
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
-    - state: sci
-    - state: unlit
+    - state: science
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  # functional
   - type: Machine
     board: SecurityTechFabCircuitboard # TODO
   - type: Lathe
+    runningState: null
     staticPacks:
     - LathePackPowercells
     - LathePackScienceSpares
@@ -211,24 +207,23 @@
   id: MachineLatheSecurity
   name: security techfab
   components:
-  # visual
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/techfab.rsi
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
-    - state: sec
-    - state: unlit
+    - state: security
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  # functional
   - type: Machine
     board: SecurityTechFabCircuitboard
   - type: Lathe
+    runningState: null
     staticPacks:
     - LathePackAmmoCrew
     - LathePackPowercells
@@ -244,24 +239,23 @@
   id: MachineLatheService
   name: service techfab
   components:
-  # visual
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/techfab.rsi
     layers:
-    - state: icon
+    - state: base-idle
     - map: [ "enum.LatheVisualLayers.IsRunning" ]
     - state: service
-    - state: unlit
+    - state: unlit-idle
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: inserting
       map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-  # functional
   - type: Machine
     board: SecurityTechFabCircuitboard # TODO
   - type: Lathe
+    runningState: null
     staticPacks:
     - LathePackLights
     - LathePackPowercells
@@ -281,7 +275,7 @@
   description: Converts plants into biomass, which can be used to construct useful items.
   components:
   - type: Sprite
-    sprite: Structures/Machines/biofabricator.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/biogenerator.rsi
   - type: Machine
     board: BiogeneratorMachineCircuitboard
   - type: ProduceMaterialExtractor
@@ -298,6 +292,7 @@
       machine_parts: !type:Container
       beaker_slot: !type:ContainerSlot
   - type: Lathe
+    unlitRunningState: null
     reagentOutputSlotId: beaker_slot
     staticPacks:
     - BioGenIngredientsStatic
@@ -314,14 +309,15 @@
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
   components:
   - type: Sprite
-    sprite: Structures/Machines/cuttermachine.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/cutter.rsi
   - type: Machine
     board: CutterMachineCircuitboard
   - type: Lathe
+    unlitRunningState: null
     producingSound: /Audio/Machines/cutter.ogg
     staticPacks:
     - FloorDarkTilesStatic
-    - floorSteelTilesStatic
+    - FloorSteelTilesStatic
     - FloorWhiteTilesStatic
     - FloorMaintsTilesStatic
     - FloorIndustrialTilesStatic
@@ -340,19 +336,10 @@
   description: Creates parts for robotics and other mechanical needs. # who wrote this shit?
   components:
   - type: Sprite
-    sprite: Structures/Machines/exosuit_fabricator.rsi
-    layers: # TODO: edit the rsi to have identical states to the parent so we don't have to redefine this
-    - state: fab-idle
-      map: [ "enum.LatheVisualLayers.IsRunning" ]
-    - state: fab-load
-      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
-    - state: fab-o
-      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+    sprite: _Pinwheel/Structures/Machines/Lathes/robotics.rsi
   - type: Machine
     board: ExosuitFabricatorMachineCircuitboard
   - type: Lathe
-    idleState: fab-idle
-    runningState: fab-active
     staticPacks:
     - RoboticsStatic
     - BorgModulesStatic
@@ -368,11 +355,12 @@
   description: Prints new or replacement uniforms.
   components:
   - type: Sprite
-    sprite: Structures/Machines/uniform_printer.rsi
+    sprite: _Pinwheel/Structures/Machines/Lathes/uniform.rsi
   - type: Machine
     board: UniformPrinterMachineCircuitboard
   - type: Lathe
-    procudingSound: /Audio/Machines/uniformprinter.ogg
+    unlitRunningState: null
+    producingSound: /Audio/Machines/uniformprinter.ogg
     staticPacks:
     - TowelsStatic
     - ClothingCivilian
