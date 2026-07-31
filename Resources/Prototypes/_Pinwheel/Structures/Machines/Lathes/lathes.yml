@@ -1,0 +1,393 @@
+## Base
+- type: entity
+  abstract: true
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  id: BaseMachineLathe
+  name: lathe
+  description: sample text
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/autolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: Appearance
+  - type: WiresVisuals
+  # UI
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: ActivatableUIRequiresPower
+  # functional
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask: [ MachineMask ]
+        layer: [ MachineLayer ]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: WiresPanel
+  - type: ApcPowerReceiver
+    powerLoad: 150
+  - type: PowerState
+    idlePowerDraw: 150
+    workingPowerDraw: 1000
+  - type: OreSiloClient
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+
+## Departmental techfabs
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheCargo
+  name: cargo techfab
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: cargo
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  # functional
+  - type: Machine
+    board: SecurityTechFabCircuitboard # TODO
+  - type: Lathe
+    staticPacks:
+    - LathePackPowercells
+    - LathePackCargoSpares
+    - LathePackCargoUtilities
+    - LathePackCargoBoards
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - LathePackAmmoCrew
+    - LathePackAmmoSyndicate
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheEngineering
+  name: engineering techfab
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: engi
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  # functional
+  - type: Machine
+    board: SecurityTechFabCircuitboard # TODO
+  - type: Lathe
+    staticPacks:
+    - LathePackLights
+    - LathePackPowercells
+    - LathePackEngineeringSpares
+    - LathePackEngineeringUtilities
+    - LathePackEngineeringBoards
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - LathePackAmmoCrew
+    - LathePackAmmoSyndicate
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheMedical
+  name: medical techfab
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: med
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  # functional
+  - type: Machine
+    board: SecurityTechFabCircuitboard # TODO
+  - type: Lathe
+    staticPacks:
+    - LathePackPowercells
+    - LathePackMedicalSpares
+    - LathePackMedicalUtilities
+    - LathePackMedicalBoards
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - LathePackAmmoCrew
+    - LathePackAmmoSyndicate
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheScience
+  name: science techfab
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: sci
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  # functional
+  - type: Machine
+    board: SecurityTechFabCircuitboard # TODO
+  - type: Lathe
+    staticPacks:
+    - LathePackPowercells
+    - LathePackScienceSpares
+    - LathePackScienceUtilities
+    - LathePackScienceBoards
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - LathePackAmmoCrew
+    - LathePackAmmoSyndicate
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheSecurity
+  name: security techfab
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: sec
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  # functional
+  - type: Machine
+    board: SecurityTechFabCircuitboard
+  - type: Lathe
+    staticPacks:
+    - LathePackAmmoCrew
+    - LathePackPowercells
+    - LathePackSecuritySpares
+    - LathePackSecurityUtilities
+    - LathePackSecurityBoards
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - LathePackAmmoSyndicate
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheService
+  name: service techfab
+  components:
+  # visual
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: service
+    - state: unlit
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: inserting
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  # functional
+  - type: Machine
+    board: SecurityTechFabCircuitboard # TODO
+  - type: Lathe
+    staticPacks:
+    - LathePackLights
+    - LathePackPowercells
+    - LathePackServiceSpares
+    - LathePackServiceUtilities
+    - LathePackServiceBoards
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - LathePackAmmoCrew
+    - LathePackAmmoSyndicate
+
+## Specifics
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheBiogenerator
+  name: biogenerator
+  description: Converts plants into biomass, which can be used to construct useful items.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/biofabricator.rsi
+  - type: Machine
+    board: BiogeneratorMachineCircuitboard
+  - type: ProduceMaterialExtractor
+  - type: ItemSlots
+    slots:
+      beaker_slot:
+        name: lathe-component-output-slot-beaker-name
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      beaker_slot: !type:ContainerSlot
+  - type: Lathe
+    reagentOutputSlotId: beaker_slot
+    staticPacks:
+    - BioGenIngredientsStatic
+    - BioGenMaterialsStatic
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - BioGenEmagStatic
+    - HostileCubesStatic
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheCutter
+  name: cutter machine
+  description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/cuttermachine.rsi
+  - type: Machine
+    board: CutterMachineCircuitboard
+  - type: Lathe
+    producingSound: /Audio/Machines/cutter.ogg
+    staticPacks:
+    - FloorDarkTilesStatic
+    - floorSteelTilesStatic
+    - FloorWhiteTilesStatic
+    - FloorMaintsTilesStatic
+    - FloorIndustrialTilesStatic
+    - FloorWoodTilesStatic
+    - FloorConcreteTilesStatic
+    - CircuitFloorsStatic
+    - FloorMarbleTilesStatic
+    - FloorShuttleTilesStatic
+    - PlasticTilesStatic
+    - PreciousTilesStatic
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheRobotics
+  name: exosuit fabricator
+  description: Creates parts for robotics and other mechanical needs. # who wrote this shit?
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/exosuit_fabricator.rsi
+    layers: # TODO: edit the rsi to have identical states to the parent so we don't have to redefine this
+    - state: fab-idle
+      map: [ "enum.LatheVisualLayers.IsRunning" ]
+    - state: fab-load
+      map: [ "enum.MaterialStorageVisualLayers.Inserting" ]
+    - state: fab-o
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: Machine
+    board: ExosuitFabricatorMachineCircuitboard
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticPacks:
+    - RoboticsStatic
+    - BorgModulesStatic
+    - BorgLimbsStatic
+  - type: GuideHelp
+    guides:
+    - Robotics
+
+- type: entity
+  parent: BaseMachineLathe
+  id: MachineLatheUniform
+  name: uniform printer
+  description: Prints new or replacement uniforms.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/uniform_printer.rsi
+  - type: Machine
+    board: UniformPrinterMachineCircuitboard
+  - type: Lathe
+    procudingSound: /Audio/Machines/uniformprinter.ogg
+    staticPacks:
+    - TowelsStatic
+    - ClothingCivilian
+    - ClothingCargo
+    - ClothingCommand
+    - ClothingEngineering
+    - ClothingMedical
+    - ClothingScience
+    - ClothingSecurity
+    - ClothingService
+    - WinterCoats
+    - Ties
+    - Scarves
+    - Carpets
+    - Bedsheets
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - ClothingSyndie

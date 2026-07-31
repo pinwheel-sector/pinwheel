@@ -57,3 +57,19 @@ FoodTacoDragon: null
 
 # 2026-07-29
 CrateCargoGambling: null
+
+# 2026-07-31
+Biogenerator: MachineLatheBiogenerator
+CutterMachine: MachineLatheCutter
+ExosuitFabricator: MachineLatheRobotics
+MedicalTechFab: MachineLatheMedical
+Protolathe: MachineLatheScience
+SecurityTechFab: MachineLatheSecurity
+UniformPrinter: MachineLatheUniform
+AmmoTechFab: null
+Autolathe: null
+AutolatheHyperConvection: null
+Biofabricator: null
+ProtolatheHyperConvection: null
+CircuitImprinter: null
+CircuitImprinterHyperConvection: null

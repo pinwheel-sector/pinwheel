@@ -1,0 +1,210 @@
+## Cargo
+- type: latheRecipePack
+  id: LathePackCargoSpares
+  recipes:
+  - CombatKnife
+  # Clipboard
+  # Parcel Wrap
+  # Pen
+  # Utility Knife
+  # Small Power Cell
+  # Medium Power Cell
+  # Large Power Cell
+
+- type: latheRecipePack
+  id: LathePackCargoUtilities
+  recipes:
+  - CombatKnife
+
+- type: latheRecipePack
+  id: LathePackCargoBoards
+  recipes:
+  - CombatKnife
+  # Power Cell Charger
+
+## Engineering
+- type: latheRecipePack
+  id: LathePackEngineeringSpares
+  recipes:
+  - CombatKnife
+  # LV Cable
+  # MV Cable
+  # HV Cable
+  # Foam Grenade
+  # Air Grenade
+  # Crowbar, Wrench, et al.
+  # Welding Mask
+  # Small Power Cell
+  # Medium Power Cell
+  # Large Power Cell
+
+- type: latheRecipePack
+  id: LathePackEngineeringUtilities
+  recipes:
+  - CombatKnife
+  # Conveyor
+  # Floodlight
+  # Handheld Map
+  # Cone
+
+- type: latheRecipePack
+  id: LathePackEngineeringBoards
+  recipes:
+  - CombatKnife
+  # power
+  # APC
+  # Substation
+  # SMES
+  # utility
+  # Cutter Machine
+  # Cyborg Charger
+  # Intercom
+  # Station Map
+  # Power Cell Charger
+  # whatever
+  # Air Alarm
+  # Airlock
+  # Condenser
+  # Fire Alarm
+  # Firelock
+
+## Medical
+- type: latheRecipePack
+  id: LathePackMedicalSpares
+  recipes:
+  - CombatKnife
+  # chemistry
+  # Small Beaker
+  # Large Beaker
+  # Bottle
+  # Jug
+  # Jet Injector
+  # Syringe
+  # topicals
+  # Bruise Pack
+  # Gauze
+  - LatheRecipeTourniquet
+  # Ointment
+  # surgical tools
+  # I Am Not Listing All The Surgical Tools In A Comment
+
+- type: latheRecipePack
+  id: LathePackMedicalUtilities
+  recipes:
+  - CombatKnife
+  # Body Bag
+  # Roller Beds (all 3)
+  # Canes
+  # Tank Harness (the vox one)
+
+- type: latheRecipePack
+  id: LathePackMedicalBoards
+  recipes:
+  - CombatKnife
+  # chemistry
+  # Hotplate
+  # Centrifuge
+  # Who Gives A Shit
+  # not chemistry
+  # SmartFridge:tm:
+  # Crew Monitoring Console
+
+## Science
+- type: latheRecipePack
+  id: LathePackScienceSpares
+  recipes:
+  - CombatKnife
+
+- type: latheRecipePack
+  id: LathePackScienceUtilities
+  recipes:
+  - CombatKnife
+  # Anomaly Locators (both)
+  # Microreactor Power Cell Maybe After I Nerf it
+
+- type: latheRecipePack
+  id: LathePackScienceBoards
+  recipes:
+  - CombatKnife
+  # Cyborg Charger
+
+## Security
+- type: latheRecipePack
+  id: LathePackSecuritySpares
+  recipes:
+  # restraints
+  # Bola
+  - Handcuffs
+  - Zipties
+  # tools
+  # Flare
+  - ForensicPad
+  - HoloprojectorSecurity
+  - LatheRecipeTourniquet
+  # weapons
+  # Flashbang
+  # Stinger
+  # Tear Gas
+  - CombatKnife
+  - Flash
+  - RiotShield
+  - Stunbaton
+  - WeaponDisabler
+
+- type: latheRecipePack
+  id: LathePackSecurityUtilities
+  recipes:
+  - TargetHuman # TODO: lathes shouldn't spawn solid structures directly
+  - TargetClown
+  - TargetSyndicate
+  - WeaponPracticeDisabler
+
+- type: latheRecipePack
+  id: LathePackSecurityBoards
+  recipes:
+  - SurveillanceCameraMonitorCircuitboard
+  # Criminal Records
+  # Portable Flasher
+  # Recharger
+
+## Service
+- type: latheRecipePack
+  id: LathePackServiceSpares
+  recipes:
+  - CombatKnife
+  # tableware
+  # Bowl
+  # Glasses (all)
+  # Plate
+  # Skewer
+  # Utensils (all)
+  # janitorial
+  # Bucket
+  # Mop
+  # Light Replacer
+  # Trash Bag
+  # Wire Brush
+
+- type: latheRecipePack
+  id: LathePackServiceUtilities
+  recipes:
+  - CombatKnife
+  # Ash Tray
+  # Folding Chair
+  # Holosign Projector
+  # Tank Harness (the vox one)
+  # Wet Floor Sign
+
+- type: latheRecipePack
+  id: LathePackServiceBoards
+  recipes:
+  # Biogenerator
+  # Booze Dispenser
+  # Grill
+  # Hydro Tray
+  - ComputerMassMediaCircuitboard
+  # Microwave (the devil)
+  # Cutter Machine
+  # SmartFridge:tm:
+  # Television
+  # Uniform Printer

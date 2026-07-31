@@ -53,7 +53,7 @@
     castShadows: false
     color: "#afd"
   - type: Appearance
-  # audio:
+  # audio
   - type: AmbientSound
     range: 10 # ooooo important machine oooo
     volume: -6
@@ -61,7 +61,7 @@
       collection: GravityGeneratorAmbientBase
   # UI
   - type: ActivatableUI
-    key: enum.PowerChargeUiKey.Key # TODO: get rid of the toggle on/off
+    key: enum.PowerChargeUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: UserInterface
     interfaces:

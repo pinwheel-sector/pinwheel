@@ -1,0 +1,52 @@
+## Ammo
+# oh boy, i sure hope the comments don't get outdated when someone comes around and rewrites guns!
+- type: latheRecipePack
+  id: LathePackAmmoCrew
+  recipes:
+  # boxes
+  - BoxLethalshot # .50 pellet - kammerer, enforcer
+  - MagazineBoxRifle # .20 rifle - lecter
+  - MagazineBoxPistol # .35 auto - mk 58, drozd, WT550
+  - MagazineBoxMagnum # .45 magnum - inspector
+  # magazines
+  - MagazinePistolSubMachineGun # .35 auto - drozd
+  - MagazinePistolSubMachineGunEmpty
+  - MagazinePistolSubMachineGunTopMounted # .35 auto - WT550
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazineRifle # .20 rifle - lecter
+  - MagazineRifleEmpty
+  - MagazinePistol # .35 auto - mk 58
+  - MagazinePistolEmpty
+
+- type: latheRecipePack
+  id: LathePackAmmoSyndicate
+  recipes:
+  # boxes
+  - BoxLethalshot # .50 pellet - bulldog
+  - MagazineBoxAntiMateriel # .60 anti-materiel - hristov
+  # MagazineBoxCaselessRifle # .25 caseless - cobra
+  - MagazineBoxLightRifle # .30 rifle - L6
+  - MagazineBoxPistol # .35 auto - viper, C20-r
+  - MagazineBoxRifle # .20 rifle - estoc
+  # magazines
+  - MagazineShotgun # .50 pellet - bulldog
+  - MagazineShotgunEmpty
+  - MagazinePistolCaselessRifle # .25 caseless - cobra
+  # MagazinePistolHighCapacity # .35 auto - viper
+  # MagazinePistolHighCapacityEmpty
+
+# utilities
+- type: latheRecipePack
+  id: LathePackLights
+  recipes:
+  # tubes
+  - CombatKnife
+  # bulbs
+
+- type: latheRecipePack
+  id: LathePackPowercells
+  recipes:
+  # Small Power Cell
+  # Medium Power Cell
+  # Large Power Cell
+  - CombatKnife
