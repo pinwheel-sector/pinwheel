@@ -37,7 +37,7 @@
     [break]All Traitors are dead or in custody, and at least one objective is left incomplete.
 
   ## Tools of the trade
-  Every Traitor gets their own [bold]uplink balance[/bold] of [bold][color=crimson]20 Telecrystals[/color][/bold] to spend on purchases
+  Every Traitor gets their own [bold]uplink balance[/bold] of [bold][color=crimson]20 Telecrystals[/color][/bold] to spend on purchases.
   [break]Every PDA can be [bold]backdoored[/bold] by entering an [bold]uplink code[/bold] as the ringtone. This will open a store with the balance associated with that code.
   [break]Telecrystals can be [bold]withdrawn and transfered[/bold] between open uplinks, in case you want to share.
   [break]If you activate without a PDA, you will find yourself with an [bold]uplink implant[/bold] and its cost subtracted from your balance.
@@ -60,7 +60,7 @@
     <GuideEntityEmbed Entity="SyndicateBusinessCard" Caption="Pointless"/>
   </Box>
 
-  The Syndicate doesn't provide refunds, so you must choose wisely and use it before you lose it.
+  The Syndicate doesn't provide refunds, warranties, or replacements, so you must choose wisely and use it before you lose it.
 
   ## Tasks at hand
   Every Traitor gets a group of objectives they have to complete before the end of the round.
