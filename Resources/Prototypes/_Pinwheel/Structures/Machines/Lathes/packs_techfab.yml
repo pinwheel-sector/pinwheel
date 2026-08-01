@@ -72,21 +72,26 @@
 - type: latheRecipePack
   id: LathePackMedicalSpares
   recipes:
-  - CombatKnife
-  # chemistry
-  # Small Beaker
-  # Large Beaker
-  # Bottle
-  # Jug
-  # Jet Injector
-  # Syringe
-  # topicals
-  # Bruise Pack
-  # Gauze
-  - LatheRecipeTourniquet
-  # Ointment
-  # surgical tools
-  # I Am Not Listing All The Surgical Tools In A Comment
+  - RecipeChemistryBeakerLarge
+  - RecipeChemistryBeakerSmall
+  - RecipeChemistryBottle
+  - RecipeChemistryGoggles
+  - RecipeChemistryJetInjector
+  - RecipeChemistryJug
+  - RecipeChemistryPillcan
+  - RecipeChemistrySyringe
+  - RecipeChemistryVialLarge
+  - RecipeChemistryVialSmall
+  - RecipeSurgeryCautery
+  - RecipeSurgeryDrill
+  - RecipeSurgeryHemostat
+  - RecipeSurgeryRetractor
+  - RecipeSurgerySaw
+  - RecipeSurgeryScalpel
+  - RecipeTopicalBrutepack
+  - RecipeTopicalOintment
+  - RecipeTopicalGauze
+  - RecipeTopicalTourniquet
 
 - type: latheRecipePack
   id: LathePackMedicalUtilities
