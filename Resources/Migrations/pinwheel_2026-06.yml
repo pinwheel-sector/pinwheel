@@ -8,9 +8,9 @@
 # WallSolid: Window
 # Table: null
 
-# 2026-06-11 - traitor sabotage
-CrewMonitoringServer: ExtractableServerCrewMonitor
-ResearchAndDevelopmentServer: ExtractableServerResearch
+# 2026-06-11
+CrewMonitoringServer: MachineServerCrewmonitor
+ResearchAndDevelopmentServer: null
 
 CrewMonitoringServerMachineCircuitboard: null
 ResearchAndDevelopmentServerMachineCircuitboard: null

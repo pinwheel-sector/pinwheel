@@ -1,6 +1,164 @@
 # Ammo Boxes
+- type: latheRecipe
+  id: RecipeAmmoBox20
+  result: MagazineBoxRifle
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: RecipeAmmoBox25
+  result: MagazineBoxCaselessRifle
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  id: RecipeAmmoBox30
+  result: MagazineBoxLightRifle
+  materials:
+    Steel: 900
+
+- type: latheRecipe
+  id: RecipeAmmoBox35
+  result: MagazineBoxPistol
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  id: RecipeAmmoBox45
+  result: MagazineBoxMagnum
+  materials:
+    Steel: 240
+
+- type: latheRecipe
+  id: RecipeAmmoBox50
+  result: BoxLethalshot # oh my fucking god
+  materials:
+    Steel: 320
+
+- type: latheRecipe
+  id: RecipeAmmoBox60
+  result: MagazineBoxAntiMateriel
+  materials:
+    Steel: 250
+
 # Ammo Magazines
+- type: latheRecipe
+  id: RecipeAmmoClip20Rifle
+  result: MagazineRifle
+  materials:
+    Steel: 475
+
+- type: latheRecipe
+  id: RecipeAmmoClip20RifleEmpty
+  result: MagazineRifleEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  id: RecipeAmmoClip25Pistol
+  result: MagazinePistolCaselessRifle
+  materials:
+    Steel: 145
+
+- type: latheRecipe
+  id: RecipeAmmoClip25PistolEmpty
+  result: MagazinePistolCaselessRifleEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  id: RecipeAmmoClip30Belt
+  result: MagazineBoxLightRifle # TODO
+  materials:
+    Steel: 900 # TODO
+
+# an empty 30 box doesn't exist and shouldn't exist
+
+- type: latheRecipe
+  id: RecipeAmmoClip35Pistol
+  result: MagazinePistol
+  materials:
+    Steel: 145
+
+- type: latheRecipe
+  id: RecipeAmmoClip35PistolEmpty
+  result: MagazinePistol
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  id: RecipeAmmoClip35Machinepistol
+  result: MagazinePistolHighCapacity
+  materials:
+    Steel: 185
+
+- type: latheRecipe
+  id: RecipeAmmoClip35MachinepistolEmpty
+  result: MagazinePistolHighCapacityEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  id: RecipeAmmoClip35Smg
+  result: MagazinePistolSubMachineGun
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: RecipeAmmoClip35SmgEmpty
+  result: MagazinePistolSubMachineGunEmpty
+  materials:
+    Steel: 30
+
+- type: latheRecipe
+  id: RecipeAmmoClip35Topload
+  result: MagazinePistolSubMachineGunTopMounted
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: RecipeAmmoClip35ToploadEmpty
+  result: MagazinePistolSubMachineGunTopMountedEmpty
+  materials:
+    Steel: 30
+
+- type: latheRecipe
+  id: RecipeAmmoClip45Loader # a speed loader is technically not a clip but that's not important
+  result: SpeedLoaderMagnum
+  materials:
+    Steel: 190
+
+- type: latheRecipe
+  id: RecipeAmmoClip45LoaderEmpty
+  result: SpeedLoaderMagnumEmpty
+  materials:
+    Steel: 50
+
+- type: latheRecipe
+  id: RecipeAmmoClip50Drum
+  result: MagazineShotgun
+  materials:
+    Steel: 240
+
+- type: latheRecipe
+  id: RecipeAmmoClip50DrumEmpty
+  result: MagazineShotgunEmpty
+  materials:
+    Steel: 50
+
 # Lights
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeLight
+  completetime: 3
+  materials:
+    Glass: 100
+    Steel: 25
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightTubeFluorescent
+  result: LightTube
 # Power Cells
 
 # Boards

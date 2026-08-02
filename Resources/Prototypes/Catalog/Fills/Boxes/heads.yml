@@ -113,8 +113,6 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: CircuitImprinterMachineCircuitboard
-        - id: ProtolatheMachineCircuitboard
         - id: ResearchComputerCircuitboard
         - id: CargoRequestScienceComputerCircuitboard
         - id: RoboticsConsoleCircuitboard

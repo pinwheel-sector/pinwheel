@@ -1,20 +1,21 @@
-﻿- type: entity
-  id: BiofabricatorMachineCircuitboard
+﻿# TODO: move this shit out to pinwheel directories
+- type: entity
   parent: BaseMachineCircuitboard
+  id: BoardLatheBiofabricator # Pinwheel
   name: biocube fabricator machine board
   description: A machine printed circuit board for a biocube fabricator.
   components:
   - type: Sprite
     state: service
   - type: MachineBoard
-    prototype: Biofabricator
+    prototype: MachineLatheBiofabricator # Pinwheel
     stackRequirements:
       Manipulator: 4
       Glass: 1
 
 - type: entity
-  id: SecurityTechFabCircuitboard
   parent: BaseMachineCircuitboard
+  id: SecurityTechFabCircuitboard
   name: security techfab machine board
   description: A machine printed circuit board for a security techfab.
   components:

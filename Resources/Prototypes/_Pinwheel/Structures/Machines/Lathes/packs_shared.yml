@@ -4,49 +4,53 @@
   id: LathePackAmmoCrew
   recipes:
   # boxes
-  - BoxLethalshot # .50 pellet - kammerer, enforcer
-  - MagazineBoxRifle # .20 rifle - lecter
-  - MagazineBoxPistol # .35 auto - mk 58, drozd, WT550
-  - MagazineBoxMagnum # .45 magnum - inspector
-  # magazines
-  - MagazinePistolSubMachineGun # .35 auto - drozd
-  - MagazinePistolSubMachineGunEmpty
-  - MagazinePistolSubMachineGunTopMounted # .35 auto - WT550
-  - MagazinePistolSubMachineGunTopMountedEmpty
-  - MagazineRifle # .20 rifle - lecter
-  - MagazineRifleEmpty
-  - MagazinePistol # .35 auto - mk 58
-  - MagazinePistolEmpty
+  - RecipeAmmoBox20 # lecter
+  - RecipeAmmoBox35 # mk 58, drozd, WT550
+  - RecipeAmmoBox45 # inspector
+  - RecipeAmmoBox50 # kammerer, enforcer
+  - RecipeAmmoClip20Rifle # lecter
+  - RecipeAmmoClip20RifleEmpty
+  - RecipeAmmoClip35Pistol # mk 58
+  - RecipeAmmoClip35PistolEmpty
+  - RecipeAmmoClip35Smg # drozd
+  - RecipeAmmoClip35SmgEmpty
+  - RecipeAmmoClip35Topload # WT550
+  - RecipeAmmoClip35ToploadEmpty
+  - RecipeAmmoClip45Loader # inspector
+  - RecipeAmmoClip45LoaderEmpty
 
 - type: latheRecipePack
   id: LathePackAmmoSyndicate
   recipes:
-  # boxes
-  - BoxLethalshot # .50 pellet - bulldog
-  - MagazineBoxAntiMateriel # .60 anti-materiel - hristov
-  # MagazineBoxCaselessRifle # .25 caseless - cobra
-  - MagazineBoxLightRifle # .30 rifle - L6
-  - MagazineBoxPistol # .35 auto - viper, C20-r
-  - MagazineBoxRifle # .20 rifle - estoc
-  # magazines
-  - MagazineShotgun # .50 pellet - bulldog
-  - MagazineShotgunEmpty
-  - MagazinePistolCaselessRifle # .25 caseless - cobra
-  # MagazinePistolHighCapacity # .35 auto - viper
-  # MagazinePistolHighCapacityEmpty
+  - RecipeAmmoBox20 # estoc
+  - RecipeAmmoBox25 # cobra
+  - RecipeAmmoBox30 # L6
+  - RecipeAmmoBox35 # viper, C20-r
+  - RecipeAmmoBox50 # bulldog
+  - RecipeAmmoBox60 # hristov
+  - RecipeAmmoClip20Rifle # estoc
+  - RecipeAmmoClip20RifleEmpty
+  - RecipeAmmoClip25Pistol # cobra
+  - RecipeAmmoClip25PistolEmpty
+  - RecipeAmmoClip35Machinepistol # viper
+  - RecipeAmmoClip35MachinepistolEmpty
+  - RecipeAmmoClip35Smg # C20-r
+  - RecipeAmmoClip35SmgEmpty
+  - RecipeAmmoClip50Drum # bulldog
+  - RecipeAmmoClip50DrumEmpty
 
 # utilities
 - type: latheRecipePack
   id: LathePackSharedLights
   recipes:
   # tubes
-  - CombatKnife
+  - RecipeServiceTablewareMetalSpoon
   # bulbs
 
 - type: latheRecipePack
   id: LathePackSharedPowercells
   recipes:
+  - RecipeServiceTablewareMetalSpoon
   # Small Power Cell
   # Medium Power Cell
   # Large Power Cell
-  - CombatKnife

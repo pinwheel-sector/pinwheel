@@ -73,3 +73,23 @@ Biofabricator: null
 ProtolatheHyperConvection: null
 CircuitImprinter: null
 CircuitImprinterHyperConvection: null
+
+CircuitImprinterMachineCircuitboard: null
+
+ComputerTechnologyDiskTerminal: null
+
+ResearchDisk: null
+ResearchDisk5000: null
+ResearchDisk10000: null
+ResearchDiskDebug: null
+
+
+TechnologyDisk: null
+TechnologyDiskT1: null
+TechnologyDiskT2: null
+TechnologyDiskT3: null
+TechnologyDiskArsenal: null
+TechnologyDiskCivilianServices: null
+TechnologyDiskExperimental: null
+TechnologyDiskIndustrial: null
+TechnologyDiskRare: null

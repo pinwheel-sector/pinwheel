@@ -13,7 +13,7 @@
 # type: latheRecipePack
 # id: LathePackCargoUtilities
 # recipes:
-# - CombatKnife
+# - RecipeServiceTablewareMetalSpoon
 
 - type: latheRecipePack
   id: LathePackCargoBoards
@@ -110,12 +110,12 @@
 - type: latheRecipePack
   id: LathePackScienceSpares
   recipes:
-  - CombatKnife
+  - RecipeServiceTablewareMetalSpoon
 
 - type: latheRecipePack
   id: LathePackScienceUtilities
   recipes:
-  - CombatKnife
+  - RecipeServiceTablewareMetalSpoon
   # Anomaly Locators (both)
   # Microreactor Power Cell Maybe After I Nerf it
 
