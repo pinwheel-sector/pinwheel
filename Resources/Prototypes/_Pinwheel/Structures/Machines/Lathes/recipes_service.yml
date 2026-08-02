@@ -1,0 +1,160 @@
+# Janitorial
+- type: latheRecipe
+  id: RecipeServiceJanitorialBucket
+  result: Bucket
+  materials:
+    Plastic: 300
+
+- type: latheRecipe
+  id: RecipeServiceJanitorialLightreplacer
+  result: LightReplacerEmpty
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: RecipeServiceJanitorialMop
+  result: Mop
+  materials:
+    Plastic: 600
+
+- type: latheRecipe
+  id: RecipeServiceJanitorialTrashbag
+  result: TrashBag
+  materials:
+    Plastic: 600
+
+- type: latheRecipe
+  id: RecipeServiceJanitorialWirebrush
+  result: WireBrush
+  materials:
+    Plastic: 150
+    Steel: 200
+
+# Tableware
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeServiceTableware
+  completetime: 1s
+  materials:
+    Steel: 20
+
+- type: latheRecipe
+  parent: BaseRecipeServiceTableware
+  id: RecipeServiceTablewareMetalFork
+  result: Fork
+
+- type: latheRecipe
+  parent: BaseRecipeServiceTableware
+  id: RecipeServiceTablewareMetalKnife
+  result: Knife
+
+- type: latheRecipe
+  parent: BaseRecipeServiceTableware
+  id: RecipeServiceTablewareMetalSpoon
+  result: Spoon
+
+- type: latheRecipe
+  parent: BaseRecipeServiceTableware
+  id: RecipeServiceTablewarePlasticFork
+  result: Fork
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  parent: BaseRecipeServiceTableware
+  id: RecipeServiceTablewarePlasticKnife
+  result: fork
+  materials:
+    Plasitc: 20
+
+- type: latheRecipe
+  parent: BaseRecipeServiceTableware
+  id: RecipeServiceTablewarePlasticSpoon
+  result: fork
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeServiceDish
+  completetime: 3s
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  parent: BaseRecipeServiceDish
+  id: RecipeServiceDishBowl
+  result: Bowl
+
+- type: latheRecipe
+  parent: BaseRecipeServiceDish
+  id: RecipeServiceDishPlate
+  result: Plate
+
+- type: latheRecipe
+  parent: BaseRecipeServiceDish
+  id: RecipeServiceDishSkewer
+  result: Skewer
+  materials:
+    Steel: 100
+
+# writing all of these lathe recipes manually has taken everything out of me. i don't need to categorize this. you don't need it categorized to understand it. fuck you. fuck this. i hate lathes. i'm not even paid for this
+- type: latheRecipe
+  id: RecipeServiceAshtray
+  result: Ashtray
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: RecipeServiceFoldingchair
+  result: FoldingChair
+  materials:
+    Plastic: 300
+    Steel: 100
+
+- type: latheRecipe
+  id: RecipeServiceWetfloorSign
+  result: WetFloorSign
+  materials:
+    Plastic: 200
+
+# Boards
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceBiogenerator
+  result: BoardLatheBiogenerator
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceryBoozedispenser
+  result: BoozeDispenserCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceGrill
+  result: GrillCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceHydrotray
+  result: HydroPonicsTrayCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceNewsComputer
+  result: ComputerMassMediaCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceMicrowave
+  result: BoardLatheBiogenerator
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceTelevision
+  result: TelevisionCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServiceUniformprinter
+  result: BoardLatheUniform

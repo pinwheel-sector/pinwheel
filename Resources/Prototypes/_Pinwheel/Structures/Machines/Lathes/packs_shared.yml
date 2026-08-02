@@ -37,14 +37,14 @@
 
 # utilities
 - type: latheRecipePack
-  id: LathePackLights
+  id: LathePackSharedLights
   recipes:
   # tubes
   - CombatKnife
   # bulbs
 
 - type: latheRecipePack
-  id: LathePackPowercells
+  id: LathePackSharedPowercells
   recipes:
   # Small Power Cell
   # Medium Power Cell

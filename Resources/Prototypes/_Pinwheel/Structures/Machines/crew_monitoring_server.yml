@@ -3,7 +3,9 @@
 - type: entity
   abstract: true
   parent: BaseMachinePowered
-  id: ExtractableServerBase
+  id: MachineServerCrewmonitor
+  name: crew monitoring server
+  description: "Receives, processes, and broadcasts the station's suit sensor data. The lid can be unscrewed and pried off, but you probably shouldn't do that without a really good reason."
   components:
   # visual
   - type: Sprite
@@ -15,12 +17,11 @@
     - state: lid
       map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
     - state: label-right
-      color: "#999"
       map: [ "enum.SabotagableMachineVisualLayers.Label" ]
+      color: "#4df"
     - state: power-on
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-  - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
@@ -40,6 +41,7 @@
         enum.SabotagableMachineVisualLayers.Tool:
           True: {visible: true}
           False: {visible: false}
+  - type: Appearance
   # audio
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -89,29 +91,7 @@
           spawn:
             SheetSteel1:
               min: 2
-              max: 2
-
-- type: entity
-  parent: ExtractableServerBase
-  id: ExtractableServerCrewMonitor
-  name: crew monitoring server
-  description: "Receives, processes, and broadcasts the station's suit sensor data. The lid can be unscrewed and pried off, but you probably shouldn't do that without a really good reason."
-  components:
-  # visual
-  - type: Sprite
-    layers: # ideally i wouldn't have to redefine the whole thing to just change the label sprite and color. but.
-    - state: base
-    - state: disk
-      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
-    - state: lid
-      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
-    - state: label-right
-      map: [ "enum.SabotagableMachineVisualLayers.Label" ]
-      color: "#4df"
-    - state: power-on
-      shader: unshaded
-      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-  # functional
+              max: 2l
   - type: VoiceOverride
     nameOverride: Crew Monitoring Server
     speechVerbOverride: Robotic
@@ -128,49 +108,10 @@
   - type: ContainerFill
     containers:
       sabotage_container:
-      - ServerDiskCrewMonitor
+      - CrewmonitorDisk
   - type: GuideHelp
     guides:
     - Medical
-
-- type: entity
-  parent: ExtractableServerBase
-  id: ExtractableServerResearch
-  name: research server
-  description: "Contains and processes Science's research data. The lid can be unscrewed and pried off, but you probably shouldn't do that without a really good reason."
-  components:
-  # visual
-  - type: Sprite
-    layers:
-    - state: base
-    - state: disk
-      map: [ "enum.SabotagableMachineVisualLayers.Tool" ]
-    - state: lid
-      map: [ "enum.SabotagableMachineVisualLayers.Cover" ]
-    - state: label-leftright
-      map: [ "enum.SabotagableMachineVisualLayers.Label" ]
-      color: "#92f"
-    - state: power-on
-      shader: unshaded
-      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-  # functional
-  - type: VoiceOverride
-    nameOverride: Research Server
-    speechVerbOverride: Robotic
-  - type: ResearchServer
-  - type: TechnologyDatabase
-    supportedDisciplines:
-    - Industrial
-    - Arsenal
-    - Experimental
-    - CivilianServices
-  - type: ContainerFill
-    containers:
-      sabotage_container:
-      - ServerDiskResearch
-  - type: GuideHelp
-    guides:
-    - Science
 
 ## Sound Collection
 - type: soundCollection
@@ -224,18 +165,11 @@
       event: !type:SabotagableMachineOpenedEvent
       broadcast: false
 
-## Disks
+## Disk
 - type: entity
   abstract: true
   parent: [ BaseItem, BaseSyndicateContraband ]
-  id: ServerDiskBase
-  components:
-  - type: Item
-    size: Normal
-
-- type: entity
-  parent: ServerDiskBase
-  id: ServerDiskCrewMonitor
+  id: CrewmonitorDisk
   name: 'server datadisk "Hippocrates"'
   description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Hippocrates" analytical software, helping crew monitor servers process vital signs en-masse.'
   components:
@@ -245,34 +179,15 @@
     - state: icon
     - state: label
       color: "#4df"
+  - type: Item
+    size: Normal
   - type: StealTarget
-    stealGroup: ServerDiskCrewMonitor
-
-- type: entity
-  parent: ServerDiskBase
-  id: ServerDiskResearch
-  name: 'server datadisk "Archimedes"'
-  description: 'A NanoTrasen 32 TB high resilience data drive, built to withstand anything short of a nuclear detonation. This one contains compiled binaries of the "Archimedes" analytical software, letting research servers process scientific data more efficiently.' # this will need some other effect when research points are axed. obviously
-  components:
-  - type: Sprite
-    sprite: _Pinwheel/Devices/Sabotage/serverdisk.rsi
-    layers:
-    - state: icon
-    - state: label
-      color: "#92f"
-  - type: StealTarget
-    stealGroup: ServerDiskResearch
+    stealGroup: StealCrewmonitorDisk
 
 - type: stealTargetGroup
-  id: ServerDiskCrewMonitor
+  id: StealCrewmonitorDisk
   name: steal-target-groups-serverdisk-crewmonitor
   sprite:
     sprite: _Pinwheel/Devices/Sabotage/serverdisk.rsi
     state: icon
 
-- type: stealTargetGroup
-  id: ServerDiskResearch
-  name: steal-target-groups-serverdisk-research
-  sprite:
-    sprite: _Pinwheel/Devices/Sabotage/serverdisk.rsi
-    state: icon

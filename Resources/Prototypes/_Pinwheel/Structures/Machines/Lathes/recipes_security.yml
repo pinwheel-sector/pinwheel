@@ -1,0 +1,90 @@
+# Grenades
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeSecurityGrenade
+  completetime: 5s
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  parent: BaseRecipeSecurityGrenade
+  id: RecipeSecurityGrenadeFlashbang
+  result: Flashbang
+
+- type: latheRecipe
+  parent: BaseRecipeSecurityGrenade
+  id: RecipeSecurityGrenadeStringer
+  result: StingerGrenade
+  materials:
+    Plastic: 200
+    Steel: 600
+
+- type: latheRecipe
+  parent: BaseRecipeSecurityGrenade
+  id: RecipeSecurityGrenadeTeargas
+  result: TearGasGrenade
+
+# Consumables
+- type: latheRecipe
+  id: RecipeSecurityFlare
+  completetime: 1s
+  result: Flare
+  materials:
+    Plastic: 25
+
+- type: latheRecipe
+  id: RecipeSecurityForensicPad
+  completetime: 1s
+  result: ForensicPad
+  materials:
+    Plastic: 20
+
+# Restraints
+- type: latheRecipe
+  id: RecipeSecurityRestraintsHandcuffs
+  completetime: 4s
+  result: Handcuffs
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: RecipeSecurityRestraintsZipties
+  completetime: 2s
+  result: Zipties
+  materials:
+    Steel: 150
+
+# Targets
+- type: latheRecipe
+  id: RecipeSecurityTargetClown
+  result: TargetClown # TODO: spawning solid structures from a lathe is bad
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  id: RecipeSecurityTargetHuman
+  result: TargetHuman
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  id: RecipeSecurityTargetSyndicate
+  result: TargetSyndicate
+  materials:
+    Steel: 600
+
+# Boards
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSecurityCameraMonitor
+  result: SurveillanceCameraMonitorCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSecurityCriminalRecords
+  result: CriminalRecordsComputerCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSecurityFlasher
+  result: PortableFlasherCircuitboard

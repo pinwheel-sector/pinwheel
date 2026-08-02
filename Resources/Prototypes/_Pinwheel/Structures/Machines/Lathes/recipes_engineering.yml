@@ -1,0 +1,149 @@
+# Cables
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeCable
+  completetime: 0.2s
+  materials:
+    Steel: 20
+
+- type: latheRecipe
+  parent: BaseRecipeCable
+  id: RecipeCableLv
+  result: CableApc1
+
+- type: latheRecipe
+  parent: BaseRecipeCable
+  id: RecipeCableMv
+  result: CableMv1
+
+- type: latheRecipe
+  parent: BaseRecipeCable
+  id: RecipeCableHv
+  result: CableHv1
+
+# Tools
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeTool
+  completetime: 5s
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeEngineeringGrenadeAir
+  result: AirGrenade # this isn't a tool but who cares
+  materials:
+    Plastic: 200
+    Steel: 600
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeEngineeringGrenadeFoam
+  result: FoamGrenade # ditto
+  materials:
+    Plastic: 200
+    Steel: 600
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeEngineeringWeldingMask
+  result: WeldingMask # ditto
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeToolCrowbar
+  result: Crowbar
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeToolMultitool
+  result: Multitool
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeToolScrewdriver
+  result: Screwdriver
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeToolWrench
+  result: Wrench
+
+- type: latheRecipe
+  parent: BaseRecipeTool
+  id: RecipeToolWirecutters
+  result: Wirecutters
+
+# I'm Too Tired To Classify This
+- type: latheRecipe
+  id: RecipeEngineeringConveyor
+  completetime: 3s
+  result: ConveyorAssembly
+  materials:
+    Steel: 200
+
+- type: latheRecipe
+  id: RecipeEngineeringFloodlight
+  completetime: 3s
+  result: FloodlightEmpty
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: RecipeEngineeringWarningCone
+  completetime: 2s
+  result: Cone
+  materials:
+    Plastic: 200
+
+# Boards
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringPowerApc
+  result: ApcCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringPowerSubstation
+  result: SubstationCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringPowerSmes
+  result: SmesCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringIntercom
+  result: IntercomCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringStationMap
+  result: StationMapCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringAirAlarm
+  result: AirAlarmCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringAirlock
+  result: AirlockCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringCondenser
+  result: CondenserCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringFireAlarm
+  result: FireAlarmCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringFirelock
+  result: FirelockCircuitboard

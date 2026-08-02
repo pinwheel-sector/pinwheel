@@ -1,0 +1,45 @@
+# Who Gives A Shit
+- type: latheRecipe
+  id: RecipeCargoClipboardPlastic
+  completetime: 3s
+  result: BoxFolderClipboardPlastic
+  materials:
+    Plastic: 50
+    Steel: 10
+
+- type: latheRecipe
+  id: RecipeCargoClipboardWood
+  completetime: 3s
+  result: BoxFolderClipboard
+  materials:
+    Steel: 10
+    Wood: 50 # good luck finding any wood. chump
+
+- type: latheRecipe
+  id: RecipeCargoEnvelope
+  completetime: 2s
+  result: Envelope
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  id: RecipeCargoParcelWrap
+  completetime: 0.2s
+  result: ParcelWrap1
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  id: RecipeCargoPen
+  completetime: 2s
+  result: Pen
+  materials:
+    Plastic: 20
+
+- type: latheRecipe
+  id: RecipeCargoUtilityKnife
+  completetime: 2s
+  result: UtilityKnife
+  materials:
+    Plastic: 100
+    Steel: 50

@@ -2,71 +2,64 @@
 - type: latheRecipePack
   id: LathePackCargoSpares
   recipes:
-  - CombatKnife
-  # Clipboard
-  # Parcel Wrap
-  # Pen
-  # Utility Knife
-  # Small Power Cell
-  # Medium Power Cell
-  # Large Power Cell
+  - RecipeCargoClipboardPlastic
+  - RecipeCargoClipboardWood
+  - RecipeCargoEnvelope
+  - RecipeCargoParcelWrap
+  - RecipeCargoPen
+  - RecipeCargoUtilityKnife
 
-- type: latheRecipePack
-  id: LathePackCargoUtilities
-  recipes:
-  - CombatKnife
+# nothingburger department award
+# type: latheRecipePack
+# id: LathePackCargoUtilities
+# recipes:
+# - CombatKnife
 
 - type: latheRecipePack
   id: LathePackCargoBoards
   recipes:
-  - CombatKnife
-  # Power Cell Charger
+    - RecipeBoardSharedRechargerCell
 
 ## Engineering
 - type: latheRecipePack
   id: LathePackEngineeringSpares
   recipes:
-  - CombatKnife
-  # LV Cable
-  # MV Cable
-  # HV Cable
-  # Foam Grenade
-  # Air Grenade
-  # Crowbar, Wrench, et al.
-  # Welding Mask
-  # Small Power Cell
-  # Medium Power Cell
-  # Large Power Cell
+  - RecipeCableLv
+  - RecipeCableMv
+  - RecipeCableHv
+  - RecipeEngineeringGrenadeAir
+  - RecipeEngineeringGrenadeFoam
+  - RecipeEngineeringWeldingMask
+  - RecipeToolCrowbar
+  - RecipeToolMultitool
+  - RecipeToolScrewdriver
+  - RecipeToolWrench
+  - RecipeToolWirecutters
 
 - type: latheRecipePack
   id: LathePackEngineeringUtilities
   recipes:
-  - CombatKnife
-  # Conveyor
-  # Floodlight
-  # Handheld Map
-  # Cone
+  - RecipeEngineeringConveyor
+  - RecipeEngineeringFloodlight
+  - RecipeEngineeringHandheldMap
+  - RecipeEngineeringWarningCone
 
 - type: latheRecipePack
   id: LathePackEngineeringBoards
   recipes:
-  - CombatKnife
-  # power
-  # APC
-  # Substation
-  # SMES
-  # utility
-  # Cutter Machine
-  # Cyborg Charger
-  # Intercom
-  # Station Map
-  # Power Cell Charger
-  # whatever
-  # Air Alarm
-  # Airlock
-  # Condenser
-  # Fire Alarm
-  # Firelock
+  - RecipeBoardEngineeringPowerApc
+  - RecipeBoardEngineeringPowerSubstation
+  - RecipeBoardEngineeringPowerSmes
+  - RecipeBoardEngineeringIntercom
+  - RecipeBoardEngineeringLatheCutter
+  - RecipeBoardEngineeringStaitionMap
+  - RecipeBoardEngineeringAirAlarm
+  - RecipeBoardEngineeringAirlock
+  - RecipeBoardEngineeringCondenser
+  - RecipeBoardEngineeringFireAlarm
+  - RecipeBoardEngineeringFirelock
+  - RecipeBoardSharedRechargerCell
+  - RecipeBoardSharedRechargerCyborg
 
 ## Medical
 - type: latheRecipePack
@@ -96,23 +89,22 @@
 - type: latheRecipePack
   id: LathePackMedicalUtilities
   recipes:
-  - CombatKnife
-  # Body Bag
-  # Roller Beds (all 3)
-  # Canes
-  # Tank Harness (the vox one)
+  - RecipeMedicalBodybag
+  - RecipeMedicalRollerbedCheap
+  - RecipeMedicalRollerbedFgsfds
+  - RecipeMedicalRollerbedEmergency
+  - RecipeMedicalCaneWalking
+  - RecipeMedicalCaneWhite
+  - RecipeMedicalTankharness
 
 - type: latheRecipePack
   id: LathePackMedicalBoards
   recipes:
-  - CombatKnife
-  # chemistry
-  # Hotplate
-  # Centrifuge
-  # Who Gives A Shit
-  # not chemistry
-  # SmartFridge:tm:
-  # Crew Monitoring Console
+  - RecipeBoardChemistryCentrifuge
+  - RecipeBoardChemistryElectrolizer
+  - RecipeBoardChemistryHotplate
+  - RecipeBoardMedicalSmartfridge
+  - RecipeBoardMedicalCrewMonitor
 
 ## Science
 - type: latheRecipePack
@@ -130,86 +122,76 @@
 - type: latheRecipePack
   id: LathePackScienceBoards
   recipes:
-  - CombatKnife
-  # Cyborg Charger
+  - RecipeBoardSharedRechargerCell
+  - RecipeBoardSharedRechargerCyborg
 
 ## Security
 - type: latheRecipePack
   id: LathePackSecuritySpares
   recipes:
-  # restraints
-  # Bola
-  - Handcuffs
-  - Zipties
-  # tools
-  # Flare
-  - ForensicPad
-  - HoloprojectorSecurity
-  - LatheRecipeTourniquet
-  # weapons
-  # Flashbang
-  # Stinger
-  # Tear Gas
-  - CombatKnife
-  - Flash
-  - RiotShield
-  - Stunbaton
-  - WeaponDisabler
+  - RecipeSecurityGrenadeFlashbang
+  - RecipeSecurityGrenadeStinger
+  - RecipeSecurityGrenadeTeargas
+  - RecipeSecurityFlare
+  - RecipeSecurityFlash
+  - RecipeSecurityForensicPad
+  - RecipeSecurityRestraintsHandcuffs
+  - RecipeSecurityRestraintsZipties
+  - RecipeTopicalTourniquet
 
 - type: latheRecipePack
   id: LathePackSecurityUtilities
   recipes:
-  - TargetHuman # TODO: lathes shouldn't spawn solid structures directly
-  - TargetClown
-  - TargetSyndicate
-  - WeaponPracticeDisabler
+  - RecipeSecurityTargetClown # TODO: spawning solid structures from a lathe is bad
+  - RecipeSecurityTargetHuman
+  - RecipeSecurityTargetSyndicate
 
 - type: latheRecipePack
   id: LathePackSecurityBoards
   recipes:
-  - SurveillanceCameraMonitorCircuitboard
-  # Criminal Records
-  # Portable Flasher
-  # Recharger
+  - RecipeBoardSecurityCameraMonitor
+  - RecipeBoardSecurityCriminalRecords
+  - RecipeBoardSecurityFlasher
+  - RecipeBoardSharedRecharger
 
 ## Service
 - type: latheRecipePack
   id: LathePackServiceSpares
   recipes:
-  - CombatKnife
-  # tableware
-  # Bowl
-  # Glasses (all)
-  # Plate
-  # Skewer
-  # Utensils (all)
-  # janitorial
-  # Bucket
-  # Mop
-  # Light Replacer
-  # Trash Bag
-  # Wire Brush
+  - RecipeServiceJanitorialBucket
+  - RecipeServiceJanitorialLightreplacer
+  - RecipeServiceJanitorialMop
+  - RecipeServiceJanitorialTrashbag
+  - RecipeServiceJanitorialWirebrush
+  - RecipeServiceTablewareMetalFork
+  - RecipeServiceTablewareMetalKnife
+  - RecipeServiceTablewareMetalSpoon
+  - RecipeServiceTablewarePlasticFork
+  - RecipeServiceTablewarePlasticKnife
+  - RecipeServiceTablewarePlasticSpoon
+  - RecipeServiceDishBowl
+  - RecipeServiceDishPlate
+  - RecipeServiceDishSkewer
 
 - type: latheRecipePack
   id: LathePackServiceUtilities
   recipes:
-  - CombatKnife
-  # Ash Tray
-  # Folding Chair
-  # Holosign Projector
-  # Tank Harness (the vox one)
-  # Wet Floor Sign
+  - RecipeMedicalAideTankharness
+  - RecipeServiceAshtray
+  - RecipeServiceFoldingchair
+  - RecipeServiceWetfloorSign
 
 - type: latheRecipePack
   id: LathePackServiceBoards
   recipes:
-  # Biogenerator
-  # Booze Dispenser
-  # Grill
-  # Hydro Tray
-  - ComputerMassMediaCircuitboard
-  # Microwave (the devil)
-  # Cutter Machine
-  # SmartFridge:tm:
-  # Television
-  # Uniform Printer
+  - RecipeBoardChemistryGrinder
+  - RecipeBoardMedicalSmartfridge
+  - RecipeBoardServiceBiogenerator
+  - RecipeBoardServiceBoozedispenser
+  - RecipeBoardServiceGrill
+  - RecipeBoardServiceHydrotray
+  - RecipeBoardServiceNewsComputer
+  - RecipeBoardServiceMicrowave
+  - RecipeBoardServiceTelevision
+  - RecipeBoardServiceUniformprinter
+  - RecipeBoardSharedCutter

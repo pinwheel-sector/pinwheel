@@ -1,0 +1,32 @@
+# Ammo Boxes
+# Ammo Magazines
+# Lights
+# Power Cells
+
+# Boards
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeBoard
+  completetime: 5
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSharedLatheCutter
+  result: BoardLatheCutter
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSharedRechargerCell
+  result: CellRechargerCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSharedRechargerCyborg
+  result: CyborgRechargerCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardSharedRecharger
+  result: RechargerCircuitboard

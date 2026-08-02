@@ -25,6 +25,7 @@
     TraitorSabotageMailbox: 1
     TraitorStealAntiqueLaser: 1
     TraitorStealCaptainJetpack: 1
+    TraitorStealCrewmonitorDisk: 1
     TraitorStealEnergyMagnum: 1
     # difficulty 1
     TraitorStealCorgiMeat: 1
@@ -35,8 +36,6 @@
     TraitorStealHypospray: 1
     TraitorStealKnuckleDusters: 1
     TraitorStealMagbootsAdvanced: 1
-    TraitorStealServerDiskCrewMonitor: 1
-    TraitorStealServerDiskResearch: 1
 
 ### Bases
 ## Base of all
@@ -402,13 +401,13 @@
 
 - type: entity
   parent: BaseTraitorStealMedical
-  id: TraitorStealServerDiskCrewMonitor
+  id: TraitorStealCrewmonitorDisk
   components:
   - type: Objective
     difficulty: 2 # this is also a quiet sabotage objective
   - type: StealCondition
     descriptionText: objective-description-traitor-steal-serverdisk
-    stealGroup: ServerDiskCrewMonitor
+    stealGroup: StealCrewmonitorDisk
 
 # Science
 - type: entity
@@ -425,12 +424,3 @@
   - type: StealCondition
     stealGroup: HandTeleporter
 
-- type: entity
-  parent: BaseTraitorStealScience
-  id: TraitorStealServerDiskResearch
-  components:
-  - type: Objective
-    difficulty: 2 # this is also a quiet sabotage objective
-  - type: StealCondition
-    descriptionText: objective-description-traitor-steal-serverdisk
-    stealGroup: ServerDiskResearch

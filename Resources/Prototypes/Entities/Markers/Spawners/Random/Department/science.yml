@@ -67,8 +67,6 @@
       weight: 10
       children:
       - id: ClothingBeltUtilityFilled
-      - id: ResearchDisk
-      - id: ResearchDisk5000
       - id: RandomInstruments
 
 # Major science loot spawner

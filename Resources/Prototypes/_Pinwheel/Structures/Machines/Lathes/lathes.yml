@@ -96,9 +96,9 @@
   - type: Lathe
     runningState: null
     staticPacks:
-    - LathePackPowercells
+    - LathePackSharedPowercells
     - LathePackCargoSpares
-    - LathePackCargoUtilities
+    # LathePackCargoUtilities
     - LathePackCargoBoards
   - type: EmagLatheRecipes
     emagStaticPacks:
@@ -128,8 +128,8 @@
   - type: Lathe
     runningState: null
     staticPacks:
-    - LathePackLights
-    - LathePackPowercells
+    - LathePackSharedLights
+    - LathePackSharedPowercells
     - LathePackEngineeringSpares
     - LathePackEngineeringUtilities
     - LathePackEngineeringBoards
@@ -161,7 +161,7 @@
   - type: Lathe
     runningState: null
     staticPacks:
-    - LathePackPowercells
+    - LathePackSharedPowercells
     - LathePackMedicalSpares
     - LathePackMedicalUtilities
     - LathePackMedicalBoards
@@ -193,7 +193,7 @@
   - type: Lathe
     runningState: null
     staticPacks:
-    - LathePackPowercells
+    - LathePackSharedPowercells
     - LathePackScienceSpares
     - LathePackScienceUtilities
     - LathePackScienceBoards
@@ -226,7 +226,7 @@
     runningState: null
     staticPacks:
     - LathePackAmmoCrew
-    - LathePackPowercells
+    - LathePackSharedPowercells
     - LathePackSecuritySpares
     - LathePackSecurityUtilities
     - LathePackSecurityBoards
@@ -257,8 +257,8 @@
   - type: Lathe
     runningState: null
     staticPacks:
-    - LathePackLights
-    - LathePackPowercells
+    - LathePackSharedLights
+    - LathePackSharedPowercells
     - LathePackServiceSpares
     - LathePackServiceUtilities
     - LathePackServiceBoards

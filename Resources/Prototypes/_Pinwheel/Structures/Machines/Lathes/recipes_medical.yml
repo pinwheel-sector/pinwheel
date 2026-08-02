@@ -1,0 +1,231 @@
+# Chemistry
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeChemistry
+  completetime: 4s
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryBeakerLarge
+  result: LargeBeaker
+  materials:
+    Glass: 400
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryBeakerSmall
+  result: Beaker
+  materials:
+    Glass: 200
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryBottle
+  result: ChemistryEmptyBottle01 # ????
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryGoggles # not parenting this off clothing because it doesn't matter
+  result: ClothingEyesGlassesChemical
+  materials:
+    Glass: 50
+    Steel: 300
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryJetInjector
+  result: JetInjector
+  materials:
+    Plastic: 100
+    Steel: 20
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryJug
+  result: Jug
+  materials:
+    Plastic: 400
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryPillcan
+  result: PillCanister
+  materials:
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistrySyringe
+  result: Syringe
+  materials:
+    Glass: 100
+    Steel: 20
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryVialLarge
+  result: ChemistryEmptyVial
+  materials:
+    Glass: 100
+
+- type: latheRecipe
+  parent: BaseRecipeChemistry
+  id: RecipeChemistryVialSmall
+  result: ChemistryEmptyVialSmall
+  materials:
+    Glass: 50
+
+# Surgical Tools
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeSurgery
+  completetime: 2s
+  materials:
+    Steel: 200
+
+- type: latheRecipe
+  parent: BaseRecipeSurgery
+  id: RecipeSurgeryScalpel
+  result: Scalpel
+
+- type: latheRecipe
+  parent: BaseRecipeSurgery
+  id: RecipeSurgeryRetractor
+  result: Retractor
+
+- type: latheRecipe
+  parent: BaseRecipeSurgery
+  id: RecipeSurgeryCautery
+  result: Cautery
+
+- type: latheRecipe
+  parent: BaseRecipeSurgery
+  id: RecipeSurgeryDrill
+  result: Drill
+
+- type: latheRecipe
+  parent: BaseRecipeSurgery
+  id: RecipeSurgerySaw
+  result: Saw
+
+- type: latheRecipe
+  parent: BaseRecipeSurgery
+  id: RecipeSurgeryHemostat
+  result: Hemostat
+
+# Topicals
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeTopical
+  completetime: 0.2s
+
+- type: latheRecipe
+  parent: BaseRecipeTopical
+  id: RecipeTopicalBrutepack
+  result: Brutepack1
+  materials:
+    Cloth: 20
+    Plastic: 20
+
+- type: latheRecipe
+  parent: BaseRecipeTopical
+  id: RecipeTopicalOintment
+  result: Ointment1
+  materials:
+    Plastic: 20
+    Steel: 20
+
+- type: latheRecipe
+  parent: BaseRecipeTopical
+  id: RecipeTopicalGauze
+  result: Gauze1
+  materials:
+    Cloth: 100
+
+- type: latheRecipe
+  parent: BaseRecipeTopical
+  id: RecipeTopicalTourniquet
+  result: Tourniquet1
+  materials:
+    Plastic: 10
+    Steel: 20
+
+# Body Movers
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipeBodymover
+  completetime: 5s
+  materials:
+    Plastic: 500
+    Steel: 20
+
+- type: latheRecipe
+  id: RecipeMedicalBodybag
+  result: BodybagFolded
+
+- type: latheRecipe
+  id: RecipeMedicalRollerbedCheap
+  result: RollerbedCheapSpawnFolded
+
+- type: latheRecipe
+  id: RecipeMedicalRollerbedFgsfds
+  result: RollerbedFgsfdsSpawnFolded
+
+- type: latheRecipe
+  id: RecipeMedicalRollerbedEmergency
+  result: RollerbedEmergencySpawnFolded
+
+# Aides
+- type: latheRecipe
+  id: RecipeMedicalCaneWalking
+  completetime: 5s
+  result: Cane
+  materials:
+    Plastic: 500
+
+- type: latheRecipe
+  id: RecipeMedicalCaneWhite
+  completetime: 5s
+  result: CaneWhite
+  materials:
+    Plastic: 500
+
+- type: latheRecipe
+  id: RecipeMedicalTankharness
+  completetime: 5s
+  result: ClothingOuterTankHarness
+  materials:
+    Steel: 500
+
+# Boards
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardChemistryCentrifuge
+  result: CentrifugeCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardChemistryElectrolizer
+  result: ElectrolizerCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardChemistryGrinder
+  result: ReagentGrinderCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardChemistryHotplate
+  result: HotplateCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardMedicalSmartfridge
+  result: SmartfridgeCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardMedicalCrewMonitor
+  result: CrewMonitoringConsoleCircuitboard
