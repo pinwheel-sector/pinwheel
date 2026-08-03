@@ -18,7 +18,7 @@ public sealed class MachineConstruction : InteractionTest
         ClientAssertPrototype(Unfinished, Target);
         await Interact(Wrench, Cable);
         AssertPrototype(MachineFrame);
-        await Interact(ProtolatheBoard, Manipulator1, Manipulator1, Manipulator1, Manipulator1, Beaker, Beaker, Screw);
+        await Interact(ProtolatheBoard, Manipulator1, Manipulator1, Manipulator1, Manipulator1, Manipulator1, Steel, Steel, Steel, Steel, Steel, Screw); // Pinwheel
         AssertPrototype(Protolathe);
     }
 
@@ -33,10 +33,9 @@ public sealed class MachineConstruction : InteractionTest
         await Interact(Wrench, Screw);
         AssertDeleted();
         await AssertEntityLookup(
-            (Steel, 5),
+            (Steel, 10),
             (Cable, 1),
-            (Beaker, 2),
-            (Manipulator1, 4),
+            (Manipulator1, 5),
             (ProtolatheBoard, 1));
     }
 
@@ -51,7 +50,7 @@ public sealed class MachineConstruction : InteractionTest
         // Change it into an autolathe
         await InteractUsing("BoardLatheSecurity"); // Pinwheel
         AssertPrototype(MachineFrame);
-        await Interact(Manipulator1, Manipulator1, Manipulator1, Manipulator1, Glass, Screw);
+        await Interact(Manipulator1, Manipulator1, Manipulator1, Manipulator1, Manipulator1, Steel, Steel, Steel, Steel, Steel, Screw); // Pinwheel
         AssertPrototype("MachineLatheSecurity"); // Pinwheel
     }
 }

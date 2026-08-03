@@ -4,7 +4,7 @@
   id: BaseBoardLathe
   components:
   - type: MachineBoard
-    stacjRequirements:
+    stackRequirements:
       Manipulator: 5
       Steel: 5
 
