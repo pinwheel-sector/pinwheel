@@ -132,10 +132,10 @@ DrinkGoldschlagerGlass: DrinkGildlagerGlass
 ClosetBase: ClosetSteelBase
 
 # 2024-01-08
-SalvagePartsT4Spawner: SalvageLootSpawner
-SalvagePartsT3Spawner: SalvageLootSpawner
-SalvagePartsT3T4Spawner: SalvageLootSpawner
-SalvagePartsT2Spawner: SalvageLootSpawner
+SalvagePartsT4Spawner: null # Pinwheel
+SalvagePartsT3Spawner: null # Pinwheel
+SalvagePartsT3T4Spawner: null # Pinwheel
+SalvagePartsT2Spawner: null # Pinwheel
 #SuperCapacitorStockPart: CapacitorStockPart
 #QuadraticCapacitorStockPart: CapacitorStockPart
 #NanoManipulatorStockPart: MicroManipulatorStockPart
