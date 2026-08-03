@@ -5,14 +5,14 @@
   result: BoxFolderPlasticClipboardEmpty
   materials:
     Plastic: 50
-    Steel: 10
+    Steel: 25
 
 - type: latheRecipe
   id: RecipeCargoClipboardWood
   completetime: 3s
   result: BoxFolderClipboardEmpty
   materials:
-    Steel: 10
+    Steel: 25
     Wood: 50 # good luck finding any wood. chump
 
 - type: latheRecipe
