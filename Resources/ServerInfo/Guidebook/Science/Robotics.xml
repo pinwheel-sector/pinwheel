@@ -4,7 +4,7 @@
 
   ## Exosuit Fabricator
 <Box>
-<GuideEntityEmbed Entity="ExosuitFabricator" Caption="Exosuit Fabricator"/>
+  <GuideEntityEmbed Entity="MachineLatheRobotics" Caption="Exosuit Fabricator"/>
 </Box>
   The [color=#a4885c]Exosuit Fabricator[/color] is where you'll be printing out most of the parts for your creations, such as:
   - [textlink="Cyborg" link="Cyborgs"] limbs

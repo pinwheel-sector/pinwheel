@@ -1,7 +1,7 @@
 - type: guideEntry
   id: Science
   name: guide-entry-science
-  text: "/ServerInfo/Guidebook/Science/Science.xml"
+  text: "/ServerInfo/_Pinwheel/Science/science.xml"
   children:
   - Technologies
   - AnomalousResearch

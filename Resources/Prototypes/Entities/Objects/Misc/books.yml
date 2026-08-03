@@ -250,27 +250,6 @@
     - Janitorial
 
 - type: entity
-  id: BookHowToRockAndStone
-  parent: BaseGuidebook
-  name: how to rock and stone
-  description: A very detailed guide about salvage written by Karl, a legendary space miner, however he's missing. It motivates you to rock and stone.
-  components:
-  - type: Sprite
-    layers:
-    - state: paper
-    - state: cover_base
-      color: "#52320b"
-    - state: decor_wingette
-      color: "#e69a3e"
-    - state: icon_glow
-    - state: icon_diamond
-    - state: icon_text
-      color: "#fcdf74"
-  - type: GuideHelp
-    guides:
-    - Salvage
-
-- type: entity
   id: BookMedicalReferenceBook
   parent: BaseGuidebook
   name: medical reference book

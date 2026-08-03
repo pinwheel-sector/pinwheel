@@ -18,7 +18,7 @@
     <GuideEntityEmbed Entity="PoweredSmallLight" Caption=""/>
     <GuideEntityEmbed Entity="ComputerShuttleCargo" Caption=""/>
     <GuideEntityEmbed Entity="ComputerComms" Caption=""/>
-    <GuideEntityEmbed Entity="Autolathe" Caption=""/>
+    <GuideEntityEmbed Entity="MachineLatheEngineering" Caption=""/>
     <GuideEntityEmbed Entity="VendingMachineEngivend" Caption=""/>
     <GuideEntityEmbed Entity="VendingMachineMedical" Caption=""/>
     <GuideEntityEmbed Entity="AlwaysPoweredWallLight" Caption=""/>
