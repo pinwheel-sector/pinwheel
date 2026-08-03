@@ -6,8 +6,8 @@ public sealed class MachineConstruction : InteractionTest
 {
     private const string MachineFrame = "MachineFrame";
     private const string Unfinished = "UnfinishedMachineFrame";
-    private const string ProtolatheBoard = "ProtolatheMachineCircuitboard";
-    private const string Protolathe = "Protolathe";
+    private const string ProtolatheBoard = "BoardLatheScience"; // Pinwheel
+    private const string Protolathe = "MachineLatheScience"; // Pinwheel
     private const string Beaker = "Beaker";
 
     [Test]
@@ -49,10 +49,10 @@ public sealed class MachineConstruction : InteractionTest
         AssertPrototype(MachineFrame);
 
         // Change it into an autolathe
-        await InteractUsing("AutolatheMachineCircuitboard");
+        await InteractUsing("BoardLatheSecurity"); // Pinwheel
         AssertPrototype(MachineFrame);
         await Interact(Manipulator1, Manipulator1, Manipulator1, Manipulator1, Glass, Screw);
-        AssertPrototype("Autolathe");
+        AssertPrototype("MachineLatheSecurity"); // Pinwheel
     }
 }
 
