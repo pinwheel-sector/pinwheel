@@ -43,14 +43,18 @@
 - type: latheRecipePack
   id: LathePackSharedLights
   recipes:
-  # tubes
-  - RecipeServiceTablewareMetalSpoon
-  # bulbs
+  - RecipeLightBulbDim
+  - RecipeLightBulbFluorescent
+  - RecipeLightBulbLed
+  - RecipeLightBulbService
+  - RecipeLightBulbWarm
+  - RecipeLightTubeExterior
+  - RecipeLightTubeFluorescent
+  - RecipeLightTubeLed
+  - RecipeLightTubeSodium
 
 - type: latheRecipePack
   id: LathePackSharedPowercells
   recipes:
-  - RecipeServiceTablewareMetalSpoon
-  # Small Power Cell
-  # Medium Power Cell
-  # Large Power Cell
+  - RecipePowercellMedium
+  - RecipePowercellSmall

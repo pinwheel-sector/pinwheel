@@ -157,9 +157,63 @@
 
 - type: latheRecipe
   parent: BaseRecipeLight
+  id: RecipeLightBulbDim
+  result: DimLightBulb
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightBulbFluorescent
+  result: LightBulb
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightBulbLed
+  result: LedLightBulb
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightBulbService
+  result: ServiceLightBulb
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightBulbWarm
+  result: WarmLightBulb
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightTubeExterior
+  result: ExteriorLightTube
+
+- type: latheRecipe
+  parent: BaseRecipeLight
   id: RecipeLightTubeFluorescent
   result: LightTube
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightTubeLed
+  result: LedLightTube
+
+- type: latheRecipe
+  parent: BaseRecipeLight
+  id: RecipeLightTubeSodium
+  result: SodiumLightTube
+
 # Power Cells
+- type: latheRecipe
+  id: RecipePowercellMedium
+  completetime: 3
+  result: PowerCellMediumPrinted
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  id: RecipePowercellSmall
+  completetime: 3
+  result: PowerCellSmallPrinted
+  materials:
+    Steel: 250
 
 # Boards
 - type: latheRecipe
