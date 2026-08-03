@@ -2,7 +2,7 @@
 - type: latheRecipe
   id: RecipeCargoClipboardPlastic
   completetime: 3s
-  result: BoxFolderClipboardPlastic
+  result: BoxFolderPlasticClipboardEmpty
   materials:
     Plastic: 50
     Steel: 10
@@ -10,7 +10,7 @@
 - type: latheRecipe
   id: RecipeCargoClipboardWood
   completetime: 3s
-  result: BoxFolderClipboard
+  result: BoxFolderClipboardEmpty
   materials:
     Steel: 10
     Wood: 50 # good luck finding any wood. chump
@@ -25,9 +25,9 @@
 - type: latheRecipe
   id: RecipeCargoParcelWrap
   completetime: 0.2s
-  result: ParcelWrap1
+  result: ParcelWrap
   materials:
-    Plastic: 20
+    Plastic: 600
 
 - type: latheRecipe
   id: RecipeCargoPen

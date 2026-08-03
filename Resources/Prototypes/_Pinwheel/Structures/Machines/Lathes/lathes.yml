@@ -92,7 +92,7 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Machine
-    board: SecurityTechFabCircuitboard # TODO
+    board: BoardLatheCargo
   - type: Lathe
     runningState: null
     staticPacks:
@@ -124,7 +124,7 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Machine
-    board: SecurityTechFabCircuitboard # TODO
+    board: BoardLatheEngineering
   - type: Lathe
     runningState: null
     staticPacks:
@@ -157,7 +157,7 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Machine
-    board: SecurityTechFabCircuitboard # TODO
+    board: BoardLatheMedical
   - type: Lathe
     runningState: null
     staticPacks:
@@ -189,7 +189,7 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Machine
-    board: SecurityTechFabCircuitboard # TODO
+    board: BoardLatheScience
   - type: Lathe
     runningState: null
     staticPacks:
@@ -221,7 +221,7 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Machine
-    board: SecurityTechFabCircuitboard
+    board: BoardLatheSecurity
   - type: Lathe
     runningState: null
     staticPacks:
@@ -253,7 +253,7 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: Machine
-    board: SecurityTechFabCircuitboard # TODO
+    board: BoardLatheService
   - type: Lathe
     runningState: null
     staticPacks:
@@ -277,7 +277,7 @@
   - type: Sprite
     sprite: _Pinwheel/Structures/Machines/Lathes/biogenerator.rsi
   - type: Machine
-    board: BiogeneratorMachineCircuitboard
+    board: BoardLatheBiogenerator
   - type: ProduceMaterialExtractor
   - type: ItemSlots
     slots:
@@ -297,10 +297,6 @@
     staticPacks:
     - BioGenIngredientsStatic
     - BioGenMaterialsStatic
-  - type: EmagLatheRecipes
-    emagStaticPacks:
-    - BioGenEmagStatic
-    - HostileCubesStatic
 
 - type: entity
   parent: BaseMachineLathe
@@ -311,7 +307,7 @@
   - type: Sprite
     sprite: _Pinwheel/Structures/Machines/Lathes/cutter.rsi
   - type: Machine
-    board: CutterMachineCircuitboard
+    board: BoardLatheCutter
   - type: Lathe
     unlitRunningState: null
     producingSound: /Audio/Machines/cutter.ogg
@@ -338,7 +334,7 @@
   - type: Sprite
     sprite: _Pinwheel/Structures/Machines/Lathes/robotics.rsi
   - type: Machine
-    board: ExosuitFabricatorMachineCircuitboard
+    board: BoardLatheRobotics
   - type: Lathe
     staticPacks:
     - RoboticsStatic
@@ -357,12 +353,11 @@
   - type: Sprite
     sprite: _Pinwheel/Structures/Machines/Lathes/uniform.rsi
   - type: Machine
-    board: UniformPrinterMachineCircuitboard
+    board: BoardLatheUniform
   - type: Lathe
     unlitRunningState: null
     producingSound: /Audio/Machines/uniformprinter.ogg
     staticPacks:
-    - TowelsStatic
     - ClothingCivilian
     - ClothingCargo
     - ClothingCommand

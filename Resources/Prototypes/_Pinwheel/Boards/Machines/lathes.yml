@@ -1,0 +1,109 @@
+- type: entity
+  abstract: true
+  parent: BaseMachineCircuitboard
+  id: BaseBoardLathe
+  components:
+  - type: MachineBoard
+    stacjRequirements:
+      Manipulator: 5
+      Steel: 5
+
+# Techfabs
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheCargo
+  name: cargo techfab machine board
+  components:
+    - type: Sprite
+      state: supply
+    - type: MachineBoard
+      prototype: MachineLatheCargo
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheEngineering
+  name: engineering techfab machine board
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: MachineLatheEngineering
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheMedical
+  name: medical techfab machine board
+  components:
+    - type: Sprite
+      state: medical
+    - type: MachineBoard
+      prototype: MachineLatheMedical
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheScience
+  name: science techfab machine board
+  components:
+    - type: Sprite
+      state: science
+    - type: MachineBoard
+      prototype: MachineLatheScience
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheSecurity
+  name: security techfab machine board
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: MachineLatheSecurity
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheService
+  name: service techfab machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: MachineLatheService
+
+# Specifics
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheBiogenerator
+  name: biocube fabricator machine board
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: MachineLatheBiogenerator
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheCutter
+  name: cutter machine board
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: MachineLatheCutter
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheRobotics
+  name: exosuit fabricator machine board
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: MachineLatheRobotics
+
+- type: entity
+  parent: BaseBoardLathe
+  id: BoardLatheUniform
+  name: uniform printer machine board
+  components:
+  - type: MachineBoard
+    prototype: MachineLatheUniform

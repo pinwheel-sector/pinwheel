@@ -9,17 +9,17 @@
 - type: latheRecipe
   parent: BaseRecipeCable
   id: RecipeCableLv
-  result: CableApc1
+  result: CableApcStack1
 
 - type: latheRecipe
   parent: BaseRecipeCable
   id: RecipeCableMv
-  result: CableMv1
+  result: CableMVStack1
 
 - type: latheRecipe
   parent: BaseRecipeCable
   id: RecipeCableHv
-  result: CableHv1
+  result: CableHVStack1
 
 # Tools
 - type: latheRecipe
@@ -40,7 +40,7 @@
 - type: latheRecipe
   parent: BaseRecipeTool
   id: RecipeEngineeringGrenadeFoam
-  result: FoamGrenade # ditto
+  result: MetalFoamGrenade # ditto
   materials:
     Plastic: 200
     Steel: 600
@@ -48,7 +48,7 @@
 - type: latheRecipe
   parent: BaseRecipeTool
   id: RecipeEngineeringWeldingMask
-  result: WeldingMask # ditto
+  result: ClothingHeadHatWelding # ditto
 
 - type: latheRecipe
   parent: BaseRecipeTool
@@ -72,28 +72,28 @@
 
 - type: latheRecipe
   parent: BaseRecipeTool
-  id: RecipeToolWirecutters
-  result: Wirecutters
+  id: RecipeToolWirecutter
+  result: Wirecutter
 
 # I'm Too Tired To Classify This
 - type: latheRecipe
   id: RecipeEngineeringConveyor
   completetime: 3s
-  result: ConveyorAssembly
+  result: ConveyorBeltAssembly
   materials:
     Steel: 200
 
 - type: latheRecipe
   id: RecipeEngineeringFloodlight
   completetime: 3s
-  result: FloodlightEmpty
+  result: Floodlight # TODO: MAKE AN EMPTY PROTOTYPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   materials:
     Steel: 500
 
 - type: latheRecipe
   id: RecipeEngineeringWarningCone
   completetime: 2s
-  result: Cone
+  result: ClothingHeadHatCone # why is this
   materials:
     Plastic: 200
 
@@ -101,22 +101,27 @@
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringPowerApc
-  result: ApcCircuitboard
+  result: APCElectronics
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringPowerSubstation
-  result: SubstationCircuitboard
+  result: SubstationMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringPowerSmes
-  result: SmesCircuitboard
+  result: SMESMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardEngineeringPowerSmesAdvanced
+  result: SMESAdvancedMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringIntercom
-  result: IntercomCircuitboard
+  result: IntercomElectronics
 
 - type: latheRecipe
   parent: BaseRecipeBoard
@@ -126,24 +131,24 @@
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringAirAlarm
-  result: AirAlarmCircuitboard
+  result: AirAlarmElectronics
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringAirlock
-  result: AirlockCircuitboard
+  result: DoorElectronics
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringCondenser
-  result: CondenserCircuitboard
+  result: CondenserMachineCircuitBoard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringFireAlarm
-  result: FireAlarmCircuitboard
+  result: FireAlarmElectronics
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardEngineeringFirelock
-  result: FirelockCircuitboard
+  result: FirelockElectronics

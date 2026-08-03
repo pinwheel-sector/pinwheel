@@ -13,7 +13,7 @@
 
 - type: latheRecipe
   id: RecipeServiceJanitorialMop
-  result: Mop
+  result: MopItem # why is it called that???
   materials:
     Plastic: 600
 
@@ -43,10 +43,10 @@
   id: RecipeServiceTablewareMetalFork
   result: Fork
 
-- type: latheRecipe
-  parent: BaseRecipeServiceTableware
-  id: RecipeServiceTablewareMetalKnife
-  result: Knife
+# type: latheRecipe
+# parent: BaseRecipeServiceTableware
+# id: RecipeServiceTablewareMetalKnife # not a thing apparently?? hello???
+# result: knife
 
 - type: latheRecipe
   parent: BaseRecipeServiceTableware
@@ -56,21 +56,21 @@
 - type: latheRecipe
   parent: BaseRecipeServiceTableware
   id: RecipeServiceTablewarePlasticFork
-  result: Fork
+  result: ForkPlastic
   materials:
     Plastic: 20
 
 - type: latheRecipe
   parent: BaseRecipeServiceTableware
   id: RecipeServiceTablewarePlasticKnife
-  result: fork
+  result: KnifePlastic
   materials:
-    Plasitc: 20
+    Plastic: 20
 
 - type: latheRecipe
   parent: BaseRecipeServiceTableware
   id: RecipeServiceTablewarePlasticSpoon
-  result: fork
+  result: SpoonPlastic
   materials:
     Plastic: 20
 
@@ -84,17 +84,17 @@
 - type: latheRecipe
   parent: BaseRecipeServiceDish
   id: RecipeServiceDishBowl
-  result: Bowl
+  result: FoodBowlBig
 
 - type: latheRecipe
   parent: BaseRecipeServiceDish
   id: RecipeServiceDishPlate
-  result: Plate
+  result: FoodPlate
 
 - type: latheRecipe
   parent: BaseRecipeServiceDish
   id: RecipeServiceDishSkewer
-  result: Skewer
+  result: FoodKebabSkewer
   materials:
     Steel: 100
 
@@ -107,7 +107,7 @@
 
 - type: latheRecipe
   id: RecipeServiceFoldingchair
-  result: FoldingChair
+  result: ChairFoldingSpawnFolded
   materials:
     Plastic: 300
     Steel: 100
@@ -126,18 +126,18 @@
 
 - type: latheRecipe
   parent: BaseRecipeBoard
-  id: RecipeBoardServiceryBoozedispenser
-  result: BoozeDispenserCircuitboard
+  id: RecipeBoardServiceBoozedispenser
+  result: BoozeDispenserMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardServiceGrill
-  result: GrillCircuitboard
+  result: ElectricGrillMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardServiceHydrotray
-  result: HydroPonicsTrayCircuitboard
+  result: HydroponicsTrayMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
@@ -147,14 +147,19 @@
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardServiceMicrowave
-  result: BoardLatheBiogenerator
+  result: MicrowaveMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeBoard
+  id: RecipeBoardServicerySodadispenser
+  result: SodaDispenserMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardServiceTelevision
-  result: TelevisionCircuitboard
+  result: ComputerTelevisionCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardServiceUniformprinter
-  result: BoardLatheUniform
+  result: BoardLatheUniform # TODO

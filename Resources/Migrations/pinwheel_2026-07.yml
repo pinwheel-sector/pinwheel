@@ -70,19 +70,27 @@ AmmoTechFab: null
 Autolathe: null
 AutolatheHyperConvection: null
 Biofabricator: null
+OreProcessor: null
 ProtolatheHyperConvection: null
 CircuitImprinter: null
 CircuitImprinterHyperConvection: null
 
+AutolatheMachineCircuitboard: null
 CircuitImprinterMachineCircuitboard: null
+ProtolatheMachineCircuitboard: null
 
+ResearchComputerCircuitBoard: null
+TechDiskComputerBoard: null
+
+DiseaseDiagnoser: null
+ComputerResearchAndDevelopment: null
 ComputerTechnologyDiskTerminal: null
+Vaccinator: null
 
 ResearchDisk: null
 ResearchDisk5000: null
 ResearchDisk10000: null
 ResearchDiskDebug: null
-
 
 TechnologyDisk: null
 TechnologyDiskT1: null

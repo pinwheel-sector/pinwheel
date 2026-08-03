@@ -60,19 +60,19 @@
   materials:
     Steel: 145
 
-- type: latheRecipe
-  id: RecipeAmmoClip25PistolEmpty
-  result: MagazinePistolCaselessRifleEmpty
-  materials:
-    Steel: 25
+# type: latheRecipe
+# id: RecipeAmmoClip25PistolEmpty
+# result: MagazinePistolCaselessRifleEmpty # not a thing???? hello?????
+# materials:
+#   Steel: 25
 
 - type: latheRecipe
-  id: RecipeAmmoClip30Belt
-  result: MagazineBoxLightRifle # TODO
+  id: RecipeAmmoClip30Box
+  result: MagazineLightRifleBox
   materials:
-    Steel: 900 # TODO
+    Steel: 1550
 
-# an empty 30 box doesn't exist and shouldn't exist
+# an empty 30 box doesn't exist and doesn't need to
 
 - type: latheRecipe
   id: RecipeAmmoClip35Pistol
@@ -182,9 +182,9 @@
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardSharedRechargerCyborg
-  result: CyborgRechargerCircuitboard
+  result: BorgChargerCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardSharedRecharger
-  result: RechargerCircuitboard
+  result: WeaponCapacitorRechargerCircuitboard

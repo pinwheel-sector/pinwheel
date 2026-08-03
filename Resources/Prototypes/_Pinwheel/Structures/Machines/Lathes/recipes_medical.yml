@@ -163,39 +163,39 @@
 
 - type: latheRecipe
   id: RecipeMedicalBodybag
-  result: BodybagFolded
+  result: BodyBagFolded
+
+- type: latheRecipe
+  id: RecipeMedicalRollerbed
+  result: RollerBedSpawnFolded
 
 - type: latheRecipe
   id: RecipeMedicalRollerbedCheap
-  result: RollerbedCheapSpawnFolded
-
-- type: latheRecipe
-  id: RecipeMedicalRollerbedFgsfds
-  result: RollerbedFgsfdsSpawnFolded
+  result: CheapRollerBedSpawnFolded
 
 - type: latheRecipe
   id: RecipeMedicalRollerbedEmergency
-  result: RollerbedEmergencySpawnFolded
+  result: EmergencyRollerBedSpawnFolded
 
 # Aides
 - type: latheRecipe
-  id: RecipeMedicalCaneWalking
+  id: RecipeMedicalCaneOffset
   completetime: 5s
-  result: Cane
+  result: OffsetCane
   materials:
     Plastic: 500
 
 - type: latheRecipe
   id: RecipeMedicalCaneWhite
   completetime: 5s
-  result: CaneWhite
+  result: WhiteCane
   materials:
     Plastic: 500
 
 - type: latheRecipe
   id: RecipeMedicalTankharness
   completetime: 5s
-  result: ClothingOuterTankHarness
+  result: ClothingOuterVestTank
   materials:
     Steel: 500
 
@@ -203,29 +203,29 @@
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardChemistryCentrifuge
-  result: CentrifugeCircuitboard
+  result: CentrifugeMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardChemistryElectrolizer
-  result: ElectrolizerCircuitboard
+  result: ElectrolysisUnitMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardChemistryGrinder
-  result: ReagentGrinderCircuitboard
+  result: ReagentGrinderMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardChemistryHotplate
-  result: HotplateCircuitboard
+  result: HotplateMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardMedicalSmartfridge
-  result: SmartfridgeCircuitboard
+  result: SmartFridgeCircuitboard
 
 - type: latheRecipe
   parent: BaseRecipeBoard
   id: RecipeBoardMedicalCrewMonitor
-  result: CrewMonitoringConsoleCircuitboard
+  result: CrewMonitoringComputerCircuitboard

@@ -9,12 +9,12 @@
 - type: latheRecipe
   parent: BaseRecipeSecurityGrenade
   id: RecipeSecurityGrenadeFlashbang
-  result: Flashbang
+  result: GrenadeFlashBang
 
 - type: latheRecipe
   parent: BaseRecipeSecurityGrenade
-  id: RecipeSecurityGrenadeStringer
-  result: StingerGrenade
+  id: RecipeSecurityGrenadeStinger
+  result: GrenadeStinger
   materials:
     Plastic: 200
     Steel: 600
@@ -31,6 +31,14 @@
   result: Flare
   materials:
     Plastic: 25
+
+- type: latheRecipe
+  id: RecipeSecurityFlash
+  completetime: 3s
+  result: Flash
+  materials:
+    Glass: 25
+    Steel: 100
 
 - type: latheRecipe
   id: RecipeSecurityForensicPad
@@ -83,8 +91,3 @@
   parent: BaseRecipeBoard
   id: RecipeBoardSecurityCriminalRecords
   result: CriminalRecordsComputerCircuitboard
-
-- type: latheRecipe
-  parent: BaseRecipeBoard
-  id: RecipeBoardSecurityFlasher
-  result: PortableFlasherCircuitboard

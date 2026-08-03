@@ -34,7 +34,7 @@
   - RecipeToolMultitool
   - RecipeToolScrewdriver
   - RecipeToolWrench
-  - RecipeToolWirecutters
+  - RecipeToolWirecutter
 
 - type: latheRecipePack
   id: LathePackEngineeringUtilities
@@ -50,14 +50,15 @@
   - RecipeBoardEngineeringPowerApc
   - RecipeBoardEngineeringPowerSubstation
   - RecipeBoardEngineeringPowerSmes
+  - RecipeBoardEngineeringPowerSmesAdvanced
   - RecipeBoardEngineeringIntercom
-  - RecipeBoardEngineeringLatheCutter
-  - RecipeBoardEngineeringStaitionMap
+  - RecipeBoardEngineeringStationMap
   - RecipeBoardEngineeringAirAlarm
   - RecipeBoardEngineeringAirlock
   - RecipeBoardEngineeringCondenser
   - RecipeBoardEngineeringFireAlarm
   - RecipeBoardEngineeringFirelock
+  - RecipeBoardSharedLatheCutter
   - RecipeBoardSharedRechargerCell
   - RecipeBoardSharedRechargerCyborg
 
@@ -90,10 +91,10 @@
   id: LathePackMedicalUtilities
   recipes:
   - RecipeMedicalBodybag
+  - RecipeMedicalRollerbed
   - RecipeMedicalRollerbedCheap
-  - RecipeMedicalRollerbedFgsfds
   - RecipeMedicalRollerbedEmergency
-  - RecipeMedicalCaneWalking
+  - RecipeMedicalCaneOffset
   - RecipeMedicalCaneWhite
   - RecipeMedicalTankharness
 
@@ -151,7 +152,6 @@
   recipes:
   - RecipeBoardSecurityCameraMonitor
   - RecipeBoardSecurityCriminalRecords
-  - RecipeBoardSecurityFlasher
   - RecipeBoardSharedRecharger
 
 ## Service
@@ -164,7 +164,7 @@
   - RecipeServiceJanitorialTrashbag
   - RecipeServiceJanitorialWirebrush
   - RecipeServiceTablewareMetalFork
-  - RecipeServiceTablewareMetalKnife
+  # RecipeServiceTablewareMetalKnife # there's none
   - RecipeServiceTablewareMetalSpoon
   - RecipeServiceTablewarePlasticFork
   - RecipeServiceTablewarePlasticKnife
@@ -176,7 +176,7 @@
 - type: latheRecipePack
   id: LathePackServiceUtilities
   recipes:
-  - RecipeMedicalAideTankharness
+  - RecipeMedicalTankharness
   - RecipeServiceAshtray
   - RecipeServiceFoldingchair
   - RecipeServiceWetfloorSign
@@ -194,4 +194,4 @@
   - RecipeBoardServiceMicrowave
   - RecipeBoardServiceTelevision
   - RecipeBoardServiceUniformprinter
-  - RecipeBoardSharedCutter
+  - RecipeBoardSharedLatheCutter

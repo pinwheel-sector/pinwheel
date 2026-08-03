@@ -24,6 +24,7 @@
         - id: AtmosMonitoringComputerCircuitboard
         - id: PowerComputerCircuitboard
         - id: SolarControlComputerCircuitboard
+        - id: BoardLatheEngineering
 
 - type: entity
   parent: ToteBase
@@ -34,8 +35,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: MedicalTechFabCircuitboard
         - id: CargoRequestMedicalComputerCircuitboard
+        - id: BoardLatheMedical # Pinwheel
 
 - type: entity
   parent: ToteBase
@@ -49,6 +50,7 @@
         - id: IDComputerCircuitboard
         - id: FundingAllocationComputerCircuitboard
         - id: CargoRequestServiceComputerCircuitboard
+        - id: BoardLatheService # Pinwheel
 
 - type: entity
   parent: BoxStamps
@@ -72,8 +74,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: SecurityTechFabCircuitboard
         - id: CargoRequestSecurityComputerCircuitboard
+        - id: BoardLatheSecurity # Pinwheel
 
 - type: entity
   parent: ToteBase
@@ -87,9 +89,7 @@
         - id: CargoBountyComputerCircuitboard
         - id: CargoRequestComputerCircuitboard
         - id: CargoSaleComputerCircuitboard
-        - id: CargoShuttleConsoleCircuitboard
-        - id: SalvageMagnetMachineCircuitboard
-        - id: SalvageJobBoardComputerCircuitboard
+        - id: BoardLatheCargo # Pinwheel
 
 - type: entity
   parent: BoxStamps
@@ -113,9 +113,9 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ResearchComputerCircuitboard
         - id: CargoRequestScienceComputerCircuitboard
         - id: RoboticsConsoleCircuitboard
         - id: AnalysisComputerCircuitboard #Because sometimes round start artis just fucking explode on the pad.
         - id: ArtifactAnalyzerMachineCircuitboard
         - id: StationAiFixerCircuitboard
+        - id: BoardLatheScience # Pinwheel
