@@ -121,7 +121,9 @@ SalvageMobSpawner: null
 SalvageMobSpawner75: null
 SalvageSpawnerEquipment: null
 SalvageSpawnerEquipmentValuable: null
+SalvageSpawnerMobMagnet: null
 SalvageSpawnerMobMagnet100: null
+SalvageSpawnerMobMiningAsteroid: null
 SalvageSpawnerMobShark: null
 SalvageSpawnerScrapCommon: null
 SalvageSpawnerScrapCommon75: null
