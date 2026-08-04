@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 283.1.0
+  engineVersion: 283.1.3
   forkId: ""
   forkVersion: ""
-  time: 07/18/2026 18:29:25
-  entityCount: 18708
+  time: 08/04/2026 12:30:36
+  entityCount: 18695
 maps:
 - 1
 grids:
@@ -21167,30 +21167,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 21.5,-37.5
-- proto: Autolathe
-  entities:
-  - uid: 2590
-    components:
-    - type: Transform
-      parent: 2
-      pos: 30.5,-10.5
-  - uid: 6570
-    components:
-    - type: Transform
-      parent: 2
-      pos: 16.5,34.5
-  - uid: 15561
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,26.5
-- proto: AutolatheMachineCircuitboard
-  entities:
-  - uid: 17247
-    components:
-    - type: Transform
-      parent: 2
-      pos: 35.460583,-1.3665128
 - proto: BananaPhoneInstrument
   entities:
   - uid: 13533
@@ -21881,24 +21857,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 11.396216,25.5396
-- proto: Biogenerator
-  entities:
-  - uid: 9690
-    components:
-    - type: Transform
-      parent: 2
-      pos: 11.5,8.5
-  - uid: 18268
-    components:
-    - type: Transform
-      parent: 2
-      pos: -10.5,-27.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: BlastDoor
   entities:
   - uid: 1159
@@ -45368,13 +45326,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -20.5,15.5
-- proto: CargoMailTeleporter
-  entities:
-  - uid: 16821
-    components:
-    - type: Transform
-      parent: 2
-      pos: 15.5,25.5
 - proto: Carpet
   entities:
   - uid: 1583
@@ -51599,13 +51550,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 23.487637,-15.65884
-- proto: CircuitImprinter
-  entities:
-  - uid: 14513
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,24.5
 - proto: CleanerDispenser
   entities:
   - uid: 957
@@ -53610,25 +53554,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 22.5,45.5
-- proto: ComputerResearchAndDevelopment
-  entities:
-  - uid: 4652
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -35.5,-8.5
-  - uid: 10607
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: -19.5,24.5
-  - uid: 11142
-    components:
-    - type: Transform
-      parent: 2
-      pos: -13.5,27.5
 - proto: ComputerRoboticsControl
   entities:
   - uid: 3549
@@ -54191,13 +54116,6 @@ entities:
           showEnts: False
           occludes: True
     - type: RadiationBlockingContainer
-- proto: CrateEngineeringShuttle
-  entities:
-  - uid: 6257
-    components:
-    - type: Transform
-      parent: 2
-      pos: -36.5,-52.5
 - proto: CrateEngineeringSolar
   entities:
   - uid: 2169
@@ -54473,6 +54391,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 7.5,8.5
+- proto: CrateSpaceShuttlePower
+  entities:
+  - uid: 6257
+    components:
+    - type: Transform
+      parent: 2
+      pos: -36.5,-52.5
 - proto: CrateTechBoardRandom
   entities:
   - uid: 5607
@@ -54508,13 +54433,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -30.5,-21.5
-- proto: CrewMonitoringServer
-  entities:
-  - uid: 7947
-    components:
-    - type: Transform
-      parent: 2
-      pos: 27.5,-1.5
 - proto: CrowbarOrange
   entities:
   - uid: 16048
@@ -54696,13 +54614,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -41.5,-36.5
-- proto: CutterMachine
-  entities:
-  - uid: 8261
-    components:
-    - type: Transform
-      parent: 2
-      pos: -3.5,21.5
 - proto: CyborgEndoskeleton
   entities:
   - uid: 3613
@@ -55346,13 +55257,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -23.537647,-22.748442
-- proto: DiseaseDiagnoser
-  entities:
-  - uid: 4081
-    components:
-    - type: Transform
-      parent: 2
-      pos: 19.5,23.5
 - proto: DiseaseSwab
   entities:
   - uid: 4091
@@ -61460,13 +61364,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -37.111725,-17.453129
-- proto: ExosuitFabricator
-  entities:
-  - uid: 11188
-    components:
-    - type: Transform
-      parent: 2
-      pos: -16.5,10.5
 - proto: ExplosivesSignMed
   entities:
   - uid: 18594
@@ -84161,13 +84058,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -23.959522,-23.029692
-- proto: GravityGenerator
-  entities:
-  - uid: 2525
-    components:
-    - type: Transform
-      parent: 2
-      pos: 42.5,-3.5
 - proto: GrenadeFoamDart
   entities:
   - uid: 2327
@@ -90769,6 +90659,101 @@ entities:
     - type: Transform
       parent: 2
       pos: -31.5,34.5
+- proto: MachineGravityGenerator
+  entities:
+  - uid: 2525
+    components:
+    - type: Transform
+      parent: 2
+      pos: 42.5,-3.5
+- proto: MachineLatheBiogenerator
+  entities:
+  - uid: 9690
+    components:
+    - type: Transform
+      parent: 2
+      pos: 11.5,8.5
+  - uid: 18268
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,-27.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheCutter
+  entities:
+  - uid: 8261
+    components:
+    - type: Transform
+      parent: 2
+      pos: -3.5,21.5
+- proto: MachineLatheMedical
+  entities:
+  - uid: 4026
+    components:
+    - type: Transform
+      parent: 2
+      pos: 40.5,20.5
+- proto: MachineLatheRobotics
+  entities:
+  - uid: 11188
+    components:
+    - type: Transform
+      parent: 2
+      pos: -16.5,10.5
+- proto: MachineLatheScience
+  entities:
+  - uid: 14514
+    components:
+    - type: Transform
+      parent: 2
+      pos: -12.5,25.5
+- proto: MachineLatheSecurity
+  entities:
+  - uid: 5634
+    components:
+    - type: Transform
+      parent: 2
+      pos: 3.5,-29.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheUniform
+  entities:
+  - uid: 14662
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.5,-7.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineMailbox
+  entities:
+  - uid: 16821
+    components:
+    - type: Transform
+      parent: 2
+      pos: 15.5,25.5
 - proto: MachineMaterialSilo
   entities:
   - uid: 3541
@@ -90776,6 +90761,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -18.5,15.5
+- proto: MachineServerCrewmonitor
+  entities:
+  - uid: 7947
+    components:
+    - type: Transform
+      parent: 2
+      pos: 27.5,-1.5
 - proto: MailingUnit
   entities:
   - uid: 11816
@@ -91378,13 +91370,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 25.5,26.5
-- proto: MedicalTechFab
-  entities:
-  - uid: 4026
-    components:
-    - type: Transform
-      parent: 2
-      pos: 40.5,20.5
 - proto: MedkitAdvancedFilled
   entities:
   - uid: 4057
@@ -91769,13 +91754,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 23.5,41.5
-- proto: OreProcessor
-  entities:
-  - uid: 6465
-    components:
-    - type: Transform
-      parent: 2
-      pos: 17.5,36.5
 - proto: OrganHumanTongue
   entities:
   - uid: 16047
@@ -95038,20 +95016,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 23.5,-28.5
-- proto: Protolathe
-  entities:
-  - uid: 14514
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,25.5
-- proto: ProtolatheMachineCircuitboard
-  entities:
-  - uid: 5438
-    components:
-    - type: Transform
-      parent: 2
-      pos: 35.601208,-1.4915128
 - proto: PsychBed
   entities:
   - uid: 14031
@@ -98756,13 +98720,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 27.638123,-26.403055
-- proto: ResearchAndDevelopmentServer
-  entities:
-  - uid: 11247
-    components:
-    - type: Transform
-      parent: 2
-      pos: -17.5,26.5
 - proto: RightArmBorg
   entities:
   - uid: 16482
@@ -99044,19 +99001,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -14.238859,26.941244
-- proto: SecurityTechFab
-  entities:
-  - uid: 5634
-    components:
-    - type: Transform
-      parent: 2
-      pos: 3.5,-29.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: SeedExtractor
   entities:
   - uid: 2127
@@ -108776,19 +108720,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 43.5,32.5
-- proto: UniformPrinter
-  entities:
-  - uid: 14662
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.5,-7.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: UniformShortsRed
   entities:
   - uid: 10487
@@ -108832,13 +108763,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -29.522558,-24.31136
-- proto: Vaccinator
-  entities:
-  - uid: 4089
-    components:
-    - type: Transform
-      parent: 2
-      pos: 19.5,22.5
 - proto: VariantCubeBox
   entities:
   - uid: 689

@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: ""
   forkVersion: ""
-  time: 07/28/2026 22:08:31
-  entityCount: 29618
+  time: 08/04/2026 12:30:59
+  entityCount: 29599
 maps:
 - 1
 grids:
@@ -19801,58 +19801,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -35.5,16.5
-- proto: Autolathe
-  entities:
-  - uid: 7297
-    components:
-    - type: Transform
-      parent: 2
-      pos: -59.5,6.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
-  - uid: 7739
-    components:
-    - type: Transform
-      parent: 2
-      pos: 49.5,-11.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
-  - uid: 26356
-    components:
-    - type: Transform
-      parent: 26286
-      pos: 0.5,-0.5
-  - uid: 27773
-    components:
-    - type: Transform
-      parent: 2
-      pos: 52.5,5.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
-- proto: AutolatheMachineCircuitboard
-  entities:
-  - uid: 25400
-    components:
-    - type: Transform
-      parent: 2
-      pos: -63.496426,11.469416
-  - uid: 25649
-    components:
-    - type: Transform
-      parent: 2
-      pos: -63.496426,11.469416
 - proto: BackgammonBoard
   entities:
   - uid: 7088
@@ -20949,30 +20897,6 @@ entities:
     - type: Transform
       parent: 26470
       pos: -7.5,4.5
-- proto: Biogenerator
-  entities:
-  - uid: 4064
-    components:
-    - type: Transform
-      parent: 2
-      pos: 22.5,8.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
-  - uid: 12573
-    components:
-    - type: Transform
-      parent: 2
-      pos: 7.5,-18.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: BlastDoor
   entities:
   - uid: 1867
@@ -21405,13 +21329,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 6.348812,-11.4496355
-- proto: BookHowToRockAndStone
-  entities:
-  - uid: 7793
-    components:
-    - type: Transform
-      parent: 2
-      pos: 46.42163,-41.889248
 - proto: BookMedicalReferenceBook
   entities:
   - uid: 6826
@@ -72128,19 +72045,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 68.57677,-1.4776893
-- proto: CircuitImprinter
-  entities:
-  - uid: 27774
-    components:
-    - type: Transform
-      parent: 2
-      pos: 52.5,4.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: CleanerDispenser
   entities:
   - uid: 5517
@@ -76077,32 +75981,6 @@ entities:
       parent: 26286
       rot: 1.5707963267948966 rad
       pos: -8.5,-1.5
-- proto: ComputerResearchAndDevelopment
-  entities:
-  - uid: 6365
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 47.5,8.5
-  - uid: 6510
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 58.5,16.5
-  - uid: 8520
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -14.5,47.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: ComputerRoboticsControl
   entities:
   - uid: 6509
@@ -76241,14 +76119,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -19.5,9.5
-- proto: ComputerTechnologyDiskTerminal
-  entities:
-  - uid: 6526
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 52.5,12.5
 - proto: ComputerTelevision
   entities:
   - uid: 4349
@@ -78734,13 +78604,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -65.4314,-4.175316
-- proto: DiseaseDiagnoser
-  entities:
-  - uid: 6621
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,-54.5
 - proto: DisposalBend
   entities:
   - uid: 2249
@@ -85823,30 +85686,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -46.30557,-33.460907
-- proto: ExosuitFabricator
-  entities:
-  - uid: 6537
-    components:
-    - type: Transform
-      parent: 2
-      pos: 57.5,31.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
-  - uid: 7745
-    components:
-    - type: Transform
-      parent: 2
-      pos: 57.5,29.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: ExplosivesSignMed
   entities:
   - uid: 5597
@@ -86017,20 +85856,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 23.5,-42.5
-- proto: ExtractableServerCrewMonitor
-  entities:
-  - uid: 6519
-    components:
-    - type: Transform
-      parent: 2
-      pos: 57.5,24.5
-- proto: ExtractableServerResearch
-  entities:
-  - uid: 6518
-    components:
-    - type: Transform
-      parent: 2
-      pos: 55.5,24.5
 - proto: FaxMachineBase
   entities:
   - uid: 1850
@@ -133013,6 +132838,130 @@ entities:
       charge: 0
     - type: Physics
       bodyType: Dynamic
+- proto: MachineLatheBiogenerator
+  entities:
+  - uid: 4064
+    components:
+    - type: Transform
+      parent: 2
+      pos: 22.5,8.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+  - uid: 12573
+    components:
+    - type: Transform
+      parent: 2
+      pos: 7.5,-18.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheMedical
+  entities:
+  - uid: 6757
+    components:
+    - type: Transform
+      parent: 2
+      pos: 5.5,-39.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheRobotics
+  entities:
+  - uid: 6537
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,31.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+  - uid: 7745
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,29.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheScience
+  entities:
+  - uid: 27772
+    components:
+    - type: Transform
+      parent: 2
+      pos: 52.5,3.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheSecurity
+  entities:
+  - uid: 2654
+    components:
+    - type: Transform
+      parent: 2
+      pos: 5.5,17.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
+- proto: MachineLatheUniform
+  entities:
+  - uid: 15659
+    components:
+    - type: Transform
+      parent: 2
+      pos: 23.5,47.5
+    - type: TechnologyDatabase
+      unlockedTechnologies: []
+      unlockedRecipes: []
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      currentTechnologyCards: []
 - proto: MachineMailbox
   entities:
   - uid: 22316
@@ -133027,6 +132976,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 51.5,12.5
+- proto: MachineServerCrewmonitor
+  entities:
+  - uid: 6519
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,24.5
 - proto: MagazineBoxPistolPractice
   entities:
   - uid: 4820
@@ -134161,19 +134117,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -6.5,-38.5
-- proto: MedicalTechFab
-  entities:
-  - uid: 6757
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.5,-39.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: MedicatedSuture
   entities:
   - uid: 24232
@@ -135079,30 +135022,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -22.5,-8.5
-- proto: OreProcessor
-  entities:
-  - uid: 4416
-    components:
-    - type: Transform
-      parent: 2
-      pos: 48.5,-32.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
-  - uid: 25336
-    components:
-    - type: Transform
-      parent: 2
-      pos: -23.5,-5.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: OrganArachnidEyes
   entities:
   - uid: 6462
@@ -140855,19 +140774,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 62.5,36.5
-- proto: Protolathe
-  entities:
-  - uid: 27772
-    components:
-    - type: Transform
-      parent: 2
-      pos: 52.5,3.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: PuddleBlood
   entities:
   - uid: 94
@@ -149567,22 +149473,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 55.5,-54.5
-- proto: SalvageSpawnerScrapCommon
-  entities:
-  - uid: 27524
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 41.5,-45.5
-- proto: SalvageSpawnerScrapValuable75
-  entities:
-  - uid: 27527
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 43.5,-43.5
 - proto: Saw
   entities:
   - uid: 8229
@@ -150094,19 +149984,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 21.478838,-10.294827
-- proto: SecurityTechFab
-  entities:
-  - uid: 2654
-    components:
-    - type: Transform
-      parent: 2
-      pos: 5.5,17.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: SeedExtractor
   entities:
   - uid: 1078
@@ -164754,19 +164631,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -43.5,-58.5
-- proto: UniformPrinter
-  entities:
-  - uid: 15659
-    components:
-    - type: Transform
-      parent: 2
-      pos: 23.5,47.5
-    - type: TechnologyDatabase
-      supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: UniformShortsRed
   entities:
   - uid: 10378
@@ -164811,13 +164675,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -5.326279,-17.086903
-- proto: Vaccinator
-  entities:
-  - uid: 6616
-    components:
-    - type: Transform
-      parent: 2
-      pos: -16.5,-54.5
 - proto: VendingBarDrobe
   entities:
   - uid: 6299
