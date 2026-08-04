@@ -41,18 +41,9 @@
   components:
   - type: NukeOperative
   - type: RandomHumanoidAppearance
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: MobHuman
-  id: MobHumanLoneNuclearOperative
-  name: Lone Operative
-  components:
-  - type: RandomHumanoidAppearance
     randomizeName: false
-  - type: NukeOperative
   - type: Loadout
-    prototypes: [SyndicateLoneOperativeGearFull]
+    prototypes: [ SyndicateOperativeGearFull ]
     roleLoadout: [ RoleSurvivalSyndicate ]
   - type: RandomMetadata
     nameSegments:

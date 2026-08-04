@@ -13,7 +13,7 @@
 - type: guideEntry
   id: Traitors
   name: guide-entry-traitors
-  text: "/ServerInfo/Guidebook/Antagonist/Traitors.xml"
+  text: "/ServerInfo/_Pinwheel/Antagonists/traitors.xml"
 
 - type: guideEntry
   id: NuclearOperatives

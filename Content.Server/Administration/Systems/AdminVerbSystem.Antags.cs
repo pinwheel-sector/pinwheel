@@ -25,7 +25,6 @@ public sealed partial class AdminVerbSystem
 
     private static readonly EntProtoId DefaultTraitorRule = "MajorAntagTraitors"; // Pinwheel - traitor remake
     private static readonly EntProtoId DefaultInitialInfectedRule = "Zombie";
-    private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
@@ -91,37 +90,6 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", zombieName, Loc.GetString("admin-verb-make-zombie")),
         };
         args.Verbs.Add(zombie);
-
-        var nukeOpName = Loc.GetString("admin-verb-text-make-nuclear-operative");
-        Verb nukeOp = new()
-        {
-            Text = nukeOpName,
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hardsuits/syndicate.rsi"), "icon"),
-            Act = () =>
-            {
-                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultNukeOpRule);
-            },
-            Impact = LogImpact.High,
-            Message = string.Join(": ", nukeOpName, Loc.GetString("admin-verb-make-nuclear-operative")),
-        };
-        args.Verbs.Add(nukeOp);
-
-        var pirateName = Loc.GetString("admin-verb-text-make-pirate");
-        Verb pirate = new()
-        {
-            Text = pirateName,
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hats/pirate.rsi"), "icon"),
-            Act = () =>
-            {
-                // pirates just get an outfit because they don't really have logic associated with them
-                _outfit.SetOutfit(args.Target, PirateGearId);
-            },
-            Impact = LogImpact.High,
-            Message = string.Join(": ", pirateName, Loc.GetString("admin-verb-make-pirate")),
-        };
-        args.Verbs.Add(pirate);
 
         var headRevName = Loc.GetString("admin-verb-text-make-head-rev");
         Verb headRev = new()

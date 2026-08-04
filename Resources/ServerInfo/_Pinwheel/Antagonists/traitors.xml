@@ -1,0 +1,90 @@
+<Document>
+  # Enemy communication intercepted.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolViper" Caption="Shootouts"/>
+    <GuideEntityEmbed Entity="EncryptionKeySyndie" Caption="Subversion"/>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesCombat" Caption="Theft"/>
+    <GuideEntityEmbed Entity="MailboxHacker" Caption="Sabotage"/>
+  </Box>
+
+  [bold][color=crimson]Traitors[/color][/bold] are sleeper agents embedded in the crew by [bold][color=maroon]The Syndicate[/color][/bold] on behalf of its member groups.
+  [break]Tasked with a range of objectives to impair the Station's operation, Traitors work from the inside to give NanoTrasen a death by a thousand cuts— or bullet wounds, for that matter.
+
+  Activating shortly after the start of the shift, [bold][color=crimson]Traitors[/color][/bold] must familiarize themselves with their objectives, identify eachother, and gear up before getting to work.
+  [break]Pressing [bold][color=yellow][keybind="OpenCharacterMenu"][/color] opens your Character Menu[/bold] which lists your objectives, codewords, and uplink code.
+  [break]Your [bold]objectives[/bold] will update their progress every time you open the character menu.
+  [break][bold]Codewords[/bold] are shared by all [bold][color=crimson]Traitors[/color][/bold], they will be automatically highlighted in chat, letting you trade words and knowing glances.
+  [break]Your [bold]uplink code[/bold] can be entered as a PDA's ringtone to link it to a store with everything you will need to finish the job.
+
+  ## Victory conditions
+  The [bold]Round Summary[/bold] is going to outline details of the operation, including the codewords, who the Traitors were & what they had to do, and [bold]which side won[/bold].
+  [break]Victory is decided based on [bold]objective completion[/bold], and how many Traitors are "taken out", that is— restrained or dead.
+  [break]Abstractly, victory is defined by which side got in the other's way more.
+
+  - [bold][color=crimson]Traitor Major Victory[/color][/bold]
+    [break]All objectives are complete, and at least one Traitor is alive and free.
+
+  - [bold][color=crimson]Traitor Minor Victory[/color][/bold]
+    [break]More than half of all objectives are complete, and at least one Traitor is left standing.
+
+  - [bold][color=yellow]Neutral Outcome[/color][/bold]
+    [break]Less than half of all objectives are complete, and at least one Traitor is left standing.
+
+  - [bold][color=green]Crew Minor Victory[/color][/bold]
+    [break]All Traitors are dead or in custody, but all objectives are complete too.
+
+  - [bold][color=green]Crew Major Victory[/color][/bold]
+    [break]All Traitors are dead or in custody, and at least one objective is left incomplete.
+
+  ## Tools of the trade
+  Every Traitor gets their own [bold]uplink balance[/bold] of [bold][color=crimson]20 Telecrystals[/color][/bold] to spend on purchases.
+  [break]Every PDA can be [bold]backdoored[/bold] by entering an [bold]uplink code[/bold] as the ringtone. This will open a store with the balance associated with that code.
+  [break]Telecrystals can be [bold]withdrawn and transfered[/bold] between open uplinks, in case you want to share.
+  [break]If you activate without a PDA, you will find yourself with an [bold]uplink implant[/bold] and its cost subtracted from your balance.
+
+  The uplink is divided into several categories.
+
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolViper" Caption="Weaponry"/>
+    <GuideEntityEmbed Entity="MagazinePistolHighCapacity" Caption="Ammo"/>
+    <GuideEntityEmbed Entity="C4" Caption="Explosives"/>
+    <GuideEntityEmbed Entity="ClothingBeltMilitaryWebbing" Caption="Wearables"/>
+    <GuideEntityEmbed Entity="Stimpack" Caption="Chemicals"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingBackpackSatchelSmuggler" Caption="Deception"/>
+    <GuideEntityEmbed Entity="ToolboxSyndicate" Caption="Disruption"/>
+    <GuideEntityEmbed Entity="EmpImplanter" Caption="Implants"/>
+    <GuideEntityEmbed Entity="SyndicatePersonalAI" Caption="Allies"/>
+    <GuideEntityEmbed Entity="SyndicateBusinessCard" Caption="Pointless"/>
+  </Box>
+
+  The Syndicate doesn't provide refunds, warranties, or replacements, so you must choose wisely and use it before you lose it.
+
+  ## Tasks at hand
+  Every Traitor gets a group of objectives they have to complete before the end of the round.
+  [break]Groups are put together as a few tough objectives, many easy objectives, or somewhere inbetween.
+  [break]It's a good idea to try and enlist the help of your fellow Traitors for tougher objectives you can't do yourself, your team depends on a flawless victory!
+
+  You may be tasked with [bold]stealing the gear[/bold] of Command members present on the station. How you get it is up to you, but make sure it stays with you after.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption=""/>
+    <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption=""/>
+    <GuideEntityEmbed Entity="Hypospray" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption=""/>
+  </Box>
+
+  You may be tasked with [bold]sabotaging[/bold] an important machine in some department. You will find a bespoke sabotage tool in your [bold]uplink[/bold] for free, in its own category.
+  [break]You must then remove the machine's maintenance panels with tools or by force, and insert the tool.
+  [break]This will start a timer until the sabotage completes, and [bold]alert the relevant people[/bold], either the department, or [bold]The Whole Station[/bold] if it's that significant.
+  [break]Get ready to defend the tool while it's doing its work, don't let it get removed too soon.
+  <Box>
+    <GuideEntityEmbed Entity="MailboxHacker" Caption=""/>
+    <GuideEntityEmbed Entity="AnomalyGeneratorHacker" Caption=""/>
+    <GuideEntityEmbed Entity="GravityGeneratorHacker" Caption=""/>
+  </Box>
+
+  [bold]You won't be tasked with harming your own department.[/bold]
+
+</Document>
