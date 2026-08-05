@@ -156,24 +156,30 @@
 - type: latheRecipe
   abstract: true
   id: BaseRecipeBodymover
-  completetime: 5s
+  materials:
+    Plastic: 500
+    Steel: 200
+
+- type: latheRecipe
+  parent: BaseRecipeBodymover
+  id: RecipeMedicalBodybag
+  result: BodyBagFolded
   materials:
     Plastic: 500
     Steel: 20
 
 - type: latheRecipe
-  id: RecipeMedicalBodybag
-  result: BodyBagFolded
-
-- type: latheRecipe
+  parent: BaseRecipeBodymover
   id: RecipeMedicalRollerbed
   result: RollerBedSpawnFolded
 
 - type: latheRecipe
+  parent: BaseRecipeBodymover
   id: RecipeMedicalRollerbedCheap
   result: CheapRollerBedSpawnFolded
 
 - type: latheRecipe
+  parent: BaseRecipeBodymover
   id: RecipeMedicalRollerbedEmergency
   result: EmergencyRollerBedSpawnFolded
 
