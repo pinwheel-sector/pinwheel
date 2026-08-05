@@ -86,9 +86,10 @@
 - type: latheRecipe
   id: RecipeEngineeringFloodlight
   completetime: 3s
-  result: Floodlight # TODO: MAKE AN EMPTY PROTOTYPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  result: FloodlightEmpty
   materials:
-    Steel: 500
+    Glass: 500
+    Steel: 200
 
 - type: latheRecipe
   id: RecipeEngineeringHandheldMap

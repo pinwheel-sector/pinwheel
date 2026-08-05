@@ -216,7 +216,10 @@
   - type: PointLight
     enabled: false
     radius: 8
-    energy: 5
+    # Pinwheel-stt
+    energy: 1.6
+    color: "#FFE4CE"
+    # Pinwheel-end
   - type: ItemSlots
     slots:
       cell_slot:
@@ -233,6 +236,7 @@
         !type:DamageTrigger
         damage: 10
       behaviors:
+      - !type:EmptyAllContainersBehaviour # Pinwheel
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
@@ -247,6 +251,20 @@
     materialComposition:
       Glass: 500
       Steel: 200
+
+# Pinwheel-stt 
+# i'm not making a dedicated file for ten fucking lines of yaml
+- type: entity
+  parent: Floodlight
+  id: FloodlightEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: null
+# Pinwheel-end
 
 - type: entity
   name: broken floodlight
