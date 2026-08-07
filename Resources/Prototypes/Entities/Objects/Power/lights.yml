@@ -86,6 +86,8 @@
   id: BaseLightTube
   abstract: true
   components:
+  - type: Sprite
+    sprite: Objects/Power/light_tube.rsi
   - type: Destructible
     thresholds:
     - trigger: *DamageTrigger10
