@@ -10,12 +10,7 @@
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
       time: 1h # Pinwheel - easy unlocks
-    # Pinwheel-stt - easy unlocks
-    # !type:DepartmentTimeRequirement
-    # department: Medical
-    # time: 10h
-    # Pinwheel-end - easy unlocks
-  weight: 10
+      time: 5h
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain

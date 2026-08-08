@@ -4,15 +4,9 @@
   description: job-description-warden
   playTimeTracker: JobWarden
   requirements:
-    # Pinwheel-stt - easy unlocks
-    # !type:RoleTimeRequirement
-    # role: JobSecurityOfficer
-    # time: 5h
-    # Pinwheel-end - easy unlocks
     - !type:DepartmentTimeRequirement
       department: Security
       time: 2h # Pinwheel - easy unlocks
-  weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

@@ -10,12 +10,6 @@
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 1h # Pinwheel - easy unlocks
-    # Pinwheel-stt - easy unlocks
-    # !type:DepartmentTimeRequirement
-    # department: Cargo
-    # time: 10h
-    # Pinwheel-end - easy unlocks
-  weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain

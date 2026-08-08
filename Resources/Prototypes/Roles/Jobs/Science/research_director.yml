@@ -7,12 +7,6 @@
   - !type:RoleTimeRequirement
     role: JobScientist
     time: 1h # Pinwheel - easy unlocks
-  # Pinwheel-stt - easy unlocks
-  # !type:DepartmentTimeRequirement
-  # department: Science
-  # time: 10h
-  # Pinwheel-end - easy unlocks
-  weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
