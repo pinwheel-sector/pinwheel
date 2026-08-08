@@ -37,7 +37,8 @@
   metabolisms:
     Metabolites: # Pinwheel - species standards
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Moth ]

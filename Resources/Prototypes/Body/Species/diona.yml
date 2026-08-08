@@ -92,14 +92,12 @@
     damageRecovery:
       types:
         Asphyxiation: -1.0
-  - type: Hunger
-    baseDecayRate: 0.0083
-  - type: Thirst
-    baseDecayRate: 0.0083
-  # Pinwheel-stt - species standards
-  # type: Damageable
-  # damageModifierSet: Diona
-  # Pinwheel-end - species standards
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: DionaHunger
+      Thirst:
+        prototype: DionaThirst
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
