@@ -175,6 +175,7 @@
   id: PlantClone
   components:
   - Plant
+  - PlantHarvest
   - PlantChemicals
   - PlantGrowth
   - PlantAtmospheric
@@ -192,7 +193,6 @@
   id: PlantLifecycleClone
   parent: PlantClone
   components:
-  - PlantHarvest
   # traits
   - PlantTraitSampled
   - PlantTraitSeedless
