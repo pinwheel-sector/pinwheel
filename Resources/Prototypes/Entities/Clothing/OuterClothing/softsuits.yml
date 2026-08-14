@@ -120,6 +120,7 @@
   - type: GroupExamine
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetVoidParamed
+  - type: ItemToggleExaminableStatus
   - type: ItemToggle
     onUse: false
     soundActivate:
