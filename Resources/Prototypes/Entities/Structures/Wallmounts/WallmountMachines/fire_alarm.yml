@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseWallmountMachine
+  parent: [ BaseWallmountMachine, StructureHealthMachineFlimsy ]
   id: FireAlarm
   name: fire alarm
   description: A fire alarm. Spicy!
@@ -83,21 +83,17 @@
     graph: FireAlarm
     node: fire_alarm
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: PlasticMod
   - type: GuideHelp
     guides:
     - Networking
   - type: Destructible
     thresholds:
-    - trigger:
+    - trigger: &DamageMachineFlimsy
         !type:DamageTrigger
-        damage: 80
+        damage: 50
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
+      - &SoundMetalGlassBreak !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
           params:
@@ -105,7 +101,7 @@
   - type: StationAiWhitelist
 
 - type: entity
-  parent: BaseWallmountMetallic
+  parent: [ BaseWallmountMetallic, StructureHealthMachineFlimsy ]
   id: FireAlarmAssembly
   name: fire alarm assembly
   description: A fire alarm assembly. Very mild.
@@ -125,32 +121,10 @@
   - type: Construction
     graph: FireAlarm
     node: assembly
+  - type: Damageable
+    damageModifierSet: PlasticMod
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 15
+    - trigger: *DamageMachineFlimsy
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalGlassBreak
-          params:
-            volume: -4
-
-- type: entity
-  id: FireAlarmXeno
-  parent: FireAlarm
-  description: An alien fire alarm. Works just the same!
-  components:
-  - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors_xeno.rsi
-
-- type: entity
-  id: FireAlarmAssemblyXeno
-  parent: FireAlarmAssembly
-  description: An alien fire alarm assembly. Good luck with the wires.
-  components:
-  - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors_xeno.rsi
+      - *SoundMetalGlassBreak

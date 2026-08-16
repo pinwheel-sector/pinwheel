@@ -5,10 +5,6 @@
   name: table
   description: A square piece of metal standing on four metal legs.
   components:
-  - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: StructuralInorganic
   - type: PlaceableSurface
   - type: Fixtures
     fixtures:

@@ -1,6 +1,6 @@
 - type: entity
+  parent: [ BaseMachinePowered, ConstructibleMachine, StructureHealthMachine ]
   id: MachineAnomalyVessel
-  parent: [ BaseMachinePowered, ConstructibleMachine, BaseConstructibleMachineDestructible ]
   name: anomaly vessel
   description: A container able to harness a scan of an anomaly and turn it into research data.
   components:
@@ -70,6 +70,8 @@
     intensitySlope: 30
     totalIntensity: 30
     canCreateVacuum: false
+  - type: Damageable
+    damageModifierSet: GlassPlasmaMod
   - type: Destructible
     thresholds:
     - trigger:

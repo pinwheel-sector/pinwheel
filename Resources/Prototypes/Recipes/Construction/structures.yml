@@ -582,6 +582,7 @@
   graph: Windoor
   targetNode: windoor
 
+<<<<<<< HEAD
 - type: construction
   parent: Windoor
   id: SecureWindoor
@@ -591,6 +592,8 @@
   parent: Windoor
   id: ClockworkWindoor
   targetNode: windoorClockwork
+=======
+>>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
 # endregion Windoors
 
 # region Lighting

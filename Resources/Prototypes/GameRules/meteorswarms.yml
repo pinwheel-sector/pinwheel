@@ -42,6 +42,7 @@
 - type: weightedRandomEntity
   id: MeteorSpawnAsteroidWallTable
   weights:
+<<<<<<< HEAD
     MeteorRock: 10
     MeteorRockCoal: 5
     MeteorRockQuartz: 5
@@ -52,6 +53,17 @@
     MeteorRockDiamond: 2
     MeteorRockUranium: 0.5
     MeteorRockBananium: 0.5
+=======
+    AsteroidRock: 10
+    AsteroidRockCoal: 5
+    AsteroidRockQuartz: 5
+    AsteroidRockTin: 5
+    AsteroidRockSilver: 2
+    AsteroidRockGold: 2
+    AsteroidRockPlasma: 2
+    AsteroidRockDiamond: 2
+    AsteroidRockUranium: 0.5
+>>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
 
 # Event Schedulers
 
