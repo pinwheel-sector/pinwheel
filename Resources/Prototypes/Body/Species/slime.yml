@@ -125,6 +125,7 @@
   - type: Vocal
     emoteSounds: MaleSlime
   - type: PassiveDamage # Around 8 damage a minute healed
+    intervalHaltOnDamageTaken: 5s
     allowedStates:
     - Alive
     damage:
