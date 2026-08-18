@@ -34,4 +34,5 @@ random_characters = false
 tickrate = 30
 
 [movement]
+crawling = false
 mob_pushing = true
