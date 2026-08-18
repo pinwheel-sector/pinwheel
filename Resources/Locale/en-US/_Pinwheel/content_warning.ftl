@@ -8,9 +8,11 @@ content-warning-message =
 
     Do not make a stand in for yourself. If you are not confident in your ability to distinguish what is part of the game and what isn't, do not play.
 
+    Characters may have familial, hostile, or romantic relationships, precipitated by the actors behind them. Understand that other players might have these interactions where you can see it.
+    At the same time, understand that you must make sure your coplayers are comfortable with this kind of play if you want to participate yourself.
+
     Do not play if you are sensitive to:
     - Character & Animal death
     - Gore & Body horror
     - Violent crime & terrorism
     - Brainwashing & loss of autonomy
-
