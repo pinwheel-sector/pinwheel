@@ -1,0 +1,37 @@
+[game]
+hostname = "[EN][HRP] Pinwheel Sector - Live Ammo Theatrics"
+desc = "Remaking Space Station from base principles, one step at a time."
+panic_bunker.enabled = false
+panic_bunker.disable_with_admins = false
+panic_bunker.enable_without_admins = false
+# it would be funny to make this 96 because it looks like a pinwheel but that's probably too high
+maxplayers = 60
+# temporary for the first week or so. though role timers are miniscule anyway because we don't hate our players
+role_timers = false
+
+[hub]
+tags = "lang:en,rp:high"
+
+[server]
+lobby_name = "Pinwheel"
+force_client_hud_version_watermark = true
+rules_file = "PinwheelRuleset"
+
+[admin]
+# notes are a bookkeeping method, not notices or medals of honor
+see_own_notes = false
+
+[chat]
+motd = "\n[color=white]From Wikipedia, the free encyclopedia:\nA pinwheel (or windmill outside North America) is a simple child's toy made of a wheel of paper or plastic curls attached at its axle to a stick by a pin. It is designed to spin when blown upon by a person or by the wind.\nPinwheels provided many children with numerous minutes of enjoyment and amusement.[/color]"
+
+[ic]
+flavor_text = true
+flavor_text_length = 128
+punctuation = true
+random_characters = false
+
+[net]
+tickrate = 30
+
+[movement]
+mob_pushing = true

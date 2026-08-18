@@ -1,0 +1,5 @@
+- type: guideEntry
+  id: PinwheelRuleset
+  name: guide-entry-pinwheel-rules
+  priority: 10
+  text: "/ServerInfo/_Pinwheel/rules.xml"
