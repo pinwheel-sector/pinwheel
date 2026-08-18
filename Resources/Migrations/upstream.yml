@@ -1002,3 +1002,6 @@ UraniumWindoorSecureNukeopLocked: UraniumWindoorNukeopLocked
 WindoorAssemblySecure: WindoorAssembly
 WindoorAssemblySecurePlasma: WindoorAssemblyPlasma
 WindoorAssemblySecureUranium: WindoorAssemblyUranium
+
+#2026-08-18
+DrinkNeurotoxinGlass: null
