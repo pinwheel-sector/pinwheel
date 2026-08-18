@@ -9,17 +9,17 @@ public sealed class CCVars_Pinwheel
     /// Should the content warning get displayed?
     /// </summary>
     public static readonly CVarDef<bool> ContentWarningDisplay =
-        CVarDef.Create("cw.display", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("contentwarning.display", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Should ignoring the content warning kick you from the server?
+    /// Should rejecting the content warning kick you from the server?
     /// </summary>
-    public static readonly CVarDef<bool> ContentWarningKickOnIgnore =
-        CVarDef.Create("cw.kick", true, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<bool> ContentWarningQuitOnReject =
+        CVarDef.Create("contentwarning.quit", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Has the content warning been acknowledged?
     /// </summary>
     public static readonly CVarDef<bool> ContentWarningAcknowledged =
-        CVarDef.Create("cw.acknowledged", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("contentwarning.acknowledged", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
