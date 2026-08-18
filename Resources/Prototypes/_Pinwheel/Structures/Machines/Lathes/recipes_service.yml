@@ -7,7 +7,7 @@
 
 - type: latheRecipe
   id: RecipeServiceJanitorialLightreplacer
-  result: LightReplacerEmpty
+  result: LightReplacer
   materials:
     Steel: 300
 
