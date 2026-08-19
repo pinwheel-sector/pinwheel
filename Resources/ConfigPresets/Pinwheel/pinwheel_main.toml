@@ -19,7 +19,7 @@ role_timers = false
 
 [server]
 lobby_name = "Pinwheel"
-force_client_hud_version_watermark = true
+force_client_hud_version_watermark = false
 rules_file = "PinwheelRuleset"
 id = "Pinwheel"
 
