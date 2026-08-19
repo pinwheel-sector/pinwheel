@@ -1,6 +1,5 @@
 <Document>
-  These rules are presented in an arbitrary order with equal priority.
-  [break]Game administrators may act on judgements not stated by the rules.
+  [head=3][color=crimson]These rules are presented in an arbitrary order with equal priority.[break]Game administrators may act on judgements not laid out by the rules.[/color][/head]
 	
   ### 0. You must be 18 years or older to participate in Pinwheel
     Anyone found to be below the age of admission will be summarily banned.
@@ -9,16 +8,13 @@
   ### 1. Make an effort to roleplay
     This server exists to provide a roleplay experience alongside its gameplay.
     [break]While in control of a character, stay in character, without exception.
+    [break]While in control of a silicon, follow your sillicon laws.
     [break]OOC, LOOC, and Dead chat are explicitly out-of-character.
 
-  ### 2. Follow roleplay prompts
-    Act in accordance with your job role, antagonist objectives, silicon laws, et cetera.
-    [break]Do not sign up for a role you have no intention of playing.
-
-  ### 3. Do not abuse the game
+  ### 2. Do not abuse the game
     Do not abuse bugs, modified clients, or external tools to get an advantage.
 
-  ### 4. Play in good faith
+  ### 3. Play in good faith
     Follow the social contract. Don't play just to be a nuisance to others.
     [break]Bigotry will not be harbored.	
 </Document>
