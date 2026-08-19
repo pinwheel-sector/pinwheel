@@ -17,8 +17,8 @@ public sealed partial class ContentWarningUIController
 
     private void AttemptOpenContentWarningPopup()
     {
-        if (_cfg.GetCVar(CCVars_Pinwheel.ContentWarningDisplay)
-            && _cfg.GetCVar(CCVars_Pinwheel.ContentWarningAcknowledged))
+        if (!_cfg.GetCVar(CCVars_Pinwheel.ContentWarningDisplay)
+            || _cfg.GetCVar(CCVars_Pinwheel.ContentWarningAcknowledged))
             return;
 
         OpenContentWarningPopup();
