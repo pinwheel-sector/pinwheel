@@ -1,4 +1,3 @@
-// Carpmosia-rework - Better visual descriptions
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Robust.Shared.Utility;
