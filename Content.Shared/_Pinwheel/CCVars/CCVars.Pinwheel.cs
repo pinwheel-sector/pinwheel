@@ -12,7 +12,7 @@ public sealed class CCVars_Pinwheel
         CVarDef.Create("contentwarning.display", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Should rejecting the content warning kick you from the server?
+    /// Should rejecting the content warning quit the game?
     /// </summary>
     public static readonly CVarDef<bool> ContentWarningQuitOnReject =
         CVarDef.Create("contentwarning.quit", true, CVar.SERVER | CVar.REPLICATED);

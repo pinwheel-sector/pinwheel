@@ -15,7 +15,7 @@ public sealed partial class ContentWarningUIController
 
     private ContentWarningPopup? _window;
 
-    private void AttemptOpenContentWarningPopup()
+    private void TryOpenContentWarningPopup()
     {
         if (!_cfg.GetCVar(CCVars_Pinwheel.ContentWarningDisplay)
             || _cfg.GetCVar(CCVars_Pinwheel.ContentWarningAcknowledged))
@@ -26,12 +26,12 @@ public sealed partial class ContentWarningUIController
 
     public void OnStateEntered(LobbyState _)
     {
-        AttemptOpenContentWarningPopup();
+        TryOpenContentWarningPopup();
     }
 
     public void OnStateEntered(GameplayState _)
     {
-        AttemptOpenContentWarningPopup();
+        TryOpenContentWarningPopup();
     }
 
     private void OpenContentWarningPopup()
