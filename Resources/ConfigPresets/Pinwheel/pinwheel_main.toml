@@ -27,7 +27,7 @@ id = "Pinwheel"
 # notes are a bookkeeping method, not notices or medals of honor
 see_own_notes = false
 admins_count_for_max_players = false
-admins_count_for_playercount = false
+admins_count_in_playercount = false
 
 [adminlogs]
 server_name = "Pinwheel"
