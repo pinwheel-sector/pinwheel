@@ -65,6 +65,10 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
+  - type: StructureAlignerPylon
+    pylons:
+    - Door
+    - Firelock
 
 - type: entity
   parent: [ BaseWindowStructure, StructureHealthBarrier ]

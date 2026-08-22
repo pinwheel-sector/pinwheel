@@ -24,9 +24,6 @@
     cost: 4
     delay: 6
     fx: EffectRCDDeconstruct6
-  - type: Tag
-    tags:
-    - ForceFixRotations # Allow fixrotations to target these
   - type: Damageable
     damageModifierSet: PlasteelMod
   - type: Destructible
@@ -149,12 +146,20 @@
     - Fires
     - Spacing
   - type: SyncSprite
+  - type: PlacementReplacement
+    key: firelocks
+  - type: StationAiWhitelist
+  - type: StructureAligner
+    alignerType:
+    - Firelock
+  - type: StructureAlignerPylon
+    pylons:
+    - Firelock
 
 - type: entity
   id: Firelock
   parent: BaseFirelock
   components:
-  - type: StationAiWhitelist
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -172,7 +177,6 @@
   parent: Firelock
   name: glass firelock
   components:
-    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
     - type: Occluder
@@ -198,7 +202,6 @@
   parent: Firelock
   name: firelock
   components:
-    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/edge_door_hazard.rsi
       snapCardinals: false
@@ -220,9 +223,6 @@
           - GlassAirlockLayer
     - type: Occluder
       enabled: false
-    - type: Tag
-      tags:
-      - ForceNoFixRotations # Prevent fixrotations from targeting these, since the base Firelock is targeted
     - type: Door
       occludes: false
     - type: Physics
@@ -230,3 +230,6 @@
     - type: Construction
       graph: Firelock
       node: FirelockEdge
+    - type: StructureAligner
+      alignerType:
+      - DoNotAlign

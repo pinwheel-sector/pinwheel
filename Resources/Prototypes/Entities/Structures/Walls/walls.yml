@@ -57,6 +57,12 @@
   id: BaseWall
   components:
   - type: Occluder # Breaks on diagonal walls
+  - type: PlacementReplacement
+    key: walls
+  - type: StructureAlignerPylon
+    pylons:
+    - Door
+    - Firelock
 
 - type: entity
   abstract: true
@@ -130,15 +136,9 @@
     base: brick
 
 - type: entity
-<<<<<<< HEAD
-  parent: BaseWall
+  parent: [ BaseWall, StructureHealthWallWeak ]
   id: WallClock
   name: clock wall
-=======
-  parent: [ BaseWall, StructureHealthWallWeak ]
-  id: WallBrass
-  name: brass wall
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
   components:
   - type: Sprite
     sprite: Structures/Walls/clock.rsi
@@ -163,54 +163,6 @@
   - type: IconSmooth
     key: walls
     base: clock
-
-- type: entity
-  parent: BaseWall
-  id: WallClown
-  name: bananium wall
-  components:
-  - type: Sprite
-    sprite: Structures/Walls/clown.rsi
-  - type: Icon
-    sprite: Structures/Walls/clown.rsi
-  - type: Construction
-    graph: Girder
-<<<<<<< HEAD
-    node: bananiumWall
-  - type: RCDDeconstructable
-    cost: 6
-    delay: 8
-    fx: EffectRCDDeconstruct8
-=======
-    node: brassWall
-  - type: Damageable
-    damageModifierSet: BrassMod
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
-  - type: Destructible
-    thresholds:
-    - trigger: *DamageWallWeak
-      behaviors:
-      - &SoundMetalSlam !type:PlaySoundBehavior
-        sound:
-          collection: MetalSlam
-          params:
-            volume: -4
-      - &ChangeNodeGirder !type:ChangeConstructionNodeBehavior
-        node: girder
-  - type: IconSmooth
-    key: walls
-    base: clown
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - WallLayer
-        density: 8000 # really good ramming wall, bananium is rare so it's probably fine
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -248,7 +200,6 @@
     base: meat
 
 - type: entity
-<<<<<<< HEAD
   parent: BaseWall
   id: WallCult
   name: cult wall
@@ -276,9 +227,7 @@
 
 - type: entity
   parent: BaseWall
-=======
   parent: [ BaseWall, BaseStructureHealth ]
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
   id: WallDebug
   name: debug wall
   suffix: DEBUG
@@ -299,7 +248,6 @@
     base: debug
 
 - type: entity
-<<<<<<< HEAD
   parent: BaseWall
   id: WallDiamond
   name: diamond wall
@@ -330,10 +278,7 @@
     base: diamond
 
 - type: entity
-  parent: BaseWall
-=======
   parent: [ BaseWall, StructureHealthWallWeak ]
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
   id: WallGold
   name: gold wall
   components:
@@ -375,7 +320,6 @@
     base: gold
 
 - type: entity
-<<<<<<< HEAD
   parent: BaseWall
   id: WallIce
   name: ice wall
@@ -402,10 +346,7 @@
     base: ice
 
 - type: entity
-  parent: BaseWall
-=======
   parent: [ BaseWall, StructureHealthWallWeak ]
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
   id: WallPlasma
   name: plasma wall
   components:
@@ -652,15 +593,9 @@
 
 # Riveting
 - type: entity
-<<<<<<< HEAD
-  parent: BaseWall
+  parent: [ BaseWall, StructureHealthWallStrong ]
   id: WallRiveted
   name: riveted wall
-=======
-  parent: [ BaseWall, StructureHealthWallStrong ]
-  id: WallMarble
-  name: marble wall
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
   components:
   - type: Sprite
     sprite: Structures/Walls/riveted.rsi
@@ -709,10 +644,7 @@
         acts: [ "Destruction" ]
   - type: IconSmooth
     key: walls
-<<<<<<< HEAD
     base: sandstone
-=======
-    base: wall
   - type: Fixtures
     fixtures:
       fix1:
@@ -726,7 +658,6 @@
         density: 4000
   - type: RadiationBlocker
     resistance: 5
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1288,43 +1219,10 @@
   - type: Airtight
 
 - type: entity
-<<<<<<< HEAD
   parent: BaseWall
   id: WallCobblebrick
   name: cobblestone brick wall
   description: Stone by stone, perfectly fitted together to form a wall.
-=======
-  id: WallForce
-  name: force wall
-  components:
-  - type: TimedDespawn
-    lifetime: 10
-  - type: Wall
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - SpecialWallLayer
-        layer:
-        - SpecialWallLayer
-  - type: Airtight
-  - type: Sprite
-    sprite: Structures/Magic/forcewall.rsi
-    state: forcewall
-  - type: Icon
-    sprite: Structures/Magic/forcewall.rsi
-    state: forcewall
-
-- type: entity
-  parent: [ BaseWall, StructureHealthBarrierStrong ]
-  id: WallConcrete
-  name: concrete wall
->>>>>>> fc129e6d72 (Full Structures Rebalance (#44755))
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick.rsi

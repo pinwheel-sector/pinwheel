@@ -50,6 +50,13 @@
     fx: EffectRCDDeconstruct6
   - type: Occluder
   - type: BlockWeather
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: PlacementReplacement
+    key: walls
+  - type: StructureAligner
+  - type: StructureAlignerPylon
 
 - type: entity
   abstract: true
