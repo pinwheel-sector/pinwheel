@@ -8,7 +8,7 @@ public sealed partial class HumanoidProfileEditor
     private bool _allowFlavorText;
 
     private FlavorText.FlavorText? _flavorText;
-    private LineEdit? _flavorTextEdit; 
+    private LineEdit? _flavorTextEdit;
 
     /// <summary>
     /// Refreshes the flavor text editor status.
@@ -53,7 +53,7 @@ public sealed partial class HumanoidProfileEditor
     {
         if (_flavorTextEdit != null)
         {
-            _flavorTextEdit.Text = Profile?.FlavorText ?? ""; 
+            _flavorTextEdit.Text = Profile?.FlavorText ?? "";
         }
     }
 }
