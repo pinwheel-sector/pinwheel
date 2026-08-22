@@ -8,12 +8,7 @@ public sealed partial class DetailExaminableSystem : EntitySystem
 {
     [Dependency] private ExamineSystemShared _examine = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<DetailExaminableComponent, ExaminedEvent>(OnExamined);
-    }
-
+    [SubscribeLocalEvent]
     private void OnExamined(Entity<DetailExaminableComponent> ent, ref ExaminedEvent args)
     {
         if (Identity.Name(args.Examined, EntityManager) != MetaData(args.Examined).EntityName)
