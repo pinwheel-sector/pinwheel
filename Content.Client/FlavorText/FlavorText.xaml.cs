@@ -20,9 +20,8 @@ namespace Content.Client.FlavorText
             IoCManager.InjectDependencies(this);
 
             var maxChars = _configurationManager.GetCVar(CCVars.MaxFlavorTextLength);
-            var loc = IoCManager.Resolve<ILocalizationManager>();
-            CFlavorTextInput.PlaceHolder = loc.GetString("flavor-text-placeholder", ("maxchars", maxChars));
-            CFlavorTextInput.OnTextChanged  += _ => FlavorTextChanged();
+            CFlavorTextInput.PlaceHolder = Loc.GetString("flavor-text-placeholder", ("maxchars", maxChars));
+            CFlavorTextInput.OnTextChanged += _ => FlavorTextChanged();
         }
 
         public void FlavorTextChanged()

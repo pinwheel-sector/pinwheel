@@ -1,13 +1,12 @@
+using Content.Shared.DetailExaminable;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.DetailExaminable;
+namespace Content.Shared._Pinwheel.DetailExaminable;
 
 public sealed partial class DetailExaminableSystem : EntitySystem
 {
-    [Dependency] private ExamineSystemShared _examine = default!;
-
     [SubscribeLocalEvent]
     private void OnExamined(Entity<DetailExaminableComponent> ent, ref ExaminedEvent args)
     {
