@@ -506,7 +506,7 @@
     graph: Girder
     node: reinforcedWall
   - type: Damageable
-    damageModifierSet: PlasteelMod
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallStrong
@@ -580,7 +580,7 @@
     sprite: Structures/Walls/reinforced_diagonal.rsi
     state: state0
   - type: Damageable
-    damageModifierSet: PlasteelMod
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallStrong
@@ -726,7 +726,7 @@
         - WallLayer
         density: 2000
   - type: Damageable
-    damageModifierSet: PlasteelMod
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallStrong
@@ -748,7 +748,7 @@
   name: shuttle wall
   components:
   - type: Damageable
-    damageModifierSet: PlasteelMod
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallStrong
@@ -815,7 +815,7 @@
     delay: 8
     fx: EffectRCDDeconstruct8
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: SteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: &DamageWallNormal
@@ -875,7 +875,7 @@
   name: solid chitin
   components:
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: SteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallNormal
@@ -909,7 +909,7 @@
     sprite: Structures/Walls/xeno.rsi
     state: rgeneric
   - type: Damageable
-    damageModifierSet: PlasteelMod
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallStrong
@@ -980,7 +980,7 @@
     graph: Girder
     node: uraniumWall
   - type: Damageable
-    damageModifierSet: PlasteelMod
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallWeak
@@ -1110,7 +1110,7 @@
   - type: Icon
     sprite: Structures/Walls/mining.rsi
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: SteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallNormal
@@ -1139,7 +1139,7 @@
     sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: SteelStaticMod
   - type: Destructible
     thresholds:
     - trigger: *DamageWallNormal

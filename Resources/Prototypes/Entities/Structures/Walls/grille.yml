@@ -69,7 +69,7 @@
         layer:
         - GlassLayer
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: RodMetalMod
   - type: Destructible
     thresholds:
     - trigger:
@@ -144,7 +144,7 @@
     tags:
     - ForceNoFixRotations
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: RodMetalMod
   - type: Destructible
     thresholds:
     - trigger:

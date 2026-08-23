@@ -45,7 +45,7 @@
       - Pullable # no dragging things in
   - type: Appearance
   - type: Damageable
-    damageModifierSet: SteelMod
+    damageModifierSet: SteelStaticMod
   - type: Destructible
     thresholds:
     - trigger:
