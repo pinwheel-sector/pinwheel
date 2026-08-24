@@ -165,7 +165,7 @@
       types:
         Slash: 5
   - type: TemperatureDamage
-    heatDamageThreshold: 343 # Pinwheel - species standards
+    heatDamageThreshold: 321.15
     coldDamageThreshold: 285
     coldDamage:
       types:
