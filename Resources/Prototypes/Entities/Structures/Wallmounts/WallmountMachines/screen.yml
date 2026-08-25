@@ -15,9 +15,9 @@
       sprite: Structures/Wallmounts/screen.rsi
       state: outer_frame
   - type: Sprite
+    noRot: true
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/screen.rsi
-    noRot: true
     state: screen # Note: outer_frame will be added on top of text layers.
   - type: Appearance
   - type: Damageable
@@ -46,7 +46,6 @@
   categories: [HideSpawnMenu]
   components:
   - type: Sprite
-    offset: 0, -0.25
 
 - type: entity
   id: ArrivalsShuttleTimer
