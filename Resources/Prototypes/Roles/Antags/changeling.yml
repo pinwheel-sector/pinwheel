@@ -4,6 +4,14 @@
   antagonist: true
   setPreference: false # TODO: set this to true once Changeling exits WIP status
   objective: roles-antag-changeling-objective
+  guides: [ Changelings ]
+  tags:
+  - OnStation
+  - Roundstart
+  - Unkillable
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 5h
 
 - type: antagSpecifier
   parent: RestrictedAntag

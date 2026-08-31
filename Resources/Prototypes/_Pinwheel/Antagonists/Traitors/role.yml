@@ -18,6 +18,8 @@
   setPreference: true
   objective: antagonist-preference-desc-traitor
   guides: [ Traitors ]
+  tags:
+  - OnStation
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 1h
