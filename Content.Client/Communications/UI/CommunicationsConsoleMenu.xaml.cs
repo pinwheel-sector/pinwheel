@@ -56,7 +56,5 @@ public sealed partial class CommunicationsConsoleMenu : FancyWindow
 
         var alertLevelSelectable = selectableAlertLevels != null && canChangeAlertLevel;
         AlertLevelControls.UpdateAlertLevels(selectableAlertLevels, currentAlertLevel, alertLevelSelectable);
-
-        ShuttleControls.UpdateState(commsState.CanCall, commsState.CountdownStarted, commsState.ExpectedCountdownEnd);
     }
 }

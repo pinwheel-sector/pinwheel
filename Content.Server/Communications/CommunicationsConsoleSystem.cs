@@ -51,8 +51,6 @@ namespace Content.Server.Communications
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleSelectAlertLevelMessage>(OnSelectAlertLevelMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleAnnounceMessage>(OnAnnounceMessage);
             SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleBroadcastMessage>(OnBroadcastMessage);
-            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleCallEmergencyShuttleMessage>(OnCallShuttleMessage);
-            SubscribeLocalEvent<CommunicationsConsoleComponent, CommunicationsConsoleRecallEmergencyShuttleMessage>(OnRecallShuttleMessage);
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
@@ -135,9 +133,7 @@ namespace Content.Server.Communications
         {
             // TODO: Use component states and predict the UI
             _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
-                CanAnnounce(comp),
-                CanCallOrRecall(comp),
-                _roundEndSystem.ExpectedCountdownEnd
+                CanAnnounce(comp)
             ));
         }
 
@@ -153,31 +149,6 @@ namespace Content.Server.Communications
                 return _accessReaderSystem.IsAllowed(user, console, accessReaderComponent);
             }
             return true;
-        }
-
-        private bool CanCallOrRecall(CommunicationsConsoleComponent comp)
-        {
-            // Defer to what the round end system thinks we should be able to do.
-            if (_emergency.EmergencyShuttleArrived || !_roundEndSystem.CanCallOrRecall())
-                return false;
-
-            // Ensure that we can communicate with the shuttle (either call or recall)
-            if (!comp.CanShuttle)
-                return false;
-
-            // Calling shuttle checks
-            if (_roundEndSystem.ExpectedCountdownEnd is null)
-                return true;
-
-            // Recalling shuttle checks
-            var recallThreshold = _cfg.GetCVar(CCVars.EmergencyRecallTurningPoint);
-
-            // shouldn't really be happening if we got here
-            if (_roundEndSystem.ShuttleTimeLeft is not { } left
-                || _roundEndSystem.ExpectedShuttleLength is not { } expected)
-                return false;
-
-            return !(left.TotalSeconds / expected.TotalSeconds < recallThreshold);
         }
 
         private void OnSelectAlertLevelMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleSelectAlertLevelMessage message)
@@ -260,48 +231,6 @@ namespace Content.Server.Communications
             _deviceNetworkSystem.QueuePacket(uid, null, payload, net.TransmitFrequency);
 
             _adminLogger.Add(LogType.DeviceNetwork, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following broadcast: {message.Message:msg}");
-        }
-
-        private void OnCallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCallEmergencyShuttleMessage message)
-        {
-            if (!CanCallOrRecall(comp))
-                return;
-
-            var mob = message.Actor;
-
-            if (!CanUse(mob, uid))
-            {
-                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
-                return;
-            }
-
-            var ev = new CommunicationConsoleCallShuttleAttemptEvent(uid, comp, mob);
-            RaiseLocalEvent(ref ev);
-            if (ev.Cancelled)
-            {
-                _popupSystem.PopupEntity(ev.Reason ?? Loc.GetString("comms-console-shuttle-unavailable"), uid, message.Actor);
-                return;
-            }
-
-            _roundEndSystem.RequestRoundEnd(mob, uid);
-            _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(mob):player} has called the shuttle.");
-        }
-
-        private void OnRecallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleRecallEmergencyShuttleMessage message)
-        {
-            if (!CanCallOrRecall(comp))
-                return;
-
-            var mob = message.Actor;
-
-            if (!CanUse(mob, uid))
-            {
-                _popupSystem.PopupEntity(Loc.GetString("comms-console-permission-denied"), uid, message.Actor);
-                return;
-            }
-
-            _roundEndSystem.CancelRoundEndCountdown(mob, uid);
-            _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(message.Actor):player} has recalled the shuttle.");
         }
     }
 

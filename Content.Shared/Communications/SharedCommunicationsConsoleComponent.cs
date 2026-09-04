@@ -14,20 +14,12 @@ namespace Content.Shared.Communications
     {
         public readonly bool CanAnnounce;
         public readonly bool CanBroadcast = true;
-        public readonly bool CanCall;
-        public readonly TimeSpan? ExpectedCountdownEnd;
-        public readonly bool CountdownStarted;
 
 
         public CommunicationsConsoleInterfaceState(
-            bool canAnnounce,
-            bool canCall,
-            TimeSpan? expectedCountdownEnd = null)
+            bool canAnnounce)
         {
             CanAnnounce = canAnnounce;
-            CanCall = canCall;
-            ExpectedCountdownEnd = expectedCountdownEnd;
-            CountdownStarted = expectedCountdownEnd != null;
         }
     }
 
