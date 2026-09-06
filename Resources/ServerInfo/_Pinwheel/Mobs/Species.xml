@@ -11,7 +11,6 @@
   </Box>
   <Box>
     <GuideEntityEmbed Entity="AppearanceReptilian" Caption="Reptilian"/>
-    <GuideEntityEmbed Entity="AppearanceSlimePerson" Caption="Slimeperson"/>
     <GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>
     <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
   </Box>

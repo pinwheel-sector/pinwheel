@@ -8,7 +8,6 @@
   - Human
   - Moth
   - Reptilian
-  - SlimePerson
   - Vox
   - Vulpkanin
 
@@ -36,11 +35,6 @@
   id: Reptilian
   name: species-name-reptilian
   text: "/ServerInfo/_Pinwheel/Mobs/Reptilian.xml"
-
-- type: guideEntry
-  id: SlimePerson
-  name: species-name-slime
-  text: "/ServerInfo/_Pinwheel/Mobs/SlimePerson.xml"
 
 - type: guideEntry
   id: Vox
