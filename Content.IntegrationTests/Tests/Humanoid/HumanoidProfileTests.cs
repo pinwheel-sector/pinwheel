@@ -21,8 +21,8 @@ namespace Content.IntegrationTests.Tests.Humanoid;
 public sealed class HumanoidProfileTests : GameTest
 {
     private static readonly EntProtoId BaseSpecies = "MobHuman";
-    private static readonly ProtoId<SpeciesPrototype> SlimePerson = "SlimePerson";
-    public static readonly ProtoId<EmoteSoundsPrototype> SlimeVoice = "FemaleSlime";
+    private static readonly ProtoId<SpeciesPrototype> Vulpkanin = "Vulpkanin";
+    public static readonly ProtoId<EmoteSoundsPrototype> VulpkaninVoice = "FemaleVulpkanin";
 
     private static string[] _species = GameDataScrounger.PrototypesOfKind<SpeciesPrototype>();
 
@@ -48,16 +48,16 @@ public sealed class HumanoidProfileTests : GameTest
                 .WithSex(Sex.Female)
                 .WithAge(67)
                 .WithGender(Gender.Neuter)
-                .WithSpecies(SlimePerson)
-                .WithVoice(SlimeVoice));
+                .WithSpecies(Vulpkanin)
+                .WithVoice(VulpkaninVoice));
 
             var voiceComponent = SEntMan.GetComponent<VocalComponent>(body);
 
             Assert.That(humanoidComponent.Age, Is.EqualTo(67));
             Assert.That(humanoidComponent.Sex, Is.EqualTo(Sex.Female));
             Assert.That(humanoidComponent.Gender, Is.EqualTo(Gender.Neuter));
-            Assert.That(humanoidComponent.Species, Is.EqualTo(SlimePerson));
-            Assert.That(humanoidComponent.Voice, Is.EqualTo(SlimeVoice));
+            Assert.That(humanoidComponent.Species, Is.EqualTo(Vulpkanin));
+            Assert.That(humanoidComponent.Voice, Is.EqualTo(VulpkaninVoice));
 
             var speciesProto = SProtoMan.Index(humanoidComponent.Species);
 
