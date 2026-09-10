@@ -22,57 +22,6 @@
     sprite: Mobs/Species/Slime/organs.rsi
 
 - type: entity
-  parent: OrganSlimePerson
-  id: OrganSlimePersonExternal
-  abstract: true
-  components:
-  - type: Sprite
-    sprite: Mobs/Species/Slime/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Slime/parts.rsi
-
-- type: entity
-  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSlimePersonExternal ]
-  id: OrganSlimePersonTorso
-
-- type: entity
-  parent: [ OrganBaseHead, OrganSlimePersonExternal ]
-  id: OrganSlimePersonHead
-
-- type: entity
-  parent: [ OrganBaseArmLeft, OrganSlimePersonExternal ]
-  id: OrganSlimePersonArmLeft
-
-- type: entity
-  parent: [ OrganBaseArmRight, OrganSlimePersonExternal ]
-  id: OrganSlimePersonArmRight
-
-- type: entity
-  parent: [ OrganBaseHandLeft, OrganSlimePersonExternal ]
-  id: OrganSlimePersonHandLeft
-
-- type: entity
-  parent: [ OrganBaseHandRight, OrganSlimePersonExternal ]
-  id: OrganSlimePersonHandRight
-
-- type: entity
-  parent: [ OrganBaseLegLeft, OrganSlimePersonExternal ]
-  id: OrganSlimePersonLegLeft
-
-- type: entity
-  parent: [ OrganBaseLegRight, OrganSlimePersonExternal ]
-  id: OrganSlimePersonLegRight
-
-- type: entity
-  parent: [ OrganBaseFootLeft, OrganSlimePersonExternal ]
-  id: OrganSlimePersonFootLeft
-
-- type: entity
-  parent: [ OrganBaseFootRight, OrganSlimePersonExternal ]
-  id: OrganSlimePersonFootRight
-
-- type: entity
   parent: [ OrganBaseBrain, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
   id: OrganSlimePersonCore
   name: sentient slime core
@@ -85,14 +34,6 @@
     maxReagents: 6
     metabolizerTypes: [ Slime ]
     stages: [ Digestion, Bloodstream, Metabolites ]
-
-- type: entity
-  parent: [ OrganBaseEyes, OrganSlimePersonInternal, OrganSlimePersonExternal ]
-  id: OrganSlimePersonEyes
-  components:
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Customization/eyes.rsi
 
 - type: entity
   parent: [ OrganBaseLungs, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
