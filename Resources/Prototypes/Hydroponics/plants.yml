@@ -714,10 +714,6 @@
         min: 1
         max: 5
         potencyDivisor: 20
-      SpaceLube:
-        min: 5
-        max: 15
-        potencyDivisor: 10
       Vitamin:
         min: 1
         max: 4

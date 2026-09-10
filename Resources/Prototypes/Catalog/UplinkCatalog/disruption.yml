@@ -98,27 +98,6 @@
     - UplinkDisruption
 
 - type: listing
-  id: UplinkSoapSyndie
-  name: uplink-soap-name
-  description: uplink-soap-desc
-  productEntity: SoapSyndie
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkDisruption
-
-- type: listing
-  id: UplinkSlipocalypseClusterSoap
-  name: uplink-slipocalypse-clustersoap-name
-  description: uplink-slipocalypse-clustersoap-desc
-  productEntity: SlipocalypseClusterSoap
-  discountCategory: rareDiscounts
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkDisruption
-
-- type: listing
   id: UplinkToolbox
   name: uplink-toolbox-name
   description: uplink-toolbox-desc

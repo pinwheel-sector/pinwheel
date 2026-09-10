@@ -225,27 +225,6 @@
             max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Slippery
-    slipData:
-      launchForwardsMultiplier: 2
-  - type: StepTrigger
-    intersectRatio: 0.2
-  - type: Fixtures
-    fixtures:
-      slips:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.35
-        hard: false
-        layer:
-          - SlipLayer
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.35
-        density: 20
-        mask:
-        - MobMask
   - type: MeleeWeapon
     damage:
       types:

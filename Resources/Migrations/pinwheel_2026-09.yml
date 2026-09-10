@@ -33,3 +33,15 @@ WallDiamond: WallSolid
 WallIce: WallSolid
 WallMarble: WallRiveted # this is actually undoing upstream migrations so it's specified
 WallSandstone: WallSolid # i didn't actually have to remove this one but i did not care enough to fix it
+
+# 2026-09-08
+SoapSyndie: null
+SoapOmega: null
+SlipocalypseClusterSoap: null
+TrashBananaPeelExplosive: null
+ClusterBananaPeel: null
+
+CrazyLube: null
+CrazyGlue: null
+DrinkSpaceLube: null
+DrinkSpaceGlue: null

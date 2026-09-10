@@ -672,10 +672,9 @@
 
 - type: entity
   parent: MobHamsterHamlet
-  id: MobHamsterHamletSlippery
-  suffix: Slippery
+  id: MobHamsterHamletGib
+  suffix: Gib
   components:
-  - type: Slippery
   - type: StepTrigger
     requiredTriggeredSpeed: 1
   - type: TriggerOnStepTrigger

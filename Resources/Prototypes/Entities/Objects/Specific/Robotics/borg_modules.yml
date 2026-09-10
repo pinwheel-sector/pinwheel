@@ -1231,7 +1231,6 @@
     - state: icon-clown-adv
   - type: ItemBorgModule
     hands:
-    - item: HoloprojectorClownBorg
     - item: BorgLauncherCreamPie
     - item: ClownRecorder
     - item: PushHorn

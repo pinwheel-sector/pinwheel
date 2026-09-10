@@ -339,15 +339,6 @@
     children:
     - id: SpaceCash100
       weight: 15
-    - id: DrinkSpaceGlue
-      amount: !type:RangeNumberSelector
-        range: 1, 2
-    - id: DrinkSpaceLube
-      amount: !type:RangeNumberSelector
-        range: 1, 2
-    - id: CrazyGlue
-      amount: !type:RangeNumberSelector
-        range: 1, 2
 
 - type: entityTable #1x small
   id: RandomSatchelKeysTable
@@ -454,7 +445,6 @@
     - id: ToySword
     - id: NukeDiskFake
     - id: RadioJammer
-    - id: SoapSyndie
     - id: SingularityToy
     - id: DehydratedSpaceCarp
 

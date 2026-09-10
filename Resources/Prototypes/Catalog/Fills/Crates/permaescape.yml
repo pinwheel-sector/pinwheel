@@ -235,8 +235,6 @@
           prob: 0.05
         - id: MedkitCombatFilled
           prob: 0.01
-        - id: SoapSyndie
-          prob: 0.15
         - id: DnaScramblerImplanter
           prob: 0.005
 
