@@ -280,8 +280,6 @@
     maxDuration: 240
   - type: SolarFlareRule
     onlyJamHeadsets: true
-    affectedChannels:
-    - Common
     extraChannels:
     - Command
     - Engineering

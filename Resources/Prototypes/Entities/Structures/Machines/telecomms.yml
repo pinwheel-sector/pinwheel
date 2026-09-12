@@ -51,10 +51,6 @@
           components:
           - EncryptionKey
         minCount: 1
-      variant-common:
-        whitelist:
-          tags:
-          - EncryptionCommon
       variant-cargo:
         whitelist:
           tags:
@@ -191,7 +187,6 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyCargo
       - EncryptionKeyEngineering
       - EncryptionKeyMedical
@@ -199,16 +194,6 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
-
-- type: entity
-  parent: TelecomServer
-  id: TelecomServerFilledCommon
-  suffix: Common
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyCommon
 
 - type: entity
   parent: TelecomServer

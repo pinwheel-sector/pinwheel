@@ -8,7 +8,6 @@
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
-    - Common
     - Command
     - Engineering
     - Medical
@@ -19,7 +18,6 @@
   - type: ActiveRadio
     channels:
     - Binary
-    - Common
     - Command
     - Engineering
     - Medical
@@ -88,7 +86,6 @@
   - type: ActiveRadio
     channels:
     - Binary
-    - Common
   - type: ActionGrant
     actions:
     - ActionAIViewLaws

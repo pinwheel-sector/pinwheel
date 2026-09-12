@@ -8,10 +8,6 @@
   - type: ContainerContainer
     containers:
       key_slots: !type:Container
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyCommon
   - type: Headset
   - type: EncryptionKeyHolder
     keySlots: 4
@@ -30,7 +26,8 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetGrey
-  name: passenger headset
+  name: spare headset # Pinwheel
+  description: A generic headset without departmental livery. # Pinwheel
   components:
   - type: Sprite
     sprite: Clothing/Ears/Headsets/base.rsi
@@ -45,7 +42,6 @@
     containers:
       key_slots:
       - EncryptionKeyCargo
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/cargo.rsi
   - type: Clothing
@@ -73,7 +69,6 @@
       key_slots:
       - EncryptionKeyCargo
       - EncryptionKeyCommand
-      - EncryptionKeyCommon
 
 - type: entity
   parent: [ ClothingHeadset, BaseCentcommContraband ]
@@ -116,7 +111,6 @@
     containers:
       key_slots:
       - EncryptionKeyEngineering
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/engineering.rsi
   - type: Clothing
@@ -133,7 +127,6 @@
       key_slots:
       - EncryptionKeyEngineering
       - EncryptionKeyCommand
-      - EncryptionKeyCommon
 
 - type: entity
   parent: ClothingHeadset
@@ -145,7 +138,6 @@
     containers:
       key_slots:
       - EncryptionKeyMedical
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/medical.rsi
   - type: Clothing
@@ -162,7 +154,6 @@
       key_slots:
       - EncryptionKeyMedical
       - EncryptionKeyCommand
-      - EncryptionKeyCommon
 
 - type: entity
   parent: ClothingHeadset
@@ -174,7 +165,6 @@
     containers:
       key_slots:
       - EncryptionKeyScience
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/science.rsi
   - type: Clothing
@@ -190,7 +180,6 @@
     containers:
       key_slots:
       - EncryptionKeyMedicalScience
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/medicalscience.rsi
   - type: Clothing
@@ -206,7 +195,6 @@
     containers:
       key_slots:
       - EncryptionKeyRobo
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/robotics.rsi
   - type: Clothing
@@ -223,7 +211,6 @@
       key_slots:
       - EncryptionKeyScience
       - EncryptionKeyCommand
-      - EncryptionKeyCommon
 
 - type: entity
   parent: [ClothingHeadset, BaseSecurityLawyerContraband]
@@ -235,7 +222,6 @@
     containers:
       key_slots:
       - EncryptionKeySecurity
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
@@ -252,7 +238,6 @@
       key_slots:
       - EncryptionKeyMedical
       - EncryptionKeySecurity
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/brigmedic.rsi
   - type: Clothing
@@ -268,7 +253,6 @@
     containers:
       key_slots:
       - EncryptionKeyService
-      - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/service.rsi
   - type: Clothing

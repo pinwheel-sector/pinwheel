@@ -29,7 +29,6 @@
     interactFailureString: petting-failure-generic-cyborg
   - type: BorgSwitchableType
     inherentRadioChannels:
-    - Common
     - Binary
 
 - type: entity

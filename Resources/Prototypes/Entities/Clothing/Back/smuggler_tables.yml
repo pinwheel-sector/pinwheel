@@ -355,7 +355,6 @@
     children:
     - id: SpaceCash100
       weight: 50
-    - id: EncryptionKeyCommon
     - id: EncryptionKeyCargo
     - id: EncryptionKeyService
     - id: EncryptionKeyRobo

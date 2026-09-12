@@ -18,7 +18,6 @@
         weight: 9
         prob: 0.9
         children:
-        - id: EncryptionKeyCommon
         - id: EncryptionKeyEngineering
         - id: EncryptionKeyScience
         - id: EncryptionKeyService

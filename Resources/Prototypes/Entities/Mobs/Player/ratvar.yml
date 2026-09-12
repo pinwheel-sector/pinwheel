@@ -68,7 +68,6 @@
   - type: ActiveRadio
     channels:
     - Binary
-    - Common
     - Command
     - CentCom
     - Engineering

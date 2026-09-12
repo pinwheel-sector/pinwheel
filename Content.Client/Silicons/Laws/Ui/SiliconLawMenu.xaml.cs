@@ -86,9 +86,7 @@ public sealed partial class SiliconLawMenu : FancyWindow
         else
         {
             var radioChannelProto = _selectableRadioChannels[_selectedChatChannelIdx - SelectableChatChannels.Count];
-            var radioMessage = radioChannelProto.ID == SharedChatSystem.CommonChannel
-                ? $"{SharedChatSystem.RadioCommonPrefix} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}"
-                : $"{SharedChatSystem.RadioChannelPrefix}{radioChannelProto.KeyCode} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}";
+            var radioMessage = $"{SharedChatSystem.RadioChannelPrefix}{radioChannelProto.KeyCode} {lawIdentifierPlaintext}: {lawDescriptionPlaintext}";
             _chatManager.SendMessage(radioMessage, ChatSelectChannel.Radio);
         }
     }

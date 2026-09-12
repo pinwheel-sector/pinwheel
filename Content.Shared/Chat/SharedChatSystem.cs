@@ -19,7 +19,7 @@ namespace Content.Shared.Chat;
 
 public abstract partial class SharedChatSystem : EntitySystem
 {
-    public const char RadioCommonPrefix = ';';
+    public const char RadioDefaultPrefix = ';'; // Pinwheel
     public const char RadioChannelPrefix = ':';
     public const char RadioChannelAltPrefix = '.';
     public const char LocalPrefix = '>';
@@ -39,7 +39,6 @@ public abstract partial class SharedChatSystem : EntitySystem
     public static readonly SoundSpecifier DefaultAnnouncementSound
         = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
 
-    public static readonly ProtoId<RadioChannelPrototype> CommonChannel = "Common";
 
     public static readonly string DefaultChannelPrefix = $"{RadioChannelPrefix}{DefaultChannelKey}";
     public static readonly ProtoId<SpeechVerbPrototype> DefaultSpeechVerb = "Default";
@@ -59,8 +58,6 @@ public abstract partial class SharedChatSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        DebugTools.Assert(ProtoMan.HasIndex(CommonChannel));
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReload);
         CacheRadios();
@@ -158,12 +155,18 @@ public abstract partial class SharedChatSystem : EntitySystem
         if (input.Length == 0)
             return false;
 
-        if (input.StartsWith(RadioCommonPrefix))
+        // Pinwheel-stt
+        if (input.StartsWith(RadioDefaultPrefix))
         {
+            var ev = new GetDefaultRadioChannelEvent();
+            RaiseLocalEvent(source, ev);
+
             output = SanitizeMessageCapital(input[1..].TrimStart());
-            channel = ProtoMan.Index<RadioChannelPrototype>(CommonChannel);
+            if (ev.Channel != null)
+                ProtoMan.TryIndex(ev.Channel, out channel);
             return true;
         }
+        // Pinwheel-end
 
         if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
             return false;

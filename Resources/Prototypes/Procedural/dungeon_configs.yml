@@ -368,8 +368,6 @@
       prob: 0.2
     - id: RandomPainting
       prob: 0.05
-    - id: IntercomCommon
-      prob: 0.1
 
 # Snowy labs
 - type: entityTable
