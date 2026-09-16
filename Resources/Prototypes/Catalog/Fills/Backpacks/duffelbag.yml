@@ -1,8 +1,8 @@
 - type: entity
-  parent: ClothingBackpackDuffelMedical
+  parent: ClothingBackpackMedical # we removed crew duffels so this is atavistic - Pinwheel
   id: ClothingBackpackDuffelSurgeryFilled
-  name: surgical duffel bag
-  description: "A large duffel bag for holding extra medical supplies - this one seems to be designed for holding surgical tools."
+  name: surgical bag
+  description: "A large bag for holding extra medical supplies - this one seems to be designed for holding surgical tools."
   components:
   - type: EntityTableContainerFill
     containers:
@@ -158,7 +158,7 @@
           amount: 2
 
 - type: entity
-  parent: ClothingBackpackDuffelClown
+  parent: ClothingBackpackClown # no crew duffels sorry - Pinwheel
   id: ClothingBackpackDuffelSyndicateCostumeClown
   suffix: syndicate
   components:

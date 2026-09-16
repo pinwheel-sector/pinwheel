@@ -29,7 +29,7 @@
     - id: ClothingShoesColorBlack
       amount: 3
     - id: ClothingHeadHatGreysoft
-    - id: ClothingBackpackDuffel
+    - id: ClothingBackpackGeneric
       prob: 0.5
     - id: ClothingOuterCoatBomber
       prob: 0.3

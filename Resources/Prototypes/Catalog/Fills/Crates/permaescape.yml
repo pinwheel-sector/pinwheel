@@ -25,7 +25,6 @@
         - id: CratePermaEscapeLights
         - id: CratePermaEscapeMats
           weight: 2
-        - id: CratePermaEscapeMerc
         - id: CratePermaEscapeTowercap
           weight: 2
         - id: CrateTrashCartFilled
@@ -239,39 +238,6 @@
           prob: 0.15
         - id: DnaScramblerImplanter
           prob: 0.005
-
-- type: entity
-  parent: CrateGenericSteel
-  id: CratePermaEscapeMerc
-  suffix: Mercenary
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - id: ClothingUniformJumpsuitMercenary
-        - id: ClothingHeadBandMerc
-          prob: 0.50
-        - id: ClothingHeadHatBeretMerc
-          prob: 0.20
-        - id: ClothingHeadHelmetMerc
-          prob: 0.05
-        - id: ClothingEyesGlassesMercenary
-          prob: 0.20
-        - id: ClothingMaskGasMerc
-          prob: 0.10
-        - id: ClothingHandsGlovesMercFingerless
-          prob: 0.20
-        - id: ClothingHandsMercGlovesCombat
-          prob: 0.05
-        - id: ClothingBackpackMerc
-          prob: 0.50
-        - id: ClothingShoesBootsMerc
-          prob: 0.50
-        - id: ClothingOuterVestWebMerc
-          prob: 0.25
-        - id: ClothingBeltMercWebbing
-          prob: 0.05
 
 - type: entity
   parent: CrateGenericSteel

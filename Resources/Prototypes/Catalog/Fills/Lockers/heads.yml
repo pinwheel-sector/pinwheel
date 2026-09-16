@@ -126,8 +126,6 @@
       prob: 0.25
       # Fuck the HoP they don't deserve fucking cigars.
       # Yes they do fuck you.
-    - id: ClothingBackpackIan
-      prob: 0.5
     - id: ClothingHeadsetCommand
     - id: ClothingNeckGoldmedal
     - id: DoorRemoteService

@@ -261,7 +261,7 @@
 
 - type: entity
   name: hatsune miku day bag
-  parent: ClothingBackpackDuffel
+  parent: BaseClothingBackpack
   id: BoxPerformer
   description: Happy Hatsune Miku Day!
   components:

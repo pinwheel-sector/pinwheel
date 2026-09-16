@@ -125,7 +125,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingUniformJumpsuitChemistry
-    - id: ClothingBackpackChemistry
+    - id: ClothingBackpackMedical
     - id: ClothingShoesColorWhite
     - id: ClothingOuterCoatLabChem
     - id: ClothingUniformJumpskirtChemistry
@@ -146,7 +146,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingUniformJumpsuitGenetics
-    - id: ClothingBackpackGenetics
+    - id: ClothingBackpackMedical
     - id: ClothingShoesColorWhite
     - id: ClothingOuterCoatLabGene
     - id: ClothingUniformJumpskirtGenetics
@@ -167,7 +167,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingUniformJumpsuitVirology
-    - id: ClothingBackpackVirology
+    - id: ClothingBackpackMedical
     - id: ClothingShoesColorWhite
     - id: ClothingOuterCoatLabViro
     - id: ClothingUniformJumpskirtVirology
@@ -310,7 +310,7 @@
     children:
     - id: ClothingHeadHatCargosoft
     - id: ClothingUniformJumpsuitCargo
-    - id: ClothingBackpack
+    - id: ClothingBackpackGeneric
     - id: ClothingShoesColorBlack
     - id: ClothingUniformJumpskirtCargo
     - id: ClothingHandsGlovesFingerless
@@ -332,7 +332,7 @@
   id: FillWardrobeSalvage
   table: !type:AllSelector
     children:
-    - id: ClothingBackpack
+    - id: ClothingBackpackCargo
     - id: ClothingShoesBootsSalvage
       amount: 2
     - id: ClothingUniformJumpsuitSalvageSpecialist
