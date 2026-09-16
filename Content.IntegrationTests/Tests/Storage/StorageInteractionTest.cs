@@ -21,7 +21,7 @@ public sealed class StorageInteractionTest : InteractionTest
     {
         var sys = Server.System<SharedContainerSystem>();
 
-        await SpawnTarget("ClothingBackpack");
+        await SpawnTarget("ClothingBackpackGeneric"); // Pinwheel
         var backpack = ToServer(Target);
 
         // Initially no BUI is open.
