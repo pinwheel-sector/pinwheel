@@ -31,17 +31,35 @@
 - type: entity
   parent: BaseClothingBackpack
   id: ClothingBackpackHydroponics
-  name: giggles von honkerton
+  name: hydroponics backpack
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/clown.rsi
+    sprite: Clothing/Back/Backpacks/hydroponics.rsi
     state: icon
 
 - type: entity
   parent: BaseClothingBackpack
   id: ClothingBackpackHydroponicsSatchel
-  name: giggles von honkerton Jr.
+  name: hydroponics satchel
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/clown.rsi
+    sprite: Clothing/Back/Satchels/hydroponics.rsi
+    state: icon
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackMime
+  name: mime backpack
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/mime.rsi
+    state: icon
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackMimeSatchel
+  name: mime satchel
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/mime.rsi
     state: icon

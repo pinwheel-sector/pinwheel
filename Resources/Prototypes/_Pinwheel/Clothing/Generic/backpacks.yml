@@ -19,7 +19,7 @@
 - type: entity
   parent: BaseClothingBackpack
   id: ClothingBackpackLeatherSatchel
-  name: satchel
+  name: leather satchel
   components:
   - type: Sprite
     sprite: Clothing/Back/Satchels/leather.rsi
