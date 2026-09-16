@@ -7,8 +7,6 @@
       weight: 85
     - id: BriefcaseSmugglerCash
       weight: 10
-    - id: ClothingBackpackDuffelClownSmuggler
-      weight: 5
 
 #Table
 - type: entityTable
