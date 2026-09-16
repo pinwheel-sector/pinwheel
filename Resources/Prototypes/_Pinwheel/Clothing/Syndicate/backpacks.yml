@@ -1,0 +1,28 @@
+- type: entity
+  parent:
+  - BaseClothingBackpack
+  - BaseSyndicateContraband
+  id: ClothingBackpackSyndicate
+  name: syndicate backpack
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/syndicate.rsi
+    state: icon
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent:
+  - BaseClothingBackpack
+  - BaseSyndicateContraband
+  id: ClothingBackpackSyndicateDuffel
+  name: syndicate duffel bag
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/syndicate.rsi
+    state: icon
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: Storage
+    grid:
+    - 0,0,8,4

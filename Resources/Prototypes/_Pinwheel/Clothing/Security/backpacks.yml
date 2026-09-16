@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackSecurity
+  name: security backpack
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/security.rsi
+    state: icon
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackSecuritySatchel
+  name: security satchel
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/security.rsi
+    state: icon

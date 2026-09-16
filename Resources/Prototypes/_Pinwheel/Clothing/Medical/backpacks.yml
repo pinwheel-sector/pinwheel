@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackMedical
+  name: medical backpack
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/medical.rsi
+    state: icon
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackMedicalSatchel
+  name: medical satchel
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/medical.rsi
+    state: icon

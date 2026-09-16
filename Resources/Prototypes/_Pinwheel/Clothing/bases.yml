@@ -1,0 +1,36 @@
+- type: entity
+  abstract: true
+  parent:
+  - Clothing
+  - ContentsExplosionResistanceBase
+  id: BaseClothingBackpack
+  name: backpack
+  description: You wear this on your back and put things in it.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/backpack.rsi
+  - type: Item
+    size: Colossal
+  - type: Clothing
+    quickEquip: false
+    slots: [ back ]
+  - type: Storage
+    grid:
+    - 0,0,7,3
+    maxItemSize: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: UseDelay # audio spam prevention
+    delay: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - Backpack

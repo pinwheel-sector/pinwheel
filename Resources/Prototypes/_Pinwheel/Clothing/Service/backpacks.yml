@@ -1,0 +1,47 @@
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackClown
+  name: giggles von honkerton
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/clown.rsi
+    state: icon
+  - type: Storage
+    storageOpenSound: &ClownOpen
+      collection: BikeHorn
+      params:
+        variation: 0.125
+    storageInsertSound: &ClownInsert
+      collection: FootstepClown
+      params:
+        variation: 0.125
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackClownSatchel
+  name: giggles von honkerton Jr.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/clown.rsi
+    state: icon
+  - type: Storage
+    storageOpenSound: *ClownOpen
+    storageInsertSound: *ClownInsert
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackHydroponics
+  name: giggles von honkerton
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/clown.rsi
+    state: icon
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackHydroponicsSatchel
+  name: giggles von honkerton Jr.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/clown.rsi
+    state: icon
