@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingBackpack, BaseChameleon]
+  parent: [ BaseClothingBackpack, BaseChameleon ]
   id: ClothingBackpackChameleon
   name: backpack
   description: You wear this on your back and put items into it.
@@ -11,7 +11,7 @@
       sprite: Clothing/Back/Backpacks/backpack.rsi
     - type: ChameleonClothing
       slot: [back]
-      default: ClothingBackpack
+      default: ClothingBackpackGeneric
     - type: UserInterface
       interfaces:
         enum.StorageUiKey.Key:
@@ -74,7 +74,7 @@
     exactVolume: true
 
 - type: entity
-  parent: ClothingBackpack
+  parent: BaseClothingBackpack
   id: ClothingBagPet
   name: pet bag
   description: A small bag designed for use by pets and small animals.
@@ -120,7 +120,7 @@
         location: Middle
 
 - type: entity
-  parent: ClothingBackpack
+  parent: BaseClothingBackpack
   id: XenoborgMaterialBag
   name: silicon storage square
   description: A knockoff version of a bluespace bag, can vacuum up select materials, unfit for use by humanoids due to harmful emissions.
