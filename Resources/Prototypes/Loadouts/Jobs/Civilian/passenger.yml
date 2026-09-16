@@ -84,17 +84,12 @@
 - type: loadout
   id: CommonBackpack
   equipment:
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
 
 - type: loadout
   id: CommonSatchel
   equipment:
-    back: ClothingBackpackSatchel
-
-- type: loadout
-  id: CommonDuffel
-  equipment:
-    back: ClothingBackpackDuffel
+    back: ClothingBackpackGenericSatchel
 
 # Gloves
 - type: loadout

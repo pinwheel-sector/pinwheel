@@ -139,7 +139,6 @@
   loadouts:
   - CaptainBackpack
   - CaptainSatchel
-  - CaptainDuffel
 
 - type: loadoutGroup
   id: CaptainOuterClothing
@@ -182,8 +181,6 @@
   loadouts:
   - CommonBackpack
   - CommonSatchel
-  - CommonDuffel
-  - HoPBackpackIan
 
 - type: loadoutGroup
   id: HoPOuterClothing
@@ -229,7 +226,6 @@
   loadouts:
   - CommonBackpack
   - CommonSatchel
-  - CommonDuffel
 
 - type: loadoutGroup
   id: PassengerNeck
@@ -496,7 +492,6 @@
   loadouts:
   - BotanistBackpack
   - BotanistSatchel
-  - BotanistDuffel
 
 - type: loadoutGroup
   id: BotanistOuterClothing
@@ -536,7 +531,6 @@
   loadouts:
   - ClownBackpack
   - ClownSatchel
-  - ClownDuffel
 
 - type: loadoutGroup
   id: ClownOuterClothing
@@ -600,7 +594,6 @@
   loadouts:
   - MimeBackpack
   - MimeSatchel
-  - MimeDuffel
 
 - type: loadoutGroup
   id: MimeOuterClothing
@@ -744,7 +737,6 @@
   loadouts:
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
-  - CargoTechnicianDuffel
 
 - type: loadoutGroup
   id: CargoTechnicianOuterClothing
@@ -772,14 +764,6 @@
 #  name: loadout-group-jobtrinkets
 #  minLimit: 0
 #  loadouts:
-
-- type: loadoutGroup
-  id: SalvageSpecialistBackpack
-  name: loadout-group-salvage-specialist-backpack
-  loadouts:
-  - SalvageSpecialistBackpack
-  - SalvageSpecialistSatchel
-  - SalvageSpecialistDuffel
 
 - type: loadoutGroup
   id: SalvageSpecialistOuterClothing
@@ -886,7 +870,6 @@
   loadouts:
   - StationEngineerBackpack
   - StationEngineerSatchel
-  - StationEngineerDuffel
 
 - type: loadoutGroup
   id: StationEngineerOuterClothing
@@ -930,14 +913,6 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
-
-- type: loadoutGroup
-  id: AtmosphericTechnicianBackpack
-  name: loadout-group-atmospheric-technician-backpack
-  loadouts:
-  - AtmosphericTechnicianBackpack
-  - AtmosphericTechnicianSatchel
-  - AtmosphericTechnicianDuffel
 
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
@@ -1039,7 +1014,6 @@
   loadouts:
   - ScientistBackpack
   - ScientistSatchel
-  - ScientistDuffel
 
 - type: loadoutGroup
   id: ScientistOuterClothing
@@ -1195,7 +1169,6 @@
   loadouts:
   - SecurityBackpack
   - SecuritySatchel
-  - SecurityDuffel
 
 - type: loadoutGroup
   id: SecurityBelt

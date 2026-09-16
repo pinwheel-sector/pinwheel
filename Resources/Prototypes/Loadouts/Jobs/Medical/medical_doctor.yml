@@ -91,12 +91,7 @@
 - type: loadout
   id: MedicalDoctorSatchel
   equipment:
-    back: ClothingBackpackSatchelMedical
-
-- type: loadout
-  id: MedicalDoctorDuffel
-  equipment:
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackMedicalSatchel
 
 # OuterClothing
 - type: loadout

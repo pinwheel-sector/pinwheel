@@ -73,12 +73,7 @@
 - type: loadout
   id: CaptainSatchel
   equipment:
-    back: ClothingBackpackSatchelCaptain
-
-- type: loadout
-  id: CaptainDuffel
-  equipment:
-    back: ClothingBackpackDuffelCaptain
+    back: ClothingBackpackCaptainSatchel
 
 # Outer clothing
 - type: loadout

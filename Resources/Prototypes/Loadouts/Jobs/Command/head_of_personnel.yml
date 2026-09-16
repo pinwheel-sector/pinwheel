@@ -54,15 +54,6 @@
   equipment:
     neck: ClothingNeckMantleHOP
 
-# Back
-- type: loadout
-  id: HoPBackpackIan
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ProfessionalHoP
-  equipment:
-    back: ClothingBackpackIan
-
 # Outerclothing
 - type: loadout
   id: HoPWintercoat

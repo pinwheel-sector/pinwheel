@@ -85,12 +85,7 @@
 - type: loadout
   id: SecuritySatchel
   equipment:
-    back: ClothingBackpackSatchelSecurity
-
-- type: loadout
-  id: SecurityDuffel
-  equipment:
-    back: ClothingBackpackDuffelSecurity
+    back: ClothingBackpackSecuritySatchel
 
 # Belt
 - type: loadout

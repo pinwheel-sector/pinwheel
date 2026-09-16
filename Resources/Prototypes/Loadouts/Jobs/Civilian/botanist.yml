@@ -34,12 +34,7 @@
 - type: loadout
   id: BotanistSatchel
   equipment:
-    back: ClothingBackpackSatchelHydroponics
-
-- type: loadout
-  id: BotanistDuffel
-  equipment:
-    back: ClothingBackpackDuffelHydroponics
+    back: ClothingBackpackHydroponicsSatchel
 
 # Outer clothing
 - type: loadout

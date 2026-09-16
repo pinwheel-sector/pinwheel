@@ -9,22 +9,6 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtChemistry
 
-# Back
-- type: loadout
-  id: ChemistBackpack
-  equipment:
-    back: ClothingBackpackChemistry
-
-- type: loadout
-  id: ChemistSatchel
-  equipment:
-    back: ClothingBackpackSatchelChemistry
-
-- type: loadout
-  id: ChemistDuffel
-  equipment:
-    back: ClothingBackpackDuffelChemistry
-
 # Outer clothing
 - type: loadout
   id: ChemistLabCoat

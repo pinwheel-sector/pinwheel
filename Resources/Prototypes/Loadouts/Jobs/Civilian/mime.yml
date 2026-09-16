@@ -50,12 +50,7 @@
 - type: loadout
   id: MimeSatchel
   equipment:
-    back: ClothingBackpackSatchelMime
-
-- type: loadout
-  id: MimeDuffel
-  equipment:
-    back: ClothingBackpackDuffelMime
+    back: ClothingBackpackMimeSatchel
 
 # Outerclothing
 - type: loadout

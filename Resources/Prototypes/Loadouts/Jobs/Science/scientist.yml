@@ -84,12 +84,7 @@
 - type: loadout
   id: ScientistSatchel
   equipment:
-    back: ClothingBackpackSatchelScience
-
-- type: loadout
-  id: ScientistDuffel
-  equipment:
-    back: ClothingBackpackDuffelScience
+    back: ClothingBackpackScienceSatchel
 
 # OuterClothing
 - type: loadout

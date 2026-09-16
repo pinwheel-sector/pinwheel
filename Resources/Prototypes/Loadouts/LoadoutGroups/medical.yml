@@ -13,7 +13,6 @@
   loadouts:
   - MedicalDoctorBackpack
   - MedicalDoctorSatchel
-  - MedicalDoctorDuffel
 
 - type: loadoutGroup
   id: MedicalShoes
@@ -161,14 +160,6 @@
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
-
-- type: loadoutGroup
-  id: ChemistBackpack
-  name: loadout-group-chemist-backpack
-  loadouts:
-  - ChemistBackpack
-  - ChemistSatchel
-  - ChemistDuffel
 
 #- type: loadoutGroup
 #  id: ChemistJobTrinkets

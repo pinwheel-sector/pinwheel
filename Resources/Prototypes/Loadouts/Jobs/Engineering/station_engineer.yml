@@ -87,12 +87,7 @@
 - type: loadout
   id: StationEngineerSatchel
   equipment:
-    back: ClothingBackpackSatchelEngineering
-
-- type: loadout
-  id: StationEngineerDuffel
-  equipment:
-    back: ClothingBackpackDuffelEngineering
+    back: ClothingBackpackEngineeringSatchel
 
 # OuterClothing
 - type: loadout
