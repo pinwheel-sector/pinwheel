@@ -2,8 +2,7 @@
   id: SciDrobeInventory
   startingInventory:
     ClothingBackpackScience: 3
-    ClothingBackpackSatchelScience: 3
-    ClothingBackpackDuffelScience: 3
+    ClothingBackpackScienceSatchel: 3
     ClothingUniformJumpsuitScientist: 3
     ClothingUniformJumpskirtScientist: 3
     ClothingUniformJumpsuitScientistFormal: 3

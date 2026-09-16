@@ -2,8 +2,7 @@
   id: SecDrobeInventory
   startingInventory:
     ClothingBackpackSecurity: 3
-    ClothingBackpackSatchelSecurity: 3
-    ClothingBackpackDuffelSecurity: 3
+    ClothingBackpackSecuritySatchel: 3
     ClothingUniformJumpsuitSec: 3
     ClothingShoesBootsJack: 3
     ClothingHeadHatBeretSecurity: 3
