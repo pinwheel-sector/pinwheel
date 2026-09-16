@@ -49,6 +49,8 @@
   - type: Sprite
     sprite: Clothing/Back/Satchels/smuggler.rsi
     state: icon
+  - type: Tag
+    tags: [ Backpack ]
 
 - type: entity
   parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie, BaseMinorContraband ]
@@ -75,6 +77,8 @@
       storagebase: !type:NestedSelector
         tableId: RandomCapGunTable
         rolls: 4, 7
+  - type: Tag
+    tags: [ Backpack ]
 
 - type: entity
   parent: ClothingBackpackSatchelSmuggler
@@ -88,6 +92,8 @@
     containers:
       storagebase: !type:NestedSelector
         tableId: FillSmugglerBackpack
+  - type: Tag
+    tags: [ Backpack ]
 
 - type: entity
   parent: MarkerBase
