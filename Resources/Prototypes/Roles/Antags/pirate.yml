@@ -2,7 +2,7 @@
   id: PirateGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPirate
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     head: ClothingHeadBandBlack
     shoes: ClothingShoesBootsLaceup
     id: PiratePDA

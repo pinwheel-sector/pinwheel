@@ -29,7 +29,7 @@
     neck: ClothingNeckMantleCap
     id: VisitorPDA
     belt: WeaponDisabler
-    back: ClothingBackpackSatchelCaptain
+    back: ClothingBackpackCaptainSatchel
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterArmorCaptainCarapace
     pocket1: WeaponDisabler
@@ -43,7 +43,7 @@
     neck: ClothingNeckCloakCe
     id: VisitorPDA
     belt: ClothingBeltChiefEngineerFilled
-    back: ClothingBackpackDuffelEngineering
+    back: ClothingBackpackEngineering
     ears: ClothingHeadsetCE
     outerClothing: ClothingOuterVestHazard
     pocket1: WeaponDisabler
@@ -57,7 +57,7 @@
     neck: ClothingNeckMantleCE
     id: VisitorPDA
     belt: ClothingBeltChiefEngineerFilled
-    back: ClothingBackpackSatchelEngineering
+    back: ClothingBackpackEngineeringSatchel
     ears: ClothingHeadsetCE
     outerClothing: ClothingOuterWinterCE
     pocket1: WeaponDisabler
@@ -86,7 +86,7 @@
     head: ClothingHeadHatBeretCmo
     neck: ClothingNeckMantleCMO
     id: VisitorPDA
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackMedicalSatchel
     ears: ClothingHeadsetCMO
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
@@ -101,7 +101,7 @@
     neck: ClothingNeckCloakHop
     id: VisitorPDA
     belt: WeaponDisabler
-    back: ClothingBackpackDebug
+    back: ClothingBackpackGeneric
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterWinterHoP
     pocket1: WeaponDisabler
@@ -115,7 +115,7 @@
     neck: ClothingNeckMantleHOP
     id: VisitorPDA
     belt: WeaponDisabler
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetAltCommand
     outerClothing: ClothingOuterWinterHoP
     pocket1: WeaponDisabler
@@ -130,7 +130,7 @@
     neck: ClothingNeckCloakHos
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackSecuritySatchel
     ears: ClothingHeadsetAltSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterCoatHoSTrench
@@ -149,7 +149,7 @@
     neck: SecurityWhistle
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetAltSecurity
     eyes: ClothingEyesGlassesSecurity
     pocket1: WeaponDisabler
@@ -180,7 +180,7 @@
     head: ClothingHeadHatBeretRND
     neck: ClothingNeckMantleRD
     id: VisitorPDA
-    back: ClothingBackpackSatchelScience
+    back: ClothingBackpackScienceSatchel
     ears: ClothingHeadsetRD
     outerClothing: ClothingOuterCoatRD
     pocket1: WeaponDisabler
@@ -207,7 +207,7 @@
     head: ClothingHeadHatBeretQM
     neck: ClothingNeckMantleQM
     id: VisitorPDA
-    back: ClothingBackpackSatchelCargo
+    back: ClothingBackpackCargoSatchel
     ears: ClothingHeadsetQM
     outerClothing: ClothingOuterWinterQM
     pocket1: WeaponDisabler
@@ -241,7 +241,7 @@
     neck: SecurityWhistle
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackSecuritySatchel
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasicSlim
@@ -276,7 +276,7 @@
     neck: SecurityWhistle
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackSecuritySatchel
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasicSlim
@@ -312,7 +312,7 @@
     neck: ClothingNeckTieDet
     id: VisitorPDA
     belt: ClothingBeltHolsterFilled
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackSecuritySatchel
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterVestDetective
@@ -350,7 +350,7 @@
     head: ClothingHeadHatWarden
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackSecuritySatchel
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterWinterWarden
@@ -383,7 +383,7 @@
     shoes: ClothingShoesBootsWinterCargo
     head: ClothingHeadHatCargosoft
     id: VisitorPDA
-    back: ClothingBackpackDuffelCargo
+    back: ClothingBackpackCargo
     ears: ClothingHeadsetCargo
     pocket1: AppraisalTool
     pocket2: SpaceCash500
@@ -400,7 +400,7 @@
     head: ClothingHeadHatCargosoftFlipped
     id: VisitorPDA
     belt: ClothingBeltSalvageWebbing
-    back: ClothingBackpackSalvage
+    back: ClothingBackpackCargo
     ears: ClothingHeadsetCargo
     pocket1: SurvivalKnife
     pocket2: HandheldGPSBasic
@@ -415,7 +415,7 @@
     head: ClothingHeadHatBrownFlatcap
     id: VisitorPDA
     belt: ClothingBeltSalvageWebbing
-    back: ClothingBackpackDuffelSalvage
+    back: ClothingBackpackCargo
     ears: ClothingHeadsetCargo
     outerClothing: ClothingOuterWinterCargo
     pocket1: SurvivalKnife
@@ -433,7 +433,7 @@
     gloves: ClothingHandsGlovesFingerlessInsulated
     head: ClothingHeadHelmetFire
     id: VisitorPDA
-    back: ClothingBackpackDuffelAtmospherics
+    back: ClothingBackpackEngineering
     ears: ClothingHeadsetEngineering
     eyes: ClothingEyesGlassesMeson
     outerClothing: ClothingOuterSuitAtmosFire
@@ -452,7 +452,7 @@
     neck: ClothingNeckScarfStripedLightBlue
     id: VisitorPDA
     belt: DoubleEmergencyOxygenTankFilled
-    back: ClothingBackpackSatchelAtmospherics
+    back: ClothingBackpackEngineeringSatchel
     ears: ClothingHeadsetEngineering
     eyes: ClothingEyesGlassesMeson
     outerClothing: ClothingOuterWinterAtmos
@@ -486,7 +486,7 @@
     head: ClothingHeadHatCone
     id: VisitorPDA
     belt: ClothingBeltUtility
-    back: ClothingBackpackSatchelEngineering
+    back: ClothingBackpackEngineeringSatchel
     ears: ClothingHeadsetEngineering
     eyes: ClothingEyesGlassesMeson
     outerClothing: ClothingOuterVestHazard
@@ -523,7 +523,7 @@
     head: ClothingHeadHatBeretEngineering
     id: VisitorPDA
     belt: ClothingBeltUtilityEngineering
-    back: ClothingBackpackDuffelEngineering
+    back: ClothingBackpackEngineeringSatchel
     ears: ClothingHeadsetEngineering
     eyes: ClothingEyesGlassesMeson
     pocket1: RCD
@@ -542,7 +542,7 @@
     gloves: ClothingHandsGlovesLatex
     id: VisitorPDA
     belt: ChemBag
-    back: ClothingBackpackChemistry
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesGlassesChemical
     outerClothing: ClothingOuterCoatLabChem
@@ -560,7 +560,7 @@
     head: ClothingHeadHatPaper
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelChemistry
+    back: ClothingBackpackMedicalSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesGlassesChemical
     outerClothing: ClothingOuterWinterChem
@@ -579,7 +579,7 @@
     head: ClothingHeadBandGrey
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackGenetics
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterCoatLabGene
@@ -597,7 +597,7 @@
     head: ClothingHeadHatBeretBrigmedic
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelGenetics
+    back: ClothingBackpackMedicalSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterWinterGen
@@ -615,7 +615,7 @@
     head: ClothingHeadMirror
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackVirology
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterCoatLabViro
@@ -634,7 +634,7 @@
     neck: ClothingNeckStethoscope
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelVirology
+    back: ClothingBackpackMedicalSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterWinterViro
@@ -672,7 +672,7 @@
     neck: ClothingNeckStethoscope
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackMedicalSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterWinterMed
@@ -709,7 +709,7 @@
     neck: ClothingNeckTieRed
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: WhoopieCushion
@@ -726,7 +726,7 @@
     head: ClothingHeadHatAnimalCat
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: BulletFoam
@@ -745,7 +745,7 @@
     neck: ClothingNeckStethoscope
     id: VisitorPDA
     belt: ClothingBeltMedicalEMTFilled
-    back: ClothingBackpackDuffelGenetics
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterWinterPara
@@ -765,7 +765,7 @@
     neck: ClothingNeckStethoscope
     id: VisitorPDA
     belt: ClothingBeltMedicalEMTFilled
-    back: ClothingBackpackDuffelGenetics
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterCoatParamedicWB
@@ -783,7 +783,7 @@
     head: ClothingHeadBandGreen
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: Ointment
@@ -800,7 +800,7 @@
     head: ClothingHeadBandBlue
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackDuffelMedical
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: Ointment
@@ -818,7 +818,7 @@
     head: ClothingHeadHatSurgcapPurple
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: RegenerativeMesh
@@ -836,7 +836,7 @@
     head: ClothingHeadHatSurgcapGreen
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: RegenerativeMesh
@@ -854,7 +854,7 @@
     head: ClothingHeadHatSurgcapBlue
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
     pocket1: RegenerativeMesh
@@ -887,7 +887,7 @@
     neck: ClothingNeckTieSci
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelScience
+    back: ClothingBackpackScienceSatchel
     ears: ClothingHeadsetScience
     eyes: ClothingEyesGlasses
   inhand:
@@ -916,7 +916,7 @@
     neck: ClothingNeckTieSci
     id: VisitorPDA
     belt: ClothingBeltMedicalFilled
-    back: ClothingBackpackSatchelScience
+    back: ClothingBackpackScienceSatchel
     ears: ClothingHeadsetScience
     eyes: ClothingEyesGlasses
   inhand:
@@ -931,7 +931,7 @@
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatTophat
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     suitstorage: WeaponShotgunDoubleBarreledRubber
     ears: ClothingHeadsetService
     eyes: ClothingEyesGlassesSunglasses
@@ -947,7 +947,7 @@
     head: ClothingHeadHatBowlerHat
     neck: ClothingNeckTieSci
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGenericSatchel
     ears: ClothingHeadsetService
     eyes: ClothingEyesHudBeer
     outerClothing: ClothingOuterWinterBar
@@ -961,7 +961,7 @@
     shoes: ClothingShoesColorGreen
     head: ClothingHeadBandGreen
     id: VisitorPDA
-    back: ClothingBackpackDuffelHydroponics
+    back: ClothingBackpackHydroponics
     ears: ClothingHeadsetService
   inhand:
   - HydroponicsToolScythe
@@ -1039,7 +1039,7 @@
     head: ClothingHeadHatChef
 #    mask: ClothingMaskItalianMoustache # right now this is broken for vox, so its inhand.
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGenericSatchel
     belt: ClothingBeltChefFilled
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterJacketChef
@@ -1057,7 +1057,7 @@
     head: ClothingHeadHatChef
 #    mask: ClothingMaskItalianMoustache # right now this is broken for vox, so its inhand.
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     belt: ClothingBeltChefFilled
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterWinterChef
@@ -1087,7 +1087,7 @@
     gloves: ClothingHandsGlovesJanitor
     head: ClothingHeadFishCap
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGenericSatchel
     belt: ClothingBeltJanitorFilled
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterWinterJani
@@ -1103,7 +1103,7 @@
     gloves: ClothingHandsGlovesJanitor
     head: ClothingHeadHatHoodBioJanitor
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     belt: ClothingBeltJanitorFilled
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterBioJanitor
@@ -1119,7 +1119,7 @@
     head: ClothingHeadHatFedoraGrey
     neck: ClothingNeckLawyerbadge
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetSecurity
     pocket1: RubberStampLawyer
     pocket2: LuxuryPen
@@ -1134,7 +1134,7 @@
     head: ClothingHeadHatFedoraBrown
     neck: ClothingNeckLawyerbadge
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetSecurity
     pocket1: RubberStampLawyer
     pocket2: SmokingPipeFilledTobacco
@@ -1149,7 +1149,7 @@
     head: ClothingHeadHatCowboyBrown
     neck: ClothingNeckLawyerbadge
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     belt: ClothingBeltStorageWaistbag
     ears: ClothingHeadsetSecurity
     pocket1: RubberStampLawyer
@@ -1167,7 +1167,7 @@
     neck: ClothingNeckLawyerbadge
     mask: CigarGold
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetSecurity
     outerClothing: ClothingOuterCoatExpensive
     pocket1: RubberStampLawyer
@@ -1183,7 +1183,7 @@
     head: ClothingHeadHatCorpsoft
     neck: ClothingNeckLawyerbadge
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     belt: ClothingBeltStorageWaistbag
     ears: ClothingHeadsetSecurity
     pocket1: RubberStampLawyer
@@ -1200,7 +1200,7 @@
     head: BladedFlatcapBrown
     neck: ClothingNeckLawyerbadge
     id: VisitorLawyerPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     belt: ClothingBeltStorageWaistbag
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetCentCom
@@ -1216,7 +1216,7 @@
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckScarfStripedGreen
     id: VisitorLibrarianPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     belt: ClothingBeltStorageWaistbag
     eyes: ClothingEyesGlassesJamjar
     ears: ClothingHeadsetService
@@ -1232,7 +1232,7 @@
     shoes: ClothingShoesBootsLaceup
     head: ClothingHeadHatGreyFlatcap
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     belt: ClothingBeltStorageWaistbag
     eyes: ClothingEyesGlasses
     ears: ClothingHeadsetService
@@ -1247,7 +1247,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: DrinkGrapeCan
@@ -1261,7 +1261,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: FoodSnackCheesie
@@ -1275,7 +1275,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: FoodSnackPistachios
@@ -1289,7 +1289,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: DrinkSolDryCan
@@ -1303,7 +1303,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: DrinkEnergyDrinkCan
@@ -1317,7 +1317,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: FoodSnackSus
@@ -1331,7 +1331,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: FoodSnackCnDs
@@ -1345,7 +1345,7 @@
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
     id: VisitorPDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: FoodSnackChips
@@ -1359,7 +1359,7 @@
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBrown
     id: VisitorPDA
-    back: ClothingBackpackDuffel
+    back: ClothingBackpackGeneric
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: BluntRainbow
@@ -1373,7 +1373,7 @@
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBlack
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGenericSatchel
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: BluntRainbow
@@ -1387,7 +1387,7 @@
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBlack
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: BluntRainbow
@@ -1401,7 +1401,7 @@
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBrown
     id: VisitorPDA
-    back: ClothingBackpackDuffel
+    back: ClothingBackpackGeneric
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: BluntRainbow
@@ -1415,7 +1415,7 @@
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBlack
     id: VisitorPDA
-    back: ClothingBackpackDuffel
+    back: ClothingBackpackGeneric
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: BluntRainbow
@@ -1443,7 +1443,7 @@
     shoes: ClothingShoesWizard
     head: ClothingHeadRastaHat
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGeneric
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     pocket1: BluntRainbow
@@ -1458,7 +1458,7 @@
     shoes: ClothingShoesColorBrown
     head: ClothingHeadHatSombrero
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGeneric
     eyes: ClothingEyesGlassesCheapSunglasses
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterPoncho
@@ -1506,7 +1506,7 @@
     jumpsuit: ClothingUniformJumpsuitReporter
     shoes: ClothingShoesLeather
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGenericSatchel
     ears: ClothingHeadsetService
     pocket1: MicrophoneInstrument
     pocket2: BoxFolderClipboardThreePapers
@@ -1517,7 +1517,7 @@
     jumpsuit: ClothingUniformJumpsuitJournalist
     shoes: ClothingShoesColorBrown
     id: VisitorPDA
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackGenericSatchel
     ears: ClothingHeadsetService
     pocket1: MicrophoneInstrument
     pocket2: BoxFolderClipboardThreePapers
@@ -1529,7 +1529,7 @@
     shoes: ClothingShoesColorBlack
     head: ClothingHeadBandBlue
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     ears: ClothingHeadsetService
     pocket1: Fork
     pocket2: FoodShakerPepper
@@ -1541,7 +1541,7 @@
     shoes: ClothingShoesColorBlack
     head: ClothingHeadBandBlack
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterApronBar
     pocket1: Fork
@@ -1555,7 +1555,7 @@
     head: ClothingHeadSafari
     id: VisitorPDA
     belt: ClothingBeltUtility
-    back: ClothingBackpackDuffel
+    back: ClothingBackpackGeneric
     ears: ClothingHeadsetService
     pocket1: WeaponFlareGun
     pocket2: PillCanisterDylovene
@@ -1600,7 +1600,7 @@
     shoes: ClothingShoesBootsWinterCargo
     head: ClothingHeadHatCargosoft
     id: VisitorPDA
-    back: ClothingBackpackSatchelCargo
+    back: ClothingBackpackCargoSatchel
     #ears: # No headsets.
     pocket1: AppraisalTool
     outerClothing: ClothingOuterWinterCargo
@@ -1631,7 +1631,7 @@
     head: ClothingHeadHatCapcap
     neck: ClothingNeckMantleCap
     id: VisitorPDA
-    back: ClothingBackpackSatchelCaptain
+    back: ClothingBackpackCaptainSatchel
     #ears: # No headsets.
     outerClothing: ClothingOuterWinterCap
 
@@ -1659,7 +1659,7 @@
     head: ClothingHeadHatBeretCmo
     neck: ClothingNeckMantleCMO
     id: VisitorPDA
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackMedicalSatchel
     #ears: # No headsets.
     belt: ClothingBeltMedical
     outerClothing: ClothingOuterCoatLabCmo
@@ -1676,7 +1676,7 @@
     neck: ClothingNeckCloakCe
     id: VisitorPDA
     #belt: ClothingBeltChiefEngineerFilled # probably too strong?
-    back: ClothingBackpackDuffelEngineering
+    back: ClothingBackpackEngineering
     #ears: # No headsets.
     outerClothing: ClothingOuterVestHazard
     pocket1: WeaponDisabler
@@ -1690,7 +1690,7 @@
     neck: ClothingNeckMantleCE
     id: VisitorPDA
     belt: ClothingBeltChiefEngineerFilled
-    back: ClothingBackpackSatchelEngineering
+    back: ClothingBackpackEngineeringSatchel
     #ears: # No headsets.
     outerClothing: ClothingOuterWinterCE
     pocket1: WeaponDisabler
@@ -1707,7 +1707,7 @@
     neck: ClothingNeckCloakHop
     id: VisitorPDA
     belt: WeaponDisabler
-    back: ClothingBackpackDebug
+    back: ClothingBackpackGeneric
     #ears: #No headsets.
     outerClothing: ClothingOuterWinterHoP
 
@@ -1720,7 +1720,7 @@
     neck: ClothingNeckMantleHOP
     id: VisitorPDA
     belt: WeaponDisabler
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     #ears: #No headsets.
     outerClothing: ClothingOuterWinterHoP
 
@@ -1737,7 +1737,7 @@
     neck: ClothingNeckCloakHos
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackSecuritySatchel
     #ears: #No headsets.
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterCoatHoSTrench
@@ -1752,7 +1752,7 @@
     neck: SecurityWhistle
     id: VisitorPDA
     belt: ClothingBeltSecurityFilled
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     #ears: #No headsets.
     eyes: ClothingEyesGlassesSecurity
 
@@ -1779,7 +1779,7 @@
     head: ClothingHeadHatBeretRND
     neck: ClothingNeckMantleRD
     id: VisitorPDA
-    back: ClothingBackpackSatchelScience
+    back: ClothingBackpackScienceSatchel
     #ears: # No headsets.
     outerClothing: ClothingOuterCoatRD
 
@@ -1807,7 +1807,7 @@
     head: ClothingHeadHatBeretQM
     neck: ClothingNeckMantleQM
     id: VisitorPDA
-    back: ClothingBackpackSatchelCargo
+    back: ClothingBackpackCargoSatchel
     #ears: # No headsets.
     outerClothing: ClothingOuterWinterQM
     pocket1: AppraisalTool
@@ -1837,7 +1837,7 @@
     shoes: ClothingShoesBootsLaceup
     head: ClothingHeadBandRed
     id: PiratePDA
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackLeatherSatchel
     belt: ClothingBeltUtility
     ears: ClothingHeadsetFreelance
     pocket1: WeaponPistolFlintlock
@@ -1886,7 +1886,7 @@
     shoes: ClothingShoesBootsMercFilled
     head: ClothingHeadHelmetMerc
     id: VisitorPDA
-    back: ClothingBackpackMerc
+    back: ClothingBackpackGeneric # lmao - Pinwheel
     belt: ClothingBeltMercWebbing
     ears: ClothingHeadsetGrey
     outerClothing: ClothingOuterVestWebMerc
@@ -1900,4 +1900,4 @@
     shoes: ClothingShoesBootsSalvage
     head: ClothingHeadHatGreyFlatcap
     id: VisitorPDA
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric

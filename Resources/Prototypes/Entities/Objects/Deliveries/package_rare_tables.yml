@@ -79,8 +79,7 @@
     - !type:GroupSelector
       children:
       - id: ClothingBackpackMedical
-      - id: ClothingBackpackDuffelMedical
-      - id: ClothingBackpackSatchelMedical
+      - id: ClothingBackpackMedicalSatchel
     - !type:GroupSelector
       children:
       - id: ClothingHandsGlovesNitrile
@@ -161,12 +160,8 @@
       - id: ClothingUniformJumpskirtAtmos
     - !type:GroupSelector
       children:
-      - id: ClothingBackpackAtmospherics
       - id: ClothingBackpackEngineering
-      - id: ClothingBackpackDuffelAtmospherics
-      - id: ClothingBackpackDuffelEngineering
-      - id: ClothingBackpackSatchelAtmospherics
-      - id: ClothingBackpackSatchelEngineering
+      - id: ClothingBackpackEngineeringSatchel
     - !type:AllSelector
       prob: 0.5
       children:

@@ -5,7 +5,7 @@
   id: SkeletonBiker
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     head: ClothingHeadBandSkull
     eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterCoatGentle
@@ -22,7 +22,7 @@
   id: SyndicateOperativeGearCivilian
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndieFormal
-    back: ClothingBackpackDuffelSyndicate
+    back: ClothingBackpackSyndicateDuffel
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesColorBlack
     id: SyndiPDA
@@ -37,7 +37,7 @@
     mask: ClothingMaskGasSyndicate
     outerClothing: ClothingOuterArmorBasic
     gloves: ClothingHandsGlovesCombat
-    back: ClothingBackpack
+    back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsCombat
     id: SyndiPDA
   storage:
@@ -54,7 +54,7 @@
     eyes: ClothingEyesHudSyndicate
     outerClothing: ClothingOuterArmorBasic
     gloves: ClothingHandsGlovesCombat
-    back: ClothingBackpack
+    back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsCombatFilled
   storage:
     back:
@@ -67,7 +67,7 @@
     jumpsuit: ClothingUniformJumpsuitSyndieFormal
     head: ClothingHeadHatOutlawHat
     outerClothing: ClothingOuterArmorBasicSlim
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackSyndicate
     pocket1: BaseUplinkRadio25TC
     pocket2: EnergySword
 
@@ -134,7 +134,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitBrigmedic
     outerClothing: ClothingOuterCoatAMG
-    back: ClothingBackpackBrigmedic
+    back: ClothingBackpackSecurity
     shoes: ClothingShoesColorRed
     gloves: ClothingHandsGlovesNitrile
     eyes: ClothingEyesHudMedical

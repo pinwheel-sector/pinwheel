@@ -11,7 +11,7 @@
     outerClothing: ClothingOuterVest
     jumpsuit: ClothingUniformJumpsuitColorBlack
     neck: ClothingNeckScarfStripedRed
-    back: ClothingBackpack
+    back: ClothingBackpackGeneric
     gloves: ClothingHandsGlovesColorBlack
     shoes: ClothingShoesColorBlack
     id: PassengerPDA
