@@ -75,5 +75,7 @@ ERTSecurityPDA: null
 
 SalvageHumanCorpseSpawner: null
 
+BiomassReclaimer: null
 CloningPod: null
+ComputerCloningConsole: null
 MedicalScanner: null

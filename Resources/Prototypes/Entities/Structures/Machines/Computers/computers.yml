@@ -1111,54 +1111,6 @@
 
 - type: entity
   parent: BaseComputerAiAccess
-  id: ComputerCloningConsole
-  name: cloning console computer
-  description: The centerpiece of the cloning system, medicine's greatest accomplishment. It has lots of ports and wires.
-  components:
-  - type: CloningConsole
-  - type: DeviceList
-  - type: DeviceNetwork
-    deviceNetId: Wired
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: dna
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
-  - type: Computer
-    board: CloningConsoleComputerCircuitboard
-  - type: PointLight
-    radius: 1.5
-    energy: 4.0
-    color: "#1f8c28"
-  - type: DeviceLinkSource
-    range: 4
-    ports:
-      - MedicalScannerSender
-      - CloningPodSender
-  - type: ActivatableUI
-    key: enum.CloningConsoleUiKey.Key
-  - type: UserInterface
-    interfaces:
-        enum.CloningConsoleUiKey.Key:
-          type: CloningConsoleBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Pai
-  - type: GuideHelp
-    guides:
-    - Cloning
-
-- type: entity
-  parent: BaseComputerAiAccess
   id: ComputerSalvageJobBoard
   name: salvage job board
   description: Console for accessing salvage jobs, if you're tough enough.
