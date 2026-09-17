@@ -85,3 +85,42 @@ ClothingBackpackSatchelSalvage: ClothingBackpackCargoSatchel
 ClothingBackpackSatchelScience: ClothingBackpackScienceSatchel
 ClothingBackpackSatchelSecurity: ClothingBackpackSecuritySatchel
 ClothingBackpackSatchelVirology: ClothingBackpackMedicalSatchel
+
+# 2026-09-17
+ClothingBackpackDeathSquad: null
+ClothingBackpackERTChaplain: null
+ClothingBackpackERTEngineer: null
+ClothingBackpackERTJanitor: null
+ClothingBackpackERTLeader: null
+ClothingBackpackERTMedical: null
+ClothingBackpackERTSecurity: null
+# there was never a CBURN backpack because they suck
+
+ClothingOuterHardsuitDeathsquad: null # can't even capitalize IDs consistently
+ClothingOuterHardsuitCburn: null
+ClothingOuterHardsuitERTChaplain: null
+ClothingOuterHardsuitERTEngineer: null
+ClothingOuterHardsuitERTJanitor: null
+ClothingOuterHardsuitERTLeader: null
+ClothingOuterHardsuitERTMedical: null
+ClothingOuterHardsuitERTSecurity: null
+
+ClothingMaskGasDeathSquad: null
+ClothingMaskGasERT: null
+
+ClothingUniformJumpsuitDeathSquad: null
+ClothingUniformJumpsuitERTChaplain: null
+ClothingUniformJumpsuitERTEngineer: null
+ClothingUniformJumpsuitERTJanitor: null
+ClothingUniformJumpsuitERTLeader: null
+ClothingUniformJumpsuitERTMedic: null
+ClothingUniformJumpsuitERTSecurity: null
+# same for jumpsuits
+
+DeathsquadPDA: null
+ERTChaplainPDA: null
+ERTEngineerPDA: null
+ERTJanitorPDA: null
+ERTLeaderPDA: null
+ERTMedicPDA: null
+ERTSecurityPDA: null

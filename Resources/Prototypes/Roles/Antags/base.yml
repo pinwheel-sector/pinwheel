@@ -1,16 +1,6 @@
 ﻿- type: antagSpecifier
   abstract: true
   id: BaseAntagSpecifier
-  jobBlacklist:
-  - CentralCommandOfficial
-  - DeathSquad
-  - ERTLeader
-  - ERTChaplain
-  - ERTEngineer
-  - ERTSecurity
-  - ERTMedical
-  - ERTJanitor
-  - CBURN
   blacklist:
     components:
     - AntagImmune
