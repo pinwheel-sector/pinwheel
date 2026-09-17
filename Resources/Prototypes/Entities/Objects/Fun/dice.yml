@@ -109,39 +109,6 @@
     currentValue: 4
   - type: Sprite
     state: d4_4
-  - type: CollisionWake
-    enabled: false
-  - type: Fixtures
-    fixtures:
-      slips:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
-        hard: false
-        layer:
-        - LowImpassable
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
-        density: 30
-        mask:
-        - ItemMask
-  - type: StepTrigger
-    intersectRatio: 0.2
-  - type: TriggerOnStepTrigger
-  - type: PreventableStepTrigger
-  - type: Slippery
-    slipSound:
-      path: /Audio/Effects/glass_step.ogg
-    slipData:
-      launchForwardsMultiplier: 0
-  - type: DamageOnTrigger
-    targetUser: true
-    damage:
-      types:
-        Piercing: 5
-    # I love this
 
 - type: entity
   parent: BaseCoin

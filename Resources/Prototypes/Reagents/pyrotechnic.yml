@@ -226,14 +226,3 @@
             Poison: 1
       - !type:Flammable
         multiplier: 0.4
-
-- type: reagent
-  id: Fluorosurfactant
-  name: reagent-name-fluorosurfactant
-  parent: BasePyrotechnic
-  desc: reagent-desc-fluorosurfactant
-  physicalDesc: reagent-physical-desc-opaque
-  flavor: bitter
-  color: "#9e6b38"
-  boilingPoint: 190.0 # Perfluorooctanoic Acid.
-  meltingPoint: 45.0

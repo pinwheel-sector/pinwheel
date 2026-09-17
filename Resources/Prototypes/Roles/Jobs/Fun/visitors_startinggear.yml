@@ -1002,7 +1002,6 @@
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterSkub
     pocket1: Skub
-    pocket2: DrinkSpaceGlue
 
 - type: startingGear #!! make sure these are bible users.
   id: VisitorChaplain
