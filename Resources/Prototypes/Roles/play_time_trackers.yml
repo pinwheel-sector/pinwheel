@@ -47,30 +47,6 @@
   id: JobDetective
 
 - type: playTimeTracker
-  id: JobERTChaplain
-
-- type: playTimeTracker
-  id: JobERTEngineer
-
-- type: playTimeTracker
-  id: JobERTJanitor
-
-- type: playTimeTracker
-  id: JobERTLeader
-
-- type: playTimeTracker
-  id: JobERTMedical
-
-- type: playTimeTracker
-  id: JobERTSecurity
-
-- type: playTimeTracker
-  id: JobDeathSquad
-
-- type: playTimeTracker
-  id: JobCBURN
-
-- type: playTimeTracker
   id: JobHeadOfPersonnel
 
 - type: playTimeTracker

@@ -128,14 +128,6 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Nanotrasen
   icons:
-  - JobIconCBURN
-  - JobIconDeathSquad
-  - JobIconERTChaplain
-  - JobIconERTEngineer
-  - JobIconERTJanitor
-  - JobIconERTLeader
-  - JobIconERTMedic
-  - JobIconERTSecurity
   - JobIconNanotrasen
 
 - type: jobIconGroup
