@@ -33,3 +33,42 @@ WallDiamond: WallSolid
 WallIce: WallSolid
 WallMarble: WallRiveted # this is actually undoing upstream migrations so it's specified
 WallSandstone: WallSolid # i didn't actually have to remove this one but i did not care enough to fix it
+
+# 2026-09-17
+ClothingBackpackDeathSquad: null
+ClothingBackpackERTChaplain: null
+ClothingBackpackERTEngineer: null
+ClothingBackpackERTJanitor: null
+ClothingBackpackERTLeader: null
+ClothingBackpackERTMedical: null
+ClothingBackpackERTSecurity: null
+# there was never a CBURN backpack because they suck
+
+ClothingOuterHardsuitDeathsquad: null # can't even capitalize IDs consistently
+ClothingOuterHardsuitCburn: null
+ClothingOuterHardsuitERTChaplain: null
+ClothingOuterHardsuitERTEngineer: null
+ClothingOuterHardsuitERTJanitor: null
+ClothingOuterHardsuitERTLeader: null
+ClothingOuterHardsuitERTMedical: null
+ClothingOuterHardsuitERTSecurity: null
+
+ClothingMaskGasDeathSquad: null
+ClothingMaskGasERT: null
+
+ClothingUniformJumpsuitDeathSquad: null
+ClothingUniformJumpsuitERTChaplain: null
+ClothingUniformJumpsuitERTEngineer: null
+ClothingUniformJumpsuitERTJanitor: null
+ClothingUniformJumpsuitERTLeader: null
+ClothingUniformJumpsuitERTMedic: null
+ClothingUniformJumpsuitERTSecurity: null
+# same for jumpsuits
+
+DeathsquadPDA: null
+ERTChaplainPDA: null
+ERTEngineerPDA: null
+ERTJanitorPDA: null
+ERTLeaderPDA: null
+ERTMedicPDA: null
+ERTSecurityPDA: null
