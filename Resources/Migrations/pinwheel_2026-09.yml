@@ -74,3 +74,6 @@ ERTMedicPDA: null
 ERTSecurityPDA: null
 
 SalvageHumanCorpseSpawner: null
+
+CloningPod: null
+MedicalScanner: null
