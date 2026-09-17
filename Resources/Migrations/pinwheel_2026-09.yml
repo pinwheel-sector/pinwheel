@@ -73,7 +73,22 @@ ERTLeaderPDA: null
 ERTMedicPDA: null
 ERTSecurityPDA: null
 
+SpawnMobShark: null
 SalvageHumanCorpseSpawner: null
+SpawnMobBear: null
+SpawnMobHellspawn: null
+SpawnMobKangaroo: null
+SpawnMobSheepRainbow: null
+SpawnMobSheepSpace: null
+SpawnMobSyndicateFootsoldier: null
+SpawnMobSyndicateFootsoldierPilot: null
+RandomCargoCorpseSpawner: null
+RandomCommandCorpseSpawner: null
+RandomEngineerCorpseSpawner: null
+RandomMedicCorpseSpawner: null
+RandomScienceCorpseSpawner: null
+RandomSecurityCorpseSpawner: null
+RandomServiceCorpseSpawner: null
 
 BiomassReclaimer: null
 CloningPod: null
