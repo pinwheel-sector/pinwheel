@@ -2,6 +2,7 @@ using Content.Shared.EntityTable;
 using Content.Shared.EntityTable.Conditions;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using System.Linq;
 
@@ -16,6 +17,7 @@ public sealed partial class AlienRockSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private EntityTableSystem _entityTable = default!;
     [Dependency] private SharedPointLightSystem _light = default!;
+    [Dependency] private INetManager _net = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
 
     public override void Initialize()
@@ -88,6 +90,9 @@ public sealed partial class AlienRockSystem : EntitySystem
     private void OnEntRemovedFromContainer(Entity<AlienRockComponent> ent,
         ref EntRemovedFromContainerMessage args) // picked up when nodes get deleted
     {
+        if (!_net.IsServer)
+            return; // bandaid fix for artifacts leaving PVS crashing people
+
         AdjustLight(ent);
         AdjustAnchor(ent);
     }
