@@ -18,7 +18,6 @@ wires-board-name-firealarm = Fire Alarm
 wires-board-name-arcade = Arcade
 wires-board-name-ape = Ape
 wires-board-name-anomalygenerator = AnomalyGenerator
-wires-board-name-cloningpod = CloningPod
 wires-board-name-cryopod = Cryo pod
 wires-board-name-chemdispenser = ChemDispenser
 wires-board-name-chemmaster = ChemMaster
