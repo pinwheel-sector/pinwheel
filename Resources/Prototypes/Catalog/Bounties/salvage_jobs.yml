@@ -66,21 +66,6 @@
 # Tier 2
 
 - type: cargoBounty
-  id: BountyTeethSharkminnow
-  reward: 12500
-  description: bounty-description-tooth-sharkminnow
-  group: SalvageJobTier2
-  sprite:
-    sprite: Mobs/Aliens/Carps/sharkminnow.rsi
-    state: icon
-  entries:
-  - name: bounty-item-tooth-sharkminnow
-    amount: 3
-    whitelist:
-      tags:
-      - ToothSharkminnow
-
-- type: cargoBounty
   id: BountySalvageOrePlasma
   reward: 12500
   description: bounty-description-salvage-ore-plasma
@@ -126,37 +111,6 @@
       - OreBananium
 
 # Tier 3
-
-- type: cargoBounty
-  id: BountyGoliathPlates
-  reward: 20000
-  description: bounty-description-plates
-  group: SalvageJobTier3
-  sprite:
-    sprite: Mobs/Aliens/Asteroid/goliath.rsi
-    state: goliath
-  entries:
-  - name: bounty-item-plates
-    amount: 6
-    whitelist:
-      tags:
-      - GoliathPlate
-
-- type: cargoBounty
-  id: BountyHivelordRemains
-  reward: 20000
-  description: bounty-description-remains
-  group: SalvageJobTier3
-  sprite:
-    sprite: Mobs/Aliens/Asteroid/hivelord.rsi
-    state: hivelord
-  entries:
-  - name: bounty-item-remains
-    amount: 3
-    whitelist:
-      tags:
-      - HivelordRemains
-
 - type: cargoBounty
   id: BountySalvageDiamond
   reward: 20000

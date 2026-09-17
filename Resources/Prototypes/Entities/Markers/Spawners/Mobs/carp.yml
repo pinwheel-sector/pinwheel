@@ -39,17 +39,3 @@
   - type: ConditionalSpawner
     prototypes:
     - MobCarpMagic
-
-- type: entity
-  parent: MarkerBase
-  id: SpawnMobShark
-  name: Space Sharkminnow Spawner
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-    - state: icon
-      sprite: Mobs/Aliens/Carps/sharkminnow.rsi
-  - type: ConditionalSpawner
-    prototypes:
-    - MobShark

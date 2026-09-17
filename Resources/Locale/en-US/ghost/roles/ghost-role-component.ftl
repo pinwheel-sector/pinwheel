@@ -116,15 +116,6 @@ ghost-role-information-holoclown-description = Listen to your owner. Utilize you
 ghost-role-information-cluwne-name = Cluwne
 ghost-role-information-cluwne-description = Become a pitiful cluwne, your only goal in life is to find a sweet release from your suffering (usually by being beaten to death). A cluwne is not an antagonist but may defend itself. Crewmembers may murder cluwnes freely.
 
-ghost-role-information-skeleton-pirate-name = Skeleton Pirate
-ghost-role-information-skeleton-pirate-description = Cause chaos and loot the station for treasure.
-
-ghost-role-information-skeleton-biker-name = Skeleton Biker
-ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
-
-ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = You are arguably one of the oldest members of the station! Get your old job back, or cause chaos! The world is yours to shape.
-
 ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
 ghost-role-information-remilia-description = Follow and obey the chaplain. Eat fruit. Screech loudly into people's ears and write it off as echolocation.
 

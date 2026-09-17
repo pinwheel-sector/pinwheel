@@ -1,22 +1,5 @@
 #Misc outfit startingGear definitions.
 
-#Skeleton Biker - Just a skeleton now
-- type: startingGear
-  id: SkeletonBiker
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlack
-    back: ClothingBackpack
-    head: ClothingHeadBandSkull
-    eyes: ClothingEyesGlassesSunglasses
-    outerClothing: ClothingOuterCoatGentle
-    gloves: ClothingHandsGlovesFingerless
-    shoes: ClothingShoesBootsJack
-    id: PassengerPDA
-    ears: ClothingHeadsetGrey
-  storage:
-    back:
-    - BoxSurvival
-
 # Syndicate Operative Outfit - Civilian
 - type: startingGear
   id: SyndicateOperativeGearCivilian

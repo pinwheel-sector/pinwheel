@@ -215,8 +215,6 @@
         - !type:GroupSelector
           children:
           - id: CockroachCube
-          - id: AbominationCube
-            weight: 0.20
           - id: SpaceCarpCube
             weight: 0.20
           - id: SyndicateSponge
