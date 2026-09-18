@@ -73,6 +73,18 @@ ERTLeaderPDA: null
 ERTMedicPDA: null
 ERTSecurityPDA: null
 
+CratePermaEscapeSpawner: null
+CratePermaEscapeDigging: null
+CratePermaEscapeEVA: null
+CratePermaEscapeGun: null
+CratePermaEscapeBureacracy: null
+CratePermaEscapeLights: null
+CratePermaEscapeMats: null
+CratePermaEscapeGiftsFromSyndicate: null
+CratePermaEscapeMerc: null
+CratePermaEscapeComs: null
+CratePermaEscapeTowercap: null
+
 SpawnMobShark: null
 SalvageHumanCorpseSpawner: null
 SpawnMobBear: null
