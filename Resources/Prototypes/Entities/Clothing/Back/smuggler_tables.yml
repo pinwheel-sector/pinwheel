@@ -658,6 +658,3 @@
     - id: SpaceTickCube
       amount: !type:RangeNumberSelector
         range: 1, 10
-    - id: AbominationCube
-      amount: !type:RangeNumberSelector
-        range: 1, 10

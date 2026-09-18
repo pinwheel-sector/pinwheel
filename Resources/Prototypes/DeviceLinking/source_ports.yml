@@ -58,19 +58,6 @@
   defaultLinks: [ OrderReceiver ]
 
 - type: sourcePort
-  id: CloningPodSender
-  name: signal-port-name-pod-receiver
-  description: signal-port-description-pod-sender
-  defaultLinks: [ CloningPodReceiver ]
-
-- type: sourcePort
-  id: MedicalScannerSender
-  name: signal-port-name-med-scanner-sender
-  description: signal-port-description-med-scanner-sender
-  defaultLinks: [ MedicalScannerReceiver ]
-
-
-- type: sourcePort
   id: TargetSource
   name: signal-port-name-target-source
   description: signal-port-description-target-source

@@ -72,7 +72,6 @@ guide-entry-medicaldoctor = Medical Doctor
 guide-entry-chemist = Chemist
 guide-entry-brute = Advanced Brute Medication
 guide-entry-botanicals = Botanicals
-guide-entry-cloning = Cloning
 guide-entry-cryogenics = Cryogenics
 guide-entry-science = Science
 guide-entry-technologies = Technologies

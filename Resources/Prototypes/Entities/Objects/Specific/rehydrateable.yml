@@ -175,25 +175,6 @@
     possibleSpawns:
     - MobTick
 
-- type: entity
-  parent: RehydratableAnimalCube
-  id: AbominationCube
-  name: abomination cube
-  description: Just add blood!
-  components:
-  - type: Reactive
-    reactions:
-    - reagents: [Blood]
-      methods: [Touch, Ingestion, Injection]
-      effects:
-      - !type:AddReagentToSolution
-        reagent: Blood
-        solution: cube
-  - type: Rehydratable
-    catalyst: Blood # blood is fuel
-    possibleSpawns:
-    - MobAbomination
-
 # It inherits FoodComponent from PlushieCarp, but is de-facto inedible
 # PlushieCarp has requiresSpecialDigestion:true, and this one is not whitelisted anywhere, so it behaves like it's not edible
 - type: entity
@@ -240,13 +221,9 @@
   - type: Rehydratable
     possibleSpawns:
     - MobCarpHolo
-    - MobXenoRavager
     - MobAngryBee
     - MobAdultSlimesYellowAngry
-    - MobSpiderSpace
-    - MobBearSpace
     - MobPurpleSnake
-    - MobKangarooSpace
     - MobTick
 
 - type: entity

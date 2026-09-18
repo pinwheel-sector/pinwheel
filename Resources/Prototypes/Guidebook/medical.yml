@@ -5,18 +5,12 @@
   children:
   - MedicalDoctor
   - Chemist
-  - Cloning
   - Cryogenics
 
 - type: guideEntry
   id: MedicalDoctor
   name: guide-entry-medicaldoctor
   text: "/ServerInfo/Guidebook/Medical/MedicalDoctor.xml"
-
-- type: guideEntry
-  id: Cloning
-  name: guide-entry-cloning
-  text: "/ServerInfo/Guidebook/Medical/Cloning.xml"
 
 - type: guideEntry
   id: Cryogenics

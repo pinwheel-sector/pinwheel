@@ -127,3 +127,55 @@ ERTJanitorPDA: null
 ERTLeaderPDA: null
 ERTMedicPDA: null
 ERTSecurityPDA: null
+
+CratePermaEscapeSpawner: null
+CratePermaEscapeDigging: null
+CratePermaEscapeEVA: null
+CratePermaEscapeGun: null
+CratePermaEscapeBureacracy: null
+CratePermaEscapeLights: null
+CratePermaEscapeMats: null
+CratePermaEscapeGiftsFromSyndicate: null
+CratePermaEscapeMerc: null
+CratePermaEscapeComs: null
+CratePermaEscapeTowercap: null
+
+SpawnMobShark: null
+SalvageHumanCorpseSpawner: null
+SpawnMobBear: null
+SpawnMobHellspawn: null
+SpawnMobKangaroo: null
+SpawnMobSheepRainbow: null
+SpawnMobSheepSpace: null
+SpawnMobSyndicateFootsoldier: null
+SpawnMobSyndicateFootsoldierPilot: null
+SpawnMobXenoLonePraetorian: null
+RandomCargoCorpseSpawner: null
+RandomCommandCorpseSpawner: null
+RandomEngineerCorpseSpawner: null
+RandomMedicCorpseSpawner: null
+RandomScienceCorpseSpawner: null
+RandomSecurityCorpseSpawner: null
+RandomServiceCorpseSpawner: null
+
+CommandVisitorSpawner: null
+CossackSpawner: null
+VisitorCargoTechnicianSpawner: null
+VisitorClownSpawner: null
+SyndieVisitorSpawner: null
+SyndieSoldierSpawner: null
+SyndieSoldierTeamLeaderSpawner: null
+
+ComputerSalvageJobBoard: null
+SalvageJobBoardComputerCircuitboard: null
+ComputerSalvageExpedition: null
+SalvageExpeditionsComputerCircuitboard: null
+
+SalvageLocator: null
+SalvageMagnet: null
+SalvageMagnetMachineCiruitboard: null
+
+BiomassReclaimer: null
+CloningPod: null
+ComputerCloningConsole: null
+MedicalScanner: null

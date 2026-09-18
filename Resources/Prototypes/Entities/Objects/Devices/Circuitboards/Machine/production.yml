@@ -205,36 +205,6 @@
       Cable: 5
 
 - type: entity
-  id: CloningPodMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: cloning pod machine board
-  description: A machine printed circuit board for a cloning pod.
-  components:
-    - type: Sprite
-      state: medical
-    - type: MachineBoard
-      prototype: CloningPod
-      stackRequirements:
-        Manipulator: 4
-        Glass: 1
-        Cable: 1
-
-- type: entity
-  id: MedicalScannerMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: medical scanner machine board
-  description: A machine printed circuit board for a medical scanner.
-  components:
-    - type: Sprite
-      state: medical
-    - type: MachineBoard
-      prototype: MedicalScanner
-      stackRequirements:
-        Manipulator: 1
-        Glass: 5
-        Cable: 1
-
-- type: entity
   id: CryoPodMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: cryo pod machine board
@@ -285,25 +255,6 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-
-- type: entity
-  id: BiomassReclaimerMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: biomass reclaimer machine board
-  description: A machine printed circuit board for a biomass reclaimer.
-  components:
-  - type: Sprite
-    state: medical
-  - type: MachineBoard
-    prototype: BiomassReclaimer
-    stackRequirements:
-      Manipulator: 3
-      Steel: 5
-    tagRequirements:
-      Knife:
-        amount: 2
-        defaultPrototype: KitchenKnife
-        examineName: construction-insert-info-examine-name-knife
 
 - type: entity
   id: HydroponicsTrayMachineCircuitboard
@@ -933,22 +884,6 @@
     prototype: TelecomServer
     stackRequirements:
       Steel: 1
-      Cable: 2
-
-- type: entity
-  parent: BaseMachineCircuitboard
-  id: SalvageMagnetMachineCircuitboard
-  name: salvage magnet machine board
-  description: A machine printed circuit board for a salvage magnet.
-  components:
-  - type: Sprite
-    state: supply
-  - type: MachineBoard
-    prototype: SalvageMagnet
-    stackRequirements:
-      Manipulator: 4
-      Steel: 5
-      CableHV: 5
       Cable: 2
 
 - type: entity

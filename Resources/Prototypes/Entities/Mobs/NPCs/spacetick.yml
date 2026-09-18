@@ -100,11 +100,3 @@
       reagents:
       - ReagentId: Toxin
         Quantity: 5
-
-- type: entity
-  id: MobTickSalvage
-  parent: MobTick
-  suffix: "Salvage Ruleset"
-  components:
-  - type: SalvageMobRestrictions
-
