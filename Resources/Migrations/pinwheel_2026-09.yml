@@ -99,6 +99,15 @@ SyndieVisitorSpawner: null
 SyndieSoldierSpawner: null
 SyndieSoldierTeamLeaderSpawner: null
 
+ComputerSalvageJobBoard: null
+SalvageJobBoardComputerCircuitboard: null
+ComputerSalvageExpedition: null
+SalvageExpeditionsComputerCircuitboard: null
+
+SalvageLocator: null
+SalvageMagnet: null
+SalvageMagnetMachineCiruitboard: null
+
 BiomassReclaimer: null
 CloningPod: null
 ComputerCloningConsole: null
