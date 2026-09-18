@@ -148,7 +148,7 @@
 - type: startingGear
   id: MobAghostGear
   equipment:
-    back: ClothingBackpackSatchelAdmin
+    back: ClothingBackpackAdmin
     id: AdminPDA
   storage:
     back:

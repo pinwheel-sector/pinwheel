@@ -24,3 +24,16 @@
   - type: Sprite
     sprite: Clothing/Back/Satchels/leather.rsi
     state: icon
+
+- type: entity
+  parent: BaseClothingBackpack
+  id: ClothingBackpackAdmin
+  name: admin backpack
+  categories: [ Debug ]
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Storage
+    maxItemSize: Colossal
+    grid:
+    - 0,0,19,9

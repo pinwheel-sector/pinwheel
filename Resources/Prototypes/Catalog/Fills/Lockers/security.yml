@@ -39,11 +39,6 @@
     - id: DoorRemoteArmory
     - id: HoloprojectorSecurity
     - id: BookSpaceLaw
-    - id: ClothingBackpackElectropack
-      amount: 2
-    - id: RemoteSignaller
-      amount: 2
-    - id: NetworkConfigurator
     - id: Binoculars
     - id: PlushieLizardJobWarden
       prob: 0.02

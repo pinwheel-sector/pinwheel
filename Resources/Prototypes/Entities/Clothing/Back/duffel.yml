@@ -1,3 +1,4 @@
+# these exist purely for the sake of uplink bundles which straight up should not be a thing and now is not the time for me to gut them
 - type: entity
   parent: [ ClothingBackpackSyndicateDuffel, BaseSyndicateContraband ]
   id: ClothingBackpackDuffelSyndicateBundle

@@ -29,6 +29,18 @@
     storageInsertSound: *ClownInsert
 
 - type: entity
+  parent: ClothingBackpackClown
+  id: ClothingBackpackCluwne
+  name: jiggles von jonkerton
+  suffix: unremovable
+  description: This goes on your back and you can't take it off.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/cluwne.rsi
+  - type: Unremoveable
+    deleteOnDrop: false
+
+- type: entity
   parent: BaseClothingBackpack
   id: ClothingBackpackHydroponics
   name: hydroponics backpack
