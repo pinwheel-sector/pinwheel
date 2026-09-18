@@ -82,6 +82,7 @@ SpawnMobSheepRainbow: null
 SpawnMobSheepSpace: null
 SpawnMobSyndicateFootsoldier: null
 SpawnMobSyndicateFootsoldierPilot: null
+SpawnMobXenoLonePraetorian: null
 RandomCargoCorpseSpawner: null
 RandomCommandCorpseSpawner: null
 RandomEngineerCorpseSpawner: null
@@ -89,6 +90,14 @@ RandomMedicCorpseSpawner: null
 RandomScienceCorpseSpawner: null
 RandomSecurityCorpseSpawner: null
 RandomServiceCorpseSpawner: null
+
+CommandVisitorSpawner: null
+CossackSpawner: null
+VisitorCargoTechnicianSpawner: null
+VisitorClownSpawner: null
+SyndieVisitorSpawner: null
+SyndieSoldierSpawner: null
+SyndieSoldierTeamLeaderSpawner: null
 
 BiomassReclaimer: null
 CloningPod: null
