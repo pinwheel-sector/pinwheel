@@ -46,15 +46,13 @@ public sealed partial class AlienScannerDisplay : FancyWindow
 
         _updateNext = _timing.CurTime + _updateRate;
 
-        if (!_ent.TryGetComponent<AlienScannerConnectedComponent>(_owner, out var con))
+        if (!_ent.TryGetComponent<AlienScannerConnectedComponent>(_owner, out var con)
+            || !_ent.TryGetComponent<AlienRockComponent>(con.Attached, out var rock))
         { // set text with empty node list if we're not connected
             var empty = new List<string>();
             SetText(false, empty);
             return;
         }
-
-        if (!_ent.TryGetComponent<AlienRockComponent>(con.Attached, out var rock))
-            throw new Exception("Entity attached to alien scanner is not an artifact.");
 
         if (rock.Nodes is null)
             throw new Exception("Artifact does not have a node container");

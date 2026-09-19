@@ -25,7 +25,7 @@ public sealed partial class AlienScannerSystem : EntitySystem
                 continue;
 
             if (!TryComp<AlienRockScannedComponent>(scan.Attached, out var rock))
-                throw new Exception($"Entity {scan.Attached} did not have expected {typeof(AlienRockScannedComponent)}");
+                continue;
 
             scan.UpdateNext = _timing.CurTime + scan.UpdateRate;
 
@@ -111,21 +111,6 @@ public sealed partial class AlienScannerSystem : EntitySystem
         Attach(ent, args.Target.Value, args.User);
     }
 
-    [SubscribeLocalEvent]
-    private void OnScannerConnectedShutdown(
-        Entity<AlienScannerConnectedComponent> ent,
-        ref ComponentShutdown args)
-    {
-        RemCompDeferred<AlienRockScannedComponent>(ent.Comp.Attached);
-    }
-
-    [SubscribeLocalEvent]
-    private void OnRockScannedShutdown(
-        Entity<AlienRockScannedComponent> ent,
-        ref ComponentShutdown args)
-    {
-        RemCompDeferred<AlienScannerConnectedComponent>(ent.Comp.Attached);
-    }
 }
 
 [Serializable, NetSerializable]
