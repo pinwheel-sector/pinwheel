@@ -46,7 +46,8 @@ public sealed partial class AlienScannerDisplay : FancyWindow
 
         _updateNext = _timing.CurTime + _updateRate;
 
-        if (!_ent.TryGetComponent<AlienScannerConnectedComponent>(_owner, out var con) || !_ent.TryGetComponent<AlienRockComponent>(con.Attached, out var rock))
+        if (!_ent.TryGetComponent<AlienScannerConnectedComponent>(_owner, out var con)
+            || !_ent.TryGetComponent<AlienRockComponent>(con.Attached, out var rock))
         { // set text with empty node list if we're not connected
             var empty = new List<string>();
             SetText(false, empty);
