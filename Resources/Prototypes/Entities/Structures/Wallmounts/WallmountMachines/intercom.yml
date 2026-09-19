@@ -209,18 +209,6 @@
     node: intercomReinforced
 
 - type: entity
-  id: IntercomCommon
-  parent: Intercom
-  suffix: Common
-  components:
-  - type: ContainerFill
-    containers:
-      board:
-      - IntercomElectronics
-      key_slots:
-      - EncryptionKeyCommon
-
-- type: entity
   id: IntercomCommand
   parent: BaseIntercomSecure
   suffix: Command
@@ -231,7 +219,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyCommand
 
 - type: entity
@@ -244,7 +231,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyEngineering
 
 - type: entity
@@ -257,7 +243,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyMedical
 
 - type: entity
@@ -270,7 +255,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyScience
 
 - type: entity
@@ -284,7 +268,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeySecurity
 
 - type: entity
@@ -297,7 +280,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyService
 
 - type: entity
@@ -310,7 +292,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyCargo
 
 - type: entity
@@ -323,7 +304,6 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyStationMaster
 
 - type: entity
@@ -336,5 +316,4 @@
       board:
       - IntercomElectronics
       key_slots:
-      - EncryptionKeyCommon
       - EncryptionKeyFreelance

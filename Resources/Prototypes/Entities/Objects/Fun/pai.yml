@@ -52,10 +52,6 @@
     stopSearchVerbText: pai-system-stop-searching-verb-text
     stopSearchVerbPopup: pai-system-stopped-searching
   - type: Examiner
-  - type: IntrinsicRadioReceiver
-  - type: ActiveRadio
-    channels:
-    - Common
   - type: DoAfter
   - type: Actions
   - type: ActionGrant

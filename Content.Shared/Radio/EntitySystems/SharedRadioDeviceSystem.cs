@@ -217,6 +217,14 @@ public abstract partial class SharedRadioDeviceSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
+        // Pinwheel-stt
+        if (ent.Comp.BroadcastChannel is null)
+        {
+            args.PushMarkup(Loc.GetString("radio-microphone-component-examine-none"));
+            return;
+        }
+        // Pinwheel-end
+
         var proto = ProtoMan.Index(ent.Comp.BroadcastChannel);
 
         using (args.PushGroup(nameof(RadioMicrophoneComponent)))
@@ -233,6 +241,9 @@ public abstract partial class SharedRadioDeviceSystem : EntitySystem
     {
         if (HasComp<RadioSpeakerComponent>(args.Source))
             return; // no feedback loops please.
+
+        if (ent.Comp.BroadcastChannel is null) // Pinwheel
+            return; // Pinwheel
 
         var channel = ProtoMan.Index(ent.Comp.BroadcastChannel);
         if (_recentlySent.Add((args.Message, args.Source, channel)))

@@ -22,7 +22,7 @@ public sealed partial class RadioSpeakerComponent : Component
     /// Radio channels from which messages are received.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public HashSet<ProtoId<RadioChannelPrototype>> Channels = new() { SharedChatSystem.CommonChannel };
+    public HashSet<ProtoId<RadioChannelPrototype>> Channels = new() { };
 
     /// <summary>
     /// Whether the speaker is currently receiving radio messages.

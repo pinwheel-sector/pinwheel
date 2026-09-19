@@ -16,7 +16,7 @@ public sealed partial class RadioMicrophoneComponent : Component
     /// Radio channel on which local speech is broadcast.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public ProtoId<RadioChannelPrototype> BroadcastChannel = SharedChatSystem.CommonChannel;
+    public ProtoId<RadioChannelPrototype>? BroadcastChannel = default!;
 
     /// <summary>
     /// Maximum distance from the microphone at which speech is heard.
