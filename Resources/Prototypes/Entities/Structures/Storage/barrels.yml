@@ -68,8 +68,6 @@
     - id: BarrelChemFilledPhosphorus
     - id: BarrelChemFilledSilicon
     - id: BarrelChemFilledMercury
-    - id: BarrelChemFilledLube # oiled up...
-      weight: 0.1
 
 - type: entityTable
   id: RandomChemicalBarrelRadioactive
@@ -162,20 +160,6 @@
     solution:
       reagents:
       - ReagentId: Silicon
-        Quantity: 960
-
-- type: entity
-  parent: BaseBarrelChem
-  id: BarrelChemFilledLube
-  suffix: Lube
-  description: Slippery...
-  components:
-  - type: Sprite
-    state: silicatebarrel
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: SpaceLube
         Quantity: 960
 
 - type: entity

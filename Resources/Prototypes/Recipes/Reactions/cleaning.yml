@@ -30,16 +30,3 @@
       amount: 1
   products:
     SpaceCleaner: 2
-
-- type: reaction
-  id: SpaceLube
-  impact: Medium
-  reactants:
-    Water:
-      amount: 1
-    Fersilicite:
-      amount: 1
-    Oxygen:
-      amount: 1
-  products:
-    SpaceLube: 5
