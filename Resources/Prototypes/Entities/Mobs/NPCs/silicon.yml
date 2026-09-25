@@ -67,8 +67,6 @@
     - BasicSilicon
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
-    channels:
-    - Common
   - type: HealthExaminable
     examinableTypes:
     - Blunt
@@ -333,7 +331,6 @@
     - Unimplantable
   - type: ActiveRadio
     channels:
-    - Common
     - Supply
   - type: Puller
     needsHands: false
