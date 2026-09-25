@@ -14,4 +14,18 @@
   - type: ActivatableUI
     key: enum.AlienScannerUiKey.Key
     singleUser: true
-  - type: AlienScanner # TODO: give this use sounds and shit
+  - type: AlienScanner
+    soundStart:
+      collection: AlienScannerStart
+    soundEnd:
+      collection: AlienScannerEnd
+
+- type: soundCollection
+  id: AlienScannerStart
+  files:
+  - /Audio/_Pinwheel/AlienRock/scan_start.ogg
+
+- type: soundCollection
+  id: AlienScannerEnd
+  files:
+  - /Audio/_Pinwheel/AlienRock/scan_end.ogg
