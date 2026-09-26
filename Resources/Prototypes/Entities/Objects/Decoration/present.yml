@@ -146,8 +146,6 @@
         orGroup: GiftPool
       - id: ToyFigurineSkeleton
         orGroup: GiftPool
-      - id: FoamBlade
-        orGroup: GiftPool
       - id: AcousticGuitarInstrument
         orGroup: GiftPool
       - id: ViolinInstrument
@@ -347,10 +345,6 @@
       - id: ClothingHeadHatCatEars
         orGroup: GiftPool
       - id: ClothingHeadHatDogEars
-        orGroup: GiftPool
-      - id: ToySword
-        orGroup: GiftPool
-      - id: RevolverCapGun
         orGroup: GiftPool
       - id: Ash
         orGroup: GiftPool

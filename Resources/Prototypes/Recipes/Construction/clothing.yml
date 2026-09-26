@@ -33,18 +33,6 @@
 
 - type: construction
   parent: BaseClothing
-  id: cardHelmet
-  graph: cardHelmet
-  targetNode: cardhelmet
-
-- type: construction
-  parent: BaseClothing
-  id: cardArmour
-  graph: cardArmour
-  targetNode: cardarmour
-
-- type: construction
-  parent: BaseClothing
   id: BananaClownMask
   graph: BananaClownMask
   targetNode: mask

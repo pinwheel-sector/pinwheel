@@ -31,16 +31,6 @@
   - UplinkPointless
 
 - type: listing
-  id: UplinkRevolverCapGun
-  name: uplink-revolver-cap-gun-name
-  description: uplink-revolver-cap-gun-desc
-  productEntity: RevolverCapGun
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkPointless
-
-- type: listing
   id: UplinkSyndicateStamp
   name: uplink-syndicate-stamp-name
   description: uplink-syndicate-stamp-desc

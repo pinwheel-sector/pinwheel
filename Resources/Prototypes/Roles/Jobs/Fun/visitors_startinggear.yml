@@ -729,10 +729,8 @@
     back: ClothingBackpackLeatherSatchel
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
-    pocket1: BulletFoam
-    pocket2: PillSpaceDrugs
+    pocket1: PillSpaceDrugs
   inhand:
-  - FoamCrossbow
   - DrinkWhiskeyBottleFull
 
 - type: startingGear

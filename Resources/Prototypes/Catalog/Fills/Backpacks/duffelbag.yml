@@ -391,7 +391,6 @@
         - id: BalloonElite
         - id: BalloonJuggernaut
         - id: BalloonCommander
-        - id: SnapPopBox
         - id: GrenadeDummy
           amount: 2
         - id: SyndieTrickyBomb

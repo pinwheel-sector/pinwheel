@@ -711,25 +711,6 @@
 
 - type: entity
   parent: SeedBase
-  id: RealCapfruitSeeds
-  name: packet of capfruit seeds
-  description: "Is it real, or is it fake?"
-  components:
-    - type: Seed
-      plantId: RealCapfruitPlants
-    - type: Sprite
-      sprite: Objects/Specific/Hydroponics/capfruit.rsi
-
-- type: entity
-  parent: RealCapfruitSeeds
-  id: FakeCapfruitSeeds
-  suffix: Fake
-  components:
-    - type: Seed
-      plantId: FakeCapfruitPlants
-
-- type: entity
-  parent: SeedBase
   name: packet of cherry seeds
   id: CherrySeeds
   components:

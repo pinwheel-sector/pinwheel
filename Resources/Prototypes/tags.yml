@@ -186,9 +186,6 @@
   id: Bucket # Storage whitelist: JanitorialTrolley. ItemMapper: JanitorialTrolley. ConstructionGraph: CleanBot, scraphelmet
 
 - type: Tag
-  id: BulletFoam # Ammo: WeaponRifleFoam, FoamCrossbow, MagazineFoamBox, BoxDonkSoftBox
-
-- type: Tag
   id: Bun # LastElement key on burger associated MetamorphRecipes.
 
 - type: Tag
@@ -255,9 +252,6 @@
 
 - type: Tag
   id: CartridgeAntiMateriel # .60 high caliber ammo for powerful rifles like WeaponSniperHristov, Musket.
-
-- type: Tag
-  id: CartridgeCap # Specialty ammo for RevolverCapGun, RevolverCapGunFake.
 
 - type: Tag
   id: CartridgeCaselessRifle # Specialty ammo for WeaponPistolCobra.
@@ -1326,9 +1320,6 @@
   id: Spear # CargoBounty: BountySpear
 
 - type: Tag
-  id: SpeedLoaderCap # Ammo: RevolverCapGun, RevolverCapGunFake
-
-- type: Tag
   id: SpeedLoaderMagnum # Ammo: BaseWeaponRevolver, XenoArtifactGun
 
 - type: Tag
@@ -1444,9 +1435,6 @@
 
 - type: Tag
   id: ToyRubberDuck # ConstructionGraph: ClothingShoeSlippersDuck
-
-- type: Tag
-  id: ToySidearm # Storage whitelist: ClothingShoesClownBase
 
 - type: Tag
   id: ToyKnife # Storage whitelist: ClothingShoesClownBase

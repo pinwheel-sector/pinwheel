@@ -1876,59 +1876,6 @@
       Burger: GatfruitBurger
 
 - type: entity
-  name: capfruit
-  parent: [FoodProduceBase, BaseSlicingRefinable]
-  id: FoodRealCapfruit
-  description: A soft but smooth gun-shaped fruit.
-  components:
-  - type: FlavorProfile
-    flavors:
-      - plastic
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Nutriment
-        Quantity: 5
-      - ReagentId: Iron
-        Quantity: 5
-      - ReagentId: Sulfur
-        Quantity: 5
-  - type: Sprite
-    sprite: Objects/Specific/Hydroponics/capfruit.rsi
-  - type: Item
-    heldPrefix: produce
-  - type: Produce
-    plantId: RealCapfruitPlants
-  - type: Edible
-    trash:
-    - RevolverCapGun
-  - type: ToolRefinable
-    refineResult:
-    - id: RevolverCapGun
-  - type: Tag
-    tags:
-    - Fruit
-  - type: FoodSequenceElement
-    entries:
-      Taco: Capfruit
-      Burger: CapfruitBurger
-
-- type: entity
-  name: capfruit
-  parent: [FoodRealCapfruit, BaseSlicingRefinable]
-  id: FoodFakeCapfruit
-  suffix: Fake
-  components:
-  - type: Produce
-    plantId: FakeCapfruitPlants
-  - type: Edible
-    trash:
-    - RevolverCapGunFake
-  - type: ToolRefinable
-    refineResult:
-    - id: RevolverCapGunFake
-
-- type: entity
   name: rice bushel
   description: Can be ground into rice, perfect for pudding or sake.
   id: RiceBushel

@@ -228,24 +228,6 @@
   id: AllToyWeaponsTable
   table: !type:GroupSelector
     children:
-    - !type:GroupSelector # Swords type group
-      children:
-      - id: ToyHammer
-      - id: ToySword
-      - id: FoamBlade
-      - id: FoamCutlass
-      - id: CardSword
-    - !type:GroupSelector # Throwing type group
-      rolls: 2 # Expendables need restocks
-      children:
-      - id: SnapPopBox
-      - id: BoxDarts
-      - id: GrenadeFoamDart
-      - !type:GroupSelector # REAL fake grenades
-        weight: 0.05 # 2 in 186. Rare in order to not spoil the surprise
-        children:
-        - id: GrenadeDummy
-        - id: SyndieTrickyBomb
     - !type:GroupSelector # Guns type group
       children:
       - id: WeaponStickyHand
@@ -253,35 +235,6 @@
         children:
         - id: WeaponWaterBlaster
         - id: WeaponWaterPistol
-      - !type:NestedSelector
-        tableId: RandomFoamGunTable
-      - !type:NestedSelector
-        tableId: RandomCapGunTable
-
-- type: entityTable # price 100
-  id: RandomFoamGunTable
-  table: !type:AllSelector # Need to spawn with ammo
-    children:
-    - !type:GroupSelector
-      children:
-      - id: FoamCrossbow
-      - id: WeaponRifleFoam
-    - id: BoxDonkSoftBox
-
-- type: entityTable
-  id: RandomCapGunTable
-  table: !type:AllSelector
-    children:
-    - !type:GroupSelector # real or fake?
-      children:
-      - id: RevolverCapGun
-      - id: RevolverCapGunFake
-        weight: 0.01 # 1 in 101
-    - !type:GroupSelector # ready for reload
-      prob: 0.9
-      children:
-      - id: SpeedLoaderCap
-      - id: BoxCartridgeCap
 
 # A group of items with fun or unique properties. Highly varied (some are more fun than others)
 - type: entityTable # size 2x2  # price 100
@@ -292,7 +245,6 @@
       tableId: AllCrayonsTable
     - id: CrayonBox
     - id: PlasticBanana
-    - id: NukeDiskFake
     - id: DiceBag
     - id: SpectralLocator
     - id: Magic9Ball
@@ -330,7 +282,6 @@
     - !type:GroupSelector # Orbs of "power"
       weight: 0.05 # 1 in 320
       children:
-      - id: SingularityToy
       - id: TeslaToy
       - id: PonderingOrb
 
@@ -451,38 +402,6 @@
     table: !type:NestedSelector
       tableId: AllFigurineMechsTable
       prob: 0.5
-
-- type: entity
-  parent: MarkerBase
-  id: ToyWeaponSpawner90
-  name: Toy Weapon Spawner
-  suffix: 90
-  components:
-  - type: Sprite
-    layers:
-    - state: red
-    - sprite: Objects/Fun/rubber_hammer.rsi
-      state: icon
-  - type: EntityTableSpawner
-    table: !type:NestedSelector
-      tableId: AllToyWeaponsTable
-      prob: 0.9
-
-- type: entity
-  parent: MarkerBase
-  id: CapGunSpawner90
-  name: Cap Gun Spawner
-  suffix: 90
-  components:
-  - type: Sprite
-    layers:
-    - state: red
-    - sprite: Objects/Fun/capgun.rsi
-      state: base
-  - type: EntityTableSpawner
-    table: !type:NestedSelector
-      tableId: RandomCapGunTable
-      prob: 0.9
 
 - type: entity
   parent: MarkerBase

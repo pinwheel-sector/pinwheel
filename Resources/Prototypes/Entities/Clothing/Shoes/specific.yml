@@ -14,16 +14,6 @@
   abstract: true
   parent: [ClothingShoesBaseButcherable, ClothingSlotBase]
   id: ClothingShoesClownBase
-  components:
-  - type: ItemSlots
-    slots:
-      item:
-        name: clothing-boots-sidearm
-        ejectOnBreak: true
-        whitelist:
-          tags:
-          - ToyKnife
-          - ToySidearm
 
 - type: entity
   parent: ClothingShoesClownBase

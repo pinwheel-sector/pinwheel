@@ -68,8 +68,6 @@
     - id: WeaponRevolverPython
     - id: WeaponPistolCobra
     - id: WeaponShotgunSawn
-    - id: RevolverCapGunFake
-      weight: .01
 
 - type: entityTable
   id: NukeOpsAmmoTable

@@ -675,12 +675,9 @@
     - id: ToyIan
     - id: ToyFigurineOwlman
     - id: ToyFigurineSkeleton
-    - id: FoamBlade
     - id: ClothingHeadHatBunny
     - id: PersonalAI
     - id: CrayonBox
-    - id: ToySword
-    - id: RevolverCapGun
     - id: ToyRubberDuck
     - id: BikeHorn
       weight: 0.5
@@ -701,7 +698,6 @@
     - id: ToyMarauder
     - id: ToyMauler
     - id: ToyNuke
-    - id: ToySword
     - id: WeaponRevolverPythonAP
       weight: 0.4
     - id: BalloonSyn
