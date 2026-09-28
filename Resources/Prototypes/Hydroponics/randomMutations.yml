@@ -7,11 +7,6 @@
       appliesToProduce: false
       persists: false
       effect: !type:MakeSentient # existing effect.
-    - name: Slippery
-      description: mutation-plant-slippery
-      baseOdds: 0.036
-      appliesToPlant: false
-      effect: !type:Slipify
     - name: ChangeSpecies
       baseOdds: 0.036
       appliesToProduce: false

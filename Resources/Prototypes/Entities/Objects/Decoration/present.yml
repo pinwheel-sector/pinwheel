@@ -258,10 +258,6 @@
         orGroup: GiftPool
       - id: SoapDeluxe
         orGroup: GiftPool
-      - id: SoapSyndie
-        orGroup: GiftPool
-      - id: SoapOmega
-        orGroup: GiftPool
       - id: BedsheetCosmos
         orGroup: GiftPool
       - id: BedsheetIan

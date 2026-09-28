@@ -20,55 +20,6 @@
     solution: drink
 
 - type: entity
-  parent: BaseSqueezeBottle
-  id: DrinkSpaceGlue
-  name: space glue tube
-  description: High performance glue intended for maintenance of extremely complex mechanical equipment. DON'T DRINK!
-  components:
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/glue-tube.rsi
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: SpaceGlue
-        Quantity: 60
-  - type: Glue
-
-- type: entity
-  parent: BaseSqueezeBottle
-  id: DrinkSpaceLube
-  name: space lube tube
-  description: High performance lubricant intended for maintenance of extremely complex mechanical equipment.
-  components:
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/lube-tube.rsi
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: SpaceLube
-        Quantity: 60
-  - type: Lube
-
-# Find your nearest clown and give them a gift :o)
-- type: entity
-  parent: BluespaceBeaker
-  id: BottomlessLube
-  name: bottomless lube beaker
-  suffix: DEBUG
-  description: This anomalous beaker infinitely produces space lube and as such is to be closely guarded such that it doesn't fall in the wrong hands.
-  components:
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: SpaceLube
-        Quantity: 960
-  - type: SolutionRegeneration
-    generated:
-      reagents:
-      - ReagentId: SpaceLube
-        Quantity: 240
-
-- type: entity
   parent: [DrinkBaseMaterialGlass, DrinkBase]
   id: DrinkJarWhat
   name: jar of something
@@ -132,8 +83,6 @@
     reagents:
     - SpaceDrugs
     - Mold
-    - SpaceLube
-    - SpaceGlue
     - SpaceCleaner
     - MilkSpoiled
     - FourteenLoko

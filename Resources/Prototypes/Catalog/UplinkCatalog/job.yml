@@ -53,23 +53,6 @@
     - Clown
 
 - type: listing
-  id: UplinkClusterBananaPeel
-  name: uplink-cluster-banana-peel-name
-  description: uplink-cluster-banana-peel-desc
-  productEntity: ClusterBananaPeel
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Clown
-
-- type: listing
   id: UplinkHoloclownKit
   name: uplink-holoclown-kit-name
   description: uplink-holoclown-kit-desc

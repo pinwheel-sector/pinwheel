@@ -661,29 +661,6 @@
     - 0,0,1,0
   - type: Sprite
     state: butter
-  - type: Slippery
-  - type: StepTrigger
-    intersectRatio: 0.2
-  - type: CollisionWake
-    enabled: false
-  - type: Physics
-    bodyType: Dynamic
-  - type: Fixtures
-    fixtures:
-      slips:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.2,0.3,0.2"
-        layer:
-        - SlipLayer
-        hard: false
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.2,0.3,0.2"
-        density: 10
-        mask:
-        - ItemMask
   - type: Solution
     solution:
       reagents:
