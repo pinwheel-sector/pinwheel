@@ -110,8 +110,6 @@
         orGroup: GiftPool
       - id: ToyAi
         orGroup: GiftPool
-      - id: ToyNuke
-        orGroup: GiftPool
       - id: ToyFigurinePassenger
         orGroup: GiftPool
       - id: ToyFigurineGriffin
@@ -145,8 +143,6 @@
       - id: ToyDurand
         orGroup: GiftPool
       - id: ToyFigurineSkeleton
-        orGroup: GiftPool
-      - id: FoamBlade
         orGroup: GiftPool
       - id: AcousticGuitarInstrument
         orGroup: GiftPool
@@ -213,8 +209,6 @@
       - id: Football
         orGroup: GiftPool
       - id: BalloonCorgi
-        orGroup: GiftPool
-      - id: PonderingOrb
         orGroup: GiftPool
       - id: Skub
         orGroup: GiftPool
@@ -347,10 +341,6 @@
       - id: ClothingHeadHatCatEars
         orGroup: GiftPool
       - id: ClothingHeadHatDogEars
-        orGroup: GiftPool
-      - id: ToySword
-        orGroup: GiftPool
-      - id: RevolverCapGun
         orGroup: GiftPool
       - id: Ash
         orGroup: GiftPool

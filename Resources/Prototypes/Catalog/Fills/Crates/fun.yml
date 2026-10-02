@@ -332,22 +332,6 @@
           amount: 4
 
 - type: entity
-  parent: CratePlastic
-  id: CrateFunFoamGuns
-  name: Foam Force crate
-  description: Contains four Foam Force Battle Kits™. It's [REDACTED] or nothing!
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - !type:NestedSelector
-          tableId: RandomFoamGunTable
-          rolls: 4
-        - id: GrenadeFoamDart
-          amount: 4
-
-- type: entity
   parent: CrateGenericSteel
   id: CrateFunBoxing
   name: boxing crate
@@ -382,8 +366,6 @@
         - id: ClothingShoesBootsLaceup
           amount: 2
         - id: ClothingHeadBandRed
-        - id: FoamCutlass
-          amount: 2
 
 - type: entity
   parent: CrateToyBox

@@ -13,12 +13,6 @@
         {
             "name": "storage"
         },
-        {
-            "name": "foam_icon"
-        },
-        {
-            "name": "foam_storage"
-        },
 		{
             "name": "inhand-left",
             "directions": 4

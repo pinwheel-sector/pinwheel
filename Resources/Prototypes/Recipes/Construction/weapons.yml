@@ -78,14 +78,6 @@
 
 - type: construction
   parent: BaseWeapon
-  id: CardShield
-  graph: CardShield
-  targetNode: cardShield
-  category: construction-category-weapons
-  objectType: Item
-
-- type: construction
-  parent: BaseWeapon
   id: ImprovisedArrow
   graph: ImprovisedArrow
   targetNode: ImprovisedArrow
@@ -125,10 +117,4 @@
   id: ClothingHandsKnuckleDustersBrass
   graph: ClothingHandsKnuckleDustersBrass
   targetNode: icon
-
-- type: construction
-  parent: BaseWeapon
-  id: CardSword
-  graph: CardSword
-  targetNode: cardSword
 # endregion Weapons

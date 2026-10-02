@@ -49,8 +49,6 @@
     - id: CrateFunSharkPlushieBulk
     - id: CrateCandles
     - id: CrateFunArtSupplies
-    - id: CrateFunFoamGuns
-      weight: 0.01
 
 - type: entityTable
   id: LowValueMaterialCrateTable
