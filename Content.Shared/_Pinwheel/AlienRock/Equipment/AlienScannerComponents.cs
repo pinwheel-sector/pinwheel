@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -20,6 +21,18 @@ public sealed partial class AlienScannerComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan DoAfterLength = TimeSpan.FromSeconds(6);
+
+    /// <summary>
+    /// Start to play when beginning the doafter
+    /// </summary>
+    [DataField]
+    public SoundSpecifier SoundStart;
+
+    /// <summary>
+    /// Start to play when completing the doafter
+    /// </summary>
+    [DataField]
+    public SoundSpecifier SoundEnd;
 }
 
 /// <summary>

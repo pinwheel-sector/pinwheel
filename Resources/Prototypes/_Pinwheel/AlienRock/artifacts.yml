@@ -34,6 +34,13 @@
         layer: [ Opaque ]
   - type: Anchorable
     flags: [ None ]
+  # audio
+  - type: AmbientSound
+    enabled: true
+    range: 7
+    volume: -5
+    sound:
+      collection: AlienRockAmbient
   # function
   - type: ContainerContainer
     containers:
@@ -89,3 +96,8 @@
   - type: RadiationSource
     slope: 0.8 # intensity is dynamic
   - type: AlienEffectRadiation
+
+- type: soundCollection
+  id: AlienRockAmbient
+  files:
+  - /Audio/_Pinwheel/AlienRock/rock_ambient.ogg

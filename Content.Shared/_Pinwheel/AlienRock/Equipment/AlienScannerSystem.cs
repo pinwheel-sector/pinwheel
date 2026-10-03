@@ -1,6 +1,7 @@
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared._Pinwheel.AlienRock;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Serialization;
 
@@ -11,6 +12,7 @@ namespace Content.Shared._Pinwheel.AlienRock.Equipment;
 /// </summary>
 public sealed partial class AlienScannerSystem : EntitySystem
 {
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -93,6 +95,7 @@ public sealed partial class AlienScannerSystem : EntitySystem
             };
 
         _doAfter.TryStartDoAfter(doAfter);
+        _audio.PlayPredicted(ent.Comp.SoundStart, ent.Owner, args.User);
 
         args.Handled = true;
     }
@@ -109,6 +112,7 @@ public sealed partial class AlienScannerSystem : EntitySystem
             return;
 
         Attach(ent, args.Target.Value, args.User);
+        _audio.PlayPredicted(ent.Comp.SoundEnd, ent.Owner, args.User);
     }
 
 }
